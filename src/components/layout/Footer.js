@@ -130,13 +130,11 @@ export default function Footer() {
 					<img src="assets/images/footer-shape-2.png" alt="Image" />
 				</div>
 			</footer>
-			<div class="copy-right-area">
+			<div class="copy-right-area" style={{ backgroundColor: '#101828' }}>
 				<div class="container">
 					<p>
-						Copyright <i class="ri-copyright-line"></i>{new Date().getFullYear()}. Designed By{' '}
-						<a href="https://envytheme.com/" target="_blank">
-							iDegin
-						</a>
+						Copyright <i class="ri-copyright-line"></i>
+						{new Date().getFullYear()}. Tess. All rights reserved{' '}
 					</p>
 				</div>
 			</div>

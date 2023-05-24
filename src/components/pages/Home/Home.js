@@ -1,6 +1,8 @@
 import React from 'react'
 import Metrics from './Metrics'
 import WhatWeDo from './WhatWeDo'
+import RecentPublication from './RecentPublication'
+import StackHolders from './StackHolders'
 
 export default function Home() {
 	return (
@@ -30,7 +32,8 @@ export default function Home() {
 			</section>
 			<Metrics />
 			<WhatWeDo />
-			<div>index</div>
+			<StackHolders />
+			<RecentPublication />
 		</>
 	)
 }
