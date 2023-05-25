@@ -21,7 +21,10 @@ export default function Home() {
 			</section>
 			<section
 				className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
-				style={{ backgroundColor: '#F2F4F7' }}
+				style={{
+					backgroundColor: '#F2F4F7',
+					backgroundImage: `url(/assets/figma/quote-bg.png)`,
+				}}
 			>
 				<div className="col-lg-6">
 					<h5 className="fw-normal text-center" style={{ fontSize: '30px' }}>
