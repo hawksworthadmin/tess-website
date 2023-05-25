@@ -1,72 +1,17 @@
-import '@/styles/globals.css';
-import localFont from 'next/font/local';
-import { Syne } from 'next/font/google';
-
-// Fonts
-const syne = Syne({
-	subsets: ['latin'],
-	variable: '--font-syne',
-})
-const satoshi = localFont({
-	src: [
-		{
-			path: './fonts/Satoshi-Light.woff2',
-			weight: '300',
-			style: 'normal',
-		},
-		{
-			path: './fonts/Satoshi-LightItalic.woff2',
-			weight: '300',
-			style: 'italic',
-		},
-		{
-			path: './fonts/Satoshi-Regular.woff2',
-			weight: '400',
-			style: 'normal',
-		},
-		{
-			path: './fonts/Satoshi-Italic.woff2',
-			weight: '400',
-			style: 'italic',
-		},
-		{
-			path: './fonts/Satoshi-Medium.woff2',
-			weight: '600',
-			style: 'normal',
-		},
-		{
-			path: './fonts/Satoshi-MediumItalic.woff2',
-			weight: '600',
-			style: 'italic',
-		},
-		{
-			path: './fonts/Satoshi-Bold.woff2',
-			weight: '700',
-			style: 'normal',
-		},
-		{
-			path: './fonts/Satoshi-BoldItalic.woff2',
-			weight: '700',
-			style: 'italic',
-		},
-		{
-			path: './fonts/Satoshi-Black.woff2',
-			weight: '900',
-			style: 'normal',
-		},
-		{
-			path: './fonts/Satoshi-BlackItalic.woff2',
-			weight: '900',
-			style: 'italic',
-		},
-	],
-  variable: '--font-satoshi'
-})
+import '../../public/assets/css/bootstrap.min.css'
+import '../../public/assets/css/owl.theme.default.min.css'
+// import "../../public/assets/css/owl.carousel.min.css";
+import '../../public/assets/css/remixicon.css'
+import '../../public/assets/css/flaticon.css'
+import '../../public/assets/css/meanmenu.min.css'
+import '../../public/assets/css/animate.min.css'
+import '../../public/assets/css/magnific-popup.min.css'
+import '../../public/assets/css/odometer.min.css'
+import '../../public/assets/css/date-picker.min.css'
+import '../../public/assets/css/style.css'
+import '../../public/assets/css/responsive.css'
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
-  return (
-		<main className={`${syne.variable} ${satoshi.variable}`}>
-			<Component {...pageProps} />
-		</main>
-	)
+	return <Component {...pageProps} />
 }
