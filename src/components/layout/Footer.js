@@ -12,7 +12,12 @@ export default function Footer() {
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
 								<a href="index.html" className="logo">
-									<img src="assets/images/white-logo.png" alt="Image" />
+									<img
+										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
+										alt="Image"
+										width={100}
+										className='rounded-full'
+									/>
 								</a>
 
 								<p>
@@ -123,11 +128,11 @@ export default function Footer() {
 				</div>
 
 				<div className="shape footer-shape-1">
-					<img src="assets/images/footer-shape-1.png" alt="Image" />
+					<img src="/assets/images/footer-shape-1.png" alt="Image" />
 				</div>
 
 				<div className="shape footer-shape-2">
-					<img src="assets/images/footer-shape-2.png" alt="Image" />
+					<img src="/assets/images/footer-shape-2.png" alt="Image" />
 				</div>
 			</footer>
 			<div class="copy-right-area" style={{ backgroundColor: '#101828' }}>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Header() {
@@ -101,9 +102,9 @@ export default function Header() {
 							>
 								<ul className="navbar-nav">
 									<li className="nav-item">
-										<a href="#" className="nav-link active fw-400">
+										<Link href="/" className="nav-link fw-400">
 											Home
-										</a>
+										</Link>
 									</li>
 
 									<li className="nav-item">
@@ -123,87 +124,11 @@ export default function Header() {
 													Councilor
 												</a>
 											</li>
-											<li className="nav-item">
-												<a href="#" className="nav-link fw-400">
-													Events
-													<i className="ri-arrow-down-s-line"></i>
-												</a>
-
-												<ul className="dropdown-menu">
-													<li className="nav-item">
-														<a href="events.html" className="nav-link">
-															Events
-														</a>
-													</li>
-													<li className="nav-item">
-														<a href="event-details.html" className="nav-link">
-															Event details
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li className="nav-item">
-												<a href="galleries.html" className="nav-link">
-													Galleries
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="faq.html" className="nav-link">
-													FAQ
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="#" className="nav-link fw-400">
-													User
-													<i className="ri-arrow-down-s-line"></i>
-												</a>
-
-												<ul className="dropdown-menu">
-													<li className="nav-item">
-														<a href="my-account.html" className="nav-link">
-															My account
-														</a>
-													</li>
-													<li className="nav-item">
-														<a href="log-in.html" className="nav-link">
-															Log in
-														</a>
-													</li>
-													<li className="nav-item">
-														<a href="register.html" className="nav-link">
-															Register
-														</a>
-													</li>
-													<li className="nav-item">
-														<a href="book-now.html" className="nav-link">
-															Book now
-														</a>
-													</li>
-												</ul>
-											</li>
+											
+											
 											<li className="nav-item">
 												<a href="accessibility.html" className="nav-link">
 													Accessibility
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="privacy-policy.html" className="nav-link">
-													Privacy policy
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="terms-conditions.html" className="nav-link">
-													Terms &amp; conditions
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="coming-soon.html" className="nav-link">
-													Coming soon
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="404.html" className="nav-link">
-													404 Page
 												</a>
 											</li>
 										</ul>
@@ -231,35 +156,34 @@ export default function Header() {
 
 									<li className="nav-item">
 										<a href="#" className="nav-link fw-400">
-											Media
+											Media Room
 											<i className="ri-arrow-down-s-line"></i>
 										</a>
 
 										<ul className="dropdown-menu">
 											<li className="nav-item">
-												<a href="services.html" className="nav-link">
-													Services
-												</a>
+												<Link
+													href="/media-room/press-release"
+													className="nav-link"
+												>
+													News/Press Release
+												</Link>
 											</li>
 											<li className="nav-item">
-												<a href="individual-services.html" className="nav-link">
-													Individual services
-												</a>
+												<Link
+													href="/media-room/video-gallery"
+													className="nav-link"
+												>
+													Video Gallery
+												</Link>
 											</li>
 											<li className="nav-item">
-												<a href="business-services.html" className="nav-link">
-													Business services
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="government-services.html" className="nav-link">
-													Government services
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="services-details.html" className="nav-link">
-													Services details
-												</a>
+												<Link
+													href="/media-room/photo-gallery"
+													className="nav-link"
+												>
+													Photo Gallery
+												</Link>
 											</li>
 										</ul>
 									</li>
@@ -272,15 +196,37 @@ export default function Header() {
 
 										<ul className="dropdown-menu">
 											<li className="nav-item">
-												<a href="blog.html" className="nav-link">
-													Blog
-												</a>
+												<Link
+													href="/publications/fact-sheets"
+													className="nav-link"
+												>
+													Fact Sheets
+												</Link>
 											</li>
 
 											<li className="nav-item">
-												<a href="blog-details.html" className="nav-link">
-													Blog details
-												</a>
+												<Link
+													href="/publications/fact-sheets"
+													className="nav-link"
+												>
+													News Letters
+												</Link>
+											</li>
+											<li className="nav-item">
+												<Link
+													href="/publications/reports"
+													className="nav-link"
+												>
+													Reports
+												</Link>
+											</li>
+											<li className="nav-item">
+												<Link
+													href="/publications/blog"
+													className="nav-link"
+												>
+													Blog
+												</Link>
 											</li>
 										</ul>
 									</li>
