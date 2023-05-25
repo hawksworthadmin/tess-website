@@ -72,7 +72,11 @@ export default function Header() {
 						<div className="mobile-responsive-menu">
 							<div className="logo">
 								<a href="index.html">
-									<img src="/assets/images/logo.png" alt="logo" />
+									<img
+										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
+										alt="logo"
+										width={'45'}
+									/>
 								</a>
 							</div>
 						</div>
@@ -86,7 +90,7 @@ export default function Header() {
 								<img
 									src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
 									alt="logo"
-                  width={'80'}
+									width={'80'}
 								/>
 							</a>
 
