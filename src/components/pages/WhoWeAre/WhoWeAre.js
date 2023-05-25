@@ -20,7 +20,7 @@ export default function WhoWeAre() {
 								className="who-we-are-img who-we-are-img-3 pr-15"
 								bis_skin_checked="1"
 							>
-								<img src="assets/images/who-we-are-img-3.jpg" alt="Image" />
+								<img src="/assets/figma/image-19.png" alt="Image" />
 							</div>
 						</div>
 
@@ -64,7 +64,7 @@ export default function WhoWeAre() {
 					</div>
 				</div>
 			</section>
-            <Agreement />
+			<Agreement />
 		</div>
 	)
 }
