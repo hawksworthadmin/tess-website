@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Header() {
 	return (
-		<header className="header-area">
+		<header className="header-area" style={{ zIndex: 40}}>
 			{/* <div className="top-header">
 				<div className="container">
 					<div className="row align-items-center">

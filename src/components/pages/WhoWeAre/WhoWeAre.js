@@ -5,11 +5,11 @@ export default function WhoWeAre() {
 	return (
 		<div>
 			<div
-				className="bg-1 bg-theme-"
+				className="bg-1 bg-theme- "
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">What We Do</h3>
+					<h3 className="fw-400 text-white">Who We Are</h3>
 				</div>
 			</div>
 			<section className="who-we-are-area pt-100 pb-70">
@@ -20,13 +20,17 @@ export default function WhoWeAre() {
 								className="who-we-are-img who-we-are-img-3 pr-15"
 								bis_skin_checked="1"
 							>
-								<img src="/assets/figma/image-19.png" alt="Image" />
+								<img
+									src="/assets/figma/image-19.png"
+									alt="Image"
+									className="animate__slideInLeft animate__animated animate__faster"
+								/>
 							</div>
 						</div>
 
 						<div className="col-lg-6" bis_skin_checked="1">
 							<div
-								className="who-we-are-content who-we-are-content-two pl-15"
+								className="who-we-are-content who-we-are-content-two pl-15 animate__slideInRight animate__animated animate__faster"
 								bis_skin_checked="1"
 							>
 								<span className="top-title">Who we are</span>
