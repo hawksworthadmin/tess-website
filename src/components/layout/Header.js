@@ -108,12 +108,12 @@ export default function Header() {
 									</li>
 
 									<li className="nav-item">
-										<a href="#" className="nav-link fw-400">
+										<Link href="/who-we-are" className="nav-link fw-400">
 											Who We Are
-											<i className="ri-arrow-down-s-line"></i>
-										</a>
+											{/* <i className="ri-arrow-down-s-line"></i> */}
+										</Link>
 
-										<ul className="dropdown-menu">
+										{/* <ul className="dropdown-menu">
 											<li className="nav-item">
 												<a href="about.html" className="nav-link">
 													What We Do
@@ -131,7 +131,7 @@ export default function Header() {
 													Accessibility
 												</a>
 											</li>
-										</ul>
+										</ul> */}
 									</li>
 
 									<li className="nav-item">
