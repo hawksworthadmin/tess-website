@@ -1,3 +1,4 @@
+import arrangement from '@/data/arrangement'
 import React from 'react'
 
 export default function Agreement() {
@@ -21,61 +22,53 @@ export default function Agreement() {
 					</div>
 				</div>
 			</div>
-            <br />
-            <br />
-			<div className="container">
-				<h4 className='mb-5 fw-600'>Federal Level</h4>
-				<div className="row justify-content-center">
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-				</div>
-			</div>
-            <br />
-            <br />
-            <br />
-            <br />
-			<div className="container">
-				<h4 className='mb-5 fw-600'>Federal Level</h4>
-				<div className="row justify-content-center">
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-					<EachLevel />
-				</div>
-			</div>
+			<br />
+			<br />
+			{arrangement.map((data) => {
+				return (
+					<div key={Math.random()}>
+						<div className="container">
+							<h4 className="mb-5 fw-600">{data.section_name}</h4>
+							<div className="row justify-content-center">
+								{data.fields.map((field) => {
+									return <EachLevel key={Math.random()} data={field} />
+								})}
+							</div>
+						</div>
+						<br />
+						<br />
+						<br />
+						<br />
+					</div>
+				)
+			})}
 		</section>
 	)
 }
 
-const EachLevel = () => {
+const EachLevel = ({ data }) => {
 	return (
 		<div className="col-lg-4 col-md-6 mb-4">
-			<div class="single-services-box d-flex justify-content-between bg-white" bis_skin_checked="1">
+			<div
+				class="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
+				bis_skin_checked="1"
+			>
 				{/* <span class="flaticon-government"></span> */}
 				<div className="col-3">
 					<img
 						src={
 							'https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg'
 						}
-                        
 					/>
 				</div>
 
-				<div className='col-8'>
+				<div className="col-8">
 					<h3>
-						<a href="services-details.html">Government services</a>
+						<a href="services-details.html">{data?.name}</a>
 					</h3>
 
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
-						repudiandae magni iure debitis fuga est quis non beatae expedita in
-						consectetur, molestias corrupti, sunt eveniet.
+						{data?.des}
 					</p>
 
 					{/* <a href="services-details.html" class="read-more">
