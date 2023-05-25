@@ -21,7 +21,7 @@ export default function EachBlog() {
 							February 12, 2021
 						</li>
 					</ul>
-					<h3>
+					<h3 className='fw-500'>
 						<a href="blog-details.html">Responds to citizens advice</a>
 					</h3>
 					<p>
@@ -31,7 +31,7 @@ export default function EachBlog() {
 						sit amet, consectetur.
 					</p>
 					<a href="blog-details.html" className="read-more">
-						Read more
+						Read Post
 						<i className="ri-arrow-right-s-line"></i>
 					</a>
 				</div>
