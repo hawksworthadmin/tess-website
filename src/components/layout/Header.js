@@ -75,7 +75,7 @@ export default function Header() {
 									<img
 										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
 										alt="logo"
-										width={'80'}
+										width={'60'}
 									/>
 								</a>
 							</div>
