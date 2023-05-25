@@ -206,7 +206,7 @@ export default function Header() {
 
 											<li className="nav-item">
 												<Link
-													href="/publications/fact-sheets"
+													href="/publications/news-letters"
 													className="nav-link"
 												>
 													News Letters
