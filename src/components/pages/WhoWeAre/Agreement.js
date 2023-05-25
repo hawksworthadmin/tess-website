@@ -7,6 +7,8 @@ export default function Agreement() {
 			<div className="container">
 				<div className=" pt-100">
 					<div
+						data-aos="fade-up"
+						data-aos-delay="100"
 						className="section-title- text-center"
 						bis_skin_checked="1"
 						style={{ margin: '-13px auto 50px' }}
@@ -28,10 +30,22 @@ export default function Agreement() {
 				return (
 					<div key={Math.random()}>
 						<div className="container">
-							<h4 className="mb-5 fw-600">{data.section_name}</h4>
+							<h4
+								className="mb-5 fw-600"
+								data-aos="fade-up"
+								data-aos-delay="100"
+							>
+								{data.section_name}
+							</h4>
 							<div className="row justify-content-center">
-								{data.fields.map((field) => {
-									return <EachLevel key={Math.random()} data={field} />
+								{data.fields.map((field, i) => {
+									return (
+										<EachLevel
+											key={Math.random()}
+											data={field}
+											index={i + 100}
+										/>
+									)
 								})}
 							</div>
 						</div>
@@ -46,9 +60,13 @@ export default function Agreement() {
 	)
 }
 
-const EachLevel = ({ data }) => {
+const EachLevel = ({ data, index }) => {
 	return (
-		<div className="col-lg-4 col-md-6 mb-4">
+		<div
+			className="col-lg-4 col-md-6 mb-4"
+			data-aos="fade-up"
+			data-aos-delay={`${index}`}
+		>
 			<div
 				class="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
 				bis_skin_checked="1"
@@ -67,9 +85,7 @@ const EachLevel = ({ data }) => {
 						<a href="services-details.html">{data?.name}</a>
 					</h3>
 
-					<p>
-						{data?.des}
-					</p>
+					<p>{data?.des}</p>
 
 					{/* <a href="services-details.html" class="read-more">
 						Learn more

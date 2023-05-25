@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function EachBlog() {
 	return (
-		<div className="col-lg-6 col-md-6" bis_skin_checked="1">
+		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
 				<a href="blog-details.html">
 					<img src="/assets/images/blog/blog-1.jpg" alt="Images" />
@@ -21,7 +21,7 @@ export default function EachBlog() {
 							February 12, 2021
 						</li>
 					</ul>
-					<h3 className='fw-500'>
+					<h3 className="fw-500">
 						<a href="blog-details.html">Responds to citizens advice</a>
 					</h3>
 					<p>

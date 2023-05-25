@@ -11,7 +11,14 @@ import '../../public/assets/css/date-picker.min.css'
 import '../../public/assets/css/style.css'
 import '../../public/assets/css/responsive.css'
 import '@/styles/globals.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
+
 
 export default function App({ Component, pageProps }) {
+	useEffect(() => {
+		AOS.init()
+	},[])
 	return <Component {...pageProps} />
 }

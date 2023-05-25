@@ -23,24 +23,27 @@ export default function WhoWeAre() {
 								<img
 									src="/assets/figma/image-19.png"
 									alt="Image"
-									className="animate__slideInLeft animate__animated animate__faster"
+									className="animate__slideInLeft "
+									data-aos="fade-right"
 								/>
 							</div>
 						</div>
 
 						<div className="col-lg-6" bis_skin_checked="1">
 							<div
-								className="who-we-are-content who-we-are-content-two pl-15 animate__slideInRight animate__animated animate__faster"
+								className="who-we-are-content who-we-are-content-two pl-15 "
 								bis_skin_checked="1"
 							>
-								<span className="top-title">Who we are</span>
-								<h2>
+								<span data-aos="fade-left" className="top-title">
+									Who we are
+								</span>
+								<h2 data-aos="fade-left" data-aos-delay="50">
 									The Transforming Education Systems at State Level (TESS)
 									program was initiated in response to the need for educational
 									reform and improvement in Nigeria.
 								</h2>
 
-								<p>
+								<p data-aos="fade-left" data-aos-delay="250">
 									TESS aims to enhance the quality of education and learning
 									outcomes in Nigerian states by addressing key challenges in
 									the education sector. TESS seeks to transform the education
@@ -48,16 +51,26 @@ export default function WhoWeAre() {
 									socioeconomic growth and development.
 								</p>
 
-								<h3>Our Focus:</h3>
+								<h3 data-aos="fade-left" data-aos-delay="250">
+									Our Focus:
+								</h3>
 								<ul>
-									<li>Improving teacher quality</li>
-									<li>
+									<li data-aos="fade-left" data-aos-delay="300">
+										Improving teacher quality
+									</li>
+									<li data-aos="fade-left" data-aos-delay="300">
 										Curabitur arcu erat, accumsan id imperdiet et, porttitor at
 										sem
 									</li>
-									<li>Enhancing curriculum and assessment systems</li>
-									<li>Strengthening school infrastructure</li>
-									<li>Promoting community engagement</li>
+									<li data-aos="fade-left" data-aos-delay="300">
+										Enhancing curriculum and assessment systems
+									</li>
+									<li data-aos="fade-left" data-aos-delay="300">
+										Strengthening school infrastructure
+									</li>
+									<li data-aos="fade-left" data-aos-delay="300">
+										Promoting community engagement
+									</li>
 								</ul>
 
 								{/* <a href="about.html" className="default-btn">
