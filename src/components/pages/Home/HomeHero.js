@@ -48,11 +48,11 @@ export default function HomeHero() {
 							className="text-white mb-5"
 							style={{ fontSize, minWidth: '100%' }}
 						>
-							Welcome to TESS (Transforming Education Systems at State Level),
+							{`Welcome to TESS (Transforming Education Systems at State Level),
 							where we are committed to revolutionizing education systems for a
 							brighter future. Our program is designed to implement a
 							comprehensive framework and structure that will bring about
-							positive changes in education at various levels.
+							positive changes in education at various levels.`}
 						</p>
 
 						<div
