@@ -18,9 +18,9 @@ export default function WhatWeDo() {
 				</div>
 			</div>
 			<div className="container">
-				<div class="row align-items-center" style={{ marginBottom: '112px' }}>
-					<div class="col-lg-6">
-						<div class="counselor-img pr-15">
+				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+					<div className="col-lg-6">
+						<div className="counselor-img pr-15">
 							<img
 								data-aos="fade-up-right"
 								src="https://globaladvocacyafrica.org/wp-content/uploads/2018/12/AFRICAN-CHILD-2.jpg"
@@ -30,9 +30,9 @@ export default function WhatWeDo() {
 						</div>
 					</div>
 
-					<div class="col-lg-6">
-						<div class="counselor-content pl-15">
-							<div class="single-counselor">
+					<div className="col-lg-6">
+						<div className="counselor-content pl-15">
+							<div className="single-counselor">
 								<div className="flex " style={{ marginBottom: '20px' }}>
 									<div
 										className="rounded-full d-flex justify-content-center align-items-center text-theme fw-500"
@@ -42,7 +42,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
-										data-aos="fade-up-left"
+										data-aos="fade-up"
 									>
 										<span>1</span>
 									</div>
@@ -51,14 +51,14 @@ export default function WhatWeDo() {
 									className="font-30 text-theme fw-500"
 									style={{ marginBottom: '20px' }}
 									data-aos-delay="50"
-									data-aos="fade-up-left"
+									data-aos="fade-up"
 								>
 									Reduction in Number of Out-of-School Children
 								</h4>
 								<p
 									className="font-20"
 									data-aos-delay="150"
-									data-aos="fade-up-left"
+									data-aos="fade-up"
 								>
 									Our focus on equity drives this results area, aiming to ensure
 									more equitable allocation of state education resources.
@@ -70,10 +70,10 @@ export default function WhatWeDo() {
 						</div>
 					</div>
 				</div>
-				<div class="row align-items-center" style={{ marginBottom: '112px' }}>
-					<div class="col-lg-6">
-						<div class="counselor-content pl-15">
-							<div class="single-counselor">
+				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+					<div className="col-lg-6">
+						<div className="counselor-content pl-15">
+							<div className="single-counselor">
 								<div className="flex " style={{ marginBottom: '20px' }}>
 									<div
 										className="rounded-full d-flex justify-content-center align-items-center text-theme fw-500"
@@ -83,7 +83,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
-										data-aos="fade-up-left"
+										data-aos="fade-up"
 									>
 										<span>2</span>
 									</div>
@@ -110,20 +110,20 @@ export default function WhatWeDo() {
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
-						<div class="counselor-img pr-15">
+					<div className="col-lg-6">
+						<div className="counselor-img pr-15">
 							<img
 								src="https://img.freepik.com/free-photo/african-woman-teaching-children-class_23-2148892564.jpg"
 								alt="Image"
 								className="rounded"
-								data-aos="fade-up-left"
+								data-aos="fade-up"
 							/>
 						</div>
 					</div>
 				</div>
-				<div class="row align-items-center" style={{ marginBottom: '112px' }}>
-					<div class="col-lg-6">
-						<div class="counselor-img pr-15">
+				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+					<div className="col-lg-6">
+						<div className="counselor-img pr-15">
 							<img
 								src="https://sacshigh.org.za/wp-content/uploads/2022/01/SACS-High-School-AS-2021_-114.jpg"
 								alt="Image"
@@ -133,9 +133,9 @@ export default function WhatWeDo() {
 						</div>
 					</div>
 
-					<div class="col-lg-6">
-						<div class="counselor-content pl-15">
-							<div class="single-counselor">
+					<div className="col-lg-6">
+						<div className="counselor-content pl-15">
+							<div className="single-counselor">
 								<div className="flex " style={{ marginBottom: '20px' }}>
 									<div
 										className="rounded-full d-flex justify-content-center align-items-center text-theme fw-500"
@@ -145,7 +145,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
-										data-aos="fade-up-left"
+										data-aos="fade-up"
 									>
 										<span>3</span>
 									</div>
@@ -154,14 +154,14 @@ export default function WhatWeDo() {
 									className="font-30 text-theme fw-500"
 									style={{ marginBottom: '20px' }}
 									data-aos-delay="50"
-									data-aos="fade-up-left"
+									data-aos="fade-up"
 								>
 									Strengthening School Infrastructure
 								</h4>
 								<p
 									className="font-20"
 									data-aos-delay="150"
-									data-aos="fade-up-left"
+									data-aos="fade-up"
 								>
 									The importance of proper infrastructure in facilitating
 									effective education delivery cannot be over-emphasized. The
