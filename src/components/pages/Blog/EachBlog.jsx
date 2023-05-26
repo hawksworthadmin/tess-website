@@ -5,7 +5,10 @@ export default function EachBlog() {
 		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
 				<a href="blog-details.html">
-					<img src="/assets/images/blog/blog-1.jpg" alt="Images" />
+					<img
+						src="https://www.thesouthafrican.com/wp-content/uploads/2022/09/Choose-an-in-demand-career.jpg"
+						alt="Images"
+					/>
 				</a>
 
 				<div className="blog-content" bis_skin_checked="1">
@@ -22,13 +25,11 @@ export default function EachBlog() {
 						</li>
 					</ul>
 					<h3 className="fw-500">
-						<a href="blog-details.html">Responds to citizens advice</a>
+						<a href="blog-details.html">Strengthening School Infrastructure</a>
 					</h3>
 					<p>
-						Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-						Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo,
-						lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor
-						sit amet, consectetur.
+						The importance of proper infrastructure in facilitating effective
+						education delivery cannot be over-emphasized.
 					</p>
 					<a href="blog-details.html" className="read-more">
 						Read Post

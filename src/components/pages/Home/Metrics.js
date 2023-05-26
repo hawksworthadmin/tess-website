@@ -1,219 +1,46 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Metrics() {
 	return (
-		<section className="discover-area discover-area-style-three pb-100-" id='fact'>
+		<section
+			className="discover-area discover-area-style-three pt-100"
+			id="fact"
+		>
 			<div className="container">
-				<div className="discover-bg pt-100">
-					<div className="counter-area">
-						<div className="container">
-							<div className="section-title">
-								<h2
-									className="text-theme"
-									// style={{ fontSize: '30px' }}
-								>
-									Facts & Figures
-								</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Tempore eveniet quod mollitia asperiores ullam dolor corporis.
-									vero nemo consectetur
-								</p>
-							</div>
-							<div className="counter-bg">
-								<div className="row">
-									<div className="col-lg-3 col-sm-6">
-										<div className="single-counter">
-											<div className="count-title">
-												<h2>
-													<span
-														className="odometer odometer-auto-theme"
-														data-count="8336817"
-													>
-														<div className="odometer-inside">
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">8</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-formatting-mark">
-																,
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">3</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">3</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">6</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-formatting-mark">
-																,
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">8</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">1</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">7</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-														</div>
-													</span>
-												</h2>
-												<h4>Communities served</h4>
-											</div>
-										</div>
-									</div>
-
-									<div className="col-lg-3 col-sm-6">
-										<div className="single-counter">
-											<div className="count-title">
-												<h2>
-													<span
-														className="odometer odometer-auto-theme"
-														data-count="22"
-													>
-														<div className="odometer-inside">
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">2</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">2</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-														</div>
-													</span>
-													<span className="target">K</span>
-												</h2>
-												<h4>Beneficiary Schools</h4>
-											</div>
-										</div>
-									</div>
-
-									<div className="col-lg-3 col-sm-6">
-										<div className="single-counter">
-											<div className="count-title">
-												<h2>
-													<span className="target ml-2">545 +</span>
-												</h2>
-												<h4>Total Students</h4>
-											</div>
-										</div>
-									</div>
-
-									<div className="col-lg-3 col-sm-6">
-										<div className="single-counter">
-											<div className="count-title">
-												<h2>
-													<span
-														className="odometer odometer-auto-theme"
-														data-count="875"
-													>
-														<div className="odometer-inside">
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">8</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">7</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-															<span className="odometer-digit">
-																<span className="odometer-digit-spacer">8</span>
-																<span className="odometer-digit-inner">
-																	<span className="odometer-ribbon">
-																		<span className="odometer-ribbon-inner">
-																			<span className="odometer-value">5</span>
-																		</span>
-																	</span>
-																</span>
-															</span>
-														</div>
-													</span>
-												</h2>
-												<h4>Successful programs</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div className="section-title" bis_skin_checked="1">
+					<h2 style={{ color: '#027A48' }}>Facts & Figures</h2>
+					{/* <p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
+						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
+						consectetur
+					</p> */}
+				</div>
+				<div className="row">
+					<EachNumber
+						color="#12B76A"
+						number={`33%`}
+						text="Increase in Enrolment Rates."
+						url={`/`}
+					/>
+					<EachNumber
+						color="#F79009"
+						number={`42,566`}
+						text="New primary schools established."
+						url={`/`}
+					/>
+					<EachNumber
+						color="#7A5AF8"
+						number={`23%`}
+						text="reduction of out-of-school children."
+						url={`/`}
+					/>
+					<EachNumber
+						color="#2E90FA"
+						number={`20k+`}
+						text=" Teachers recruited"
+						url={`/`}
+					/>
 				</div>
 			</div>
 			<div className="p-5 bg-theme-light">
@@ -234,5 +61,30 @@ export default function Metrics() {
 				</div>
 			</div>
 		</section>
+	)
+}
+
+const EachNumber = ({ number, text, url, color }) => {
+	return (
+		<div className="mb-5- col-lg-6 p-5 text-center">
+			<h3
+				style={{
+					fontSize: '60px',
+					color,
+					fontWeight: 500,
+					marginBottom: '24px',
+				}}
+			>
+				{number}
+			</h3>
+			<p style={{ fontSize: '20px', color, fontWeight: 500 }}>{text}</p>
+			<Link
+				href={url || `/`}
+				className="text-white rounded-full fw-500 px-5 py-3 btn"
+				style={{ background: color }}
+			>
+				Learn More
+			</Link>
+		</div>
 	)
 }

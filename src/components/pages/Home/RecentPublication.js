@@ -39,7 +39,10 @@ const EachRelease = () => {
 		<div class="col-lg-4 col-md-6">
 			<div class="single-blog-box">
 				<a href="blog-details.html">
-					<img src="/assets/images/blog/blog-1.jpg" alt="Images" />
+					<img
+						src="https://static.foxnews.com/foxnews.com/content/uploads/2019/01/classroom-iStock.jpg"
+						alt="Images"
+					/>
 				</a>
 
 				<div class="blog-content">
@@ -56,12 +59,11 @@ const EachRelease = () => {
 						</li>
 					</ul>
 					<h3>
-						<a href="blog-details.html">Responds to citizens advice</a>
+						<a href="blog-details.html">Strengthening School Infrastructure</a>
 					</h3>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum
-						dolor.
+						The importance of proper infrastructure in facilitating effective
+						education delivery cannot be over-emphasized.
 					</p>
 					<a href="blog-details.html" class="read-more">
 						Read more
