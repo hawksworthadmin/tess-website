@@ -4,19 +4,21 @@ import React from 'react'
 export default function Metrics() {
 	return (
 		<section
-			className="discover-area discover-area-style-three pt-100"
+			className="discover-area discover-area-style-three pt-100 "
 			id="fact"
 		>
 			<div className="container">
 				<div className="section-title" bis_skin_checked="1">
-					<h2 style={{ color: '#027A48' }}>Facts & Figures</h2>
+					<h2 style={{ color: '#027A48' }} data-aos="fade-up">
+						Facts & Figures
+					</h2>
 					{/* <p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur
 					</p> */}
 				</div>
-				<div className="row">
+				<div className="row pb-100">
 					<EachNumber
 						color="#12B76A"
 						number={`33%`}
@@ -43,15 +45,16 @@ export default function Metrics() {
 					/>
 				</div>
 			</div>
-			<div className="p-5 bg-theme-light">
+			<div className="py-5 bg-theme-light">
 				<div className="container">
 					<h5
 						style={{ fontSize: '20px', marginBottom: '25px', fontWeight: 500 }}
 						className="text-theme"
+						data-aos="fade-up"
 					>
 						Who we are
 					</h5>
-					<p style={{ fontSize: '18px', fontWeight: 400 }}>
+					<p data-aos="fade-up" style={{ fontSize: '18px', fontWeight: 400 }}>
 						The TESS program focuses on elevating the quality of teachers in
 						Nigeria by implementing comprehensive training and professional
 						development initiatives. Through targeted workshops, mentoring, and
@@ -66,7 +69,7 @@ export default function Metrics() {
 
 const EachNumber = ({ number, text, url, color }) => {
 	return (
-		<div className="mb-5- col-lg-6 p-5 text-center">
+		<div className="mb-5- col-lg-6 p-5 text-center" data-aos="flip-left">
 			<h3
 				style={{
 					fontSize: '60px',

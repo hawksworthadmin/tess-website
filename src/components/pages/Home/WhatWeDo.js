@@ -8,8 +8,10 @@ export default function WhatWeDo() {
 		>
 			<div className="container">
 				<div className="pb-5 text-start">
-					<h5 className="text-theme font-20 fw-500">What we do</h5>
-					<p className="font-20">
+					<h5 className="text-theme font-20 fw-500" data-aos="fade-up">
+						What we do
+					</h5>
+					<p className="font-20" data-aos="fade-up">
 						Lorem ipsum dolor sit amet consectetur. Vitae suspendisse dolor in
 						est rutrum. Lacinia in enim pellentesque venenatis interdum eu.
 					</p>
@@ -20,6 +22,7 @@ export default function WhatWeDo() {
 					<div class="col-lg-6">
 						<div class="counselor-img pr-15">
 							<img
+								data-aos="fade-up-right"
 								src="https://globaladvocacyafrica.org/wp-content/uploads/2018/12/AFRICAN-CHILD-2.jpg"
 								alt="Image"
 								className="rounded"
@@ -39,6 +42,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
+										data-aos="fade-up-left"
 									>
 										<span>1</span>
 									</div>
@@ -46,10 +50,16 @@ export default function WhatWeDo() {
 								<h4
 									className="font-30 text-theme fw-500"
 									style={{ marginBottom: '20px' }}
+									data-aos-delay="50"
+									data-aos="fade-up-left"
 								>
 									Reducing the Number of Out-of-School Children
 								</h4>
-								<p className="font-20">
+								<p
+									className="font-20"
+									data-aos-delay="150"
+									data-aos="fade-up-left"
+								>
 									Our focus on equity drives this results area, aiming to ensure
 									more equitable allocation of state education resources.
 									Specifically, we work towards improving learning conditions in
@@ -73,6 +83,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
+										data-aos="fade-up-left"
 									>
 										<span>2</span>
 									</div>
@@ -80,10 +91,16 @@ export default function WhatWeDo() {
 								<h4
 									className="font-30 text-theme fw-500"
 									style={{ marginBottom: '20px' }}
+									data-aos-delay="50"
+									data-aos="fade-up-right"
 								>
 									Enhancing Teaching Practices and Measuring Learning Outcomes
 								</h4>
-								<p className="font-20">
+								<p
+									className="font-20"
+									data-aos-delay="159"
+									data-aos="fade-up-right"
+								>
 									At TESS, we are committed to improving the quality of
 									education by enhancing teaching practices and measuring
 									learning outcomes. Our focus is to strengthen teachers'
@@ -99,6 +116,7 @@ export default function WhatWeDo() {
 								src="https://img.freepik.com/free-photo/african-woman-teaching-children-class_23-2148892564.jpg"
 								alt="Image"
 								className="rounded"
+								data-aos="fade-up-left"
 							/>
 						</div>
 					</div>
@@ -110,6 +128,7 @@ export default function WhatWeDo() {
 								src="https://sacshigh.org.za/wp-content/uploads/2022/01/SACS-High-School-AS-2021_-114.jpg"
 								alt="Image"
 								className="rounded"
+								data-aos="fade-up-right"
 							/>
 						</div>
 					</div>
@@ -126,6 +145,7 @@ export default function WhatWeDo() {
 											height: '72px',
 											fontSize: '32px',
 										}}
+										data-aos="fade-up-left"
 									>
 										<span>3</span>
 									</div>
@@ -133,10 +153,16 @@ export default function WhatWeDo() {
 								<h4
 									className="font-30 text-theme fw-500"
 									style={{ marginBottom: '20px' }}
+									data-aos-delay="50"
+									data-aos="fade-up-left"
 								>
 									Strengthening School Infrastructure
 								</h4>
-								<p className="font-20">
+								<p
+									className="font-20"
+									data-aos-delay="150"
+									data-aos="fade-up-left"
+								>
 									The importance of proper infrastructure in facilitating
 									effective education delivery cannot be over-emphasized. The
 									program aims to improve school facilities, including

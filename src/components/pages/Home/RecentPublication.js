@@ -8,8 +8,8 @@ export default function RecentPublication() {
 		>
 			<div class="container">
 				<div class="section-title">
-					<h2>Latest News</h2>
-					<p>
+					<h2 data-aos="fade-up">Latest News</h2>
+					<p data-aos="fade-up">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur
@@ -36,7 +36,12 @@ export default function RecentPublication() {
 
 const EachRelease = () => {
 	return (
-		<div class="col-lg-4 col-md-6">
+		<div
+			class="col-lg-4 col-md-6"
+			data-aos-delay="50"
+			data-aos="fade-up"
+			data-aos-duration="1000"
+		>
 			<div class="single-blog-box">
 				<a href="blog-details.html">
 					<img

@@ -19,11 +19,22 @@ export default function Home() {
 				}}
 			>
 				<div className="col-lg-6 text-center">
-					<h5 className="fw-normal text-center" style={{ fontSize: '30px', marginBottom: '24px' }}>
+					<h5
+						className="fw-normal text-center"
+						data-aos="fade-up"
+						data-aos-delay="150"
+						style={{ fontSize: '30px', marginBottom: '24px' }}
+					>
 						Education is the most powerful weapon you can use to change the
 						world.
 					</h5>
-					<p style={{ color: '#475467', fontSize: '20px' }}>Nelson Mandela</p>
+					<p
+						data-aos-delay="200"
+						data-aos="fade-up"
+						style={{ color: '#475467', fontSize: '20px' }}
+					>
+						Nelson Mandela
+					</p>
 				</div>
 			</section>
 			<Metrics />
