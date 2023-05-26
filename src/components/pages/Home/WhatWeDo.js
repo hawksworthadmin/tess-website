@@ -53,7 +53,7 @@ export default function WhatWeDo() {
 									data-aos-delay="50"
 									data-aos="fade-up-left"
 								>
-									Reducing the Number of Out-of-School Children
+									Reduction in Number of Out-of-School Children
 								</h4>
 								<p
 									className="font-20"

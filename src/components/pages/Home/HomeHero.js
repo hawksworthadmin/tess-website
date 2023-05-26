@@ -38,7 +38,7 @@ export default function HomeHero() {
 							data-aos-delay="50"
 							data-aos-duration="1000"
 						>
-							Revolutionizing educational sector
+							Revolutionizing the educational sector
 						</h1>
 						<p
 							data-aos="fade-up"
