@@ -4,6 +4,7 @@ import WhatWeDo from './WhatWeDo'
 import RecentPublication from './RecentPublication'
 import StackHolders from './StackHolders'
 import HomeHero from './HomeHero'
+import HomePartners from './HomePartners'
 
 export default function Home() {
 	return (
@@ -27,8 +28,9 @@ export default function Home() {
 			</section>
 			<Metrics />
 			<WhatWeDo />
-			<StackHolders />
+			<HomePartners />
 			<RecentPublication />
+			<StackHolders />
 		</>
 	)
 }

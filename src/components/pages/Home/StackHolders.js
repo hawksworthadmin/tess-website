@@ -6,41 +6,39 @@ export default function StackHolders() {
 			<div class="container">
 				<div class="section-title">
 					<h2>Key Stakeholders</h2>
-					<p>
+					{/* <p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur
-					</p>
+					</p> */}
 				</div>
 
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
-						<div class="single-project">
-							<img src="assets/images/projects/project-2.jpg" alt="Image" />
+						<div class="single-project- text-center">
+							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
-							<div class="project-content">
-								<a href="project-details.html">Refuse removal</a>
-							</div>
+							<p
+								style={{ fontSize: '16px' }}
+							>{`National Project Steering Committee (NPSC)`}</p>
 						</div>
 					</div>
-
 					<div class="col-lg-4 col-md-6">
-						<div class="single-project">
-							<img src="assets/images/projects/project-3.jpg" alt="Image" />
+						<div class="single-project- text-center">
+							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
-							<div class="project-content">
-								<a href="project-details.html">Electricity and gas supply</a>
-							</div>
+							<p
+								style={{ fontSize: '16px' }}
+							>{`Federal Ministry of Finance, Budget, and National Planning (FMoFBNP)`}</p>
 						</div>
 					</div>
-
 					<div class="col-lg-4 col-md-6">
-						<div class="single-project">
-							<img src="assets/images/projects/project-3.jpg" alt="Image" />
+						<div class="single-project- text-center">
+							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
-							<div class="project-content">
-								<a href="project-details.html">Electricity and gas supply</a>
-							</div>
+							<p
+								style={{ fontSize: '16px' }}
+							>{`Federal Project Financial Management Division (FPFMD)`}</p>
 						</div>
 					</div>
 				</div>

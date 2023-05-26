@@ -20,9 +20,9 @@ export default function WhatWeDo() {
 					<div class="col-lg-6">
 						<div class="counselor-img pr-15">
 							<img
-								src="https://www.adeanet.org/sites/default/files/visual_39.jpg"
+								src="https://globaladvocacyafrica.org/wp-content/uploads/2018/12/AFRICAN-CHILD-2.jpg"
 								alt="Image"
-								className="rounded-xl"
+								className="rounded"
 							/>
 						</div>
 					</div>
@@ -96,9 +96,9 @@ export default function WhatWeDo() {
 					<div class="col-lg-6">
 						<div class="counselor-img pr-15">
 							<img
-								src="https://www.adeanet.org/sites/default/files/visual_39.jpg"
+								src="https://img.freepik.com/free-photo/african-woman-teaching-children-class_23-2148892564.jpg"
 								alt="Image"
-								className="rounded-xl"
+								className="rounded"
 							/>
 						</div>
 					</div>
@@ -107,9 +107,9 @@ export default function WhatWeDo() {
 					<div class="col-lg-6">
 						<div class="counselor-img pr-15">
 							<img
-								src="https://www.adeanet.org/sites/default/files/visual_39.jpg"
+								src="https://sacshigh.org.za/wp-content/uploads/2022/01/SACS-High-School-AS-2021_-114.jpg"
 								alt="Image"
-								className="rounded-xl"
+								className="rounded"
 							/>
 						</div>
 					</div>
