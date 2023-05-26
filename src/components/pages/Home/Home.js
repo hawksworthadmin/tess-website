@@ -3,22 +3,36 @@ import Metrics from './Metrics'
 import WhatWeDo from './WhatWeDo'
 import RecentPublication from './RecentPublication'
 import StackHolders from './StackHolders'
+import HomeHero from './HomeHero'
 
 export default function Home() {
 	return (
 		<>
-			<section
+			<HomeHero />
+			{/* <section
 				className="jumbotron hero-slider-area bg-img p-5 justify-content-center d-flex align-items-center"
 				style={{
 					height: '900px',
 					backgroundImage: `url(/assets/figma/hero.png)`,
 				}}
 			>
-				<div className='col-lg-8 text-center'>
-					<h1 className="text-white" style={{ fontSize: '72px' }}>
+				<div className="col-lg-8 col-sm-12 text-center banner-content">
+					<h1
+						className="text-white"
+						style={{ fontSize: '72px' }}
+						data-aos="fade-up"
+						data-aos-delay="100"
+						data-aos-duration="1000"
+					>
 						Revolutionizing educational sector
 					</h1>
-					<p className="text-white" style={{ fontSize: '20px' }}>
+					<p
+						className="text-white"
+						style={{ fontSize: '20px' }}
+						data-aos="fade-up"
+						data-aos-delay="500"
+						data-aos-duration="1000"
+					>
 						{`Welcome to TESS (Transforming Education Systems at State Level), where
 					we are committed to revolutionizing education systems for a brighter
 					future. Our program is designed to implement a comprehensive framework
@@ -26,11 +40,7 @@ export default function Home() {
 					various levels.`}
 					</p>
 				</div>
-				{/* <div
-					style={{ background: '#05140085', height: 'inherit' }}
-					className="p-5"
-				/> */}
-			</section>
+			</section> */}
 			<section
 				className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
 				style={{

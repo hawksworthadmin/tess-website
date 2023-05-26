@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Metrics() {
 	return (
-		<section className="discover-area discover-area-style-three pb-100-">
+		<section className="discover-area discover-area-style-three pb-100-" id='fact'>
 			<div className="container">
 				<div className="discover-bg pt-100">
 					<div className="counter-area">
