@@ -9,7 +9,9 @@
 
 /* CSS goes here. */
 
-
+*{
+    font-family: 'Syne', sans-serif !important;
+}
 
 
 .bg-img {

@@ -8,16 +8,28 @@ export default function Home() {
 	return (
 		<>
 			<section
-				className="jumbotron hero-slider-area bg-img"
+				className="jumbotron hero-slider-area bg-img p-5 justify-content-center d-flex align-items-center"
 				style={{
-					height: '80vh',
-					backgroundImage: `url(https://www.un.org/sites/un2.un.org/files/field/image/739288.jpg)`,
+					height: '900px',
+					backgroundImage: `url(/assets/figma/hero.png)`,
 				}}
 			>
-				<div
+				<div className='col-lg-8 text-center'>
+					<h1 className="text-white" style={{ fontSize: '72px' }}>
+						Revolutionizing educational sector
+					</h1>
+					<p className="text-white" style={{ fontSize: '20px' }}>
+						{`Welcome to TESS (Transforming Education Systems at State Level), where
+					we are committed to revolutionizing education systems for a brighter
+					future. Our program is designed to implement a comprehensive framework
+					and structure that will bring about positive changes in education at
+					various levels.`}
+					</p>
+				</div>
+				{/* <div
 					style={{ background: '#05140085', height: 'inherit' }}
 					className="p-5"
-				/>
+				/> */}
 			</section>
 			<section
 				className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
