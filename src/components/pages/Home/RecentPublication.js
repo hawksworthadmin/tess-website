@@ -8,7 +8,7 @@ export default function RecentPublication() {
 		>
 			<div class="container">
 				<div class="section-title">
-					<h2>Latest news &amp; updates</h2>
+					<h2>Latest News</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo

@@ -15,14 +15,13 @@ export default function Footer() {
 									<img
 										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
 										alt="Image"
-										width={100}
-										className='rounded-full'
+										width={50}
+										className="rounded-full"
 									/>
 								</a>
 
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna.
+									{`The TESS program aims to improve education by enhancing teacher quality, curriculum and assessment systems, school infrastructure, and community engagement.`}
 								</p>
 
 								<ul className="social-icon">
@@ -61,7 +60,7 @@ export default function Footer() {
 									</li>
 									<li>
 										<i className="ri-mail-open-fill"></i>
-										<a href="mailto:info@wikin.com">info@wikin.com</a>
+										<a href="mailto:info@wikin.com">info@tess.com</a>
 									</li>
 									<li className="location">
 										<i className="ri-phone-fill"></i>
@@ -77,16 +76,16 @@ export default function Footer() {
 
 								<ul className="import-link">
 									<li>
-										<a href="government-services.html">Government service</a>
+										<a href="government-services.html">Photo Gallery</a>
 									</li>
 									<li>
-										<a href="terms-conditions.html">Terms &amp; conditions</a>
+										<a href="terms-conditions.html">Success Stories</a>
 									</li>
 									<li>
-										<a href="privacy-policy.html">Privacy policy</a>
+										<a href="privacy-policy.html">Reports</a>
 									</li>
 									<li>
-										<a href="accessibility.html">Accessibility</a>
+										<a href="accessibility.html">Fact Sheets</a>
 									</li>
 								</ul>
 							</div>
