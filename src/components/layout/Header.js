@@ -1,6 +1,59 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 
+export const navLinks = [
+	{
+		name: 'Home',
+		url: '/',
+	},
+	{
+		name: 'Who We Are',
+		url: '/who-we-are',
+	},
+	{
+		name: 'What We Do',
+		url: '/what-we-do',
+	},
+	{
+		name: 'Media Room',
+		children: [
+			{
+				name: 'New/Press Releases',
+				url: '/media-room/press-release',
+			},
+			{
+				name: 'Video Gallery',
+				url: '/media-room/video-gallery',
+			},
+			{
+				name: 'Photo Gallery',
+				url: '/media-room/photo-gallery',
+			},
+		],
+	},
+	{
+		name: 'Publications',
+		children: [
+			{
+				name: 'Fact sheets',
+				url: '/publications/fact-sheets',
+			},
+			{
+				name: 'News Letters',
+				url: '/publications/news-letters',
+			},
+			{
+				name: 'Reports',
+				url: '/publications/reports',
+			},
+			{
+				name: 'Blog',
+				url: '/publications/blog',
+			},
+		],
+	},
+]
+
 export default function Header() {
 	const TheLogo = ({ size }) => {
 		return (
@@ -31,9 +84,9 @@ export default function Header() {
 						<div className="mobile-responsive-menu mean-container">
 							<MobileMenu />
 							<div className="logo-">
-								<a href="index.html">
+								<Link href="/">
 									<TheLogo />
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -42,9 +95,9 @@ export default function Header() {
 				<div className="desktop-nav">
 					<div className="container">
 						<nav className="navbar navbar-expand-md navbar-light">
-							<a className="navbar-brand" href="index.html">
+							<Link className="navbar-brand" href="/">
 								<TheLogo />
-							</a>
+							</Link>
 
 							<div
 								className="collapse navbar-collapse mean-menu"
@@ -52,7 +105,7 @@ export default function Header() {
 								style={{ display: 'block' }}
 							>
 								<ul className="navbar-nav">
-									<li className="nav-item">
+									{/* <li className="nav-item">
 										<Link href="/" className="nav-link fw-400">
 											Home
 										</Link>
@@ -61,40 +114,49 @@ export default function Header() {
 									<li className="nav-item">
 										<Link href="/who-we-are" className="nav-link fw-400">
 											Who We Are
-											{/* <i className="ri-arrow-down-s-line"></i> */}
 										</Link>
-
-										{/* <ul className="dropdown-menu">
-											<li className="nav-item">
-												<a href="about.html" className="nav-link">
-													What We Do
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="councilor.html" className="nav-link">
-													Councilor
-												</a>
-											</li>
-											
-											
-											<li className="nav-item">
-												<a href="accessibility.html" className="nav-link">
-													Accessibility
-												</a>
-											</li>
-										</ul> */}
 									</li>
 
 									<li className="nav-item">
 										<Link href="/what-we-do" className="nav-link fw-400">
 											What We Do
-											{/* <i className="ri-arrow-down-s-line"></i> */}
 										</Link>
+									</li> */}
 
-										
-									</li>
+									{navLinks.map((eachLink,i) => {
+										return (
+											<>
+												<li className="nav-item">
+													<Link href={eachLink?.url || "#"} className="nav-link fw-400">
+														{eachLink?.name}
+														{eachLink?.children ? (
+															<i className="ri-arrow-down-s-line"></i>
+														) : null}
+													</Link>
 
-									<li className="nav-item">
+													{eachLink?.children ? (
+														<ul className="dropdown-menu">
+															{eachLink?.children?.map((val,) => {
+																return (
+																	<li className="nav-item">
+																		<Link
+																			href={val?.url}
+																			className="nav-link"
+																		>
+																			{val?.name}
+																		</Link>
+																	</li>
+																)
+															})}
+															
+														</ul>
+													) : null}
+												</li>
+											</>
+										)
+									})}
+
+									{/* <li className="nav-item">
 										<a href="#" className="nav-link fw-400">
 											Media Room
 											<i className="ri-arrow-down-s-line"></i>
@@ -163,13 +225,7 @@ export default function Header() {
 												</Link>
 											</li>
 										</ul>
-									</li>
-
-									<li className="nav-item">
-										<a href="contact.html" className="nav-link fw-400">
-											Signup
-										</a>
-									</li>
+									</li> */}
 								</ul>
 
 								<div className="others-options">
@@ -190,7 +246,7 @@ export default function Header() {
 					</div>
 				</div>
 
-				<div className="others-option-for-responsive">
+				{/* <div className="others-option-for-responsive">
 					<div className="container">
 						<div className="container">
 							<div className="option-inner">
@@ -230,7 +286,7 @@ export default function Header() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	)
