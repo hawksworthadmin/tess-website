@@ -16,7 +16,7 @@ export default function StackHolders() {
 				</div>
 
 				<div class="row">
-					<div class="col-lg-4 col-md-6">
+					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="single-project- text-center" data-aos="zoom-in-up">
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
@@ -25,7 +25,7 @@ export default function StackHolders() {
 							>{`National Project Steering Committee (NPSC)`}</p>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
+					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="single-project- text-center" data-aos="zoom-in-up">
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
@@ -34,7 +34,7 @@ export default function StackHolders() {
 							>{`Federal Ministry of Finance, Budget, and National Planning (FMoFBNP)`}</p>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
+					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="single-project- text-center" data-aos="zoom-in-up">
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 

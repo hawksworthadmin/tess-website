@@ -18,16 +18,29 @@ export const navLinks = [
 		name: 'Media Room',
 		children: [
 			{
-				name: 'New/Press Releases',
-				url: '/media-room/press-release',
-			},
-			{
 				name: 'Video Gallery',
 				url: '/media-room/video-gallery',
 			},
 			{
 				name: 'Photo Gallery',
 				url: '/media-room/photo-gallery',
+			},
+		],
+	},
+	{
+		name: 'News & Events',
+		children: [
+			{
+				name: 'New/Press Releases',
+				url: '/news-and-events/press-release',
+			},
+			{
+				name: 'Events',
+				url: '/news-and-events/events',
+			},
+			{
+				name: 'Workshops',
+				url: '/news-and-events/workshops',
 			},
 		],
 	},

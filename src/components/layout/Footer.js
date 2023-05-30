@@ -56,7 +56,9 @@ export default function Footer() {
 								<ul className="address">
 									<li>
 										<i className="ri-map-pin-fill"></i>
-										2976 Sunrise road las vegas, <br /> NV 89108
+										Federal Coordinating Secretariat, Federal Ministry of
+										Education Annex 245 Samuel Ademulegun Avenue, CBD 900103,
+										Abuja, <br /> NV 89108
 									</li>
 									<li>
 										<i className="ri-mail-open-fill"></i>
@@ -64,7 +66,7 @@ export default function Footer() {
 									</li>
 									<li className="location">
 										<i className="ri-phone-fill"></i>
-										<a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
+										<a href="tel:+1-(514)-312-5678">+234 12345567</a>
 									</li>
 								</ul>
 							</div>

@@ -13,7 +13,7 @@ export default function HomePartners() {
 					</p> */}
 				</div>
 				<div className="row justify-content-center">
-					<div className="col-lg-3">
+					<div className="col-lg-3 text-center mb-4">
 						<img
 							data-aos="fade-up"
 							width={200}
@@ -21,7 +21,7 @@ export default function HomePartners() {
 							alt="partner"
 						/>
 					</div>
-					<div className="col-lg-3">
+					<div className="col-lg-3 text-center mb-4">
 						<img
 							data-aos="fade-up"
 							data-aos-delay="50"
@@ -30,7 +30,7 @@ export default function HomePartners() {
 							alt="partner"
 						/>
 					</div>
-					<div className="col-lg-3">
+					<div className="col-lg-3 text-center mb-4">
 						<img
 							data-aos="fade-up"
 							data-aos-delay="150"

@@ -1,10 +1,11 @@
 import Layout from '@/components/layout/Layout'
+import VideoGallery from '@/components/pages/VideoGallery/VideoGallery'
 import React from 'react'
 
-export default function VideoGallery() {
-  return (
+export default function _VideoGallery() {
+	return (
 		<Layout>
-			<div>VideoGallery</div>
+			<VideoGallery />
 		</Layout>
 	)
 }
