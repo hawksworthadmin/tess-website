@@ -8,10 +8,10 @@ export default function WhatWeDo() {
 		>
 			<div className="container">
 				<div className="pb-5 text-start">
-					<h5 className="text-theme font-20 fw-500" data-aos="fade-up">
+					<h5 className="text-theme font-30 fw-500" data-aos="fade-up">
 						What we do
 					</h5>
-					<p className="font-20" data-aos="fade-up">
+					<p className="font-20 text-gray fw-300" data-aos="fade-up">
 						Lorem ipsum dolor sit amet consectetur. Vitae suspendisse dolor in
 						est rutrum. Lacinia in enim pellentesque venenatis interdum eu.
 					</p>
@@ -56,7 +56,7 @@ export default function WhatWeDo() {
 									Reduction in Number of Out-of-School Children
 								</h4>
 								<p
-									className="font-20"
+									className="font-20 text-gray fw-300"
 									data-aos-delay="150"
 									data-aos="fade-up"
 								>
@@ -97,7 +97,7 @@ export default function WhatWeDo() {
 									Enhancing Teaching Practices and Measuring Learning Outcomes
 								</h4>
 								<p
-									className="font-20"
+									className="font-20 text-gray fw-300"
 									data-aos-delay="159"
 									data-aos="fade-up-right"
 								>
@@ -159,7 +159,7 @@ export default function WhatWeDo() {
 									Strengthening School Infrastructure
 								</h4>
 								<p
-									className="font-20"
+									className="font-20 text-gray fw-300"
 									data-aos-delay="150"
 									data-aos="fade-up"
 								>

@@ -49,6 +49,9 @@
 .fw-600 {
     font-weight: 600 !important;
 }
+.fw-300 {
+    font-weight: 300 !important;
+}
 .fw-400 {
     font-weight: 400 !important;
 }
@@ -57,4 +60,7 @@
 }
 .rounded-full {
     border-radius: 100px;
+}
+.text-gray {
+    color: #344054bd !important;
 }

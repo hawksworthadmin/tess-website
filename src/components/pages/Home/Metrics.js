@@ -9,7 +9,7 @@ export default function Metrics() {
 		>
 			<div className="container">
 				<div className="section-title" bis_skin_checked="1">
-					<h2 style={{ color: '#027A48' }} data-aos="fade-up">
+					<h2 style={{ color: '#027A48' }} data-aos="fade-up" >
 						Facts & Figures
 					</h2>
 					{/* <p>
@@ -48,13 +48,13 @@ export default function Metrics() {
 			<div className="py-5 bg-theme-light">
 				<div className="container">
 					<h5
-						style={{ fontSize: '20px', marginBottom: '25px', fontWeight: 500 }}
-						className="text-theme"
+						style={{  marginBottom: '25px', fontWeight: 500 }}
+						className="text-theme font-30"
 						data-aos="fade-up"
 					>
 						Who we are
 					</h5>
-					<p data-aos="fade-up" style={{ fontSize: '18px', fontWeight: 400 }}>
+					<p data-aos="fade-up" style={{ fontWeight: 400 }} className='font-20'>
 						The TESS program focuses on elevating the quality of teachers in
 						Nigeria by implementing comprehensive training and professional
 						development initiatives. Through targeted workshops, mentoring, and
