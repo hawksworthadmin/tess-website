@@ -8,7 +8,8 @@ export default function StackHolders() {
 					<h2 data-aos="fade-up" data-aos-duration="1000">
 						Key Stakeholders
 					</h2>
-					{/* <p>
+					{/* <p
+						className='font-20'>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur
@@ -21,6 +22,7 @@ export default function StackHolders() {
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
 							<p
+								className='font-20'
 								style={{ fontSize: '16px' }}
 							>{`National Project Steering Committee (NPSC)`}</p>
 						</div>
@@ -30,6 +32,7 @@ export default function StackHolders() {
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
 							<p
+								className='font-20'
 								style={{ fontSize: '16px' }}
 							>{`Federal Ministry of Finance, Budget, and National Planning (FMoFBNP)`}</p>
 						</div>
@@ -39,6 +42,7 @@ export default function StackHolders() {
 							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
 
 							<p
+								className='font-20'
 								style={{ fontSize: '16px' }}
 							>{`Federal Project Financial Management Division (FPFMD)`}</p>
 						</div>

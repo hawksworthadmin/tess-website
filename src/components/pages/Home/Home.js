@@ -20,10 +20,10 @@ export default function Home() {
 			>
 				<div className="col-lg-6 text-center">
 					<h5
-						className="fw-normal text-center"
+						className="fw-normal text-center font-30"
 						data-aos="fade-up"
 						data-aos-delay="150"
-						style={{ fontSize: '30px', marginBottom: '24px' }}
+						style={{ marginBottom: '24px' }}
 					>
 						Education is the most powerful weapon you can use to change the
 						world.

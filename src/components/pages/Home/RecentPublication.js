@@ -9,7 +9,7 @@ export default function RecentPublication() {
 			<div class="container">
 				<div class="section-title">
 					<h2 data-aos="fade-up">Latest News</h2>
-					<p data-aos="fade-up">
+					<p data-aos="fade-up" className='font-20'>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur

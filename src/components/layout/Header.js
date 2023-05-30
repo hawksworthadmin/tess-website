@@ -142,7 +142,7 @@ export default function Header() {
 												<li className="nav-item">
 													<Link
 														href={eachLink?.url || '#'}
-														className="nav-link fw-400"
+														className="nav-link fw-400 font-15"
 													>
 														{eachLink?.name}
 														{eachLink?.children ? (
