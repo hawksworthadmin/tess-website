@@ -123,11 +123,14 @@ export default function Header() {
 										</Link>
 									</li> */}
 
-									{navLinks.map((eachLink,i) => {
+									{navLinks.map((eachLink, i) => {
 										return (
 											<>
 												<li className="nav-item">
-													<Link href={eachLink?.url || "#"} className="nav-link fw-400">
+													<Link
+														href={eachLink?.url || '#'}
+														className="nav-link fw-400"
+													>
 														{eachLink?.name}
 														{eachLink?.children ? (
 															<i className="ri-arrow-down-s-line"></i>
@@ -136,19 +139,15 @@ export default function Header() {
 
 													{eachLink?.children ? (
 														<ul className="dropdown-menu">
-															{eachLink?.children?.map((val,) => {
+															{eachLink?.children?.map((val) => {
 																return (
 																	<li className="nav-item">
-																		<Link
-																			href={val?.url}
-																			className="nav-link"
-																		>
+																		<Link href={val?.url} className="nav-link">
 																			{val?.name}
 																		</Link>
 																	</li>
 																)
 															})}
-															
 														</ul>
 													) : null}
 												</li>
@@ -156,76 +155,7 @@ export default function Header() {
 										)
 									})}
 
-									{/* <li className="nav-item">
-										<a href="#" className="nav-link fw-400">
-											Media Room
-											<i className="ri-arrow-down-s-line"></i>
-										</a>
-
-										<ul className="dropdown-menu">
-											<li className="nav-item">
-												<Link
-													href="/media-room/press-release"
-													className="nav-link"
-												>
-													News/Press Release
-												</Link>
-											</li>
-											<li className="nav-item">
-												<Link
-													href="/media-room/video-gallery"
-													className="nav-link"
-												>
-													Video Gallery
-												</Link>
-											</li>
-											<li className="nav-item">
-												<Link
-													href="/media-room/photo-gallery"
-													className="nav-link"
-												>
-													Photo Gallery
-												</Link>
-											</li>
-										</ul>
-									</li>
-
-									<li className="nav-item">
-										<a href="#" className="nav-link fw-400">
-											Publications
-											<i className="ri-arrow-down-s-line"></i>
-										</a>
-
-										<ul className="dropdown-menu">
-											<li className="nav-item">
-												<Link
-													href="/publications/fact-sheets"
-													className="nav-link"
-												>
-													Fact Sheets
-												</Link>
-											</li>
-
-											<li className="nav-item">
-												<Link
-													href="/publications/news-letters"
-													className="nav-link"
-												>
-													News Letters
-												</Link>
-											</li>
-											<li className="nav-item">
-												<Link href="/publications/reports" className="nav-link">
-													Reports
-												</Link>
-											</li>
-											<li className="nav-item">
-												<Link href="/publications/blog" className="nav-link">
-													Blog
-												</Link>
-											</li>
-										</ul>
-									</li> */}
+									
 								</ul>
 
 								<div className="others-options">
@@ -246,53 +176,13 @@ export default function Header() {
 					</div>
 				</div>
 
-				{/* <div className="others-option-for-responsive">
-					<div className="container">
-						<div className="container">
-							<div className="option-inner">
-								<div className="others-option justify-content-center d-flex align-items-center">
-									<ul>
-										<li>
-											<div className="option-item">
-												<i className="search-btn ri-search-line"></i>
-												<i className="close-btn ri-close-line"></i>
-
-												<div className="search-overlay search-popup">
-													<div className="search-box">
-														<form className="search-form">
-															<input
-																className="search-input"
-																name="search"
-																placeholder="Search"
-																type="text"
-															/>
-
-															<button className="search-button" type="submit">
-																<i className="ri-search-line"></i>
-															</button>
-														</form>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<a href="tel:+1-(514)-312-5678" className="call">
-												<i className="ri-phone-fill"></i>
-												+1 (514) 312-5678
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> */}
 			</div>
 		</header>
 	)
 }
 
 const MobileMenu = () => {
+	'use client'
 	const [show, setShow] = useState(false)
 	return (
 		<div className="mean-bar" bis_skin_checked="1">
@@ -308,285 +198,96 @@ const MobileMenu = () => {
 					</span>
 				</span>
 			</a>
-			<nav className="mean-nav">
-				<ul className="navbar-nav" style={show ? { display: 'none' } : null}>
-					<li className="nav-item">
-						<a href="#" className="nav-link active">
-							Home
-							<i className="ri-arrow-down-s-line"></i>
-						</a>
-
-						<ul className="dropdown-menu" style={{ display: 'none' }}>
-							<li className="nav-item">
-								<a href="index.html" className="nav-link">
-									Home one
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="index-2.html" className="nav-link active">
-									Home two
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="index-3.html" className="nav-link">
-									Home three
-								</a>
-							</li>
-						</ul>
-						<a className="mean-expand" href="#" style={{ fontSize: '18px' }}>
-							+
-						</a>
-					</li>
-
-					<li className="nav-item">
-						<a href="#" className="nav-link">
-							Pages
-							<i className="ri-arrow-down-s-line"></i>
-						</a>
-
-						<ul className="dropdown-menu" style={{ display: 'none' }}>
-							<li className="nav-item">
-								<a href="about.html" className="nav-link">
-									About
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="councilor.html" className="nav-link">
-									Councilor
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="#" className="nav-link">
-									Events
-									<i className="ri-arrow-down-s-line"></i>
-								</a>
-
-								<ul className="dropdown-menu" style={{ display: 'none' }}>
-									<li className="nav-item">
-										<a href="events.html" className="nav-link">
-											Events
-										</a>
-									</li>
-									<li className="nav-item">
-										<a href="event-details.html" className="nav-link">
-											Event details
-										</a>
-									</li>
-								</ul>
-								<a
-									className="mean-expand"
-									href="#"
-									style={{ fontSize: '18px' }}
-								>
-									+
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="galleries.html" className="nav-link">
-									Galleries
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="faq.html" className="nav-link">
-									FAQ
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="#" className="nav-link">
-									User
-									<i className="ri-arrow-down-s-line"></i>
-								</a>
-
-								<ul className="dropdown-menu" style={{ display: 'none' }}>
-									<li className="nav-item">
-										<a href="my-account.html" className="nav-link">
-											My account
-										</a>
-									</li>
-									<li className="nav-item">
-										<a href="log-in.html" className="nav-link">
-											Log in
-										</a>
-									</li>
-									<li className="nav-item">
-										<a href="register.html" className="nav-link">
-											Register
-										</a>
-									</li>
-									<li className="nav-item">
-										<a href="book-now.html" className="nav-link">
-											Book now
-										</a>
-									</li>
-								</ul>
-								<a
-									className="mean-expand"
-									href="#"
-									style={{ fontSize: '18px' }}
-								>
-									+
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="accessibility.html" className="nav-link">
-									Accessibility
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="privacy-policy.html" className="nav-link">
-									Privacy policy
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="terms-conditions.html" className="nav-link">
-									Terms &amp; conditions
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="coming-soon.html" className="nav-link">
-									Coming soon
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="404.html" className="nav-link">
-									404 Page
-								</a>
-							</li>
-						</ul>
-						<a className="mean-expand" href="#" style={{ fontSize: '18px' }}>
-							+
-						</a>
-					</li>
-
-					<li className="nav-item">
-						<a href="#" className="nav-link">
-							Projects
-							<i className="ri-arrow-down-s-line"></i>
-						</a>
-
-						<ul className="dropdown-menu" style={{ display: 'block' }}>
-							<li className="nav-item">
-								<a href="projects.html" className="nav-link">
-									Projects
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="project-details.html" className="nav-link">
-									Project details
-								</a>
-							</li>
-						</ul>
-						<a className="mean-expand" href="#" style={{ fontSize: '18px' }}>
-							+
-						</a>
-					</li>
-
-					<li className="nav-item">
-						<a href="#" className="nav-link">
-							Services
-							<i className="ri-arrow-down-s-line"></i>
-						</a>
-
-						<ul className="dropdown-menu" style={{ display: 'none' }}>
-							<li className="nav-item">
-								<a href="services.html" className="nav-link">
-									Services
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="individual-services.html" className="nav-link">
-									Individual services
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="business-services.html" className="nav-link">
-									Business services
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="government-services.html" className="nav-link">
-									Government services
-								</a>
-							</li>
-							<li className="nav-item">
-								<a href="services-details.html" className="nav-link">
-									Services details
-								</a>
-							</li>
-						</ul>
-						<a className="mean-expand" href="#" style={{ fontSize: '18px' }}>
-							+
-						</a>
-					</li>
-
-					<li className="nav-item">
-						<a href="#" className="nav-link">
-							Blog
-							<i className="ri-arrow-down-s-line"></i>
-						</a>
-
-						<ul className="dropdown-menu" style={{ display: 'none' }}>
-							<li className="nav-item">
-								<a href="blog.html" className="nav-link">
-									Blog
-								</a>
-							</li>
-
-							<li className="nav-item">
-								<a href="blog-details.html" className="nav-link">
-									Blog details
-								</a>
-							</li>
-						</ul>
-						<a className="mean-expand" href="#" style={{ fontSize: '18px' }}>
-							+
-						</a>
-					</li>
-
-					<li className="nav-item">
-						<a href="contact.html" className="nav-link">
-							Contact
-						</a>
-					</li>
-				</ul>
-
-				<div className="others-options" bis_skin_checked="1">
-					<ul style={{ display: 'none' }}>
-						<li>
-							<div className="option-item" bis_skin_checked="1">
-								<i className="search-btn ri-search-line"></i>
-								<i className="close-btn ri-close-line"></i>
-
-								<div
-									className="search-overlay search-popup"
-									bis_skin_checked="1"
-								>
-									<div className="search-box" bis_skin_checked="1">
-										<form className="search-form">
-											<input
-												className="search-input"
-												name="search"
-												placeholder="Search"
-												type="text"
-											/>
-
-											<button className="search-button" type="submit">
-												<i className="ri-search-line"></i>
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li className="mean-last">
-							<a href="tel:+1-(514)-312-5678" className="call">
-								<i className="ri-phone-fill"></i>
-								+1 (514) 312-5678
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			{show && (
+				<>
+					<div
+						className="shadow card animate__fadeInRight animate__animated animate__faster"
+						style={{
+							right: 0,
+							minHeight: '100vh',
+							position: 'fixed',
+							minWidth: '70vw',
+							maxWidth: '70vw',
+							top: 0,
+							bottom: 0,
+							zIndex: 90,
+						}}
+					>
+						<nav className="mean-nav" style={{ minHeight: '90vh' }}>
+							<ul
+								className="navbar-nav shadow-none"
+								style={{ minHeight: '90vh' }}
+							>
+								{navLinks?.map((eachNavLink) => {
+									return (
+										<SideNavLinks eachLink={eachNavLink} key={Math.random()} />
+									)
+								})}
+								<li className="nav-item">
+									<a href="contact.html" className="nav-link">
+										Login
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div
+						style={{
+							position: 'fixed',
+							height: '100%',
+							backgroundColor: '#0000007a',
+							zIndex: 70,
+							left: 0,
+							top: 0,
+							right: 0,
+						}}
+						onClick={() => setShow(false)}
+						className="p-3 animate__fadeIn animate__animated"
+					></div>
+				</>
+			)}
 		</div>
+	)
+}
+
+const SideNavLinks = ({ eachLink }) => {
+	'use client'
+	const [show, setShow] = useState(false)
+	return (
+		<>
+			<li className="nav-item">
+				
+				<Link href={eachLink?.url || '#'} className="nav-link active-">
+					{eachLink?.name}
+				</Link>
+
+				{eachLink?.children ? (
+					<ul
+						className="dropdown-menu"
+						style={{ display: !show ? 'none' : 'block' }}
+					>
+						{eachLink?.children?.map((val) => {
+							return (
+								<li className="nav-item" key={Math.random()}>
+									<a href="index.html" className="nav-link">
+										{val?.name}
+									</a>
+								</li>
+							)
+						})}
+					</ul>
+				) : null}
+				{eachLink?.children ? (
+					<a
+						onClick={() => setShow(!show)}
+						className="mean-expand"
+						href="#"
+						style={{ fontSize: '18px' }}
+					>
+						+
+					</a>
+				) : null}
+			</li>
+		</>
 	)
 }
