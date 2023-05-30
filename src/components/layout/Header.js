@@ -185,7 +185,7 @@ const MobileMenu = () => {
 	'use client'
 	const [show, setShow] = useState(false)
 	return (
-		<div className="mean-bar" bis_skin_checked="1">
+		<div className="mean-bar" bis_skin_checked="1" style={{ top: '20%' }}>
 			<a
 				onClick={() => setShow(!show)}
 				href="#nav"
