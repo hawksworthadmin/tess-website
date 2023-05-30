@@ -86,23 +86,12 @@ export default function Header() {
 									</li>
 
 									<li className="nav-item">
-										<a href="#" className="nav-link fw-400">
+										<Link href="/what-we-do" className="nav-link fw-400">
 											What We Do
-											<i className="ri-arrow-down-s-line"></i>
-										</a>
+											{/* <i className="ri-arrow-down-s-line"></i> */}
+										</Link>
 
-										<ul className="dropdown-menu">
-											<li className="nav-item">
-												<a href="projects.html" className="nav-link">
-													Projects
-												</a>
-											</li>
-											<li className="nav-item">
-												<a href="project-details.html" className="nav-link">
-													Project details
-												</a>
-											</li>
-										</ul>
+										
 									</li>
 
 									<li className="nav-item">
