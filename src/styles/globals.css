@@ -1,27 +1,66 @@
-@tailwind base;
+:root{
+    --primary-color: #027A48;
+    --primary-color-light: #F6FEF9;
+}
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* CSS goes here. */
+
+*{
+    font-family: 'Syne', sans-serif !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+.hero-heading {
+    font-size: 72px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.text-theme {
+    color: var(--primary-color) !important;
+}
+
+
+
+.bg-theme-light {
+    background-color: var(--primary-color-light) !important;
+}
+.bg-theme {
+    background-color: var(--primary-color) !important;
+}
+
+.font-20 {
+    font-size: 16px !important;
+}
+.font-30 {
+    font-size: 27px !important;
+}
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-400 {
+    font-weight: 400 !important;
+}
+.rounded {
+    border-radius: 9px !important;
+}
+.rounded-full {
+    border-radius: 100px;
+}
+.text-gray {
+    color: #344054bd !important;
 }
