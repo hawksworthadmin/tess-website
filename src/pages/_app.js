@@ -14,11 +14,14 @@ import '@/styles/globals.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
+import { PrismicPreview } from '@prismicio/next'
 
 
 export default function App({ Component, pageProps }) {
 	useEffect(() => {
 		AOS.init()
 	},[])
-	return <Component {...pageProps} />
+	return <PrismicPreview>
+		<Component {...pageProps} />
+	</PrismicPreview>
 }

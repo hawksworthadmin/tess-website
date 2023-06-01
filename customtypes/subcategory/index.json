@@ -1,0 +1,20 @@
+{
+	"id": "subcategory",
+	"label": "Subcategory",
+	"format": "custom",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": { "type": "UID", "config": { "label": "UID" } },
+			"title": {
+				"type": "Text",
+				"config": { "label": "Title", "placeholder": "" }
+			},
+			"slug": {
+				"type": "Text",
+				"config": { "label": "slug", "placeholder": "" }
+			}
+		}
+	}
+}
