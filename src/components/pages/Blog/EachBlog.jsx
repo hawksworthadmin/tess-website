@@ -1,5 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 import { RichText } from 'prismic-dom'
+import moment from 'moment'
 
 export default function EachBlog({ blog }) {
 	console.log(blog)
@@ -18,17 +20,17 @@ export default function EachBlog({ blog }) {
 					<ul>
 						<li>
 							<a href="#">
-								<i className="ri-user-3-fill"></i>
+								<i className="ri-user-3-fill capitalize"></i>
 								{blog?.user.slug.replace('-', ' ')}
 							</a>
 						</li>
 						<li>
 							<i className="ri-calendar-line"></i>
-							{new Date(blog?.created_at).toDateString()}
+							{moment(blog?.created_at).format('DD MMMM, YYYY')}
 						</li>
 					</ul>
 					<h3 className="fw-500">
-						<a href="blog-details.html">${blog?.title}</a>
+						<Link href={`/publication/blog/${blog?.slug}`}>{blog?.title}</Link>
 					</h3>
 					<p>{convertRichTextToPlain.split(' ').slice(0, 13).join(' ')}</p>
 					<a href={`/publication/blog/${blog.slug}`} className="read-more">
