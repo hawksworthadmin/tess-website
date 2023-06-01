@@ -2,7 +2,7 @@ import React from 'react'
 import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
 
-export default function Blog({ heading }) {
+export default function Blog({ heading, blogposts }) {
 	return (
 		<div>
 			<div
@@ -18,12 +18,16 @@ export default function Blog({ heading }) {
 					<div className="row">
 						<div className="col-lg-8">
 							<div className="row">
+								{/* <EachBlog />
 								<EachBlog />
 								<EachBlog />
 								<EachBlog />
 								<EachBlog />
-								<EachBlog />
-								<EachBlog />
+								<EachBlog /> */}
+
+								{blogposts.map((blogpost) => (
+									<EachBlog blog={blogpost.data} />
+								))}
 							</div>
 							<br />
 							<br />
