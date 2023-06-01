@@ -26,9 +26,7 @@ export default function Blog({ heading, blogposts }) {
 								<EachBlog /> */}
 
 								{blogposts &&
-									blogposts.map((blogpost) => (
-										<EachBlog blog={blogpost.data} />
-									))}
+									blogposts.map((blogpost) => <EachBlog blog={blogpost} />)}
 							</div>
 							<br />
 							<br />
