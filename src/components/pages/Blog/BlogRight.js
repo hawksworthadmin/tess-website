@@ -114,7 +114,7 @@ export default function BlogRight() {
 					</ul>
 				</div>
 
-				<div class="sidebar-widget advertizing" bis_skin_checked="1">
+				{/* <div class="sidebar-widget advertizing" bis_skin_checked="1">
 					<h3>Advertizing spot</h3>
 
 					<div class="advertizing-img" bis_skin_checked="1">
@@ -125,7 +125,7 @@ export default function BlogRight() {
 							/>
 						</a>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)

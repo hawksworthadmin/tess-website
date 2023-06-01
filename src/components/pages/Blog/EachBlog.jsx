@@ -1,6 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
+import { RichText } from 'prismic-dom'
+import moment from 'moment'
 
-export default function EachBlog() {
+export default function EachBlog({ blog }) {
+	console.log(blog)
+	const convertRichTextToPlain = RichText.asText(blog.description)
 	return (
 		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
@@ -15,23 +20,20 @@ export default function EachBlog() {
 					<ul>
 						<li>
 							<a href="#">
-								<i className="ri-user-3-fill"></i>
-								Cameron
+								<i className="ri-user-3-fill capitalize"></i>
+								{blog?.user.slug.replace('-', ' ')}
 							</a>
 						</li>
 						<li>
 							<i className="ri-calendar-line"></i>
-							February 12, 2021
+							{moment(blog?.created_at).format('DD MMMM, YYYY')}
 						</li>
 					</ul>
 					<h3 className="fw-500">
-						<a href="blog-details.html">Strengthening School Infrastructure</a>
+						<Link href={`/publication/blog/${blog?.slug}`}>{blog?.title}</Link>
 					</h3>
-					<p>
-						The importance of proper infrastructure in facilitating effective
-						education delivery cannot be over-emphasized.
-					</p>
-					<a href="blog-details.html" className="read-more">
+					<p>{convertRichTextToPlain.split(' ').slice(0, 13).join(' ')}</p>
+					<a href={`/publication/blog/${blog.slug}`} className="read-more">
 						Read Post
 						<i className="ri-arrow-right-s-line"></i>
 					</a>

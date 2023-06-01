@@ -3,9 +3,9 @@ import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 
 export default function Reports() {
-  return (
-    <Layout>
-        <Blog heading={'Reports'} />
-    </Layout>
-  )
+	return (
+		<Layout>
+			<Blog heading={'Reports'} blogposts={[]} />
+		</Layout>
+	)
 }
