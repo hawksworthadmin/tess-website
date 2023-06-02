@@ -1,10 +1,11 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 
-export default function EachPhoto() {
+export default function EachPhoto({ img, alt, content }) {
 	const [show, setShow] = useState(false)
 	return (
 		<>
-			{show && <Preview onClick={() => setShow(false)} />}
+			{show && <Preview img={img} alt={alt} onClick={() => setShow(false)} />}
 			<div
 				onClick={() => setShow(true)}
 				className="col-lg-4 col-md-6 mix business"
@@ -13,17 +14,11 @@ export default function EachPhoto() {
 				bis_skin_checked="1"
 			>
 				<div className="gallery-item" bis_skin_checked="1">
-					<img
-						src="https://schoolings.org/wp-content/uploads/2022/03/Minister-of-Education-in-Nigeria.jpg"
-						alt="Image"
-					/>
+					<img src={img} alt={alt} />
 
 					<div className="gallery-item-content" bis_skin_checked="1">
 						{/* <a href="assets/images/gallery/gallery-1.jpg">Office building</a> */}
-						<span>
-							Salisu Dahiru National Coordinator NEWMAP and Federal Project
-							Management Team (FPMU) at the Workshop
-						</span>
+						<span>{content}</span>
 					</div>
 				</div>
 			</div>
@@ -31,7 +26,7 @@ export default function EachPhoto() {
 	)
 }
 
-const Preview = ({ onClick }) => {
+const Preview = ({ onClick, img, alt }) => {
 	return (
 		<div
 			onClick={onClick}
@@ -48,10 +43,12 @@ const Preview = ({ onClick }) => {
 		>
 			{/* <div className="bg-danger w-100" style={{ height: '10px' }}></div> */}
 			<div style={{ flex: 1 }} className="d-flex align-items-center">
-				<img
+				<Image
 					className="shadow rounded"
-					src="https://schoolings.org/wp-content/uploads/2022/03/Minister-of-Education-in-Nigeria.jpg"
-					alt="Image"
+					src={img}
+					alt={alt}
+					width={550}
+					height={450}
 				/>
 			</div>
 		</div>

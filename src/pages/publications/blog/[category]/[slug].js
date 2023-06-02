@@ -25,13 +25,17 @@ export default function BlogDetails({ blog, categories }) {
 						<div className="row">
 							<div className="col-lg-8">
 								<div className="blog-details-content">
-
-									<div className="blog-details-img" >
-										<img src={blog?.data?.image?.url} alt="Image" />
-
+									{blog?.data?.user?.slug?.replace('-', ' ')}
+									<div className="blog-details-img" bis_skin_checked="1">
+										<img
+											// fill
+											// style={{ objectFit: 'contain' }}
+											src={blog?.data?.image?.url}
+											alt={blog?.data?.image?.alt}
+										/>
 									</div>
 									<div className="blog-top-content">
-										<div className="news-content" >
+										<div className="news-content">
 											<ul className="admin d-flex">
 												<li>
 													<p className='d-flex align-items-center'>
@@ -44,7 +48,6 @@ export default function BlogDetails({ blog, categories }) {
 													<i className="ri-calendar-line"></i>
 													{moment(blog?.data?.created_at).format('DD MMMM')}
 												</li>
-
 											</ul>
 
 											<h3>{blog?.data?.title}</h3>

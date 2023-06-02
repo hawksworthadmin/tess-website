@@ -169,6 +169,135 @@ export type CategoryDocument<Lang extends string = string> =
 		'category',
 		Lang
 	>
+/** Content for Image_gallery documents */
+interface ImageGalleryDocumentData {
+	/**
+	 * image field in *Image_gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>
+	/**
+	 * Content field in *Image_gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.content
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	content: prismic.KeyTextField
+	/**
+	 * Category field in *Image_gallery*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'image_gallery_category'>
+}
+/**
+ * Image_gallery document from Prismic
+ *
+ * - **API ID**: `image_gallery`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGalleryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGalleryDocumentData>,
+		'image_gallery',
+		Lang
+	>
+/** Content for image_gallery_category documents */
+interface ImageGalleryCategoryDocumentData {
+	/**
+	 * Title field in *image_gallery_category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Slice Zone field in *image_gallery_category*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+	 *
+	 */
+	slices: prismic.SliceZone<ImageGalleryCategoryDocumentDataSlicesSlice>
+	/**
+	 * Meta Title field in *image_gallery_category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: image_gallery_category.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *image_gallery_category*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: image_gallery_category.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	meta_description: prismic.RichTextField
+	/**
+	 * Meta Image field in *image_gallery_category*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+}
+/**
+ * Slice for *image_gallery_category → Slice Zone*
+ *
+ */
+type ImageGalleryCategoryDocumentDataSlicesSlice = never
+/**
+ * image_gallery_category document from Prismic
+ *
+ * - **API ID**: `image_gallery_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGalleryCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGalleryCategoryDocumentData>,
+		'image_gallery_category',
+		Lang
+	>
 /** Content for Subcategory documents */
 interface SubcategoryDocumentData {
 	/**
@@ -237,6 +366,8 @@ export type UserDocument<Lang extends string = string> =
 export type AllDocumentTypes =
 	| BlopgpostDocument
 	| CategoryDocument
+	| ImageGalleryDocument
+	| ImageGalleryCategoryDocument
 	| SubcategoryDocument
 	| UserDocument
 /**
@@ -283,6 +414,11 @@ declare module '@prismicio/client' {
 			BlopgpostDocument,
 			CategoryDocumentData,
 			CategoryDocument,
+			ImageGalleryDocumentData,
+			ImageGalleryDocument,
+			ImageGalleryCategoryDocumentData,
+			ImageGalleryCategoryDocumentDataSlicesSlice,
+			ImageGalleryCategoryDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,

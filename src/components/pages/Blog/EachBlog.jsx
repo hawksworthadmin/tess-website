@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { RichText } from 'prismic-dom'
 import moment from 'moment'
+import Image from 'next/image'
 
 export default function EachBlog({
 	link,
@@ -17,8 +18,22 @@ export default function EachBlog({
 	return (
 		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
-				<Link href={link}>
-					<img src={img} alt={alt} />
+				<Link
+					className="w-100 relative "
+					style={{
+						minHeight: '200px',
+						position: 'relative',
+						width: '500px',
+						display: 'block',
+					}}
+					href={link}
+				>
+					<Image
+						fill
+						src={img}
+						alt={alt}
+						// style={{ objectFit: 'contain' }}
+					/>
 				</Link>
 
 				<div className="blog-content" bis_skin_checked="1">
