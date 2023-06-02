@@ -38,10 +38,10 @@ export default function BlogDetails({ blog, categories }) {
 										<div className="news-content">
 											<ul className="admin d-flex">
 												<li>
-													<a href="#">
-														<i class="ri-user-fill"></i>
+													<p className='d-flex align-items-center'>
+														<i className="ri-user-fill"></i>
 														{blog?.data?.user?.slug?.replace('-', ' ')}
-													</a>
+													</p>
 												</li>
 
 												<li>
