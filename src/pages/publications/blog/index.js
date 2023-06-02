@@ -3,28 +3,36 @@ import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 
 // import { createClient,  } from '@prismicio/client'
-import * as prismic from '@prismicio/client'
+import { Client, PrismicDocument } from '@prismicio/client'
 
-export default function index({ blogposts }) {
+export default function index({ blogposts, totalPages }) {
 	console.log(blogposts)
 	return (
 		<Layout>
-			<Blog heading={'Blog'} blogposts={blogposts} />
+			<Blog heading={'Blog'} blogposts={blogposts} totalPages={totalPages} />
 		</Layout>
 	)
 }
 
-export const getStaticProps = async ({ previewData }) => {
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+export const getServerSideProps = async ({ query }) => {
+	const page = Number(query.page) || 1
 
-	// This will fetch all the data from prismic
-	const blog = await client.getAllByType('blopgpost', {
-		fetchLinks: ['author.name', 'category.title'],
+	const client = new Client(process.env.PRISMIC_API_URL)
+
+	const blog = await client.getByType('blopgpost', {
+		pageSize: 4,
+		page: page,
+
+		orderings: {
+			field: 'document.first_publication_date',
+			direction: 'desc',
+		},
 	})
 
 	return {
 		props: {
-			blogposts: blog,
+			blogposts: blog.results,
+			totalPages: blog.total_pages,
 		},
 	}
 }

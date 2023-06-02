@@ -1,8 +1,17 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
+import Link from 'next/link'
 
-export default function Blog({ heading, blogposts }) {
+export default function Blog({ heading, blogposts, totalPages }) {
+	const router = useRouter()
+	const currentPage = router.query.page || 1
+	const pageNumbers = Array.from(
+		{ length: totalPages },
+		(_, index) => index + 1
+	)
+
 	return (
 		<div>
 			<div
@@ -18,35 +27,30 @@ export default function Blog({ heading, blogposts }) {
 					<div className="row">
 						<div className="col-lg-8">
 							<div className="row">
-								{/* <EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog /> */}
-
 								{blogposts &&
-									blogposts.map((blogpost) => (
-										<EachBlog blog={blogpost.data} />
-									))}
+									blogposts.map((blogpost) => <EachBlog blog={blogpost} />)}
 							</div>
 							<br />
 							<br />
 							<div className="col-12" bis_skin_checked="1">
 								<div className="pagination-area" bis_skin_checked="1">
-									<span className="page-numbers current" aria-current="page">
-										1
-									</span>
-									<a href="#" className="page-numbers">
-										2
-									</a>
-									<a href="#" className="page-numbers">
-										3
-									</a>
+									{pageNumbers.map((pageNumber) => (
+										<Link
+											className="page-numbers"
+											href={`/publications/blog?page=${pageNumber}`}
+										>
+											{pageNumber}
+										</Link>
+									))}
 
-									<a href="#" className="next page-numbers">
-										<i className="ri-arrow-right-line"></i>
-									</a>
+									{currentPage < totalPages && (
+										<Link
+											href={`/publications/blog?page=${currentPage + 1}`}
+											className="next page-numbers"
+										>
+											<i className="ri-arrow-right-line"></i>
+										</Link>
+									)}
 								</div>
 							</div>
 						</div>
