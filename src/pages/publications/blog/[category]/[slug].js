@@ -36,7 +36,7 @@ export default function BlogDetails({ blog, categories }) {
 												<li>
 													<p className='d-flex align-items-center'>
 														<i className="ri-user-fill"></i>
-														{blog?.data?.user?.slug.replace('-', ' ')}
+														{blog?.data?.user?.slug?.replace('-', ' ')}
 													</p>
 												</li>
 
