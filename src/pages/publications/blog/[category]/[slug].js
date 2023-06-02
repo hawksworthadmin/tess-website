@@ -72,9 +72,9 @@ export default function BlogDetails({ blog }) {
 export const getStaticPaths = async () => {
 	const client = createClient(process.env.PRISMIC_API_URL)
 
-	const blogposts = await client.getAllByType('blopgpost')
+	const blogposts = await client.getByType('blopgpost')
 
-	const paths = blogposts.map((post) => ({
+	const paths = blogposts.results.map((post) => ({
 		params: {
 			category: post.data.category.slug,
 			slug: post.uid,

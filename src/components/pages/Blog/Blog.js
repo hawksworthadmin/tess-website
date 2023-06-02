@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Blog({ heading, blogposts, totalPages }) {
 	const router = useRouter()
-	const currentPage = router.query.page
+	const currentPage = router.query.page || 1
 	const pageNumbers = Array.from(
 		{ length: totalPages },
 		(_, index) => index + 1

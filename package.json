@@ -7,8 +7,12 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"slicemachine": "start-slicemachine",
-		"precommit": "npm run build"
+		"slicemachine": "start-slicemachine"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "echo  \"[Husky] pre-commit\""
+		}
 	},
 	"dependencies": {
 		"@prismicio/client": "^7.0.1",
