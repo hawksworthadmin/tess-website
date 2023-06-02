@@ -18,7 +18,7 @@ export default function EachBlog({ blog }) {
 						<li>
 							<a href="#">
 								<i className="ri-user-3-fill capitalize"></i>
-								{blog?.data?.user.slug.replace('-', ' ')}
+								{blog?.data?.user?.slug.replace('-', ' ')}
 							</a>
 						</li>
 						<li>
@@ -33,7 +33,7 @@ export default function EachBlog({ blog }) {
 					</h3>
 					<p>{convertRichTextToPlain.split(' ').slice(0, 13).join(' ')}</p>
 					<a
-						href={`/publications/blog/${blog?.data?.category.slug} /${blog.uid}`}
+						href={`/publications/blog/${blog?.data?.category?.slug} /${blog.uid}`}
 						className="read-more"
 					>
 						Read Post

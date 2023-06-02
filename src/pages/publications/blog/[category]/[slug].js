@@ -24,7 +24,7 @@ export default function BlogDetails({ blog }) {
 						<div className="row">
 							<div clasThe Blog TitlesName="col-lg-8">
 								<div className="blog-details-content">
-									{blog?.data?.user.slug.replace('-', ' ')}
+									{blog?.data?.user?.slug.replace('-', ' ')}
 									<div className="blog-details-img" bis_skin_checked="1">
 										<img src={blog?.data?.image?.url} alt="Image" />
 									</div>
@@ -34,7 +34,7 @@ export default function BlogDetails({ blog }) {
 												<li>
 													<a href="#">
 														<i class="ri-user-fill"></i>
-														{blog?.data?.user.slug.replace('-', ' ')}
+														{blog?.data?.user?.slug.replace('-', ' ')}
 													</a>
 												</li>
 
