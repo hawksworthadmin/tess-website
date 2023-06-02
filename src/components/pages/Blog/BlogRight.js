@@ -1,6 +1,22 @@
+import Link from 'next/link'
 import React from 'react'
 
-export default function BlogRight() {
+export default function BlogRight({ categories, link }) {
+	// Prismic does not support alphabetic order sorting yet
+	// This will sort the categories manually in alphabetic order
+	const sortInAphabeticOrder = categories?.sort((a, b) => {
+		const titleA = a?.data?.title.toLowerCase()
+		const titleB = b?.data?.title.toLowerCase()
+
+		if (titleA < titleB) {
+			return -1
+		} else if (titleA > titleB) {
+			return 1
+		}
+
+		return 0
+	})
+
 	return (
 		<div bis_skin_checked="1">
 			<div class="widget-sidebar pl-15" bis_skin_checked="1">
@@ -23,64 +39,18 @@ export default function BlogRight() {
 					<h3>Categories</h3>
 
 					<ul>
-						<li>
-							<a href="#">
-								Advertising permits
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Animal health and welfare
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Building and construction
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Drainage services
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Environmental services
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Geographic information services
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Public health and safety
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Survey services
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Water supply
-								<i class="ri-arrow-right-s-line"></i>
-							</a>
-						</li>
+						{sortInAphabeticOrder?.map((category) => (
+							<li>
+								<Link href={`${link}${category.uid}`}>
+									{category?.data?.title}
+									<i class="ri-arrow-right-s-line"></i>
+								</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 
-				<div class="sidebar-widget tags" bis_skin_checked="1">
+				{/* <div class="sidebar-widget tags" bis_skin_checked="1">
 					<h3>Tags</h3>
 
 					<ul>
@@ -112,7 +82,7 @@ export default function BlogRight() {
 							<a href="#">Naational report</a>
 						</li>
 					</ul>
-				</div>
+				</div> */}
 
 				{/* <div class="sidebar-widget advertizing" bis_skin_checked="1">
 					<h3>Advertizing spot</h3>
