@@ -1,13 +1,14 @@
 import Layout from '@/components/layout/Layout'
 import BlogRight from '@/components/pages/Blog/BlogRight'
-import { createClient, Client } from '@prismicio/client'
+import { createClient } from '@prismicio/client'
+import Image from 'next/image'
 import moment from 'moment'
 import { RichText } from 'prismic-dom'
 import React from 'react'
 
 import RichTextComponent from '@/components/pages/Blog/RichTextComponent'
 
-export default function BlogDetails({ blog }) {
+export default function BlogDetails({ blog, categories }) {
 	return (
 		<Layout>
 			<div>
@@ -22,11 +23,16 @@ export default function BlogDetails({ blog }) {
 				<section className="blog-details-area ptb-100">
 					<div className="container">
 						<div className="row">
-							<div clasThe Blog TitlesName="col-lg-8">
+							<div className="col-lg-8">
 								<div className="blog-details-content">
 									{blog?.data?.user?.slug.replace('-', ' ')}
 									<div className="blog-details-img" bis_skin_checked="1">
-										<img src={blog?.data?.image?.url} alt="Image" />
+										<img
+											// fill
+											// style={{ objectFit: 'contain' }}
+											src={blog?.data?.image?.url}
+											alt={blog?.data?.image?.alt}
+										/>
 									</div>
 									<div className="blog-top-content">
 										<div class="news-content" bis_skin_checked="1">
@@ -59,7 +65,10 @@ export default function BlogDetails({ blog }) {
 								</div>
 							</div>
 							<div className="col-lg-4">
-								<BlogRight />
+								<BlogRight
+									categories={categories}
+									link={'/publications/blog/'}
+								/>
 							</div>
 						</div>
 					</div>
@@ -91,14 +100,29 @@ export const getStaticProps = async ({ params }) => {
 	const { slug } = params
 
 	const client = createClient(process.env.PRISMIC_API_URL)
+	try {
+		const categories = await client.getByType('category', {
+			orderings: {
+				field: 'document.uid',
+				direction: 'desc',
+			},
+		})
 
-	// console.log(slug)
+		const blog = await client.getByUID('blopgpost', slug)
 
-	const blog = await client.getByUID('blopgpost', slug)
+		return {
+			props: {
+				blog,
+				categories: categories.results,
+			},
+		}
+	} catch (error) {
+		console.log('errors', error)
 
-	return {
-		props: {
-			blog,
-		},
+		return {
+			props: {
+				// error,
+			},
+		}
 	}
 }

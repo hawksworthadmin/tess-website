@@ -4,9 +4,15 @@ import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
 import Link from 'next/link'
 
-export default function Blog({ heading, blogposts, totalPages }) {
+export default function Blog({
+	heading,
+	blogposts,
+	totalPages,
+	categories,
+	link,
+}) {
 	const router = useRouter()
-	const currentPage = router.query.page || 1
+	const currentPage = Number(router.query.page) || 1
 	const pageNumbers = Array.from(
 		{ length: totalPages },
 		(_, index) => index + 1
@@ -28,7 +34,16 @@ export default function Blog({ heading, blogposts, totalPages }) {
 						<div className="col-lg-8">
 							<div className="row">
 								{blogposts &&
-									blogposts.map((blogpost) => <EachBlog blog={blogpost} />)}
+									blogposts.map((post) => (
+										<EachBlog
+											title={post?.data?.title}
+											img={post?.data?.image.url}
+											created_at={post?.data.created_at}
+											alt={post?.data?.image?.alt}
+											description={post?.data?.description}
+											link={`${link}${post?.data?.category?.slug} /${post.uid}`}
+										/>
+									))}
 							</div>
 							<br />
 							<br />
@@ -56,7 +71,7 @@ export default function Blog({ heading, blogposts, totalPages }) {
 						</div>
 
 						<div className="col-lg-4">
-							<BlogRight />
+							<BlogRight categories={categories} link={link} />
 						</div>
 					</div>
 				</div>
