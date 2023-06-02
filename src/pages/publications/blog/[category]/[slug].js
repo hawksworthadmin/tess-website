@@ -35,8 +35,8 @@ export default function BlogDetails({ blog, categories }) {
 										/>
 									</div>
 									<div className="blog-top-content">
-										<div class="news-content" bis_skin_checked="1">
-											<ul class="admin">
+										<div className="news-content">
+											<ul className="admin d-flex">
 												<li>
 													<a href="#">
 														<i class="ri-user-fill"></i>
@@ -45,15 +45,8 @@ export default function BlogDetails({ blog, categories }) {
 												</li>
 
 												<li>
-													<i class="ri-calendar-line"></i>
+													<i className="ri-calendar-line"></i>
 													{moment(blog?.data?.created_at).format('DD MMMM')}
-												</li>
-
-												<li>
-													<a href="#">
-														<i class="ri-question-answer-fill"></i>
-														(03) comments
-													</a>
 												</li>
 											</ul>
 
