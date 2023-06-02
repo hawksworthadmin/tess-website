@@ -13,6 +13,11 @@ export default function Blog({
 }) {
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
+	const pathname = router.asPath.split('?')[0] // doing this to get the accurate pathname
+	// so that the component is reuseable for  both the blog page and the category pages
+
+	console.log(pathname)
+
 	const pageNumbers = Array.from(
 		{ length: totalPages },
 		(_, index) => index + 1
@@ -36,6 +41,7 @@ export default function Blog({
 								{blogposts &&
 									blogposts.map((post) => (
 										<EachBlog
+											user={post?.data?.user?.slug?.replace('-', ' ')}
 											title={post?.data?.title}
 											img={post?.data?.image.url}
 											created_at={post?.data.created_at}
@@ -51,8 +57,10 @@ export default function Blog({
 								<div className="pagination-area" bis_skin_checked="1">
 									{pageNumbers.map((pageNumber) => (
 										<Link
-											className="page-numbers"
-											href={`/publications/blog?page=${pageNumber}`}
+											className={`page-numbers ${
+												currentPage == pageNumber && 'active'
+											}`}
+											href={`${pathname}?page=${pageNumber}`}
 										>
 											{pageNumber}
 										</Link>
