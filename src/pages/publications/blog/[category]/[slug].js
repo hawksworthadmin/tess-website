@@ -25,36 +25,26 @@ export default function BlogDetails({ blog, categories }) {
 						<div className="row">
 							<div className="col-lg-8">
 								<div className="blog-details-content">
-									{blog?.data?.user?.slug.replace('-', ' ')}
-									<div className="blog-details-img" bis_skin_checked="1">
-										<img
-											// fill
-											// style={{ objectFit: 'contain' }}
-											src={blog?.data?.image?.url}
-											alt={blog?.data?.image?.alt}
-										/>
+
+									<div className="blog-details-img" >
+										<img src={blog?.data?.image?.url} alt="Image" />
+
 									</div>
 									<div className="blog-top-content">
-										<div class="news-content" bis_skin_checked="1">
-											<ul class="admin">
+										<div className="news-content" >
+											<ul className="admin d-flex">
 												<li>
-													<a href="#">
-														<i class="ri-user-fill"></i>
+													<p className='d-flex align-items-center'>
+														<i className="ri-user-fill"></i>
 														{blog?.data?.user?.slug.replace('-', ' ')}
-													</a>
+													</p>
 												</li>
 
 												<li>
-													<i class="ri-calendar-line"></i>
+													<i className="ri-calendar-line"></i>
 													{moment(blog?.data?.created_at).format('DD MMMM')}
 												</li>
 
-												<li>
-													<a href="#">
-														<i class="ri-question-answer-fill"></i>
-														(03) comments
-													</a>
-												</li>
 											</ul>
 
 											<h3>{blog?.data?.title}</h3>
