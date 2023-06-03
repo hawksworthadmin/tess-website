@@ -1,6 +1,6 @@
 {
 	"id": "image_gallery_category",
-	"label": "image_gallery_category",
+	"label": "Image and video category",
 	"format": "page",
 	"repeatable": true,
 	"status": true,

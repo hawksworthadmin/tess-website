@@ -1,46 +1,47 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
+import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
 
-export default function index({ blogposts, totalPages, categories }) {
-	console.log(blogposts)
+export default function Reports({ reports, categories, totalPages }) {
+	console.log(reports)
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'Reports'}
+				posts={reports}
+				link={'/publications/reports/'}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
 			/>
 		</Layout>
 	)
 }
-
-export const getServerSideProps = async ({ query, params }) => {
+export const getServerSideProps = async ({ previewData, query, params }) => {
 	const page = Number(query.page) || 1
 	const { category } = params
 
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+	console.log(category)
+	const client = createClient(previewData)
 
 	try {
-		const categories = await client.getByType('category', {
+		const categories = await client.getByType('report_category', {
 			orderings: {
 				field: 'document.uid',
 				direction: 'desc',
 			},
 		})
 
-		const getCategoryIdUsingSlug = await client.getByUID('category', category)
+		const getCategoryIdUsingSlug = await client.getByUID(
+			'report_category',
+			category
+		)
 
 		const categoryId = getCategoryIdUsingSlug.id
 
-		const blog = await client.getByType('blopgpost', {
-			filters: [prismic.filter.at('my.blopgpost.category', categoryId)],
+		const report = await client.getByType('report', {
+			filters: [prismic.filter.at('my.report.category', categoryId)],
 			pageSize: 4,
 			page: page,
 			orderings: {
@@ -51,8 +52,8 @@ export const getServerSideProps = async ({ query, params }) => {
 
 		return {
 			props: {
-				blogposts: blog.results,
-				totalPages: blog.total_pages,
+				reports: report.results,
+				totalPages: report.total_pages,
 				categories: categories.results,
 				params,
 				getCategoryIdUsingSlug,

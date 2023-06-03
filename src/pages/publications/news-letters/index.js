@@ -1,21 +1,17 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
 
-export default function index({ blogposts, totalPages, categories }) {
-	console.log(blogposts)
+export default function NewsLetters({ newsletters, categories, totalPages }) {
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'Reports'}
+				posts={newsletters}
+				link={'/publications/news-letters/'}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
 			/>
 		</Layout>
 	)
@@ -26,14 +22,14 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 	const client = createClient(previewData)
 
-	const categories = await client.getByType('category', {
+	const categories = await client.getByType('newsletter_category', {
 		orderings: {
 			field: 'document.uid',
 			direction: 'desc',
 		},
 	})
 
-	const blog = await client.getByType('blopgpost', {
+	const newsletters = await client.getByType('newsletter', {
 		pageSize: 4,
 		page: page,
 
@@ -45,8 +41,8 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 	return {
 		props: {
-			blogposts: blog.results,
-			totalPages: blog.total_pages,
+			newsletters: newsletters.results,
+			totalPages: newsletters.total_pages,
 			categories: categories.results,
 		},
 	}

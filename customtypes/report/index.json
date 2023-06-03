@@ -1,6 +1,6 @@
 {
-	"id": "blopgpost",
-	"label": "Blog Post",
+	"id": "report",
+	"label": "Report",
 	"format": "custom",
 	"repeatable": true,
 	"status": true,
@@ -22,43 +22,27 @@
 			},
 			"image": {
 				"type": "Image",
-				"config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+				"config": {
+					"label": "Featured Image",
+					"constraint": {},
+					"thumbnails": []
+				}
 			},
 			"category": {
 				"type": "Link",
 				"config": {
 					"label": "Category",
 					"select": "document",
-					"customtypes": ["category"]
-				}
-			},
-			"subcategories": {
-				"type": "Group",
-				"config": {
-					"label": "Subcategories",
-					"fields": {
-						"subcategory": {
-							"type": "Link",
-							"config": { "label": "Subcategory", "select": "document" }
-						}
-					}
+					"customtypes": ["report_category"]
 				}
 			},
 			"user": {
 				"type": "Link",
 				"config": {
-					"label": "Author",
+					"label": "User",
 					"select": "document",
 					"customtypes": ["user"]
 				}
-			},
-			"created_at": {
-				"type": "Timestamp",
-				"config": { "label": "Created At", "placeholder": "" }
-			},
-			"updated_at": {
-				"type": "Timestamp",
-				"config": { "label": "Updated At", "placeholder": "" }
 			}
 		}
 	}
