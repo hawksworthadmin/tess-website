@@ -14,10 +14,9 @@ export default function Footer() {
 							<div className="single-footer-widget single-bg">
 								<a href="index.html" className="logo">
 									<img
-										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
+										src="/assets/images/gpe.png"
 										alt="Image"
-										width={50}
-										className="rounded-full"
+										width={90}
 									/>
 								</a>
 
