@@ -1,6 +1,6 @@
 {
 	"id": "image_gallery",
-	"label": "Image_gallery",
+	"label": "Image Gallery",
 	"format": "custom",
 	"repeatable": true,
 	"status": true,

@@ -1,14 +1,49 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
-import { useRouter } from 'next/router'
 import React from 'react'
+import { createClient } from '../../../../prismicio'
 
-export default function TheType() {
-	const router = useRouter()
-	const { type } = router.query
+export default function Event({ pressReleases, totalPages, categories }) {
 	return (
 		<Layout>
-			<Blog heading={'News & Press Release'} />
+			<Blog
+				heading={'News and Press Release'}
+				posts={pressReleases}
+				totalPages={totalPages}
+				categories={categories}
+				link={'/news-and-events/press-release/'}
+			/>
 		</Layout>
 	)
+}
+
+export const getServerSideProps = async ({ previewData, query }) => {
+	const page = Number(query.page) || 1
+
+	const client = createClient(previewData)
+
+	const categories = await client.getByType('press_release_category', {
+		orderings: {
+			field: 'document.uid',
+			direction: 'desc',
+		},
+	})
+
+	const pressReleases = await client.getByType('press_release', {
+		pageSize: 4,
+		page: page,
+
+		orderings: {
+			field: 'document.first_publication_date',
+			direction: 'desc',
+		},
+	})
+
+	return {
+		props: {
+			pressReleases: pressReleases.results,
+			totalPages: pressReleases.total_pages,
+			categories: categories.results,
+		},
+	}
 }

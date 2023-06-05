@@ -60,6 +60,25 @@
 				"type": "Timestamp",
 				"config": { "label": "Updated At", "placeholder": "" }
 			}
+		},
+		"SEO & Meta Datas": {
+			"meta_title": {
+				"type": "Text",
+				"config": { "label": "Meta title", "placeholder": "" }
+			},
+			"meta_image": {
+				"type": "Image",
+				"config": { "label": "Meta Image", "constraint": {}, "thumbnails": [] }
+			},
+			"meta_description": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Meta Description",
+					"placeholder": "Description should not be more than 155 characters",
+					"allowTargetBlank": true,
+					"single": "paragraph,strong,em"
+				}
+			}
 		}
 	}
 }

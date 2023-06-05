@@ -46,7 +46,7 @@ export default function Blog({
 											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
 											title={post?.data?.title}
 											img={post?.data?.image?.url}
-											created_at={post?.data.created_at}
+											created_at={post?.first_publication_date}
 											alt={post?.data?.image?.alt}
 											description={post?.data?.description}
 											categoryLink={`${link}${post?.data?.category?.slug}`}

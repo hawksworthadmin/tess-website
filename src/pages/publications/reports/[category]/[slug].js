@@ -9,6 +9,7 @@ export default function Details({ blog, categories }) {
 			post={blog}
 			categories={categories}
 			link={'/publications/report/'}
+			heading={'Reports'}
 		/>
 	)
 }
