@@ -6,7 +6,7 @@ import StackHolders from './StackHolders'
 import HomeHero from './HomeHero'
 import HomePartners from './HomePartners'
 
-export default function Home() {
+export default function Home({ latestNews }) {
 	return (
 		<>
 			<HomeHero />
@@ -40,7 +40,7 @@ export default function Home() {
 			<Metrics />
 			<WhatWeDo />
 			<HomePartners />
-			<RecentPublication />
+			<RecentPublication latestNews={latestNews} />
 			<StackHolders />
 		</>
 	)

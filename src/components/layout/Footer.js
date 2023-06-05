@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -11,14 +12,14 @@ export default function Footer() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
-								<a href="index.html" className="logo">
+								<Link href="/" className="logo">
 									<img
 										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
 										alt="Image"
 										width={50}
 										className="rounded-full"
 									/>
-								</a>
+								</Link>
 
 								<p>
 									{`The TESS program aims to improve education by enhancing teacher quality, curriculum and assessment systems, school infrastructure, and community engagement.`}
@@ -26,24 +27,24 @@ export default function Footer() {
 
 								<ul className="social-icon">
 									<li>
-										<a href="https://www.facebook.com/" target="_blank">
+										<Link href="https://www.facebook.com/" target="_blank">
 											<i className="ri-facebook-fill"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://www.instagram.com/" target="_blank">
+										<Link href="https://www.instagram.com/" target="_blank">
 											<i className="ri-instagram-line"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://twitter.com/" target="_blank">
+										<Link href="https://twitter.com/" target="_blank">
 											<i className="ri-twitter-fill"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://twitter.com/" target="_blank">
+										<Link href="https://twitter.com/" target="_blank">
 											<i className="ri-linkedin-box-fill"></i>
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</div>
@@ -62,11 +63,11 @@ export default function Footer() {
 									</li>
 									<li>
 										<i className="ri-mail-open-fill"></i>
-										<a href="mailto:info@wikin.com">info@tess.com</a>
+										<Link href="mailto:info@tess.com">info@tess.com</Link>
 									</li>
 									<li className="location">
 										<i className="ri-phone-fill"></i>
-										<a href="tel:+1-(514)-312-5678">+234 12345567</a>
+										<Link href="tel:+23412345567">+234 12345567</Link>
 									</li>
 								</ul>
 							</div>
@@ -78,16 +79,16 @@ export default function Footer() {
 
 								<ul className="import-link">
 									<li>
-										<a href="government-services.html">Photo Gallery</a>
+										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
 									</li>
 									<li>
-										<a href="terms-conditions.html">Success Stories</a>
+										<Link href="/publications/blog">Blog</Link>
 									</li>
 									<li>
-										<a href="privacy-policy.html">Reports</a>
+										<Link href="/publications/reports">Reports</Link>
 									</li>
 									<li>
-										<a href="accessibility.html">Fact Sheets</a>
+										<Link href="/publications/fact-sheets">Fact Sheets</Link>
 									</li>
 								</ul>
 							</div>
