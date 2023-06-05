@@ -15,13 +15,18 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import { PrismicPreview } from '@prismicio/next'
-
+import { PrismicProvider } from '@prismicio/react'
+import Link from 'next/link'
 
 export default function App({ Component, pageProps }) {
 	useEffect(() => {
 		AOS.init()
-	},[])
-	return <PrismicPreview>
-		<Component {...pageProps} />
-	</PrismicPreview>
+	}, [])
+	return (
+		<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
+			<PrismicPreview repositoryName={process.env.PRISMIC_REPO_NAME}>
+				<Component {...pageProps} />
+			</PrismicPreview>
+		</PrismicProvider>
+	)
 }

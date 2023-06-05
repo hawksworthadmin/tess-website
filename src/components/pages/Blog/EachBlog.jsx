@@ -7,11 +7,12 @@ import Image from 'next/image'
 export default function EachBlog({
 	link,
 	title,
-	user,
+	category,
 	created_at,
 	img,
 	alt,
 	description,
+	categoryLink,
 }) {
 	const convertRichTextToPlain = RichText.asText(description)
 
@@ -38,11 +39,8 @@ export default function EachBlog({
 
 				<div className="blog-content" bis_skin_checked="1">
 					<ul>
-						<li>
-							<a href="#">
-								<i className="ri-user-3-fill capitalize"></i>
-								{user}
-							</a>
+						<li style={{ textTransform: 'capitalize' }}>
+							<Link href={categoryLink || '#'}>{category}</Link>
 						</li>
 						<li>
 							<i className="ri-calendar-line"></i>

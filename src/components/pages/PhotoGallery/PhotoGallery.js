@@ -10,6 +10,9 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 	)
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
+	const pathname = router.asPath.includes('category')
+		? `${router.asPath.split('&')[0]}&`
+		: `${router.asPath.split('?')[0]}?`
 
 	return (
 		<div>
@@ -23,10 +26,13 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 			</div>
 			<section className="gallery-area gallery-popup pt-100 pb-70">
 				<div className="container">
-					<Tabs tabs_category={tabs_category} />
+					<Tabs
+						tabs_category={tabs_category}
+						link={'/media-room/photo-gallery'}
+					/>
 					<div className="shorting">
 						<div className="row">
-							{photos.map((photo) => (
+							{photos?.map((photo) => (
 								<EachPhoto
 									img={photo?.data?.image?.url}
 									content={photo?.data?.content}
@@ -39,10 +45,12 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 					<br />
 					<div className="col-12" bis_skin_checked="1">
 						<div className="pagination-area" bis_skin_checked="1">
-							{pageNumbers.map((pageNumber) => (
+							{pageNumbers?.map((pageNumber) => (
 								<Link
-									className="page-numbers"
-									href={`/media-room/photo-gallery?page=${pageNumber}`}
+									className={`page-numbers ${
+										currentPage == pageNumber && 'current'
+									}`}
+									href={`${pathname}page=${pageNumber}`}
 								>
 									{pageNumber}
 								</Link>
@@ -50,7 +58,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 
 							{currentPage < totalPages && (
 								<Link
-									href={`/media-room/photo-gallery?page=${currentPage + 1}`}
+									href={`${pathname}page==${currentPage + 1}`}
 									className="next page-numbers"
 								>
 									<i className="ri-arrow-right-line"></i>
@@ -64,12 +72,11 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 	)
 }
 
-const Tabs = ({ tabs_category }) => {
+// Am sharing this component with the VideoGallery
+export const Tabs = ({ tabs_category, link }) => {
 	const router = useRouter()
 	const categoryPath = router.query.category || 'all'
-	// const pathname = router.asPath.split("?")
 
-	console.log(categoryPath)
 	return (
 		<div className="row" bis_skin_checked="1">
 			<div className="col-lg-12" bis_skin_checked="1">
@@ -81,16 +88,16 @@ const Tabs = ({ tabs_category }) => {
 					bis_skin_checked="1"
 				>
 					<Link
-						href={`/media-room/photo-gallery?category=all`}
+						href={`${link}?category=all`}
 						className={`filter ${categoryPath == 'all' && 'active'}`}
 						data-filter="all"
 						fdprocessedid="03j22"
 					>
 						All
 					</Link>
-					{tabs_category.map((category) => (
+					{tabs_category?.map((category) => (
 						<Link
-							href={`/media-room/photo-gallery?category=${category?.uid}`}
+							href={`${link}?category=${category?.uid}`}
 							className={`filter  ${categoryPath == category?.uid && 'active'}`}
 							data-filter=".business"
 							fdprocessedid="r0rmbc"
