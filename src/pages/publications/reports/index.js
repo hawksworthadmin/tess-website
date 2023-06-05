@@ -1,39 +1,35 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
 
-export default function index({ blogposts, totalPages, categories }) {
-	console.log(blogposts)
+export default function Reports({ reports, categories, totalPages }) {
+	console.log(reports)
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'Reports'}
+				posts={reports}
+				link={'/publications/reports/'}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
 			/>
 		</Layout>
 	)
 }
-
 export const getServerSideProps = async ({ previewData, query }) => {
 	const page = Number(query.page) || 1
 
 	const client = createClient(previewData)
 
-	const categories = await client.getByType('category', {
+	const categories = await client.getByType('report_category', {
 		orderings: {
 			field: 'document.uid',
 			direction: 'desc',
 		},
 	})
 
-	const blog = await client.getByType('blopgpost', {
+	const reports = await client.getByType('report', {
 		pageSize: 4,
 		page: page,
 
@@ -45,8 +41,8 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 	return {
 		props: {
-			blogposts: blog.results,
-			totalPages: blog.total_pages,
+			reports: reports.results,
+			totalPages: reports.total_pages,
 			categories: categories.results,
 		},
 	}

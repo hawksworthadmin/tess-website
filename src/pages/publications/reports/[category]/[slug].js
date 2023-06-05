@@ -8,15 +8,15 @@ export default function Details({ blog, categories }) {
 		<BlogDetails
 			post={blog}
 			categories={categories}
-			link={'/publications/blog/'}
+			link={'/publications/report/'}
 		/>
 	)
 }
 
 export const getStaticPaths = async ({ previewData }) => {
-	const client = createClient({ previewData })
+	const client = createClient(previewData)
 
-	const blogposts = await client.getByType('blopgpost')
+	const blogposts = await client.getByType('report')
 
 	const paths = blogposts.results.map((post) => ({
 		params: {
@@ -36,14 +36,14 @@ export const getStaticProps = async ({ previewData, params }) => {
 
 	const client = createClient(previewData)
 	try {
-		const categories = await client.getByType('category', {
+		const categories = await client.getByType('report_category', {
 			orderings: {
 				field: 'document.uid',
 				direction: 'desc',
 			},
 		})
 
-		const blog = await client.getByUID('blopgpost', slug)
+		const blog = await client.getByUID('report', slug)
 
 		return {
 			props: {

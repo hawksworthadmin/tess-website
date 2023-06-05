@@ -1,21 +1,20 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
+import { useRouter } from 'next/router'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
 
-export default function index({ blogposts, totalPages, categories }) {
-	console.log(blogposts)
+export default function Event({ events, totalPages, categories }) {
+	console.log(events)
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'Events'}
+				posts={events}
+				checkEvent={true}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
+				link={'/news-and-events/blog/'}
 			/>
 		</Layout>
 	)
@@ -26,14 +25,14 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 	const client = createClient(previewData)
 
-	const categories = await client.getByType('category', {
+	const categories = await client.getByType('event_category', {
 		orderings: {
 			field: 'document.uid',
 			direction: 'desc',
 		},
 	})
 
-	const blog = await client.getByType('blopgpost', {
+	const events = await client.getByType('event', {
 		pageSize: 4,
 		page: page,
 
@@ -45,8 +44,8 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 	return {
 		props: {
-			blogposts: blog.results,
-			totalPages: blog.total_pages,
+			events: events.results,
+			totalPages: events.total_pages,
 			categories: categories.results,
 		},
 	}

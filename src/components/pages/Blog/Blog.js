@@ -3,13 +3,15 @@ import { useRouter } from 'next/router'
 import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
 import Link from 'next/link'
+import EventCard from './EventCard'
 
 export default function Blog({
 	heading,
-	blogposts,
+	posts,
 	totalPages,
 	categories,
 	link,
+	checkEvent,
 }) {
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
@@ -38,27 +40,39 @@ export default function Blog({
 					<div className="row">
 						<div className="col-lg-8">
 							<div className="row">
-								{blogposts &&
-									blogposts.map((post) => (
+								{posts?.map((post) =>
+									!checkEvent ? (
 										<EachBlog
-											user={post?.data?.user?.slug?.replace('-', ' ')}
+											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
 											title={post?.data?.title}
-											img={post?.data?.image.url}
+											img={post?.data?.image?.url}
 											created_at={post?.data.created_at}
 											alt={post?.data?.image?.alt}
 											description={post?.data?.description}
-											link={`${link}${post?.data?.category?.slug} /${post.uid}`}
+											categoryLink={`${link}${post?.data?.category?.slug}`}
+											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
 										/>
-									))}
+									) : (
+										<EventCard
+											date={post?.data?.date}
+											title={post?.data?.title}
+											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
+											alt={post?.data?.image?.alt}
+											image={post?.data?.featured_image.url}
+											location={post?.data?.location}
+											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
+										/>
+									)
+								)}
 							</div>
 							<br />
 							<br />
 							<div className="col-12" bis_skin_checked="1">
 								<div className="pagination-area" bis_skin_checked="1">
-									{pageNumbers.map((pageNumber) => (
+									{pageNumbers?.map((pageNumber) => (
 										<Link
 											className={`page-numbers ${
-												currentPage == pageNumber && 'active'
+												currentPage == pageNumber && 'current'
 											}`}
 											href={`${pathname}?page=${pageNumber}`}
 										>

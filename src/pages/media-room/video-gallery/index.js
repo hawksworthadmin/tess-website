@@ -1,33 +1,32 @@
 import Layout from '@/components/layout/Layout'
-import PhotoGallery from '@/components/pages/PhotoGallery/PhotoGallery'
+import VideoGallery from '@/components/pages/VideoGallery/VideoGallery'
 import React from 'react'
+import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
-
-export default function _PhotoGallery({ category, photos, totalPages }) {
+export default function _VideoGallery({ category, videos, totalPages }) {
+	console.log('video', videos)
 	return (
 		<Layout>
-			<PhotoGallery
+			<VideoGallery
 				tabs_category={category}
-				photos={photos}
+				videos={videos}
 				totalPages={totalPages}
 			/>
 		</Layout>
 	)
 }
 
-export const getServerSideProps = async ({ query, res }) => {
+export const getServerSideProps = async ({ previewData, query }) => {
 	const page = Number(query.page) || 1
 	const category = query.category || 'all'
 
 	try {
-		const client = prismic.createClient(process.env.PRISMIC_API_URL)
+		const client = createClient(previewData)
 
 		const photo_category = await client.getAllByType('image_gallery_category')
 
-		console.log(photo_category)
-
 		if (category == 'all') {
-			const photos = await client.getByType('image_gallery', {
+			const videos = await client.getByType('video_gallery', {
 				pageSize: 6,
 				page: page,
 				orderings: {
@@ -35,11 +34,12 @@ export const getServerSideProps = async ({ query, res }) => {
 					direction: 'desc',
 				},
 			})
+
 			return {
 				props: {
 					category: photo_category,
-					photos: photos.results,
-					totalPages: photos.total_pages,
+					videos: videos.results,
+					totalPages: videos.total_pages,
 				},
 			}
 		} else {
@@ -48,8 +48,8 @@ export const getServerSideProps = async ({ query, res }) => {
 				category
 			)
 			const categoryId = getCategoryIdUsingSlug.id
-			const photos = await client.getByType('image_gallery', {
-				filters: [prismic.filter.at('my.image_gallery.category', categoryId)],
+			const videos = await client.getByType('video_gallery', {
+				filters: [prismic.filter.at('my.video_gallery.category', categoryId)],
 				pageSize: 6,
 				page: page,
 				orderings: {
@@ -60,8 +60,8 @@ export const getServerSideProps = async ({ query, res }) => {
 			return {
 				props: {
 					category: photo_category,
-					photos: photos.results,
-					totalPages: photos.total_pages,
+					videos: videos.results,
+					totalPages: videos.total_pages,
 				},
 			}
 		}
