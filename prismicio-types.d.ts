@@ -5,10 +5,10 @@ import type * as prismic from '@prismicio/client'
 type Simplify<T> = {
 	[KeyType in keyof T]: T[KeyType]
 }
-/** Content for Blopgpost documents */
+/** Content for Blog Post documents */
 interface BlopgpostDocumentData {
 	/**
-	 * Title field in *Blopgpost*
+	 * Title field in *Blog Post*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -19,7 +19,7 @@ interface BlopgpostDocumentData {
 	 */
 	title: prismic.KeyTextField
 	/**
-	 * Description field in *Blopgpost*
+	 * Description field in *Blog Post*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -30,7 +30,7 @@ interface BlopgpostDocumentData {
 	 */
 	description: prismic.RichTextField
 	/**
-	 * Image field in *Blopgpost*
+	 * Image field in *Blog Post*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -41,7 +41,7 @@ interface BlopgpostDocumentData {
 	 */
 	image: prismic.ImageField<never>
 	/**
-	 * Category field in *Blopgpost*
+	 * Category field in *Blog Post*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
@@ -52,7 +52,7 @@ interface BlopgpostDocumentData {
 	 */
 	category: prismic.RelationField<'category'>
 	/**
-	 * Subcategories field in *Blopgpost*
+	 * Subcategories field in *Blog Post*
 	 *
 	 * - **Field Type**: Group
 	 * - **Placeholder**: *None*
@@ -65,7 +65,7 @@ interface BlopgpostDocumentData {
 		Simplify<BlopgpostDocumentDataSubcategoriesItem>
 	>
 	/**
-	 * Author field in *Blopgpost*
+	 * Author field in *Blog Post*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
@@ -76,7 +76,7 @@ interface BlopgpostDocumentData {
 	 */
 	user: prismic.RelationField<'user'>
 	/**
-	 * Created At field in *Blopgpost*
+	 * Created At field in *Blog Post*
 	 *
 	 * - **Field Type**: Timestamp
 	 * - **Placeholder**: *None*
@@ -87,7 +87,7 @@ interface BlopgpostDocumentData {
 	 */
 	created_at: prismic.TimestampField
 	/**
-	 * Updated At field in *Blopgpost*
+	 * Updated At field in *Blog Post*
 	 *
 	 * - **Field Type**: Timestamp
 	 * - **Placeholder**: *None*
@@ -99,12 +99,12 @@ interface BlopgpostDocumentData {
 	updated_at: prismic.TimestampField
 }
 /**
- * Item in Blopgpost → Subcategories
+ * Item in Blog Post → Subcategories
  *
  */
 export interface BlopgpostDocumentDataSubcategoriesItem {
 	/**
-	 * Subcategory field in *Blopgpost → Subcategories*
+	 * Subcategory field in *Blog Post → Subcategories*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
@@ -115,7 +115,7 @@ export interface BlopgpostDocumentDataSubcategoriesItem {
 	subcategory: prismic.RelationField
 }
 /**
- * Blopgpost document from Prismic
+ * Blog Post document from Prismic
  *
  * - **API ID**: `blopgpost`
  * - **Repeatable**: `true`
@@ -167,6 +167,433 @@ export type CategoryDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<
 		Simplify<CategoryDocumentData>,
 		'category',
+		Lang
+	>
+/** Content for Event documents */
+interface EventDocumentData {
+	/**
+	 * Title field in *Event*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Featured Image field in *Event*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.featured_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	featured_image: prismic.ImageField<never>
+	/**
+	 * Description field in *Event*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	description: prismic.RichTextField
+	/**
+	 * Location field in *Event*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.location
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	location: prismic.KeyTextField
+	/**
+	 * Video field in *Event*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.video
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	video: prismic.LinkToMediaField
+	/**
+	 * Category field in *Event*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'event_category'>
+}
+/**
+ * Event document from Prismic
+ *
+ * - **API ID**: `event`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<Simplify<EventDocumentData>, 'event', Lang>
+/** Content for Event Category documents */
+interface EventCategoryDocumentData {
+	/**
+	 * Title field in *Event Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Event Category document from Prismic
+ *
+ * - **API ID**: `event_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<EventCategoryDocumentData>,
+		'event_category',
+		Lang
+	>
+/** Content for Image_gallery documents */
+interface ImageGalleryDocumentData {
+	/**
+	 * image field in *Image_gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>
+	/**
+	 * Content field in *Image_gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.content
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	content: prismic.KeyTextField
+	/**
+	 * Category field in *Image_gallery*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'image_gallery_category'>
+}
+/**
+ * Image_gallery document from Prismic
+ *
+ * - **API ID**: `image_gallery`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGalleryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGalleryDocumentData>,
+		'image_gallery',
+		Lang
+	>
+/** Content for Image and video category documents */
+interface ImageGalleryCategoryDocumentData {
+	/**
+	 * Title field in *Image and video category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Slice Zone field in *Image and video category*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+	 *
+	 */
+	slices: prismic.SliceZone<ImageGalleryCategoryDocumentDataSlicesSlice>
+	/**
+	 * Meta Title field in *Image and video category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: image_gallery_category.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Image and video category*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: image_gallery_category.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	meta_description: prismic.RichTextField
+	/**
+	 * Meta Image field in *Image and video category*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery_category.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+}
+/**
+ * Slice for *Image and video category → Slice Zone*
+ *
+ */
+type ImageGalleryCategoryDocumentDataSlicesSlice = never
+/**
+ * Image and video category document from Prismic
+ *
+ * - **API ID**: `image_gallery_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGalleryCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGalleryCategoryDocumentData>,
+		'image_gallery_category',
+		Lang
+	>
+/** Content for Newsletter documents */
+interface NewsletterDocumentData {
+	/**
+	 * Title field in *Newsletter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Description field in *Newsletter*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	description: prismic.RichTextField
+	/**
+	 * Featured Image field in *Newsletter*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>
+	/**
+	 * Category field in *Newsletter*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'newsletter_category'>
+}
+/**
+ * Newsletter document from Prismic
+ *
+ * - **API ID**: `newsletter`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsletterDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<NewsletterDocumentData>,
+		'newsletter',
+		Lang
+	>
+/** Content for Newsletter Category documents */
+interface NewsletterCategoryDocumentData {
+	/**
+	 * Title field in *Newsletter Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Newsletter Category document from Prismic
+ *
+ * - **API ID**: `newsletter_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsletterCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<NewsletterCategoryDocumentData>,
+		'newsletter_category',
+		Lang
+	>
+/** Content for Report documents */
+interface ReportDocumentData {
+	/**
+	 * Title field in *Report*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Description field in *Report*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	description: prismic.RichTextField
+	/**
+	 * Featured Image field in *Report*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>
+	/**
+	 * Category field in *Report*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'report_category'>
+	/**
+	 * User field in *Report*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.user
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	user: prismic.RelationField<'user'>
+}
+/**
+ * Report document from Prismic
+ *
+ * - **API ID**: `report`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReportDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<Simplify<ReportDocumentData>, 'report', Lang>
+/** Content for Report Category documents */
+interface ReportCategoryDocumentData {
+	/**
+	 * Title field in *Report Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Report Category document from Prismic
+ *
+ * - **API ID**: `report_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReportCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ReportCategoryDocumentData>,
+		'report_category',
 		Lang
 	>
 /** Content for Subcategory documents */
@@ -234,11 +661,93 @@ interface UserDocumentData {
  */
 export type UserDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<Simplify<UserDocumentData>, 'user', Lang>
+/** Content for Video Gallery documents */
+interface VideoGalleryDocumentData {
+	/**
+	 * TItle field in *Video Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Video field in *Video Gallery*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.video
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	video: prismic.LinkToMediaField
+	/**
+	 * Category field in *Video Gallery*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'image_gallery_category'>
+	/**
+	 * Content field in *Video Gallery*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.content
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	content: prismic.RichTextField
+	/**
+	 * thumbnail image field in *Video Gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.thumbnail_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	thumbnail_image: prismic.ImageField<never>
+}
+/**
+ * Video Gallery document from Prismic
+ *
+ * - **API ID**: `video_gallery`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VideoGalleryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<VideoGalleryDocumentData>,
+		'video_gallery',
+		Lang
+	>
 export type AllDocumentTypes =
 	| BlopgpostDocument
 	| CategoryDocument
+	| EventDocument
+	| EventCategoryDocument
+	| ImageGalleryDocument
+	| ImageGalleryCategoryDocument
+	| NewsletterDocument
+	| NewsletterCategoryDocument
+	| ReportDocument
+	| ReportCategoryDocument
 	| SubcategoryDocument
 	| UserDocument
+	| VideoGalleryDocument
 /**
  * Default variation for BlogPostSlice Slice
  *
@@ -283,10 +792,29 @@ declare module '@prismicio/client' {
 			BlopgpostDocument,
 			CategoryDocumentData,
 			CategoryDocument,
+			EventDocumentData,
+			EventDocument,
+			EventCategoryDocumentData,
+			EventCategoryDocument,
+			ImageGalleryDocumentData,
+			ImageGalleryDocument,
+			ImageGalleryCategoryDocumentData,
+			ImageGalleryCategoryDocumentDataSlicesSlice,
+			ImageGalleryCategoryDocument,
+			NewsletterDocumentData,
+			NewsletterDocument,
+			NewsletterCategoryDocumentData,
+			NewsletterCategoryDocument,
+			ReportDocumentData,
+			ReportDocument,
+			ReportCategoryDocumentData,
+			ReportCategoryDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,
 			UserDocument,
+			VideoGalleryDocumentData,
+			VideoGalleryDocument,
 			AllDocumentTypes,
 			BlogPostSliceSliceDefault,
 			BlogPostSliceSliceVariation,

@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import React from 'react'
 
 export default function TheType() {
-    const router = useRouter();
-    const {type} = router.query;
-  return (
-    <Layout>
-        <Blog heading={String(type).toUpperCase().replace('-',' ')} />
-    </Layout>
-  )
+	const router = useRouter()
+	const { type } = router.query
+	return (
+		<Layout>
+			<Blog heading={'News & Press Release'} />
+		</Layout>
+	)
 }

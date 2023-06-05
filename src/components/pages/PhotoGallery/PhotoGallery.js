@@ -1,7 +1,19 @@
 import React from 'react'
 import EachPhoto from './EachPhoto'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export default function PhotoGallery() {
+export default function PhotoGallery({ tabs_category, photos, totalPages }) {
+	const pageNumbers = Array.from(
+		{ length: totalPages },
+		(_, index) => index + 1
+	)
+	const router = useRouter()
+	const currentPage = Number(router.query.page) || 1
+	const pathname = router.asPath.includes('category')
+		? `${router.asPath.split('&')[0]}&`
+		: `${router.asPath.split('?')[0]}?`
+
 	return (
 		<div>
 			<div
@@ -14,34 +26,44 @@ export default function PhotoGallery() {
 			</div>
 			<section className="gallery-area gallery-popup pt-100 pb-70">
 				<div className="container">
-					<Tabs />
+					<Tabs
+						tabs_category={tabs_category}
+						link={'/media-room/photo-gallery'}
+					/>
 					<div className="shorting">
 						<div className="row">
-							<EachPhoto />
-							<EachPhoto />
-							<EachPhoto />
-							<EachPhoto />
-							<EachPhoto />
-							<EachPhoto />
+							{photos?.map((photo) => (
+								<EachPhoto
+									img={photo?.data?.image?.url}
+									content={photo?.data?.content}
+									alt={photo?.data?.image?.alt}
+								/>
+							))}
 						</div>
 					</div>
-                    <br />
-                    <br />
+					<br />
+					<br />
 					<div className="col-12" bis_skin_checked="1">
 						<div className="pagination-area" bis_skin_checked="1">
-							<span className="page-numbers current" aria-current="page">
-								1
-							</span>
-							<a href="#" className="page-numbers">
-								2
-							</a>
-							<a href="#" className="page-numbers">
-								3
-							</a>
+							{pageNumbers?.map((pageNumber) => (
+								<Link
+									className={`page-numbers ${
+										currentPage == pageNumber && 'current'
+									}`}
+									href={`${pathname}page=${pageNumber}`}
+								>
+									{pageNumber}
+								</Link>
+							))}
 
-							<a href="#" className="next page-numbers">
-								<i className="ri-arrow-right-line"></i>
-							</a>
+							{currentPage < totalPages && (
+								<Link
+									href={`${pathname}page==${currentPage + 1}`}
+									className="next page-numbers"
+								>
+									<i className="ri-arrow-right-line"></i>
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>
@@ -50,34 +72,39 @@ export default function PhotoGallery() {
 	)
 }
 
-const Tabs = () => {
+// Am sharing this component with the VideoGallery
+export const Tabs = ({ tabs_category, link }) => {
+	const router = useRouter()
+	const categoryPath = router.query.category || 'all'
+
 	return (
 		<div className="row" bis_skin_checked="1">
 			<div className="col-lg-12" bis_skin_checked="1">
-				<div className="shorting-menu" bis_skin_checked="1">
-					<button className="filter active" data-filter="all" fdprocessedid="03j22">
-						All
-					</button>
-
-					<button className="filter" data-filter=".business" fdprocessedid="r0rmbc">
-						Business
-					</button>
-
-					<button className="filter" data-filter=".event" fdprocessedid="p0nx9s">
-						Event
-					</button>
-
-					<button className="filter" data-filter=".culture" fdprocessedid="e7lek">
-						Culture
-					</button>
-
-					<button
-						className="filter"
-						data-filter=".government"
-						fdprocessedid="xxaa7b"
+				<div
+					className="shorting-menu d-flex image_scroll_bar"
+					style={{
+						overflowX: 'auto',
+					}}
+					bis_skin_checked="1"
+				>
+					<Link
+						href={`${link}?category=all`}
+						className={`filter ${categoryPath == 'all' && 'active'}`}
+						data-filter="all"
+						fdprocessedid="03j22"
 					>
-						Government
-					</button>
+						All
+					</Link>
+					{tabs_category?.map((category) => (
+						<Link
+							href={`${link}?category=${category?.uid}`}
+							className={`filter  ${categoryPath == category?.uid && 'active'}`}
+							data-filter=".business"
+							fdprocessedid="r0rmbc"
+						>
+							{category?.data?.title}
+						</Link>
+					))}
 				</div>
 			</div>
 		</div>

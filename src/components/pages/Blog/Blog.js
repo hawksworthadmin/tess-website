@@ -1,8 +1,30 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
+import Link from 'next/link'
+import EventCard from './EventCard'
 
-export default function Blog({ heading, blogposts }) {
+export default function Blog({
+	heading,
+	posts,
+	totalPages,
+	categories,
+	link,
+	checkEvent,
+}) {
+	const router = useRouter()
+	const currentPage = Number(router.query.page) || 1
+	const pathname = router.asPath.split('?')[0] // doing this to get the accurate pathname
+	// so that the component is reuseable for  both the blog page and the category pages
+
+	console.log(pathname)
+
+	const pageNumbers = Array.from(
+		{ length: totalPages },
+		(_, index) => index + 1
+	)
+
 	return (
 		<div>
 			<div
@@ -18,40 +40,60 @@ export default function Blog({ heading, blogposts }) {
 					<div className="row">
 						<div className="col-lg-8">
 							<div className="row">
-								{/* <EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog />
-								<EachBlog /> */}
-
-								{blogposts.map((blogpost) => (
-									<EachBlog blog={blogpost.data} />
-								))}
+								{posts?.map((post) =>
+									!checkEvent ? (
+										<EachBlog
+											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
+											title={post?.data?.title}
+											img={post?.data?.image?.url}
+											created_at={post?.data.created_at}
+											alt={post?.data?.image?.alt}
+											description={post?.data?.description}
+											categoryLink={`${link}${post?.data?.category?.slug}`}
+											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
+										/>
+									) : (
+										<EventCard
+											date={post?.data?.date}
+											title={post?.data?.title}
+											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
+											alt={post?.data?.image?.alt}
+											image={post?.data?.featured_image.url}
+											location={post?.data?.location}
+											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
+										/>
+									)
+								)}
 							</div>
 							<br />
 							<br />
 							<div className="col-12" bis_skin_checked="1">
 								<div className="pagination-area" bis_skin_checked="1">
-									<span className="page-numbers current" aria-current="page">
-										1
-									</span>
-									<a href="#" className="page-numbers">
-										2
-									</a>
-									<a href="#" className="page-numbers">
-										3
-									</a>
+									{pageNumbers?.map((pageNumber) => (
+										<Link
+											className={`page-numbers ${
+												currentPage == pageNumber && 'current'
+											}`}
+											href={`${pathname}?page=${pageNumber}`}
+										>
+											{pageNumber}
+										</Link>
+									))}
 
-									<a href="#" className="next page-numbers">
-										<i className="ri-arrow-right-line"></i>
-									</a>
+									{currentPage < totalPages && (
+										<Link
+											href={`/publications/blog?page=${currentPage + 1}`}
+											className="next page-numbers"
+										>
+											<i className="ri-arrow-right-line"></i>
+										</Link>
+									)}
 								</div>
 							</div>
 						</div>
 
 						<div className="col-lg-4">
-							<BlogRight />
+							<BlogRight categories={categories} link={link} />
 						</div>
 					</div>
 				</div>

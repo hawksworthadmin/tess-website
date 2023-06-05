@@ -1,66 +1,83 @@
-:root{
-    --primary-color: #027A48;
-    --primary-color-light: #F6FEF9;
+:root {
+	--primary-color: #027a48;
+	--primary-color-light: #f6fef9;
 }
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
 
-
 /* CSS goes here. */
 
-*{
-    font-family: 'Syne', sans-serif !important;
+* {
+	font-family: 'Syne', sans-serif !important;
 }
 
-
 .hero-heading {
-    font-size: 72px;
+	font-size: 72px;
+}
+
+.font-secondary {
+	font-family: 'Nanum Gothic', sans-serif !important;
 }
 
 .bg-img {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .text-theme {
-    color: var(--primary-color) !important;
+	color: var(--primary-color) !important;
 }
-
-
 
 .bg-theme-light {
-    background-color: var(--primary-color-light) !important;
+	background-color: var(--primary-color-light) !important;
 }
 .bg-theme {
-    background-color: var(--primary-color) !important;
+	background-color: var(--primary-color) !important;
 }
 
 .font-20 {
-    font-size: 16px !important;
+	font-size: 20px !important;
+}
+.font-24 {
+	font-size: 24px !important;
 }
 .font-30 {
-    font-size: 27px !important;
+	font-size: 27px !important;
 }
 .fw-500 {
-    font-weight: 500 !important;
+	font-weight: 500 !important;
 }
 .fw-600 {
-    font-weight: 600 !important;
+	font-weight: 600 !important;
 }
 .fw-300 {
-    font-weight: 300 !important;
+	font-weight: 300 !important;
 }
 .fw-400 {
-    font-weight: 400 !important;
+	font-weight: 400 !important;
 }
 .rounded {
-    border-radius: 9px !important;
+	border-radius: 9px !important;
 }
 .rounded-full {
-    border-radius: 100px;
+	border-radius: 100px;
 }
 .text-gray {
-    color: #344054bd !important;
+	color: #344054bd !important;
+}
+
+.image_scroll_bar::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+.image_scroll_bar::-webkit-scrollbar-thumb {
+	background-color: #00aa55;
+	border-radius: 16px;
+	box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+		inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+.image_scroll_bar::-webkit-scrollbar-track {
+	background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
 }

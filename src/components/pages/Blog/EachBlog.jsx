@@ -1,37 +1,57 @@
 import React from 'react'
+import Link from 'next/link'
 import { RichText } from 'prismic-dom'
+import moment from 'moment'
+import Image from 'next/image'
 
-export default function EachBlog({ blog }) {
-	console.log(blog)
-	const convertRichTextToPlain = RichText.asText(blog.description)
+export default function EachBlog({
+	link,
+	title,
+	category,
+	created_at,
+	img,
+	alt,
+	description,
+	categoryLink,
+}) {
+	const convertRichTextToPlain = RichText.asText(description)
+
 	return (
 		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
-				<a href="blog-details.html">
-					<img
-						src="https://www.thesouthafrican.com/wp-content/uploads/2022/09/Choose-an-in-demand-career.jpg"
-						alt="Images"
+				<Link
+					className="w-100 relative "
+					style={{
+						minHeight: '200px',
+						position: 'relative',
+						width: '500px',
+						display: 'block',
+					}}
+					href={link}
+				>
+					<Image
+						fill
+						src={img}
+						alt={alt}
+						// style={{ objectFit: 'contain' }}
 					/>
-				</a>
+				</Link>
 
 				<div className="blog-content" bis_skin_checked="1">
 					<ul>
-						<li>
-							<a href="#">
-								<i className="ri-user-3-fill"></i>
-								{blog?.user.slug.replace('-', ' ')}
-							</a>
+						<li style={{ textTransform: 'capitalize' }}>
+							<Link href={categoryLink || '#'}>{category}</Link>
 						</li>
 						<li>
 							<i className="ri-calendar-line"></i>
-							{new Date(blog?.created_at).toDateString()}
+							{moment(created_at).format('DD MMMM, YYYY')}
 						</li>
 					</ul>
 					<h3 className="fw-500">
-						<a href="blog-details.html">${blog?.title}</a>
+						<Link href={link}>{title}</Link>
 					</h3>
 					<p>{convertRichTextToPlain.split(' ').slice(0, 13).join(' ')}</p>
-					<a href={`/publication/blog/${blog.slug}`} className="read-more">
+					<a href={link} className="read-more">
 						Read Post
 						<i className="ri-arrow-right-s-line"></i>
 					</a>

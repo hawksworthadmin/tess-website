@@ -5,6 +5,7 @@ import RecentPublication from './RecentPublication'
 import StackHolders from './StackHolders'
 import HomeHero from './HomeHero'
 import HomePartners from './HomePartners'
+import ResultAreaMap from './ResultAreaMap'
 
 export default function Home() {
 	return (
@@ -41,6 +42,7 @@ export default function Home() {
 			<WhatWeDo />
 			<HomePartners />
 			<RecentPublication />
+			<ResultAreaMap />
 			<StackHolders />
 		</>
 	)

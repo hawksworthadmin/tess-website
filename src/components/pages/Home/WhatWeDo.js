@@ -7,18 +7,17 @@ export default function WhatWeDo() {
 			style={{ backgroundColor: '#F9FAFB' }}
 		>
 			<div className="container">
-				<div className="pb-5 text-start">
-					<h5 className="text-theme font-30 fw-500" data-aos="fade-up">
-						What we do
-					</h5>
-					<p className="font-20 text-gray fw-300" data-aos="fade-up">
-						Lorem ipsum dolor sit amet consectetur. Vitae suspendisse dolor in
-						est rutrum. Lacinia in enim pellentesque venenatis interdum eu.
-					</p>
+				<div class="section-title">
+					<h2 data-aos="fade-up">What We Do</h2>
 				</div>
 			</div>
+			<br />
+			<br />
 			<div className="container">
-				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+				<div
+					className="row align-items-center"
+					style={{ marginBottom: '112px' }}
+				>
 					<div className="col-lg-6">
 						<div className="counselor-img pr-15">
 							<img
@@ -70,7 +69,10 @@ export default function WhatWeDo() {
 						</div>
 					</div>
 				</div>
-				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+				<div
+					className="row align-items-center"
+					style={{ marginBottom: '112px' }}
+				>
 					<div className="col-lg-6">
 						<div className="counselor-content pl-15">
 							<div className="single-counselor">
@@ -121,7 +123,10 @@ export default function WhatWeDo() {
 						</div>
 					</div>
 				</div>
-				<div className="row align-items-center" style={{ marginBottom: '112px' }}>
+				<div
+					className="row align-items-center"
+					style={{ marginBottom: '112px' }}
+				>
 					<div className="col-lg-6">
 						<div className="counselor-img pr-15">
 							<img

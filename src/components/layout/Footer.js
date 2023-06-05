@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -13,10 +14,9 @@ export default function Footer() {
 							<div className="single-footer-widget single-bg">
 								<a href="index.html" className="logo">
 									<img
-										src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
+										src="/assets/images/gpe.png"
 										alt="Image"
-										width={50}
-										className="rounded-full"
+										width={90}
 									/>
 								</a>
 
@@ -78,16 +78,17 @@ export default function Footer() {
 
 								<ul className="import-link">
 									<li>
-										<a href="government-services.html">Photo Gallery</a>
+										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
 									</li>
 									<li>
-										<a href="terms-conditions.html">Success Stories</a>
+										<a href="/publications/news-letters">News Letters</a>
 									</li>
 									<li>
-										<a href="privacy-policy.html">Reports</a>
+										<Link href="/publications/blog">Blog</Link>
 									</li>
+									
 									<li>
-										<a href="accessibility.html">Fact Sheets</a>
+										<Link href="/publications/fact-sheets">Fact Sheets</Link>
 									</li>
 								</ul>
 							</div>

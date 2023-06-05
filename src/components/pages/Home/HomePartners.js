@@ -5,7 +5,7 @@ export default function HomePartners() {
 		<section className="services-area services-area-style-two pt-100 pb-70">
 			<div className="container">
 				<div className="section-title" bis_skin_checked="1">
-					<h2 data-aos="fade-up">Municipality services</h2>
+					<h2 data-aos="fade-up">Our Partners</h2>
 					{/* <p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
