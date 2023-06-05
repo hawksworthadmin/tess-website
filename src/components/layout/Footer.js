@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -78,16 +79,17 @@ export default function Footer() {
 
 								<ul className="import-link">
 									<li>
-										<a href="government-services.html">Photo Gallery</a>
+										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
 									</li>
 									<li>
-										<a href="terms-conditions.html">Success Stories</a>
+										<a href="/publications/news-letters">News Letters</a>
 									</li>
 									<li>
-										<a href="privacy-policy.html">Reports</a>
+										<Link href="/publications/blog">Blog</Link>
 									</li>
+									
 									<li>
-										<a href="accessibility.html">Fact Sheets</a>
+										<Link href="/publications/fact-sheets">Fact Sheets</Link>
 									</li>
 								</ul>
 							</div>

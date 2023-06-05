@@ -20,6 +20,7 @@ export default function Document() {
 					defer
 					src="https://static.cdn.prismic.io/prismic.js?new=true&repo=tess-website"
 				></script>
+				<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"></link>
 			</Head>
 			<body>
 				<Main />
