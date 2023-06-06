@@ -18,7 +18,7 @@ export default function RecentPublication({ latestNews }) {
 						consectetur
 					</p> */}
 				</div>
-
+				{/*  */}
 				<div class="row justify-content-center">
 					{latestNews.map((news, id) => (
 						<EachRelease
