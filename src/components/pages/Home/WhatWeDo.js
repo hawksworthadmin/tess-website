@@ -35,6 +35,8 @@ export default function WhatWeDo() {
 					</p> */}
 				</div>
 			</div>
+			<br />
+			<br />
 			<div className="container">
 				<div
 					className="row align-items-center"

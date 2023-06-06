@@ -16,6 +16,10 @@
 	font-size: 72px;
 }
 
+.font-secondary {
+	font-family: 'Nanum Gothic', sans-serif !important;
+}
+
 .bg-img {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -34,7 +38,10 @@
 }
 
 .font-20 {
-	font-size: 16px !important;
+	font-size: 20px !important;
+}
+.font-24 {
+	font-size: 24px !important;
 }
 .font-30 {
 	font-size: 27px !important;
