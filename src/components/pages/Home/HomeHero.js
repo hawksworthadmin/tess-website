@@ -26,9 +26,9 @@ export default function HomeHero() {
 			}}
 		>
 			<div className="h-100 w-100 d-flex justify-content-center align-items-center">
-				<div className="col-lg-7 text-center" bis_skin_checked="1">
+				<div className="col-lg-10 text-center" bis_skin_checked="1">
 					<div
-						className="banner-content  d-flex flex-column align-items-center"
+						className="banner-content  d-flex flex-column align-items-center justify-content-center"
 						bis_skin_checked="1"
 						style={{ margin: 0, maxWidth: '100vw' }}
 					>
@@ -38,9 +38,12 @@ export default function HomeHero() {
 							data-aos-delay="50"
 							data-aos-duration="1000"
 						>
-							Revolutionizing the educational sector
+							Welcome to TESS (Transforming Education Systems at States Level)-
 						</h1>
-						<p
+						<h2 style={{ color: 'white' }}>
+							Revolutionizing the educational sector
+						</h2>
+						{/* <p
 							data-aos="fade-up"
 							data-aos-offset="200"
 							data-aos-delay="300"
@@ -48,14 +51,16 @@ export default function HomeHero() {
 							className="text-white mb-5"
 							style={{ fontSize, minWidth: '100%' }}
 						>
-							{`Welcome to TESS (Transforming Education Systems at State Level),
+							{`
+							Revolutionizing the educational sector
+							Welcome to TESS (Transforming Education Systems at State Level),
 							where we are committed to revolutionizing education systems for a
 							brighter future. Our program is designed to implement a
 							comprehensive framework and structure that will bring about
 							positive changes in education at various levels.`}
-						</p>
+						</p> */}
 
-						<div
+						{/* <div
 							className="slider-btn"
 							bis_skin_checked="1"
 							data-aos="flip-left"
@@ -65,7 +70,7 @@ export default function HomeHero() {
 							<a href="#fact" className="default-btn">
 								Learn more
 							</a>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

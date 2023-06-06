@@ -20,21 +20,25 @@ export default function RecentPublication({ latestNews }) {
 				</div>
 				{/*  */}
 				<div class="row justify-content-center">
-					{latestNews.map((news, id) => (
-						<EachRelease
-							key={news?.uid}
-							category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
-							title={news?.data?.title}
-							img={news?.data?.image?.url}
-							created_at={news?.first_publication_date}
-							alt={news?.data?.image?.alt}
-							description={news?.data?.description}
-							categoryLink={`${'/news-and-events/press-release'}${
-								news?.data?.category?.slug
-							}`}
-							link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
-						/>
-					))}
+					{latestNews?.length > 0 ? (
+						latestNews?.map((news, id) => (
+							<EachRelease
+								key={news?.uid}
+								category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
+								title={news?.data?.title}
+								img={news?.data?.image?.url}
+								created_at={news?.first_publication_date}
+								alt={news?.data?.image?.alt}
+								description={news?.data?.description}
+								categoryLink={`${'/news-and-events/press-release'}${
+									news?.data?.category?.slug
+								}`}
+								link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
+							/>
+						))
+					) : (
+						<p>NOT FOUND</p>
+					)}
 					{/* <EachRelease link={}/>
 					<EachRelease /> */}
 				</div>
@@ -62,6 +66,7 @@ const EachRelease = ({
 	categoryLink,
 }) => {
 	const convertRichTextToPlain = RichText?.asText(description)
+	console.log('mage', img)
 	return (
 		<div
 			class="col-lg-4 col-md-6"
@@ -71,10 +76,7 @@ const EachRelease = ({
 		>
 			<div class="single-blog-box">
 				<Link href={link}>
-					<img
-						src="https://static.foxnews.com/foxnews.com/content/uploads/2019/01/classroom-iStock.jpg"
-						alt="Images"
-					/>
+					<img src={img} alt={alt} />
 				</Link>
 
 				<div class="blog-content">
