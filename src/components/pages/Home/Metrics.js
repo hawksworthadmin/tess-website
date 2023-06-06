@@ -55,12 +55,13 @@ export default function Metrics() {
 						Who we are
 					</h5>
 					<p data-aos="fade-up" style={{ fontWeight: 400 }} className="font-20">
-						The Transforming Education Systems at State Level{' '}
-						<strong>{`(TESS)`}</strong> program was initiated in response to the
-						need for educational reform and improvement in Nigeria. The program
-						focuses on improving teacher quality, enhancing curriculum and
-						assessment systems, strengthening school infrastructure, and
-						promoting community engagement.
+						<strong>BESDA AF-TESS</strong> (Better Education Service Delivery
+						For All Additional Finance Transforming Education Systems at States
+						Level) program was initiated in response to the need for educational
+						reform and improvement in Nigeria. The program focuses on improving
+						teacher quality, enhancing curriculum and assessment systems,
+						strengthening school infrastructure, and promoting community
+						engagement.
 					</p>
 				</div>
 			</div>

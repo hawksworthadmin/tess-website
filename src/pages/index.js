@@ -14,18 +14,25 @@ export default function index({ pressReleases }) {
 export const getServerSideProps = async ({ previewData }) => {
 	const client = createClient(previewData)
 
-	const pressReleases = await client.getByType('press_release', {
-		pageSize: 3,
+	try {
+		const pressReleases = await client.getByType('press_release', {
+			pageSize: 3,
+			orderings: {
+				field: 'document.first_publication_date',
+				direction: 'desc',
+			},
+		})
 
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc',
-		},
-	})
-
-	return {
-		props: {
-			pressReleases: pressReleases.results,
-		},
+		return {
+			props: {
+				pressReleases: pressReleases.results,
+			},
+		}
+	} catch (error) {
+		return {
+			props: {
+				pressReleases: [],
+			},
+		}
 	}
 }
