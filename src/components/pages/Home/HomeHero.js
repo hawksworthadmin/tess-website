@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 export default function HomeHero() {
 	const [show, setShow] = useState(false)
-	const [fontSize, setFontSize] = useState('20px')
+	const [fontSize, setFontSize] = useState('40px')
+	const [fontSize2, setFontSize2] = useState('70px')
 	useEffect(() => {
 		console.log(window.innerWidth)
 		if (window.innerWidth > 500) {
-			setFontSize('20px')
+			setFontSize('40px')
+			setFontSize2('70px')
 		} else {
-			setFontSize('16px')
+			setFontSize('20px')
+			setFontSize2('40px')
 		}
 		setShow(true)
 	}, [])
@@ -37,8 +40,9 @@ export default function HomeHero() {
 							data-aos-offset="200"
 							data-aos-delay="50"
 							data-aos-duration="1000"
+							style={{ fontSize: fontSize2 }}
 						>
-							Revolutionizing the educational sector
+							{`Welcome to TESS (Transforming Education Systems at States Level)`}
 						</h1>
 						<p
 							data-aos="fade-up"
@@ -48,11 +52,7 @@ export default function HomeHero() {
 							className="text-white mb-5"
 							style={{ fontSize, minWidth: '100%' }}
 						>
-							{`Welcome to TESS (Transforming Education Systems at State Level),
-							where we are committed to revolutionizing education systems for a
-							brighter future. Our program is designed to implement a
-							comprehensive framework and structure that will bring about
-							positive changes in education at various levels.`}
+							{`Revolutionizing the educational sector.`}
 						</p>
 
 						<div

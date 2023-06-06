@@ -71,19 +71,15 @@ export default function Header() {
 	const TheLogo = ({ size }) => {
 		return (
 			<div className="d-flex align-items-center" style={{ gap: 10 }}>
-				<img
-					src="https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg"
-					alt="logo"
-					width={size || 70}
-				/>
+				<img src="/assets/images/gpe.png" alt="logo" width={size || 70} />
 				<div
 					className="d-flex text-theme flex-column"
 					style={{ maxWidth: '200px' }}
 				>
 					<span style={{ fontWeight: 600 }}>BESDA AF-TESS</span>
 					<span style={{ fontSize: '10px' }}>
-						Better Education Service Delivery For All Financing
-						<br /> Transforming Education Systems at State Level
+						Better Education Service Delivery For All <br /> Additional Finance
+						Transforming Education <br /> Systems at States Level
 					</span>
 				</div>
 			</div>
@@ -179,7 +175,37 @@ export default function Header() {
 								</ul>
 
 								<div className="others-options">
-									<ul>
+									<ul className="d-flex align-items-center gap-2">
+										<li>
+											<div className="option-item" bis_skin_checked="1">
+												<i className="search-btn ri-search-line"></i>
+												<i className="close-btn ri-close-line"></i>
+
+												<div
+													className="search-overlay search-popup"
+													bis_skin_checked="1"
+												>
+													<div
+														className="search-box"
+														bis_skin_checked="1"
+														style={{ display: 'block' }}
+													>
+														<form className="search-form">
+															<input
+																className="search-input"
+																name="search"
+																placeholder="Search"
+																type="text"
+															/>
+
+															<button className="search-button" type="submit">
+																<i className="ri-search-line"></i>
+															</button>
+														</form>
+													</div>
+												</div>
+											</div>
+										</li>
 										<li>
 											<button
 												className="default-btn register"
@@ -275,6 +301,7 @@ const SideNavLinks = ({ eachLink }) => {
 	return (
 		<>
 			<li className="nav-item">
+
 				{eachLink?.url ? (
 					<Link href={eachLink?.url} className="nav-link active-">
 						{eachLink?.name}
@@ -282,6 +309,12 @@ const SideNavLinks = ({ eachLink }) => {
 				) : (
 					<a className="nav-link active-">{eachLink?.name}</a>
 				)}
+
+				<Link href={eachLink?.url || '#'} className="nav-link active-">
+					{eachLink?.name}
+				</Link>
+
+
 				{eachLink?.children ? (
 					<ul
 						className="dropdown-menu"
