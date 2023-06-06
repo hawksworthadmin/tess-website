@@ -136,15 +136,24 @@ export default function Header() {
 										return (
 											<>
 												<li className="nav-item">
-													<Link
-														href={eachLink?.url || '#'}
-														className="nav-link fw-400 font-15"
-													>
-														{eachLink?.name}
-														{eachLink?.children ? (
-															<i className="ri-arrow-down-s-line"></i>
-														) : null}
-													</Link>
+													{eachLink.url ? (
+														<Link
+															href={eachLink?.url}
+															className="nav-link fw-400 font-15"
+														>
+															{eachLink?.name}
+															{eachLink?.children ? (
+																<i className="ri-arrow-down-s-line"></i>
+															) : null}
+														</Link>
+													) : (
+														<a className="nav-link fw-400 font-15">
+															{eachLink?.name}
+															{eachLink?.children ? (
+																<i className="ri-arrow-down-s-line"></i>
+															) : null}
+														</a>
+													)}
 
 													{eachLink?.children ? (
 														<ul className="dropdown-menu">
@@ -260,9 +269,9 @@ const MobileMenu = () => {
 									)
 								})}
 								<li className="nav-item">
-									<a href="contact.html" className="nav-link">
+									<Link href="/" className="nav-link">
 										Login
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</nav>
@@ -292,9 +301,19 @@ const SideNavLinks = ({ eachLink }) => {
 	return (
 		<>
 			<li className="nav-item">
+
+				{eachLink?.url ? (
+					<Link href={eachLink?.url} className="nav-link active-">
+						{eachLink?.name}
+					</Link>
+				) : (
+					<a className="nav-link active-">{eachLink?.name}</a>
+				)}
+
 				<Link href={eachLink?.url || '#'} className="nav-link active-">
 					{eachLink?.name}
 				</Link>
+
 
 				{eachLink?.children ? (
 					<ul
@@ -304,9 +323,9 @@ const SideNavLinks = ({ eachLink }) => {
 						{eachLink?.children?.map((val) => {
 							return (
 								<li className="nav-item" key={Math.random()}>
-									<a href="index.html" className="nav-link">
+									<Link href={val?.url} className="nav-link">
 										{val?.name}
-									</a>
+									</Link>
 								</li>
 							)
 						})}
@@ -316,8 +335,8 @@ const SideNavLinks = ({ eachLink }) => {
 					<a
 						onClick={() => setShow(!show)}
 						className="mean-expand"
-						href="#"
-						style={{ fontSize: '18px' }}
+						// href="#"
+						style={{ fontSize: '18px', cursor: 'pointer' }}
 					>
 						+
 					</a>

@@ -12,13 +12,13 @@ export default function Footer() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
-								<a href="index.html" className="logo">
+								<Link href="/" className="logo">
 									<img
 										src="/assets/images/gpe.png"
 										alt="Image"
 										width={90}
 									/>
-								</a>
+								</Link>
 
 								<p>
 									{`The TESS program aims to improve education by enhancing teacher quality, curriculum and assessment systems, school infrastructure, and community engagement.`}
@@ -26,24 +26,24 @@ export default function Footer() {
 
 								<ul className="social-icon">
 									<li>
-										<a href="https://www.facebook.com/" target="_blank">
+										<Link href="https://www.facebook.com/" target="_blank">
 											<i className="ri-facebook-fill"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://www.instagram.com/" target="_blank">
+										<Link href="https://www.instagram.com/" target="_blank">
 											<i className="ri-instagram-line"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://twitter.com/" target="_blank">
+										<Link href="https://twitter.com/" target="_blank">
 											<i className="ri-twitter-fill"></i>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a href="https://twitter.com/" target="_blank">
+										<Link href="https://twitter.com/" target="_blank">
 											<i className="ri-linkedin-box-fill"></i>
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</div>
@@ -62,11 +62,11 @@ export default function Footer() {
 									</li>
 									<li>
 										<i className="ri-mail-open-fill"></i>
-										<a href="mailto:info@wikin.com">info@tess.com</a>
+										<Link href="mailto:info@tess.com">info@tess.com</Link>
 									</li>
 									<li className="location">
 										<i className="ri-phone-fill"></i>
-										<a href="tel:+1-(514)-312-5678">+234 12345567</a>
+										<Link href="tel:+23412345567">+234 12345567</Link>
 									</li>
 								</ul>
 							</div>
@@ -81,10 +81,17 @@ export default function Footer() {
 										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
 									</li>
 									<li>
+
+										<Link href="/publications/blog">Blog</Link>
+									</li>
+									<li>
+										<Link href="/publications/reports">Reports</Link>
+
 										<a href="/publications/news-letters">News Letters</a>
 									</li>
 									<li>
 										<Link href="/publications/blog">Blog</Link>
+
 									</li>
 									
 									<li>

@@ -23,7 +23,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	try {
 		const client = createClient(previewData)
 
-		const photo_category = await client.getAllByType('image_gallery_category')
+		const photo_category = await client.getAllByType('video_gallery_category')
 
 		if (category == 'all') {
 			const videos = await client.getByType('video_gallery', {
@@ -44,7 +44,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 			}
 		} else {
 			const getCategoryIdUsingSlug = await client.getByUID(
-				'image_gallery_category',
+				'video_gallery_category',
 				category
 			)
 			const categoryId = getCategoryIdUsingSlug.id

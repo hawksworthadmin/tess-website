@@ -1,20 +1,17 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
 import * as prismic from '@prismicio/client'
 
-export default function index({ blogposts, totalPages, categories }) {
+export default function EventCategory({ events, totalPages, categories }) {
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'Events'}
+				posts={events}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
+				link={'/news-and-events/events/'}
 			/>
 		</Layout>
 	)
@@ -27,19 +24,22 @@ export const getServerSideProps = async ({ query, params }) => {
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
 
 	try {
-		const categories = await client.getByType('category', {
+		const categories = await client.getByType('event_category', {
 			orderings: {
 				field: 'document.uid',
 				direction: 'desc',
 			},
 		})
 
-		const getCategoryIdUsingSlug = await client.getByUID('category', category)
+		const getCategoryIdUsingSlug = await client.getByUID(
+			'event_category',
+			category
+		)
 
 		const categoryId = getCategoryIdUsingSlug.id
 
-		const blog = await client.getByType('blopgpost', {
-			filters: [prismic.filter.at('my.blopgpost.category', categoryId)],
+		const events = await client.getByType('event', {
+			filters: [prismic.filter.at('my.event.category', categoryId)],
 			pageSize: 4,
 			page: page,
 			orderings: {
@@ -50,11 +50,9 @@ export const getServerSideProps = async ({ query, params }) => {
 
 		return {
 			props: {
-				blogposts: blog.results,
-				totalPages: blog.total_pages,
+				events: events.results,
+				totalPages: events.total_pages,
 				categories: categories.results,
-				params,
-				getCategoryIdUsingSlug,
 			},
 		}
 	} catch (error) {

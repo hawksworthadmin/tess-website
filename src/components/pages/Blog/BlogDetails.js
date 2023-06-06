@@ -7,7 +7,13 @@ import React from 'react'
 
 import RichTextComponent from '@/components/pages/Blog/RichTextComponent'
 
-export default function BlogDetails({ post, categories, link }) {
+export default function BlogDetails({
+	post,
+	categories,
+	link,
+	checkEvent,
+	heading,
+}) {
 	console.log('from details', post)
 	return (
 		<Layout>
@@ -17,7 +23,7 @@ export default function BlogDetails({ post, categories, link }) {
 					style={{ height: '112px', backgroundColor: '#12B76A' }}
 				>
 					<div className="container d-flex flex-column justify-content-center h-100">
-						<h3 className="fw-400 text-white">The Blog Title</h3>
+						<h3 className="fw-400 text-white">{heading}</h3>
 					</div>
 				</div>
 				<section className="blog-details-area ptb-100">
@@ -29,11 +35,19 @@ export default function BlogDetails({ post, categories, link }) {
 										<img
 											// fill
 											// style={{ objectFit: 'contain' }}
-											src={post?.data?.image?.url}
-											alt={post?.data?.image?.alt}
+											src={
+												!checkEvent
+													? post?.data?.image?.url
+													: post?.data?.featured_image?.url
+											}
+											alt={
+												!checkEvent
+													? post?.data?.image?.alt
+													: post?.data?.featured_image?.alt
+											}
 										/>
 									</div>
-									<div className="blog-top-content">
+									<div className="blog-top-content pb-100">
 										<div className="news-content">
 											<ul className="admin d-flex">
 												<li>
@@ -47,13 +61,25 @@ export default function BlogDetails({ post, categories, link }) {
 
 												<li>
 													<i className="ri-calendar-line"></i>
-													{moment(post?.data?.created_at).format('DD MMMM')}
+													{moment(post?.first_publication_date).format(
+														'DD MMMM'
+													)}
 												</li>
 											</ul>
 
 											<h3>{post?.data?.title}</h3>
 
 											{<RichTextComponent field={post?.data?.description} />}
+
+											{checkEvent && post.data?.video?.url && (
+												<div>
+													<video
+														src={post.data?.video?.url}
+														controls
+														className="w-100 h-100 video_poster"
+													></video>
+												</div>
+											)}
 										</div>
 									</div>
 								</div>

@@ -20,7 +20,7 @@
 				"config": {
 					"label": "Category",
 					"select": "document",
-					"customtypes": ["image_gallery_category"]
+					"customtypes": ["video_gallery_category"]
 				}
 			},
 			"content": {

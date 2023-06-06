@@ -1,11 +1,9 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
-import { useRouter } from 'next/router'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
 
 export default function Event({ events, totalPages, categories }) {
-	console.log(events)
 	return (
 		<Layout>
 			<Blog
@@ -14,7 +12,7 @@ export default function Event({ events, totalPages, categories }) {
 				checkEvent={true}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/news-and-events/blog/'}
+				link={'/news-and-events/events/'}
 			/>
 		</Layout>
 	)

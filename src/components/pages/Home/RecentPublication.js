@@ -1,6 +1,9 @@
+import moment from 'moment'
+import Link from 'next/link'
 import React from 'react'
+import { RichText } from 'prismic-dom'
 
-export default function RecentPublication() {
+export default function RecentPublication({ latestNews }) {
 	return (
 		<section
 			class="blog-area blog-area-two- pt-100 pb-70"
@@ -9,17 +12,31 @@ export default function RecentPublication() {
 			<div class="container">
 				<div class="section-title">
 					<h2 data-aos="fade-up">Latest News</h2>
-					<p data-aos="fade-up" className='font-20'>
+					{/* <p data-aos="fade-up" className="font-20">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
 						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
 						consectetur
-					</p>
+					</p> */}
 				</div>
-
+				{/*  */}
 				<div class="row justify-content-center">
-					<EachRelease />
-					<EachRelease />
-					<EachRelease />
+					{latestNews.map((news, id) => (
+						<EachRelease
+							key={news?.uid}
+							category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
+							title={news?.data?.title}
+							img={news?.data?.image?.url}
+							created_at={news?.first_publication_date}
+							alt={news?.data?.image?.alt}
+							description={news?.data?.description}
+							categoryLink={`${'/news-and-events/press-release'}${
+								news?.data?.category?.slug
+							}`}
+							link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
+						/>
+					))}
+					{/* <EachRelease link={}/>
+					<EachRelease /> */}
 				</div>
 			</div>
 
@@ -34,7 +51,17 @@ export default function RecentPublication() {
 	)
 }
 
-const EachRelease = () => {
+const EachRelease = ({
+	link,
+	title,
+	category,
+	created_at,
+	img,
+	alt,
+	description,
+	categoryLink,
+}) => {
+	const convertRichTextToPlain = RichText?.asText(description)
 	return (
 		<div
 			class="col-lg-4 col-md-6"
@@ -43,37 +70,34 @@ const EachRelease = () => {
 			data-aos-duration="1000"
 		>
 			<div class="single-blog-box">
-				<a href="blog-details.html">
+				<Link href={link}>
 					<img
 						src="https://static.foxnews.com/foxnews.com/content/uploads/2019/01/classroom-iStock.jpg"
 						alt="Images"
 					/>
-				</a>
+				</Link>
 
 				<div class="blog-content">
 					<ul>
 						<li>
-							<a href="#">
-								<i class="ri-user-3-fill"></i>
-								Cameron
-							</a>
+							<Link href={categoryLink}>
+								{/* <i class="ri-user-3-fill"></i> */}
+								{category}
+							</Link>
 						</li>
 						<li>
 							<i class="ri-calendar-line"></i>
-							February 12, 2021
+							{moment(created_at).format('MMMM DD, YYYY')}
 						</li>
 					</ul>
 					<h3>
-						<a href="blog-details.html">Strengthening School Infrastructure</a>
+						<a href={link}>{title}</a>
 					</h3>
-					<p>
-						The importance of proper infrastructure in facilitating effective
-						education delivery cannot be over-emphasized.
-					</p>
-					<a href="blog-details.html" class="read-more">
+					<p>{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}</p>
+					<Link href={link} class="read-more">
 						Read more
 						<i class="ri-arrow-right-s-line"></i>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>
