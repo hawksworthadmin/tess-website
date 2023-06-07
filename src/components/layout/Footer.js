@@ -13,11 +13,7 @@ export default function Footer() {
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
 								<Link href="/" className="logo">
-									<img
-										src="/assets/images/gpe.png"
-										alt="Image"
-										width={90}
-									/>
+									<img src="/assets/images/gpe.png" alt="Image" width={90} />
 								</Link>
 
 								<p>
@@ -80,20 +76,17 @@ export default function Footer() {
 									<li>
 										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
 									</li>
-									<li>
 
-										<Link href="/publications/blog">Blog</Link>
-									</li>
 									<li>
 										<Link href="/publications/reports">Reports</Link>
-
-										<a href="/publications/news-letters">News Letters</a>
+									</li>
+									<li>
+										<Link href="/publications/news-letters">News Letters</Link>
 									</li>
 									<li>
 										<Link href="/publications/blog">Blog</Link>
-
 									</li>
-									
+
 									<li>
 										<Link href="/publications/fact-sheets">Fact Sheets</Link>
 									</li>

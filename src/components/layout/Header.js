@@ -67,20 +67,24 @@ export const navLinks = [
 	},
 ]
 
-export default function Header() {
+export default function Header({ setOpenSearchComponent }) {
 	const TheLogo = ({ size }) => {
 		return (
 			<div className="d-flex align-items-center" style={{ gap: 10 }}>
-				<img src="/assets/images/gpe.png" alt="logo" width={size || 70} />
+				<img
+					src="/assets/figma/ministry_of_edu_logo.png"
+					alt="logo"
+					width={size || 70}
+				/>
 				<div
 					className="d-flex text-theme flex-column"
 					style={{ maxWidth: '200px' }}
 				>
 					<span style={{ fontWeight: 600 }}>BESDA AF-TESS</span>
-					<span style={{ fontSize: '10px' }}>
+					{/* <span style={{ fontSize: '10px' }}>
 						Better Education Service Delivery For All <br /> Additional Finance
 						Transforming Education <br /> Systems at States Level
-					</span>
+					</span> */}
 				</div>
 			</div>
 		)
@@ -94,7 +98,7 @@ export default function Header() {
 							<MobileMenu />
 							<div className="logo-">
 								<Link href="/">
-									<TheLogo />
+									<TheLogo size={48} />
 								</Link>
 							</div>
 						</div>
@@ -114,24 +118,6 @@ export default function Header() {
 								style={{ display: 'block' }}
 							>
 								<ul className="navbar-nav">
-									{/* <li className="nav-item">
-										<Link href="/" className="nav-link fw-400">
-											Home
-										</Link>
-									</li>
-
-									<li className="nav-item">
-										<Link href="/who-we-are" className="nav-link fw-400">
-											Who We Are
-										</Link>
-									</li>
-
-									<li className="nav-item">
-										<Link href="/what-we-do" className="nav-link fw-400">
-											What We Do
-										</Link>
-									</li> */}
-
 									{navLinks.map((eachLink, i) => {
 										return (
 											<>
@@ -177,9 +163,13 @@ export default function Header() {
 								<div className="others-options">
 									<ul className="d-flex align-items-center gap-2">
 										<li>
-											<div className="option-item" bis_skin_checked="1">
+											<div
+												onClick={() => setOpenSearchComponent((prev) => !prev)}
+												className="option-item"
+												bis_skin_checked="1"
+											>
 												<i className="search-btn ri-search-line"></i>
-												<i className="close-btn ri-close-line"></i>
+												{/* <i className="close-btn ri-close-line"></i>
 
 												<div
 													className="search-overlay search-popup"
@@ -203,7 +193,7 @@ export default function Header() {
 															</button>
 														</form>
 													</div>
-												</div>
+												</div> */}
 											</div>
 										</li>
 										<li>
@@ -301,7 +291,6 @@ const SideNavLinks = ({ eachLink }) => {
 	return (
 		<>
 			<li className="nav-item">
-
 				{eachLink?.url ? (
 					<Link href={eachLink?.url} className="nav-link active-">
 						{eachLink?.name}
@@ -309,11 +298,6 @@ const SideNavLinks = ({ eachLink }) => {
 				) : (
 					<a className="nav-link active-">{eachLink?.name}</a>
 				)}
-
-				<Link href={eachLink?.url || '#'} className="nav-link active-">
-					{eachLink?.name}
-				</Link>
-
 
 				{eachLink?.children ? (
 					<ul

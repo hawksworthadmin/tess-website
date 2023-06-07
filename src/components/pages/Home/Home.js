@@ -40,11 +40,8 @@ export default function Home({ latestNews }) {
 			</section>
 			<Metrics />
 			<WhatWeDo />
-			<HomePartners />
-
+			{/* <HomePartners /> */}
 			<RecentPublication latestNews={latestNews} />
-
-			<RecentPublication />
 			<ResultAreaMap />
 			<StackHolders />
 		</>
