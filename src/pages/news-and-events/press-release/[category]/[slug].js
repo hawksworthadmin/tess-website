@@ -3,13 +3,13 @@ import React from 'react'
 
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
 
-export default function Details({ blog, categories }) {
+export default function Details({ pressRelease, categories }) {
 	return (
 		<BlogDetails
-			post={blog}
+			post={pressRelease}
 			categories={categories}
-			link={'/publications/blog/'}
-			heading={'Blogs'}
+			link={'/news-and-events/press-release/'}
+			heading={'News and Press Release'}
 		/>
 	)
 }
@@ -19,18 +19,18 @@ export const getServerSideProps = async ({ previewData, params }) => {
 
 	const client = createClient(previewData)
 	try {
-		const categories = await client.getByType('category', {
+		const categories = await client.getByType('press_release_category', {
 			orderings: {
 				field: 'document.uid',
 				direction: 'desc',
 			},
 		})
 
-		const blog = await client.getByUID('blopgpost', slug)
+		const pressRelease = await client.getByUID('press_release', slug)
 
 		return {
 			props: {
-				blog,
+				pressRelease,
 				categories: categories.results,
 			},
 		}

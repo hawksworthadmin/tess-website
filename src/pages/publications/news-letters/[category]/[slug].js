@@ -9,6 +9,7 @@ export default function Details({ newsletter, categories }) {
 			post={newsletter}
 			categories={categories}
 			link={'/publications/news-letters/'}
+			heading={'News Letters'}
 		/>
 	)
 }

@@ -82,7 +82,7 @@ const EachLevel = ({ data, index }) => {
 
 				<div className="col-8">
 					<h3>
-						<a href="services-details.html">{data?.name}</a>
+						<a>{data?.name}</a>
 					</h3>
 
 					<p>{data?.des}</p>

@@ -7,11 +7,10 @@ import { Client, PrismicDocument } from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
 
 export default function index({ blogposts, totalPages, categories }) {
-	console.log(blogposts)
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
+				heading={'Blogs'}
 				posts={blogposts}
 				totalPages={totalPages}
 				categories={categories}

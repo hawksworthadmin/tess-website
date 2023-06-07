@@ -1,6 +1,6 @@
 {
-	"id": "newsletter",
-	"label": "Newsletter",
+	"id": "press_release",
+	"label": "Press Release",
 	"format": "custom",
 	"repeatable": true,
 	"status": true,
@@ -11,6 +11,10 @@
 				"type": "Text",
 				"config": { "label": "Title", "placeholder": "" }
 			},
+			"image": {
+				"type": "Image",
+				"config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+			},
 			"description": {
 				"type": "StructuredText",
 				"config": {
@@ -20,12 +24,12 @@
 					"multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
 				}
 			},
-			"image": {
-				"type": "Image",
+			"author": {
+				"type": "Link",
 				"config": {
-					"label": "Featured Image",
-					"constraint": {},
-					"thumbnails": []
+					"label": "Author",
+					"select": "document",
+					"customtypes": ["user"]
 				}
 			},
 			"category": {
@@ -33,15 +37,7 @@
 				"config": {
 					"label": "Category",
 					"select": "document",
-					"customtypes": ["newsletter_category"]
-				}
-			},
-			"author": {
-				"type": "Link",
-				"config": {
-					"label": "Author",
-					"select": "document",
-					"customtypes": ["user"]
+					"customtypes": ["press_release_category"]
 				}
 			}
 		}

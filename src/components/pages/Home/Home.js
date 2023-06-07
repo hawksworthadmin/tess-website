@@ -7,7 +7,7 @@ import HomeHero from './HomeHero'
 import HomePartners from './HomePartners'
 import ResultAreaMap from './ResultAreaMap'
 
-export default function Home() {
+export default function Home({ latestNews }) {
 	return (
 		<>
 			<HomeHero />
@@ -40,8 +40,8 @@ export default function Home() {
 			</section>
 			<Metrics />
 			<WhatWeDo />
-			<HomePartners />
-			<RecentPublication />
+			{/* <HomePartners /> */}
+			<RecentPublication latestNews={latestNews} />
 			<ResultAreaMap />
 			<StackHolders />
 		</>
