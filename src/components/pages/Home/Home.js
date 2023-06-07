@@ -11,6 +11,7 @@ export default function Home({ latestNews }) {
 	return (
 		<>
 			<HomeHero />
+			<HomePartners />
 
 			<section
 				className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
@@ -38,7 +39,6 @@ export default function Home({ latestNews }) {
 					</p>
 				</div>
 			</section>
-			<HomePartners />
 			<Metrics />
 			<WhatWeDo />
 			<RecentPublication latestNews={latestNews} />
