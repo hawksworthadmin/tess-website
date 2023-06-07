@@ -38,9 +38,9 @@ export default function Home({ latestNews }) {
 					</p>
 				</div>
 			</section>
+			<HomePartners />
 			<Metrics />
 			<WhatWeDo />
-			{/* <HomePartners /> */}
 			<RecentPublication latestNews={latestNews} />
 			<ResultAreaMap />
 			<StackHolders />
