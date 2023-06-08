@@ -8,7 +8,7 @@ export default function PillarOne() {
 					<div className="col-lg-6" bis_skin_checked="1">
 						<div className="local-councils-img pl-15" bis_skin_checked="1">
 							<img
-								src="https://atlantablackstar.com/wp-content/uploads/2014/12/o-BLACK-TEACHERS-facebook.jpg"
+								src="/assets/images/what-we-do/tess_4.jpeg"
 								alt="Image"
 								className="rounded"
 							/>

@@ -24,7 +24,7 @@ export default function PillarThree() {
 					<div className="col-lg-6" bis_skin_checked="1">
 						<div className="local-councils-img pl-15" bis_skin_checked="1">
 							<img
-								src="https://i0.wp.com/prismreports.org/wp-content/uploads/2020/08/iStock-1005285232-4.jpg?fit=915%2C610&ssl=1"
+								src="/assets/images/what-we-do/tess_school.jpeg"
 								alt="Image"
 								className="rounded"
 							/>

@@ -2,6 +2,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import React from 'react'
 import { RichText } from 'prismic-dom'
+import Image from 'next/image'
 
 export default function RecentPublication({ latestNews }) {
 	return (
@@ -66,7 +67,7 @@ const EachRelease = ({
 	categoryLink,
 }) => {
 	const convertRichTextToPlain = RichText?.asText(description)
-	console.log('mage', img)
+
 	return (
 		<div
 			class="col-lg-4 col-md-6"
@@ -75,8 +76,11 @@ const EachRelease = ({
 			data-aos-duration="1000"
 		>
 			<div class="single-blog-box">
-				<Link href={link}>
-					<img src={img} alt={alt} />
+				<Link
+					style={{ display: 'block', height: '350px', position: 'relative' }}
+					href={link}
+				>
+					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
 				</Link>
 
 				<div class="blog-content">
@@ -93,9 +97,11 @@ const EachRelease = ({
 						</li>
 					</ul>
 					<h3>
-						<a href={link}>{title}</a>
+						<Link href={link}>{title.split(' ').slice(0, 3).join(' ')}...</Link>
 					</h3>
-					<p>{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}</p>
+					<p>
+						{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}...
+					</p>
 					<Link href={link} class="read-more">
 						Read more
 						<i class="ri-arrow-right-s-line"></i>

@@ -1,67 +1,87 @@
 import Layout from '@/components/layout/Layout'
 import React, { useState } from 'react'
+import * as prismic from '@prismicio/client'
+import { createClient } from '../../../prismicio'
+import SearchResults from '@/components/pages/Search/SearchResults'
 
-const index = ({ query }) => {
-	const [searchQuery, setSearchQuery] = useState(query)
+const index = ({
+	query,
+	blogPosts,
+	press_release,
+	video_gallery,
+	image_gallery,
+	totalPages,
+	events,
+	reports,
+	all,
+}) => {
+	console.log(all)
 	return (
-		<Layout>
-			<div>
-				<form
-					style={{
-						width: '100%',
-						padding: '38px ',
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'center',
-					}}
-				>
-					<div
-						style={{
-							display: 'flex',
-							flex: '1',
-							gap: '19px',
-							alignItems: 'center',
-						}}
-					>
-						<i class="ri-search-line"></i>
-						<input
-							onChange={(e) => setSearchQuery(e.target.value)}
-							style={{
-								border: 'none',
-								flex: 1,
-								padding: '4px',
-								marginRight: '8px',
-							}}
-							className=" "
-							placeholder="Search for anything"
-							type="text"
-						/>
-					</div>
-					{/* <button
-							style={{
-								backgroundColor: 'transparent',
-								border: '1px solid #12B76A',
-								padding: '10px 16px',
-								borderRadius: '32px',
-								color: '#12B76A',
-							}}
-						>
-							Search
-						</button> */}
-				</form>
-			</div>
+		<Layout query={query}>
+			<SearchResults
+				blogPosts={blogPosts}
+				press_release={press_release}
+				video_gallery={video_gallery}
+				image_gallery={image_gallery}
+				query={query}
+				totalPages={totalPages}
+				reports={reports}
+				events={events}
+			/>
 		</Layout>
 	)
 }
 
-export const getServerSideProps = async ({ query }) => {
-	const { query: searchQuery } = query
+export const getServerSideProps = async ({ previewData, query }) => {
+	const searchQuery = query.query || ''
+	const page = Number(query.page) || 1
 
-	console.log(searchQuery)
+	const client = createClient(previewData)
+
+	const searchResults = await client.get({
+		filters: [
+			prismic.filter.any('document.type', [
+				'blopgpost',
+				'video_gallery',
+				'image_gallery',
+				'press_release',
+				'report',
+				'event',
+			]),
+			prismic.filter.fulltext('document', searchQuery),
+		],
+		orderings: {
+			field: 'document.first_publication_date',
+			direction: 'desc',
+		},
+		pageSize: 10,
+		page: page,
+	})
+
+	const blogPosts =
+		searchResults.results?.filter((post) => post?.type == 'blopgpost') || []
+	const press_release =
+		searchResults.results?.filter((post) => post?.type == 'press_release') || []
+	const video_gallery =
+		searchResults.results?.filter((post) => post?.type == 'video_gallery') || []
+	const image_gallery =
+		searchResults.results?.filter((post) => post?.type == 'image_gallery') || []
+	const events =
+		searchResults.results?.filter((post) => post?.type == 'event') || []
+	const reports =
+		searchResults.results?.filter((post) => post?.type == 'report') || []
 
 	return {
 		props: {
 			query: searchQuery,
+			blogPosts,
+			press_release,
+			video_gallery,
+			image_gallery,
+			reports,
+			events,
+			totalPages: searchResults.total_pages,
+			all: searchResults,
 		},
 	}
 }

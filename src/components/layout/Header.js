@@ -164,7 +164,10 @@ export default function Header({ setOpenSearchComponent }) {
 									<ul className="d-flex align-items-center gap-2">
 										<li>
 											<div
-												onClick={() => setOpenSearchComponent((prev) => !prev)}
+												onClick={() =>
+													setOpenSearchComponent &&
+													setOpenSearchComponent((prev) => !prev)
+												}
 												className="option-item"
 												bis_skin_checked="1"
 											>

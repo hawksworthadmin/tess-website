@@ -12,27 +12,17 @@ export default function WhatWeDo() {
 					<h2
 						style={{
 							fontFamily: 'Syne !important',
-							// fontSize: '120px',
-							// fontWeight: 700,
+
 							textAlign: 'center',
 							color: '#F6FEF9',
 							WebkitTextStroke: '1.5px #12B76A',
 							WebkitTextFillColor: 'transparent',
-							// border: '1.5px solid #12B76A',
 						}}
 						className=" font-60 fw-700 section-title"
 						data-aos="fade-up"
 					>
 						What we do
 					</h2>
-					{/* <p
-						style={{ textAlign: 'center' }}
-						className="font-20 text-gray fw-300"
-						data-aos="fade-up"
-					>
-						Lorem ipsum dolor sit amet consectetur. Vitae suspendisse dolor in
-						est rutrum. Lacinia in enim pellentesque venenatis interdum eu.
-					</p> */}
 				</div>
 			</div>
 			<br />
@@ -44,7 +34,7 @@ export default function WhatWeDo() {
 				>
 					<WhatWeDoContent
 						number={1}
-						title={`Reduction In The Number of Out-of-School Children, Focused On Equity`}
+						title={`Reduction in the number of out-of-school children, focused on equity`}
 						paragraph={`Our focus on equity drives this results area, aiming to ensure more
 							 equitable allocation of state education resources. Specifically, we 
 							 work towards improving learning conditions in the most disadvantaged 
@@ -52,7 +42,7 @@ export default function WhatWeDo() {
 					/>
 					<WhatWeDoContent
 						number={2}
-						title={`Enhancing Teaching Practices and Measuring Learning Outcomes, 
+						title={`Enhancing teaching practices and measuring learning outcomes, 
 							Focused On Learning Outcomes. `}
 						paragraph={`At TESS, we are committed to improving the quality of
 						 education by enhancing teaching practices and measuring learning
@@ -62,7 +52,7 @@ export default function WhatWeDo() {
 					/>
 					<WhatWeDoContent
 						number={3}
-						title={`Improving Teacher Development and Making Education Expenditures
+						title={`Improving teacher development and making education expenditures
 						 Transparent and accessible For Policy Formulation, Focused on 
 						 efficiency and system management.`}
 						paragraph={`The importance of proper infrastructure in facilitating
@@ -119,7 +109,7 @@ const WhatWeDoContent = ({ number, title, paragraph }) => {
 						</div>
 						<h4
 							className="font-30 text-theme fw-500"
-							style={{ marginBottom: '20px' }}
+							style={{ marginBottom: '20px', textTransform: 'initial' }}
 							data-aos-delay="50"
 							data-aos="fade-up"
 						>
