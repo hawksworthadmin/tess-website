@@ -2,17 +2,9 @@ import React from 'react'
 
 export default function HomePartners() {
 	return (
-		<section className="services-area services-area-style-two pt-100 pb-70">
-			<div className="container">
-				<div className="section-title" bis_skin_checked="1">
-					{/* <h2 data-aos="fade-up">Our Partners</h2> */}
-					{/* <p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
-						consectetur
-					</p> */}
-				</div>
-				<div className="row justify-content-center">
+		<section className="services-area services-area-style-two  pb-70">
+			<section className="container ">
+				<div className="row justify-content-center align-items-center">
 					<div className="col-lg-3 text-center mb-4">
 						<img
 							data-aos="fade-up"
@@ -40,7 +32,7 @@ export default function HomePartners() {
 						/>
 					</div>
 				</div>
-			</div>
+			</section>
 		</section>
 	)
 }
