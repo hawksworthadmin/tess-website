@@ -43,7 +43,7 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 
 		const categoryId = getCategoryIdUsingSlug.id
 
-		const press_release = await client.getByType('event', {
+		const press_release = await client.getByType('press_release', {
 			filters: [prismic.filter.at('my.press_release.category', categoryId)],
 			pageSize: 4,
 			page: page,

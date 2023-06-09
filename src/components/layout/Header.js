@@ -38,19 +38,19 @@ export const navLinks = [
 				name: 'Events',
 				url: '/news-and-events/events',
 			},
-			{
-				name: 'Workshops',
-				url: '/news-and-events/workshops',
-			},
+			// {
+			// 	name: 'Workshops',
+			// 	url: '/news-and-events/workshops',
+			// },
 		],
 	},
 	{
 		name: 'Publications',
 		children: [
-			{
-				name: 'Fact sheets',
-				url: '/publications/fact-sheets',
-			},
+			// {
+			// 	name: 'Fact sheets',
+			// 	url: '/publications/fact-sheets',
+			// },
 			{
 				name: 'News Letters',
 				url: '/publications/news-letters',
@@ -133,7 +133,10 @@ export default function Header({ setOpenSearchComponent }) {
 															) : null}
 														</Link>
 													) : (
-														<a className="nav-link fw-400 font-15">
+														<a
+															style={{ cursor: 'pointer' }}
+															className="nav-link fw-400 font-15"
+														>
 															{eachLink?.name}
 															{eachLink?.children ? (
 																<i className="ri-arrow-down-s-line"></i>

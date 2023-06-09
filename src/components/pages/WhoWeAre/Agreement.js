@@ -73,11 +73,7 @@ const EachLevel = ({ data, index }) => {
 			>
 				{/* <span class="flaticon-government"></span> */}
 				<div className="col-3">
-					<img
-						src={
-							'https://admaa.b-cdn.net/wp-content/uploads/2020/06/nigeria-coats-of-arms-decal-3.jpg'
-						}
-					/>
+					<img src={data?.img} />
 				</div>
 
 				<div className="col-8">

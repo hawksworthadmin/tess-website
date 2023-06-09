@@ -2,6 +2,7 @@ import React from 'react'
 import EachSearchBlog from './EachSearchBlog'
 import VideoResult from './VideoResult'
 import EachPhoto from '../PhotoGallery/EachPhoto'
+import EachSearchPhoto from './EachSearchImage'
 
 const BlogSearch = ({ posts, title, queryWord, link }) => {
 	if (title == 'Videos') {
@@ -22,10 +23,11 @@ const BlogSearch = ({ posts, title, queryWord, link }) => {
 					style={{ marginTop: 20, alignItems: 'stretch', gap: '32px' }}
 				>
 					{posts?.map((photo) => (
-						<EachPhoto
+						<EachSearchPhoto
 							key={photo?.id}
 							img={photo?.data?.image?.url}
 							alt={photo?.data?.image?.alt}
+							content={photo?.data?.content}
 						/>
 					))}
 				</div>

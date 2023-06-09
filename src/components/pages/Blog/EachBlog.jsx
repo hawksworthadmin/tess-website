@@ -39,7 +39,15 @@ export default function EachBlog({
 
 				<div className="blog-content" bis_skin_checked="1">
 					<ul>
-						<li style={{ textTransform: 'capitalize' }}>
+						<li
+							style={{
+								textTransform: 'capitalize',
+								background: '#e7f4eb',
+								color: 'white',
+								padding: '2px 6px',
+								borderRadius: '8px',
+							}}
+						>
 							<Link href={categoryLink || '#'}>{category}</Link>
 						</li>
 						<li>
@@ -51,10 +59,10 @@ export default function EachBlog({
 						<Link href={link}>{title}</Link>
 					</h3>
 					<p>{convertRichTextToPlain.split(' ').slice(0, 13).join(' ')}</p>
-					<a href={link} className="read-more">
+					<Link href={link} className="read-more">
 						Read Post
 						<i className="ri-arrow-right-s-line"></i>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>

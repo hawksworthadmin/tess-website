@@ -18,8 +18,6 @@ export default function Blog({
 	const pathname = router.asPath.split('?')[0] // doing this to get the accurate pathname
 	// so that the component is reuseable for  both the blog page and the category pages
 
-	console.log(posts)
-
 	const pageNumbers = Array.from(
 		{ length: totalPages },
 		(_, index) => index + 1
@@ -57,8 +55,8 @@ export default function Blog({
 											date={post?.data?.date}
 											title={post?.data?.title}
 											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
-											alt={post?.data?.image?.alt}
-											image={post?.data?.image?.url}
+											alt={post?.data?.featured_image?.alt}
+											image={post?.data?.featured_image?.url}
 											location={post?.data?.location}
 											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
 										/>

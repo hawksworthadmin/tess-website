@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-export default function EachPhoto({ img, alt, content }) {
+export default function EachSearchPhoto({ img, alt, content }) {
 	const [show, setShow] = useState(false)
 	return (
 		<>
 			{show && <Preview img={img} alt={alt} onClick={() => setShow(false)} />}
 			<div
 				onClick={() => setShow(true)}
-				className="col-lg-4 col-md-6 mix business"
+				className="col-lg-5 col-md-6 mix business"
 				style={{
 					display: 'inline-block',
 					cursor: 'pointer',
@@ -20,14 +20,15 @@ export default function EachPhoto({ img, alt, content }) {
 					style={{
 						position: 'relative',
 						height: '400px',
-						background:
-							'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)',
+						overflow: 'hidden',
 						borderRadius: '8px',
+						background:
+							'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(.jpg)',
 					}}
 					className="gallery-item"
 					bis_skin_checked="1"
 				>
-					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image src={img} alt={alt} fill />
 
 					<div className="gallery-item-content" bis_skin_checked="1">
 						{/* <a href="assets/images/gallery/gallery-1.jpg">Office building</a> */}

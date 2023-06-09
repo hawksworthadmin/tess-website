@@ -16,7 +16,6 @@ export default function Metrics() {
 			: setCurrentSlide(currentSlide - 1)
 	}
 
-	console.log('currentslide', currentSlide)
 	return (
 		<section
 			className="discover-area discover-area-style-three pt-100 "
