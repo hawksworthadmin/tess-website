@@ -14,6 +14,7 @@ export default function Home({ latestNews }) {
 			<HomeHero />
 			<Partners />
 			{/* <HomePartners /> */}
+
 			<section
 				className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
 				style={{
