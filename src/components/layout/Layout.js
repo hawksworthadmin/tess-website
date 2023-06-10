@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { useRouter } from 'next/router'
+import Chatbot from './Chatbot'
 
 export default function Layout({ children, query }) {
 	const router = useRouter()
@@ -80,7 +81,9 @@ export default function Layout({ children, query }) {
 				</div>
 			</form>
 			<main className="animate__fadeIn animate__animated ">{children}</main>
+
 			<Footer />
+			{/* <Chatbot /> */}
 		</>
 	)
 }

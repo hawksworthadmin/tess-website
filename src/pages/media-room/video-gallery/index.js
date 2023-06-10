@@ -4,7 +4,6 @@ import React from 'react'
 import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
 export default function _VideoGallery({ category, videos, totalPages }) {
-	console.log('video', videos)
 	return (
 		<Layout>
 			<VideoGallery

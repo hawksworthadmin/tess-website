@@ -4,13 +4,12 @@ import React from 'react'
 import Link from 'next/link'
 
 const EachSearchBlog = ({ posts, queryWord, link }) => {
-	console.log(posts)
 	return (
 		<>
 			{posts?.map((post) => {
 				const regex = new RegExp(queryWord, 'gi')
 				const parts = post?.data?.title?.split(regex)
-				console.log('pard', parts)
+
 				return (
 					<div style={{ marginTop: '24px' }}>
 						<div className="d-flex justify-content-between align-items-center">
@@ -23,7 +22,7 @@ const EachSearchBlog = ({ posts, queryWord, link }) => {
 									textTransform: 'capitalize',
 								}}
 							>
-								{parts[0]}{' '}
+								{parts?.length > 0 ? parts[0] : ''}{' '}
 								<span
 									style={{
 										textTransform: 'capitalize',
@@ -32,7 +31,7 @@ const EachSearchBlog = ({ posts, queryWord, link }) => {
 								>
 									{regex.test(post?.data?.title) && queryWord}
 								</span>{' '}
-								{parts[1]}
+								{parts?.length > 0 ? parts[1] : ''}
 							</Link>
 							<span>
 								Posted {moment(post?.first_publication_date).fromNow()}

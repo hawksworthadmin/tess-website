@@ -66,20 +66,9 @@ export const getServerSideProps = async ({ previewData, params }) => {
 	// try {
 	const video = await client.getByUID('video_gallery', slug)
 
-	console.log(video)
-
 	return {
 		props: {
 			video,
 		},
 	}
-	// } catch (error) {
-	// 	console.log('errors', error)
-
-	// 	return {
-	// 		props: {
-	// 			// error,
-	// 		},
-	// 	}
-	// }
 }

@@ -52,7 +52,7 @@ export default function WhatWeDo() {
 					/>
 					<WhatWeDoContent
 						number={3}
-						title={`Improving teacher development and making education expenditures
+						title={`Improving teacher deployment and making education expenditures
 						 Transparent and accessible For Policy Formulation, Focused on 
 						 efficiency and system management.`}
 						paragraph={`The importance of proper infrastructure in facilitating

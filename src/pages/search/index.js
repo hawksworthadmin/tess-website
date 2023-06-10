@@ -15,7 +15,6 @@ const index = ({
 	reports,
 	all,
 }) => {
-	console.log(all)
 	return (
 		<Layout query={query}>
 			<SearchResults

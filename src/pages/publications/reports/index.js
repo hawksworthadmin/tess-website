@@ -4,7 +4,6 @@ import React from 'react'
 import { createClient } from '../../../../prismicio'
 
 export default function Reports({ reports, categories, totalPages }) {
-	console.log(reports)
 	return (
 		<Layout>
 			<Blog

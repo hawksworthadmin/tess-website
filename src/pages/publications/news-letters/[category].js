@@ -5,7 +5,6 @@ import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
 
 export default function NewsLetters({ newsletters, categories, totalPages }) {
-	console.log(categories)
 	return (
 		<Layout>
 			<Blog
@@ -22,10 +21,8 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 	const page = Number(query.page) || 1
 	const { category } = params
 
-	console.log(category)
 	const client = createClient(previewData)
 
-	// try {
 	const categories = await client.getByType('newsletter_category', {
 		orderings: {
 			field: 'document.uid',
@@ -50,8 +47,6 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 		},
 	})
 
-	console.log(categoryId)
-
 	return {
 		props: {
 			newsletters: newsletters.results,
@@ -59,9 +54,4 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 			categories: categories.results,
 		},
 	}
-	// } catch (error) {
-	// 	return {
-	// 		props: {},
-	// 	}
-	// }
 }

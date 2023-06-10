@@ -4,21 +4,30 @@ import { RichText } from 'prismic-dom'
 import React from 'react'
 
 const VideoResult = ({ posts, query }) => {
-	console.log('oist', posts)
 	return (
 		<div
 			className="row "
 			style={{ marginTop: 20, alignItems: 'stretch', gap: '32px' }}
 		>
 			{posts?.map((post) => {
+				/* 
+				Perform a regex to check the query text is in the post title.
+				If its there, split the post title by the query text
+			*/
+				const regex = new RegExp(query, 'gi')
+				const parts = post?.data?.title?.split(regex)
 				return (
 					<div className="col-lg-5 col-md-6">
-						<div
+						<Link
+							href={`/media-room/video-gallery/${post?.uid}`}
 							style={{
+								display: 'block',
 								position: 'relative',
 								height: '400px',
 								overflow: 'hidden',
 								borderRadius: '8px',
+								background:
+									'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(.jpg)',
 							}}
 						>
 							<Image
@@ -30,7 +39,8 @@ const VideoResult = ({ posts, query }) => {
 								}
 								alt={''}
 							/>
-						</div>
+						</Link>
+
 						<Link
 							href={`/media-room/video-gallery/${post?.uid}`}
 							style={{
@@ -41,18 +51,19 @@ const VideoResult = ({ posts, query }) => {
 								marginTop: '24px',
 							}}
 						>
-							{post?.data?.title?.split(' ')?.map((word, i) => (
-								<>
-									<span
-										style={{
-											background:
-												query.toLowerCase() == word?.toLowerCase() && '#FEC84B',
-										}}
-									>
-										{word}
-									</span>{' '}
-								</>
-							))}
+							{parts?.length > 0 ? parts[0] : ''}{' '}
+							<span
+								style={{
+									textTransform: 'capitalize',
+									background: '#FEC84B',
+								}}
+							>
+								{/* only display the query amongst the title if it's included
+									in the title
+								*/}
+								{regex.test(post?.data?.title) && query}
+							</span>{' '}
+							{parts?.length > 0 ? parts[1] : ''}
 						</Link>
 						<p style={{ fontSize: '16px' }}>
 							{RichText?.asText(post.data?.content || post.data?.description)
