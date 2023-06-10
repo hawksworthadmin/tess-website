@@ -6,6 +6,8 @@ import moment from 'moment'
 import React from 'react'
 
 import RichTextComponent from '@/components/pages/Blog/RichTextComponent'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogDetails({
 	post,
@@ -13,8 +15,8 @@ export default function BlogDetails({
 	link,
 	checkEvent,
 	heading,
+	relatedPosts,
 }) {
-	console.log('from details', post)
 	return (
 		<Layout>
 			<div>
@@ -51,12 +53,15 @@ export default function BlogDetails({
 										<div className="news-content">
 											<ul className="admin d-flex">
 												<li>
-													<p
-														style={{ textTransform: 'capitalize' }}
+													<Link
+														href={`${link}/${post?.data?.category?.slug}`}
+														style={{
+															textTransform: 'capitalize',
+														}}
 														className="d-flex align-items-center"
 													>
 														{post?.data?.category?.slug?.replace(/-/gi, ' ')}
-													</p>
+													</Link>
 												</li>
 
 												<li>
@@ -86,11 +91,72 @@ export default function BlogDetails({
 							</div>
 							<div className="col-lg-4">
 								<BlogRight categories={categories} link={link} />
+								<RelatedPosts
+									heading={heading}
+									posts={relatedPosts}
+									link={link}
+								/>
 							</div>
 						</div>
 					</div>
 				</section>
 			</div>
 		</Layout>
+	)
+}
+
+const RelatedPosts = ({ posts, heading, link }) => {
+	return (
+		<div style={{ width: '100%', marginTop: '42px' }} bis_skin_checked="1">
+			<div class="widget-sidebar pl-15" bis_skin_checked="1">
+				<div class="sidebar-widget categories" bis_skin_checked="1">
+					<h3>Related {heading} </h3>
+
+					<>
+						{posts?.map((post) => (
+							<div bis_skin_checked="1">
+								<div
+									style={{
+										marginTop: '12px',
+										position: 'relative',
+										height: '200px',
+										borderRadius: '8px',
+										overflow: 'hidden',
+										background:
+											'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)',
+									}}
+								>
+									<Image fill src={post?.data?.image?.url} alt={''} />
+
+									<div
+										style={{
+											position: 'absolute',
+											bottom: '16px',
+											left: '16px',
+											color: 'white',
+											fontSize: '16px',
+											fontWeight: '500',
+										}}
+										className="project-content"
+										bis_skin_checked="1"
+									>
+										<Link
+											style={{
+												color: 'white',
+												fontSize: '16px',
+												fontWeight: '500',
+											}}
+											href={`${link}/${post?.data?.category?.slug}/${post?.uid}`}
+										>
+											{post?.data?.title}
+										</Link>
+									</div>
+								</div>
+							</div>
+						))}
+					</>
+				</div>
+			</div>
+		</div>
 	)
 }

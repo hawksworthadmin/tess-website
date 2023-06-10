@@ -5,7 +5,6 @@ import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
 
 export default function Reports({ reports, categories, totalPages }) {
-	console.log(reports)
 	return (
 		<Layout>
 			<Blog
@@ -22,7 +21,7 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 	const page = Number(query.page) || 1
 	const { category } = params
 
-	console.log(category)
+	c
 	const client = createClient(previewData)
 
 	try {

@@ -1,4 +1,5 @@
 import { createClient } from '../../../../../prismicio'
+import * as prismic from '@prismicio/client'
 import React from 'react'
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
 
@@ -27,11 +28,25 @@ export const getServerSideProps = async ({ previewData, params }) => {
 		})
 
 		const event = await client.getByUID('event', slug)
+		const categoryId = event?.data?.category?.id
+		const postId = event?.id
+		const relatedPosts = await client.getByType('event', {
+			filters: [
+				prismic.filter.at('my.event.category', categoryId),
+				prismic.filter.not('document.id', postId),
+			],
+			pageSize: 3,
+			orderings: {
+				field: 'document.first_publication_date',
+				direction: 'desc',
+			},
+		})
 
 		return {
 			props: {
 				event,
 				categories: categories.results,
+				relatedPosts: relatedPosts.results,
 			},
 		}
 	} catch (error) {

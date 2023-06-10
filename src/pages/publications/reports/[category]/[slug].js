@@ -1,64 +1,53 @@
 import { createClient } from '../../../../../prismicio'
+import * as prismic from '@prismicio/client'
 import React from 'react'
 
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
 
-export default function Details({ blog, categories }) {
+export default function Details({ reports, categories, relatedPosts }) {
 	return (
 		<BlogDetails
-			post={blog}
+			post={reports}
 			categories={categories}
 			link={'/publications/report/'}
 			heading={'Reports'}
+			relatedPosts={relatedPosts}
 		/>
 	)
 }
 
-export const getStaticPaths = async ({ previewData }) => {
-	const client = createClient(previewData)
-
-	const blogposts = await client.getByType('report')
-
-	const paths = blogposts.results.map((post) => ({
-		params: {
-			category: post.data.category.slug,
-			slug: post.uid,
-		},
-	}))
-
-	return {
-		paths,
-		fallback: 'blocking',
-	}
-}
-
-export const getStaticProps = async ({ previewData, params }) => {
+export const getServerSideProps = async ({ previewData, params }) => {
 	const { slug } = params
 
 	const client = createClient(previewData)
-	try {
-		const categories = await client.getByType('report_category', {
-			orderings: {
-				field: 'document.uid',
-				direction: 'desc',
-			},
-		})
 
-		const blog = await client.getByUID('report', slug)
+	const categories = await client.getByType('report_category', {
+		orderings: {
+			field: 'document.uid',
+			direction: 'desc',
+		},
+	})
 
-		return {
-			props: {
-				blog,
-				categories: categories.results,
-			},
-		}
-	} catch (error) {
-		console.log('errors', error)
+	const reports = await client.getByUID('report', slug)
+	const categoryId = reports?.data?.category?.id
+	const postId = reports?.id
+	const relatedPosts = await client.getByType('report', {
+		filters: [
+			prismic.filter.at('my.report.category', categoryId),
+			prismic.filter.not('document.id', postId),
+		],
+		pageSize: 3,
+		orderings: {
+			field: 'document.first_publication_date',
+			direction: 'desc',
+		},
+	})
 
-		return {
-			props: {
-				// error,
-			},
-		}
+	return {
+		props: {
+			reports,
+			categories: categories.results,
+			relatedPosts: relatedPosts?.results,
+		},
 	}
 }

@@ -2,11 +2,16 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { useRouter } from 'next/router'
+import Chatbot from './Chatbot'
 
-export default function Layout({ children }) {
-	const [openSearchComponent, setOpenSearchComponent] = useState(false)
-	const [searchQuery, setSearchQuery] = useState('')
+export default function Layout({ children, query }) {
 	const router = useRouter()
+
+	const pathname = router.pathname
+	const [openSearchComponent, setOpenSearchComponent] = useState(
+		pathname == '/search' ? true : false
+	)
+	const [searchQuery, setSearchQuery] = useState(query || '')
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -14,53 +19,71 @@ export default function Layout({ children }) {
 	}
 	return (
 		<>
-			<Header setOpenSearchComponent={setOpenSearchComponent} />
+			<Header
+				setOpenSearchComponent={
+					pathname !== '/search' && setOpenSearchComponent
+				}
+			/>
 			<form
 				onSubmit={handleSubmit}
 				style={{
 					width: '100%',
-					padding: '38px ',
-					display: openSearchComponent ? 'flex' : 'none',
-					justifyContent: 'space-between',
-					alignItems: 'center',
+					padding: '38px 0 ',
+					display: openSearchComponent ? 'block' : 'none',
 				}}
+				className="container"
 			>
 				<div
 					style={{
 						display: 'flex',
-						flex: '1',
-						gap: '19px',
+						justifyContent: 'space-between',
 						alignItems: 'center',
+						background: '#F2F4F7',
+						borderRadius: '40px',
+						padding: '8px 16px ',
 					}}
 				>
-					<i class="ri-search-line"></i>
-					<input
-						onChange={(e) => setSearchQuery(e.target.value)}
+					<div
 						style={{
-							border: 'none',
-							flex: 1,
-							padding: '4px',
-							marginRight: '8px',
+							display: 'flex',
+							flex: '1',
+							gap: '19px',
+							alignItems: 'center',
 						}}
-						className=" "
-						placeholder="Search for anything"
-						type="text"
-					/>
+					>
+						<i class="ri-search-line"></i>
+						<input
+							onChange={(e) => setSearchQuery(e.target.value)}
+							value={searchQuery}
+							style={{
+								border: 'none',
+								flex: 1,
+								padding: '4px',
+								marginRight: '8px',
+								background: 'transparent',
+							}}
+							className=" "
+							placeholder="Search for anything"
+							type="text"
+						/>
+					</div>
+					<button
+						style={{
+							backgroundColor: 'transparent',
+							border: '1px solid #12B76A',
+							padding: '10px 16px',
+							borderRadius: '32px',
+							color: '#12B76A',
+						}}
+					>
+						Search
+					</button>
 				</div>
-				<button
-					style={{
-						backgroundColor: 'transparent',
-						border: '1px solid #12B76A',
-						padding: '10px 16px',
-						borderRadius: '32px',
-						color: '#12B76A',
-					}}
-				>
-					Search
-				</button>
 			</form>
 			<main className="animate__fadeIn animate__animated ">{children}</main>
+
 			<Footer />
+			{/* <Chatbot /> */}
 		</>
 	)
 }

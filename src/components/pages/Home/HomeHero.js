@@ -4,7 +4,6 @@ export default function HomeHero() {
 	const [show, setShow] = useState(false)
 	const [fontSize, setFontSize] = useState('20px')
 	useEffect(() => {
-		console.log(window.innerWidth)
 		if (window.innerWidth > 500) {
 			setFontSize('20px')
 		} else {
@@ -43,34 +42,6 @@ export default function HomeHero() {
 						<h2 style={{ color: 'white' }}>
 							Revolutionizing the educational sector
 						</h2>
-						{/* <p
-							data-aos="fade-up"
-							data-aos-offset="200"
-							data-aos-delay="300"
-							data-aos-duration="1200"
-							className="text-white mb-5"
-							style={{ fontSize, minWidth: '100%' }}
-						>
-							{`
-							Revolutionizing the educational sector
-							Welcome to TESS (Transforming Education Systems at State Level),
-							where we are committed to revolutionizing education systems for a
-							brighter future. Our program is designed to implement a
-							comprehensive framework and structure that will bring about
-							positive changes in education at various levels.`}
-						</p> */}
-
-						{/* <div
-							className="slider-btn"
-							bis_skin_checked="1"
-							data-aos="flip-left"
-							data-aos-delay="400"
-							data-aos-duration="1200"
-						>
-							<a href="#fact" className="default-btn">
-								Learn more
-							</a>
-						</div> */}
 					</div>
 				</div>
 			</div>

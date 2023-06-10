@@ -12,9 +12,21 @@ export default function Footer() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
-								<Link href="/" className="logo">
-									<img src="/assets/images/gpe.png" alt="Image" width={90} />
-								</Link>
+								<div className="d-flex align-items-center" style={{ gap: 10 }}>
+									<img
+										src="/assets/figma/ministry_of_edu_logo.png"
+										alt="logo"
+										width={70}
+									/>
+									<div
+										className="d-flex text-theme flex-column"
+										style={{ maxWidth: '200px' }}
+									>
+										<h4 style={{ fontWeight: 600, color: 'white' }}>
+											BESDA AF-TESS
+										</h4>
+									</div>
+								</div>
 
 								<p>
 									{`The TESS program aims to improve education by enhancing teacher quality, curriculum and assessment systems, school infrastructure, and community engagement.`}

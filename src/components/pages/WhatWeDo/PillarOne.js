@@ -26,7 +26,7 @@ export default function PillarOne() {
 					<div className="col-lg-6" bis_skin_checked="1">
 						<div className="local-councils-img pl-15" bis_skin_checked="1">
 							<img
-								src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80"
+								src="/assets/images/what-we-do/tess_school_2.jpeg"
 								alt="Image"
 								className="rounded"
 							/>

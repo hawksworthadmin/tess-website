@@ -24,8 +24,6 @@ export const getServerSideProps = async ({ query, res }) => {
 
 		const photo_category = await client.getAllByType('image_gallery_category')
 
-		console.log(photo_category)
-
 		if (category == 'all') {
 			const photos = await client.getByType('image_gallery', {
 				pageSize: 6,
