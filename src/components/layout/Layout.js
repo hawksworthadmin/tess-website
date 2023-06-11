@@ -82,8 +82,8 @@ export default function Layout({ children, query }) {
 			</form>
 			<main className="animate__fadeIn animate__animated ">{children}</main>
 
+			<Chatbot />
 			<Footer />
-			{/* <Chatbot /> */}
 		</>
 	)
 }
