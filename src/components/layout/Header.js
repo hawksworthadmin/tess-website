@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
+import Search from './Search'
 
 export const navLinks = [
 	{
@@ -63,30 +64,43 @@ export const navLinks = [
 				name: 'Blog',
 				url: '/publications/blog',
 			},
+			{
+				name: 'Resources',
+				url: '/publications/resources',
+			},
 		],
 	},
 ]
 
-export default function Header({ setOpenSearchComponent }) {
+export default function Header({
+	setOpenSearchComponent,
+	openSearchComponent,
+	searchQuery,
+	setSearchQuery,
+}) {
 	const TheLogo = ({ size }) => {
 		return (
-			<div className="d-flex align-items-center" style={{ gap: 10 }}>
+			<Link
+				href={'/'}
+				className="d-flex align-items-center"
+				style={{
+					gap: 4,
+
+					width: 'fit-content',
+					flexShrink: 0,
+					display: 'block',
+				}}
+			>
 				<img
 					src="/assets/figma/ministry_of_edu_logo.png"
 					alt="logo"
 					width={size || 70}
 				/>
-				<div
-					className="d-flex text-theme flex-column"
-					style={{ maxWidth: '200px' }}
-				>
-					<span style={{ fontWeight: 600 }}>BESDA AF-TESS</span>
-					{/* <span style={{ fontSize: '10px' }}>
-						Better Education Service Delivery For All <br /> Additional Finance
-						Transforming Education <br /> Systems at States Level
-					</span> */}
-				</div>
-			</div>
+
+				<span style={{ fontWeight: 600, flexShrink: 0, color: 'black' }}>
+					BESDA AF-TESS
+				</span>
+			</Link>
 		)
 	}
 	return (
@@ -95,12 +109,13 @@ export default function Header({ setOpenSearchComponent }) {
 				<div className="mobile-responsive-nav">
 					<div className="container">
 						<div className="mobile-responsive-menu mean-container">
-							<MobileMenu />
-							<div className="logo-">
-								<Link href="/">
-									<TheLogo size={48} />
-								</Link>
-							</div>
+							<MobileMenu
+								openSearchComponent={openSearchComponent}
+								searchQuery={searchQuery}
+								setSearchQuery={setSearchQuery}
+							/>
+
+							<TheLogo size={48} />
 						</div>
 					</div>
 				</div>
@@ -108,9 +123,9 @@ export default function Header({ setOpenSearchComponent }) {
 				<div className="desktop-nav">
 					<div className="container">
 						<nav className="navbar navbar-expand-md navbar-light">
-							<Link className="navbar-brand" href="/">
-								<TheLogo />
-							</Link>
+							{/* <Link href="/"> */}
+							<TheLogo />
+							{/* </Link> */}
 
 							<div
 								className="collapse navbar-collapse mean-menu"
@@ -124,6 +139,7 @@ export default function Header({ setOpenSearchComponent }) {
 												<li className="nav-item">
 													{eachLink.url ? (
 														<Link
+															key={`nav_${i}`}
 															href={eachLink?.url}
 															className="nav-link fw-400 font-15"
 														>
@@ -134,6 +150,7 @@ export default function Header({ setOpenSearchComponent }) {
 														</Link>
 													) : (
 														<a
+															key={`nav${i}`}
 															style={{ cursor: 'pointer' }}
 															className="nav-link fw-400 font-15"
 														>
@@ -146,9 +163,12 @@ export default function Header({ setOpenSearchComponent }) {
 
 													{eachLink?.children ? (
 														<ul className="dropdown-menu">
-															{eachLink?.children?.map((val) => {
+															{eachLink?.children?.map((val, index) => {
 																return (
-																	<li className="nav-item">
+																	<li
+																		key={`link_${index}`}
+																		className="nav-item"
+																	>
 																		<Link href={val?.url} className="nav-link">
 																			{val?.name}
 																		</Link>
@@ -222,7 +242,7 @@ export default function Header({ setOpenSearchComponent }) {
 	)
 }
 
-const MobileMenu = () => {
+const MobileMenu = ({ openSearchComponent, searchQuery, setSearchQuery }) => {
 	'use client'
 	const [show, setShow] = useState(false)
 	return (
@@ -259,6 +279,14 @@ const MobileMenu = () => {
 								className="navbar-nav shadow-none"
 								style={{ minHeight: '90vh' }}
 							>
+								<li>
+									<Search
+										openSearchComponent={openSearchComponent}
+										searchQuery={searchQuery}
+										setSearchQuery={setSearchQuery}
+										mobile={true}
+									/>
+								</li>
 								{navLinks?.map((eachNavLink) => {
 									return (
 										<SideNavLinks eachLink={eachNavLink} key={Math.random()} />
@@ -323,6 +351,7 @@ const SideNavLinks = ({ eachLink }) => {
 				) : null}
 				{eachLink?.children ? (
 					<a
+						key={Math.random()}
 						onClick={() => setShow(!show)}
 						className="mean-expand"
 						// href="#"

@@ -12,6 +12,7 @@ export default function Details({ pressRelease, categories, relatedPosts }) {
 			link={'/news-and-events/press-release/'}
 			heading={'News and Press Release'}
 			relatedPosts={relatedPosts}
+			publicationType={'news'}
 		/>
 	)
 }

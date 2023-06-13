@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { useRouter } from 'next/router'
 import Chatbot from './Chatbot'
+import Search from './Search'
 
 export default function Layout({ children, query }) {
 	const router = useRouter()
@@ -13,18 +14,26 @@ export default function Layout({ children, query }) {
 	)
 	const [searchQuery, setSearchQuery] = useState(query || '')
 
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		router.push(`/search?query=${searchQuery}`)
-	}
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault()
+	// 	router.push(`/search?query=${searchQuery}`)
+	// }
 	return (
 		<>
 			<Header
 				setOpenSearchComponent={
 					pathname !== '/search' && setOpenSearchComponent
 				}
+				openSearchComponent={openSearchComponent}
+				searchQuery={searchQuery}
+				setSearchQuery={setSearchQuery}
 			/>
-			<form
+			<Search
+				openSearchComponent={openSearchComponent}
+				searchQuery={searchQuery}
+				setSearchQuery={setSearchQuery}
+			/>
+			{/* <form
 				onSubmit={handleSubmit}
 				style={{
 					width: '100%',
@@ -79,7 +88,7 @@ export default function Layout({ children, query }) {
 						Search
 					</button>
 				</div>
-			</form>
+			</form> */}
 			<main className="animate__fadeIn animate__animated ">{children}</main>
 
 			<Chatbot />

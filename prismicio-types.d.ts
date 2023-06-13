@@ -270,6 +270,39 @@ interface EventDocumentData {
 	 *
 	 */
 	category: prismic.RelationField<'event_category'>
+	/**
+	 * Meta title field in *Event*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.meta_title
+	 * - **Tab**: SEO and META DATA
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Event*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.meta_description
+	 * - **Tab**: SEO and META DATA
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Event*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: event.meta_image
+	 * - **Tab**: SEO and META DATA
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
 }
 /**
  * Event document from Prismic
@@ -497,6 +530,39 @@ interface NewsletterDocumentData {
 	 *
 	 */
 	author: prismic.RelationField<'user'>
+	/**
+	 * Meta title field in *Newsletter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.meta_title
+	 * - **Tab**: SEO and Meta Datas
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Newsletter*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter.meta_image
+	 * - **Tab**: SEO and Meta Datas
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+	/**
+	 * Meta Description field in *Newsletter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Description should not be more than 155 characters
+	 * - **API ID Path**: newsletter.meta_description
+	 * - **Tab**: SEO and Meta Datas
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
 }
 /**
  * Newsletter document from Prismic
@@ -599,6 +665,39 @@ interface PressReleaseDocumentData {
 	 *
 	 */
 	category: prismic.RelationField<'press_release_category'>
+	/**
+	 * Meta title field in *Press Release*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: press_release.meta_title
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Press Release*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Description should not be more than 155 characters
+	 * - **API ID Path**: press_release.meta_description
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Press Release*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: press_release.meta_image
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
 }
 /**
  * Press Release document from Prismic
@@ -701,6 +800,39 @@ interface ReportDocumentData {
 	 *
 	 */
 	user: prismic.RelationField<'user'>
+	/**
+	 * Meta title field in *Report*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.meta_title
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Report*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.meta_description
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Report*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: report.meta_image
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
 }
 /**
  * Report document from Prismic
