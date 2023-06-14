@@ -5,7 +5,6 @@ import React from 'react'
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
 
 export default function Details({ blog, categories, relatedPosts }) {
-	console.log(blog)
 	return (
 		<BlogDetails
 			post={blog}

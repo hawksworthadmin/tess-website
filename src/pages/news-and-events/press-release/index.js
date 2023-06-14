@@ -2,10 +2,15 @@ import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 
 export default function Event({ pressReleases, totalPages, categories }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Press Releases | {METADATA.title}</title>
+			</Head>
 			<Blog
 				heading={'News and Press Release'}
 				posts={pressReleases}

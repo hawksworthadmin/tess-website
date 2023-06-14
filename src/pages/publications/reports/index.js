@@ -2,10 +2,15 @@ import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 
 export default function Reports({ reports, categories, totalPages }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Reports | {METADATA.title}</title>
+			</Head>
 			<Blog
 				heading={'Reports'}
 				posts={reports}

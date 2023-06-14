@@ -17,7 +17,7 @@ export default function EachBlog({
 	const convertRichTextToPlain = RichText.asText(description)
 
 	return (
-		<div className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
+		<article className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
 			<div className="single-blog-box" bis_skin_checked="1">
 				<Link
 					className="w-100 relative "
@@ -65,6 +65,6 @@ export default function EachBlog({
 					</Link>
 				</div>
 			</div>
-		</div>
+		</article>
 	)
 }
