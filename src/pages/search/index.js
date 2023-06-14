@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import * as prismic from '@prismicio/client'
 import { createClient } from '../../../prismicio'
 import SearchResults from '@/components/pages/Search/SearchResults'
+import METADATA from '@/METADATA'
+import Head from 'next/head'
 
 const index = ({
 	query,
@@ -17,6 +19,10 @@ const index = ({
 }) => {
 	return (
 		<Layout query={query}>
+			<Head>
+				<title>Search | {METADATA.title}</title>
+				{/* <meta property="og:title" content={`Search | ${METADATA.title}`}></meta> */}
+			</Head>
 			<SearchResults
 				blogPosts={blogPosts}
 				press_release={press_release}
