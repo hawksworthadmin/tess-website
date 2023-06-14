@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ShareIcons from './ShareIcons'
 import NextSeo from './NextSeo'
-import { RichText } from 'prismic-dom'
+// import { RichText } from 'prismic-dom'
 import METADATA from '@/METADATA'
 
 export default function BlogDetails({
@@ -22,7 +22,7 @@ export default function BlogDetails({
 	relatedPosts,
 	publicationType,
 }) {
-	const convertRichTextToPlain = RichText.asText(post?.data?.description)
+	// const convertRichTextToPlain = RichText.asText(post?.data?.description)
 	return (
 		<Layout>
 			<NextSeo
