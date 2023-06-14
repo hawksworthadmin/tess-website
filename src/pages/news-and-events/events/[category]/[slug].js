@@ -11,6 +11,7 @@ export default function Details({ event, categories }) {
 			link={'/news-and-events/events/'}
 			checkEvent={true}
 			heading={'Events'}
+			publicationType={'event'}
 		/>
 	)
 }

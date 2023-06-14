@@ -17,16 +17,25 @@ import { useEffect } from 'react'
 import { PrismicPreview } from '@prismicio/next'
 import { PrismicProvider } from '@prismicio/react'
 import Link from 'next/link'
+import { DefaultSeo } from 'next-seo'
+import defaultSeo from '@/data/defaultSeo'
+import Head from 'next/head'
 
 export default function App({ Component, pageProps }) {
 	useEffect(() => {
 		AOS.init()
 	}, [])
 	return (
-		<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
-			<PrismicPreview repositoryName={process.env.PRISMIC_REPO_NAME}>
-				<Component {...pageProps} />
-			</PrismicPreview>
-		</PrismicProvider>
+		<>
+			<Head>
+				<link rel="icon" type="image/png" href="/favicon.png" />
+			</Head>
+			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
+				<PrismicPreview repositoryName={process.env.PRISMIC_REPO_NAME}>
+					<DefaultSeo {...defaultSeo} />
+					<Component {...pageProps} />
+				</PrismicPreview>
+			</PrismicProvider>
+		</>
 	)
 }

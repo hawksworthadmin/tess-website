@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,12 +13,35 @@ export default function Footer() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget single-bg">
-								<div className="d-flex align-items-center" style={{ gap: 10 }}>
-									<img
-										src="/assets/figma/ministry_of_edu_logo.png"
-										alt="logo"
-										width={70}
-									/>
+								<div
+									className="d-flex align-items-center"
+									style={{
+										gap: 10,
+									}}
+								>
+									<div
+										style={{
+											position: 'relative',
+											width: 70,
+											height: 70,
+											background: 'white',
+											borderRadius: '50%',
+										}}
+									>
+										<img
+											src="/assets/figma/ministry_of_edu_logo.png"
+											alt="logo"
+											style={{
+												width: '100%',
+												position: 'absolute',
+												margin: 'auto',
+												left: '5%',
+												top: '5%',
+												// transform: 'translateX(-50%)',
+												// transform: 'translateY(-50%)',
+											}}
+										/>
+									</div>
 									<div
 										className="d-flex text-theme flex-column"
 										style={{ maxWidth: '200px' }}
