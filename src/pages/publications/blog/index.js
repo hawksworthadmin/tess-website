@@ -5,10 +5,15 @@ import React from 'react'
 // import { createClient,  } from '@prismicio/client'
 import { Client, PrismicDocument } from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 
 export default function index({ blogposts, totalPages, categories }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Blog | {METADATA.title}</title>
+			</Head>
 			<Blog
 				heading={'Blogs'}
 				posts={blogposts}

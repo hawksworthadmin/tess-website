@@ -3,9 +3,14 @@ import VideoGallery from '@/components/pages/VideoGallery/VideoGallery'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 export default function _VideoGallery({ category, videos, totalPages }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Video Gallery | {METADATA.title}</title>
+			</Head>
 			<VideoGallery
 				tabs_category={category}
 				videos={videos}

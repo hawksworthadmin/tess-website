@@ -2,10 +2,15 @@ import Layout from '@/components/layout/Layout'
 import PhotoGallery from '@/components/pages/PhotoGallery/PhotoGallery'
 import React from 'react'
 import * as prismic from '@prismicio/client'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 
 export default function _PhotoGallery({ category, photos, totalPages }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Photo Gallery | {METADATA.title}</title>
+			</Head>
 			<PhotoGallery
 				tabs_category={category}
 				photos={photos}
