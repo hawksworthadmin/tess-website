@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Chatbot = () => {
 	const [chatbotOpen, setChatbotOpen] = useState(false)
@@ -137,6 +137,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 				{/* The Body */}
 				<div style={{ flex: 1, maxHeight: '526px' }}>
 					<div
+						id="chat-body"
 						style={{
 							position: 'relative',
 							padding: '8px',
@@ -187,19 +188,19 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 							)
 						)}
 						{isLoading && (
-							<div
+							<i
 								style={{
-									background: 'white',
 									padding: '8px',
-									width: '80%',
+									width: 'auto',
 									fontWeight: '500',
 									color: '#00aa55',
 									borderRadius: '8px',
 									alignSelf: 'flex-end',
 								}}
+								className="text-muted"
 							>
 								Typing...{' '}
-							</div>
+							</i>
 						)}
 					</div>
 				</div>
@@ -212,7 +213,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 						alignItems: 'stretch',
 						gap: '8px',
 					}}
-					className="card d-flex flex-row rounded-full align-items-center"
+					className="card d-flex flex-row rounded-full align-items-center my-1"
 				>
 					<input
 						placeholder="Say something..."
