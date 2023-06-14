@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -27,6 +26,7 @@ export default function Footer() {
 											background: 'white',
 											borderRadius: '50%',
 										}}
+										className='align-self-center'
 									>
 										<img
 											src="/assets/figma/ministry_of_edu_logo.png"
