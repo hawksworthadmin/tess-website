@@ -874,6 +874,141 @@ export type ReportCategoryDocument<Lang extends string = string> =
 		'report_category',
 		Lang
 	>
+/** Content for Resource documents */
+interface ResourceDocumentData {
+	/**
+	 * Title field in *Resource*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+	/**
+	 * Description field in *Resource*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	description: prismic.RichTextField
+	/**
+	 * Document field in *Resource*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.document
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	document: prismic.LinkToMediaField
+	/**
+	 * Category field in *Resource*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.category
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	category: prismic.RelationField<'resource_category'>
+	/**
+	 * Cover Photo field in *Resource*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.cover_photo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	cover_photo: prismic.ImageField<never>
+	/**
+	 * Meta title field in *Resource*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.meta_title
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Resource*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.meta_image
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+	/**
+	 * Meta Description field in *Resource*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource.meta_description
+	 * - **Tab**: SEO and Meta Data
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
+}
+/**
+ * Resource document from Prismic
+ *
+ * - **API ID**: `resource`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ResourceDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ResourceDocumentData>,
+		'resource',
+		Lang
+	>
+/** Content for Resource Category documents */
+interface ResourceCategoryDocumentData {
+	/**
+	 * Title field in *Resource Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: resource_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Resource Category document from Prismic
+ *
+ * - **API ID**: `resource_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ResourceCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ResourceCategoryDocumentData>,
+		'resource_category',
+		Lang
+	>
 /** Content for Subcategory documents */
 interface SubcategoryDocumentData {
 	/**
@@ -1054,6 +1189,8 @@ export type AllDocumentTypes =
 	| PressReleaseCategoryDocument
 	| ReportDocument
 	| ReportCategoryDocument
+	| ResourceDocument
+	| ResourceCategoryDocument
 	| SubcategoryDocument
 	| UserDocument
 	| VideoGalleryDocument
@@ -1123,6 +1260,10 @@ declare module '@prismicio/client' {
 			ReportDocument,
 			ReportCategoryDocumentData,
 			ReportCategoryDocument,
+			ResourceDocumentData,
+			ResourceDocument,
+			ResourceCategoryDocumentData,
+			ResourceCategoryDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,
