@@ -68,6 +68,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 					'Content-type': 'application/json; charset=UTF-8',
 				},
 			})
+			setMessage('')
 			const botAnswer = await res.json()
 			setIsLoading(false)
 			setMessages((prev) => [...prev, { message: botAnswer.data, type: 'bot' }])
@@ -78,7 +79,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 			style={{
 				background: '#EAECF0',
 				transition: 'all 2s ease',
-				height: chatbotOpen ? '400px' : 0,
+				height: chatbotOpen ? '450px' : 0,
 				overflow: 'hidden',
 				width: '100%',
 				borderRadius: '10px',
@@ -124,7 +125,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 							fontWeight: '700',
 						}}
 					>
-						Tess Bot
+						Ahmed Bot
 					</span>
 				</div>
 				<div
@@ -157,13 +158,14 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 						height: '80%',
 					}}
 				>
-					{messages.map((message) =>
+					{messages.map((message, index) =>
 						message.type == 'user' ? (
 							<div
+								key={`user_${index}`}
 								style={{
 									background: '#00aa55',
 									padding: '8px',
-									width: '60%',
+									width: '80%',
 									fontWeight: '500',
 									color: 'white',
 									borderRadius: '8px',
@@ -175,10 +177,11 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 						) : (
 							message.type == 'bot' && (
 								<div
+									key={`bot_${index}`}
 									style={{
 										background: 'white',
 										padding: '8px',
-										width: '60%',
+										width: '80%',
 										fontWeight: '500',
 										color: '#00aa55',
 										borderRadius: '8px',
@@ -195,7 +198,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 							style={{
 								background: 'white',
 								padding: '8px',
-								width: '60%',
+								width: '80%',
 								fontWeight: '500',
 								color: '#00aa55',
 								borderRadius: '8px',

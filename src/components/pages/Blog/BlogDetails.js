@@ -8,6 +8,9 @@ import React from 'react'
 import RichTextComponent from '@/components/pages/Blog/RichTextComponent'
 import Link from 'next/link'
 import Image from 'next/image'
+import ShareIcons from './ShareIcons'
+import NextSeo from './NextSeo'
+import { RichText } from 'prismic-dom'
 
 export default function BlogDetails({
 	post,
@@ -16,9 +19,23 @@ export default function BlogDetails({
 	checkEvent,
 	heading,
 	relatedPosts,
+	publicationType,
 }) {
+	const convertRichTextToPlain = RichText.asText(post?.data?.description)
 	return (
 		<Layout>
+			<NextSeo
+				title={post?.data?.meta_title || post?.data?.title}
+				metaDescription={
+					post?.data?.meta_description
+						? post?.data?.meta_description
+						: convertRichTextToPlain
+				}
+				image={post?.data?.image?.url || post?.data?.featured_image?.url}
+				postLink={`${link}${post?.data?.category?.slug}${post?.uid}`}
+				publishedDate={post?.first_publication_date}
+				publicationType={publicationType}
+			/>
 			<div>
 				<div
 					className="bg-1 bg-theme-"
@@ -85,6 +102,11 @@ export default function BlogDetails({
 													></video>
 												</div>
 											)}
+
+											<ShareIcons
+												title={post?.data?.title}
+												url={`${link}${post?.data?.category?.slug}/${post?.uid}`}
+											/>
 										</div>
 									</div>
 								</div>

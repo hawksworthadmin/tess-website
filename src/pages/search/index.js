@@ -13,7 +13,7 @@ const index = ({
 	totalPages,
 	events,
 	reports,
-	all,
+	total_result,
 }) => {
 	return (
 		<Layout query={query}>
@@ -26,6 +26,7 @@ const index = ({
 				totalPages={totalPages}
 				reports={reports}
 				events={events}
+				total_result={total_result}
 			/>
 		</Layout>
 	)
@@ -70,6 +71,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	const reports =
 		searchResults.results?.filter((post) => post?.type == 'report') || []
 
+	console.log(searchQuery)
 	return {
 		props: {
 			query: searchQuery,
@@ -80,7 +82,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 			reports,
 			events,
 			totalPages: searchResults.total_pages,
-			all: searchResults,
+			total_result: searchResults.total_results_size,
 		},
 	}
 }

@@ -12,6 +12,7 @@ export default function Details({ newsletter, categories, relatedPosts }) {
 			link={'/publications/news-letters/'}
 			heading={'News Letters'}
 			relatedPosts={relatedPosts}
+			publicationType={'news-letter'}
 		/>
 	)
 }

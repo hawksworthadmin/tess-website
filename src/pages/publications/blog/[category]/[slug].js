@@ -13,6 +13,7 @@ export default function Details({ blog, categories, relatedPosts }) {
 			link={'/publications/blog/'}
 			heading={'Blogs'}
 			relatedPosts={relatedPosts}
+			publicationType={'blog'}
 		/>
 	)
 }

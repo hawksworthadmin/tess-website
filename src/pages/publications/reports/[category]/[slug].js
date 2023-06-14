@@ -12,6 +12,7 @@ export default function Details({ reports, categories, relatedPosts }) {
 			link={'/publications/report/'}
 			heading={'Reports'}
 			relatedPosts={relatedPosts}
+			publicationType={'reports'}
 		/>
 	)
 }

@@ -12,6 +12,7 @@ export default function EventCategory({ events, totalPages, categories }) {
 				totalPages={totalPages}
 				categories={categories}
 				link={'/news-and-events/events/'}
+				checkEvent={true}
 			/>
 		</Layout>
 	)
