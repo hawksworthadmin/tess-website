@@ -4,6 +4,7 @@ import BlogRight from './BlogRight'
 import EachBlog from './EachBlog'
 import Link from 'next/link'
 import EventCard from './EventCard'
+import EachResource from './EachResource'
 
 export default function Blog({
 	heading,
@@ -12,6 +13,7 @@ export default function Blog({
 	categories,
 	link,
 	checkEvent,
+	isResource,
 }) {
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
@@ -39,7 +41,26 @@ export default function Blog({
 						<div className="col-lg-8">
 							<div className="row">
 								{posts?.map((post) =>
-									!checkEvent ? (
+									checkEvent ? (
+										<EventCard
+											date={post?.data?.date}
+											title={post?.data?.title}
+											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
+											alt={post?.data?.featured_image?.alt}
+											image={post?.data?.featured_image?.url}
+											location={post?.data?.location}
+											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
+										/>
+									) : isResource ? (
+										<EachResource
+											title={post?.data?.title}
+											alt={post?.data?.featured_image?.alt}
+											image={post?.data?.cover_photo?.url}
+											content={post?.data?.description}
+											downloadLink={post?.data?.document?.url}
+											documentName={post?.data?.document?.name}
+										/>
+									) : (
 										<EachBlog
 											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
 											title={post?.data?.title}
@@ -48,16 +69,6 @@ export default function Blog({
 											alt={post?.data?.image?.alt}
 											description={post?.data?.description}
 											categoryLink={`${link}${post?.data?.category?.slug}`}
-											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
-										/>
-									) : (
-										<EventCard
-											date={post?.data?.date}
-											title={post?.data?.title}
-											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
-											alt={post?.data?.featured_image?.alt}
-											image={post?.data?.featured_image?.url}
-											location={post?.data?.location}
 											link={`${link}${post?.data?.category?.slug}/${post.uid}`}
 										/>
 									)
