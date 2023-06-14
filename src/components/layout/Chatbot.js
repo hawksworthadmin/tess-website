@@ -187,19 +187,19 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 							)
 						)}
 						{isLoading && (
-							<div
+							<i
 								style={{
-									background: 'white',
 									padding: '8px',
-									width: '80%',
+									width: 'auto',
 									fontWeight: '500',
 									color: '#00aa55',
 									borderRadius: '8px',
 									alignSelf: 'flex-end',
 								}}
+								className='text-muted'
 							>
 								Typing...{' '}
-							</div>
+							</i>
 						)}
 					</div>
 				</div>
@@ -212,7 +212,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 						alignItems: 'stretch',
 						gap: '8px',
 					}}
-					className="card d-flex flex-row rounded-full align-items-center"
+					className="card d-flex flex-row rounded-full align-items-center mb-1"
 				>
 					<input
 						placeholder="Say something..."
