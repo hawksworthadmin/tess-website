@@ -11,6 +11,7 @@ import Image from 'next/image'
 import ShareIcons from './ShareIcons'
 import NextSeo from './NextSeo'
 import { RichText } from 'prismic-dom'
+import METADATA from '@/METADATA'
 
 export default function BlogDetails({
 	post,
@@ -29,7 +30,7 @@ export default function BlogDetails({
 				metaDescription={
 					post?.data?.meta_description
 						? post?.data?.meta_description
-						: convertRichTextToPlain
+						: `${METADATA.title} ${heading} | ${post?.data?.title}`
 				}
 				image={post?.data?.image?.url || post?.data?.featured_image?.url}
 				postLink={`${link}${post?.data?.category?.slug}${post?.uid}`}
