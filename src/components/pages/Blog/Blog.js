@@ -55,7 +55,7 @@ export default function Blog({
 										<EachResource
 											title={post?.data?.title}
 											alt={post?.data?.featured_image?.alt}
-											image={post?.data?.cover_photo?.url}
+											image={'/assets/figma/filePlaceholder.jpeg'}
 											content={post?.data?.description}
 											downloadLink={post?.data?.document?.url}
 											documentName={post?.data?.document?.name}

@@ -44,7 +44,11 @@ const EachResource = ({
 				>
 					<Image fill src={image} alt={alt} style={{ objectFit: 'contain' }} />
 
-					<div className="gallery-item-content" bis_skin_checked="1">
+					<div
+						style={{ background: '#e7f4eb' }}
+						className="gallery-item-content"
+						bis_skin_checked="1"
+					>
 						{/* <a href="assets/images/gallery/gallery-1.jpg">Office building</a> */}
 						{/* <span>{content}</span> */}
 						<RichTextComponent field={content} />
@@ -54,7 +58,7 @@ const EachResource = ({
 					<div
 						style={{
 							textTransform: 'capitalize',
-							background: '#e7f4eb',
+							background: '#eaecf0',
 							// color: 'white',
 							padding: '2px 6px',
 							marginBottom: '4px',
@@ -90,6 +94,7 @@ const EachResource = ({
 
 const DownloadForm = ({ onClick, documentLink, documentName }) => {
 	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
 	const [isSubmitted, setIsSubmitted] = useState(false)
 
 	const handleDownload = () => {
@@ -161,8 +166,8 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 								required
 								placeholder="Enter your password"
 								type="password"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
 								style={{
 									borderRadius: '8px',
 									height: '46px',

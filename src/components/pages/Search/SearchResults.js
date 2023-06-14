@@ -21,8 +21,6 @@ const SearchResults = ({
 		(_, index) => index + 1
 	)
 
-	console.log(total_result)
-
 	const pathname = router.asPath.includes(query)
 		? `${router.asPath.split('&')[0]}&`
 		: `${router.asPath.split('?')[0]}?`
