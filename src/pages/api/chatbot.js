@@ -6,13 +6,9 @@ import { v4 as uuid } from 'uuid'
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		const { message } = req.body
-		console.log('message', message)
-
-		console.log(message)
-		console.log(path.join('./', 'key.json'))
 
 		const sessionClient = new DialogFlow.SessionsClient({
-			keyFilename: path.join('./', 'key.json'),
+			keyFilename: path.join(process.cwd(), 'key.json'),
 		})
 
 		const sessionPath = sessionClient.projectAgentSessionPath(
