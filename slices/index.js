@@ -3,5 +3,5 @@
 import dynamic from 'next/dynamic'
 
 export const components = {
-	blog_post_slice: dynamic(() => import('./BlogPostSlice')),
+	fact_sheet: dynamic(() => import('./FactSheet')),
 }

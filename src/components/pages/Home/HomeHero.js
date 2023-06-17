@@ -37,7 +37,7 @@ export default function HomeHero() {
 							data-aos-delay="50"
 							data-aos-duration="1000"
 						>
-							Welcome to TESS (Transforming Education Systems at States Level)-
+							Welcome to Transforming Education Systems at States Level (TESS )
 						</h1>
 						<h2 style={{ color: 'white' }}>
 							Revolutionizing the educational sector

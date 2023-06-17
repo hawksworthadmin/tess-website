@@ -25,14 +25,15 @@ export default function WhatWeDo() {
 					</h2>
 				</div>
 			</div>
-			<br />
-			<br />
+			{/* <br /> */}
+			{/* <br /> */}
 			<div className="container">
 				<div
 					className="row align-items-center"
-					style={{ marginBottom: '112px' }}
+					style={{ marginBottom: '12px' }}
 				>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_5.jpeg'}
 						number={1}
 						title={`Reduction in the number of out-of-school children, focused on equity`}
 						paragraph={`Our focus on equity drives this results area, aiming to ensure more
@@ -41,7 +42,9 @@ export default function WhatWeDo() {
 							 schools and providing opportunities for students.`}
 					/>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_6.jpeg'}
 						number={2}
+						reverse={true}
 						title={`Enhancing teaching practices and measuring learning outcomes, 
 							Focused On Learning Outcomes. `}
 						paragraph={`At TESS, we are committed to improving the quality of
@@ -51,6 +54,7 @@ export default function WhatWeDo() {
 						   technology.`}
 					/>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_7.jpeg'}
 						number={3}
 						title={`Improving teacher deployment and making education expenditures
 						 Transparent and accessible For Policy Formulation, Focused on 
@@ -67,23 +71,39 @@ export default function WhatWeDo() {
 	)
 }
 
-const WhatWeDoContent = ({ number, title, paragraph }) => {
+const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 	return (
 		<div
-			className="row align-items-center justify-content-center"
-			style={{ marginBottom: '112px' }}
+			className={`align-items-center justify-content-center`}
+			style={{
+				marginBottom: '12px',
+				display: 'flex',
+				flexDirection: reverse ? 'row-reverse' : 'row',
+				alignItems: 'center',
+			}}
 		>
 			<div
 				style={{ display: 'grid', placeItems: 'center' }}
 				className="col-lg-4 jus pb-100"
 			>
-				<div className="justify-content-center counselor-img pr-15 ">
-					<img
-						src="/assets/images/pillars.png"
+				<div
+					className="justify-content-center counselor-img pr-15 "
+					style={{
+						position: 'relative',
+						borderRadius: '10px',
+						overflow: 'hidden',
+
+						height: '350px',
+						width: '100%',
+					}}
+				>
+					<Image
+						src={image}
 						alt="Image"
+						fill
 						// className="rounded"
 						data-aos="fade-up-right"
-						style={{ objectFit: 'contain', margin: 'auto' }}
+						style={{ margin: 'auto', objectFit: 'scale-down' }}
 					/>
 				</div>
 			</div>

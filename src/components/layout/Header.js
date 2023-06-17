@@ -82,9 +82,9 @@ export default function Header({
 		return (
 			<Link
 				href={'/'}
-				className="d-flex align-items-center"
+				className="d-flex align-items-center justify-space-between"
 				style={{
-					gap: 4,
+					gap: 6,
 
 					width: 'fit-content',
 					flexShrink: 0,
@@ -100,11 +100,19 @@ export default function Header({
 				<span style={{ fontWeight: 600, flexShrink: 0, color: 'black' }}>
 					BESDA AF-TESS
 				</span>
+				<img
+					src="/assets/figma/global_partners.png"
+					alt="logo"
+					width={size || 70}
+				/>
 			</Link>
 		)
 	}
 	return (
-		<header className="header-area" style={{ zIndex: 40 }}>
+		<header
+			className="header-area"
+			style={{ zIndex: 40, position: 'sticky', top: '0' }}
+		>
 			<div className="navbar-area">
 				<div className="mobile-responsive-nav">
 					<div className="container">
@@ -222,15 +230,6 @@ export default function Header({
 												</div> */}
 											</div>
 										</li>
-										<li>
-											<button
-												className="default-btn register"
-												style={{ borderRadius: '32px' }}
-												type="submit"
-											>
-												Login
-											</button>
-										</li>
 									</ul>
 								</div>
 							</div>
@@ -292,11 +291,6 @@ const MobileMenu = ({ openSearchComponent, searchQuery, setSearchQuery }) => {
 										<SideNavLinks eachLink={eachNavLink} key={Math.random()} />
 									)
 								})}
-								<li className="nav-item">
-									<Link href="/" className="nav-link">
-										Login
-									</Link>
-								</li>
 							</ul>
 						</nav>
 					</div>
@@ -326,7 +320,11 @@ const SideNavLinks = ({ eachLink }) => {
 		<>
 			<li className="nav-item">
 				{eachLink?.url ? (
-					<Link href={eachLink?.url} className="nav-link active-">
+					<Link
+						prefetch={false}
+						href={eachLink?.url}
+						className="nav-link active-"
+					>
 						{eachLink?.name}
 					</Link>
 				) : (
@@ -341,7 +339,7 @@ const SideNavLinks = ({ eachLink }) => {
 						{eachLink?.children?.map((val) => {
 							return (
 								<li className="nav-item" key={Math.random()}>
-									<Link href={val?.url} className="nav-link">
+									<Link prefetch={false} href={val?.url} className="nav-link">
 										{val?.name}
 									</Link>
 								</li>

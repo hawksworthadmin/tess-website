@@ -26,7 +26,7 @@ export default function Footer() {
 											background: 'white',
 											borderRadius: '50%',
 										}}
-										className='align-self-center'
+										className="align-self-center"
 									>
 										<img
 											src="/assets/figma/ministry_of_edu_logo.png"
@@ -42,18 +42,21 @@ export default function Footer() {
 											}}
 										/>
 									</div>
-									<div
+									{/* <div
 										className="d-flex text-theme flex-column"
 										style={{ maxWidth: '200px' }}
-									>
-										<h4 style={{ fontWeight: 600, color: 'white' }}>
-											BESDA AF-TESS
-										</h4>
-									</div>
+									> */}
+									<h4 style={{ fontWeight: 600, color: 'white' }}>
+										BESDA AF-TESS
+									</h4>
+									{/* </div> */}
 								</div>
 
 								<p>
-									{`The TESS program aims to improve education by enhancing teacher quality, curriculum and assessment systems, school infrastructure, and community engagement.`}
+									{`The Program Development Objective (PDO) is to
+									 Increase equitable access for out-of-school children,
+									  improve literacy rate and learning outcomes and
+									   strengthen accountability for results in the focus States.`}
 								</p>
 
 								<ul className="social-icon">
@@ -124,7 +127,7 @@ export default function Footer() {
 									</li>
 
 									<li>
-										<Link href="/publications/fact-sheets">Fact Sheets</Link>
+										<Link href={'https://tess-website.prismic.io'}>Login</Link>
 									</li>
 								</ul>
 							</div>

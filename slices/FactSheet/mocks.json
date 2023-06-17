@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"fact": {
+				"__TYPE__": "FieldContent",
+				"value": "like",
+				"type": "Text"
+			},
+			"figure": {
+				"__TYPE__": "FieldContent",
+				"value": "sale",
+				"type": "Text"
+			},
+			"variants": {
+				"__TYPE__": "FieldContent",
+				"value": "Purple",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

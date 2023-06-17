@@ -2,15 +2,31 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-export default function Metrics() {
+const colors = {
+	green: '#12B76A',
+	orange: '#F79009',
+	purple: '#7A5AF8',
+	blue: '#2E90FA',
+}
+
+export default function Metrics({ factsAndFigures }) {
 	const [currentSlide, setCurrentSlide] = useState(0)
-	const slides = 2
+	const [currentIndex, setCurrentIndex] = useState(0)
+	const PER_SLIDE = 4
+	const slides = Math.ceil(factsAndFigures.length / PER_SLIDE)
+
 	const handleNextSlide = () => {
 		currentSlide === slides - 1
 			? setCurrentSlide(0)
 			: setCurrentSlide((prev) => prev + 1)
+
+		const nextIndex = currentIndex + PER_SLIDE
+		currentIndex >= 0 &&
+			setCurrentIndex(nextIndex >= factsAndFigures?.length ? 0 : nextIndex)
 	}
 	const handlePrevSlide = () => {
+		currentIndex !== 0 && setCurrentIndex((prev) => prev - PER_SLIDE)
+
 		currentSlide === 0
 			? setCurrentSlide(slides - 1)
 			: setCurrentSlide(currentSlide - 1)
@@ -30,7 +46,7 @@ export default function Metrics() {
 				</div>
 				<div
 					style={{
-						transform: `translateX(-${currentSlide * 100}%)`,
+						// transform: `translateX(-${currentSlide * 100}%)`,
 						transition: 'all 2s',
 						display: 'flex',
 						flexWrap: 'nowrap',
@@ -46,64 +62,32 @@ export default function Metrics() {
 						}}
 						className=""
 					>
-						<EachNumber
-							color="#12B76A"
-							number={`33%`}
-							text="Increase in Enrolment Rates."
-							url={`/`}
+						{factsAndFigures
+							?.slice(currentIndex, currentIndex + PER_SLIDE)
+							?.map((factFigure, index) => (
+								<Fact
+									key={`fact_and_figure_${index}`}
+									color={factFigure?.data?.variants?.toLowerCase()}
+									figure={factFigure?.data?.figure}
+									fact={factFigure?.data?.fact}
+								/>
+							))}
+						{/* <Fact
+							color="green"
+							figure={`33%`}
+							fact="Increase in Enrolment Rates."
 						/>
-						<EachNumber
-							color="#F79009"
-							number={`42,566`}
-							text="New primary schools established."
-							url={`/`}
+						<Fact
+							color="orange"
+							figure={`42,566`}
+							fact="New primary schools established."
 						/>
-						<EachNumber
-							color="#7A5AF8"
-							number={`23%`}
-							text="reduction of out-of-school children."
-							url={`/`}
+						<Fact
+							color="purple"
+							figure={`23%`}
+							fact="reduction of out-of-school children."
 						/>
-						<EachNumber
-							color="#2E90FA"
-							number={`20k+`}
-							text=" Teachers recruited"
-							url={`/`}
-						/>
-					</div>
-					<div
-						style={{
-							flexShrink: 0,
-							display: 'flex',
-							flexWrap: 'wrap',
-							justifyContent: 'Center',
-							width: '100%',
-						}}
-					>
-						<EachNumber
-							color="#12B76A"
-							number={`33%`}
-							text="Increase in Enrolment Rates."
-							url={`/`}
-						/>
-						<EachNumber
-							color="#F79009"
-							number={`42,566`}
-							text="New primary schools established."
-							url={`/`}
-						/>
-						<EachNumber
-							color="#7A5AF8"
-							number={`23%`}
-							text="reduction of out-of-school children."
-							url={`/`}
-						/>
-						<EachNumber
-							color="#2E90FA"
-							number={`20k+`}
-							text=" Teachers recruited"
-							url={`/`}
-						/>
+						<Fact color="blue" figure={`20k+`} fact=" Teachers recruited" /> */}
 					</div>
 				</div>
 			</div>
@@ -166,27 +150,29 @@ export default function Metrics() {
 	)
 }
 
-const EachNumber = ({ number, text, url, color }) => {
+const Fact = ({ figure, fact, color }) => {
 	return (
 		<div className="mb-5- col-lg-6 p-5 text-center" data-aos="flip-left">
 			<h3
 				style={{
 					fontSize: '60px',
-					color,
+					color: colors[color],
 					fontWeight: 500,
 					marginBottom: '24px',
 				}}
 			>
-				{number}
+				{figure}
 			</h3>
-			<p style={{ fontSize: '20px', color, fontWeight: 500 }}>{text}</p>
-			<Link
+			<p style={{ fontSize: '20px', color: colors[color], fontWeight: 500 }}>
+				{fact}
+			</p>
+			{/* <Link
 				href={url || `/`}
 				className="text-white rounded-full fw-500 px-5 py-3 btn"
 				style={{ background: color }}
 			>
 				Learn More
-			</Link>
+			</Link> */}
 		</div>
 	)
 }
