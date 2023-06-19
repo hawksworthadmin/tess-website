@@ -12,7 +12,7 @@ export default function HomeHero() {
 			setFontSize('30px')
 		}
 		setShow(true)
-	}, [window.innerWidth])
+	}, [])
 
 	useEffect(() => {
 		const timer = setInterval(() => {
