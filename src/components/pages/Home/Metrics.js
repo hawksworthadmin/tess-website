@@ -72,22 +72,7 @@ export default function Metrics({ factsAndFigures }) {
 									fact={factFigure?.data?.fact}
 								/>
 							))}
-						{/* <Fact
-							color="green"
-							figure={`33%`}
-							fact="Increase in Enrolment Rates."
-						/>
-						<Fact
-							color="orange"
-							figure={`42,566`}
-							fact="New primary schools established."
-						/>
-						<Fact
-							color="purple"
-							figure={`23%`}
-							fact="reduction of out-of-school children."
-						/>
-						<Fact color="blue" figure={`20k+`} fact=" Teachers recruited" /> */}
+					
 					</div>
 				</div>
 			</div>
@@ -166,13 +151,7 @@ const Fact = ({ figure, fact, color }) => {
 			<p style={{ fontSize: '20px', color: colors[color], fontWeight: 500 }}>
 				{fact}
 			</p>
-			{/* <Link
-				href={url || `/`}
-				className="text-white rounded-full fw-500 px-5 py-3 btn"
-				style={{ background: color }}
-			>
-				Learn More
-			</Link> */}
+		
 		</div>
 	)
 }
