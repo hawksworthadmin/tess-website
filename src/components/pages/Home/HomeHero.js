@@ -7,12 +7,12 @@ export default function HomeHero() {
 	const slides = [...Array(3).keys()]
 	useEffect(() => {
 		if (window.innerWidth > 500) {
-			setFontSize('20px')
+			setFontSize('65px')
 		} else {
-			setFontSize('16px')
+			setFontSize('30px')
 		}
 		setShow(true)
-	}, [])
+	}, [window.innerWidth])
 
 	useEffect(() => {
 		const timer = setInterval(() => {
@@ -46,24 +46,23 @@ export default function HomeHero() {
 		>
 			<div
 				style={{
-					flexShrink: 0,
 					overflowX: 'hidden',
+					width: '100%',
 				}}
-				className="h-100 w-100 d-flex justify-content-center align-items-center hero-slider"
+				className="h-100   d-flex justify-content-center align-items-center "
 			>
 				<div
-					className="col-lg-10 text-center d-flex"
+					className=" text-center d-flex"
 					style={{
 						width: '100%',
 						transform: `translateX(-${currentSlide * 100}%)`,
 						transition: 'all 2s',
 						// gap: '1rem',
-						flexWrap: 'nowrap',
 					}}
 					bis_skin_checked="1"
 				>
 					<div
-						className="banner-content  d-flex flex-column align-items-center justify-content-center"
+						className=" d-flex flex-column align-items-center justify-content-center"
 						bis_skin_checked="1"
 						style={{
 							margin: 0,
@@ -72,6 +71,9 @@ export default function HomeHero() {
 						}}
 					>
 						<h1
+							style={{
+								color: 'white',
+							}}
 							data-aos="fade-up"
 							data-aos-offset="200"
 							data-aos-delay="50"
@@ -84,11 +86,18 @@ export default function HomeHero() {
 						</h2>
 					</div>
 					<div
-						className="banner-content  d-flex flex-column align-items-center justify-content-center"
+						className="  d-flex flex-column align-items-center justify-content-center"
 						bis_skin_checked="1"
-						style={{ margin: 0, width: '100%', flexShrink: 0 }}
+						style={{
+							margin: 0,
+							width: '100%',
+							flexShrink: 0,
+						}}
 					>
 						<h1
+							style={{
+								color: 'white',
+							}}
 							data-aos="fade-up"
 							data-aos-offset="200"
 							data-aos-delay="50"
@@ -97,16 +106,16 @@ export default function HomeHero() {
 							Reduction in the number of out-of-school children, focused on
 							equity
 						</h1>
-						{/* <h2 style={{ color: 'white' }}>
-							Revolutionizing the educational sector
-						</h2> */}
 					</div>
 					<div
-						className="banner-content  d-flex flex-column align-items-center justify-content-center"
+						className="  d-flex flex-column align-items-center justify-content-center"
 						bis_skin_checked="1"
 						style={{ margin: 0, width: '100%', flexShrink: 0 }}
 					>
 						<h1
+							style={{
+								color: 'white',
+							}}
 							data-aos="fade-up"
 							data-aos-offset="200"
 							data-aos-delay="50"
