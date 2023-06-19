@@ -1,0 +1,35 @@
+{
+	"id": "fact_sheet",
+	"type": "SharedSlice",
+	"name": "FactSheet",
+	"description": "FactSheet",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"fact": {
+					"type": "Text",
+					"config": { "label": "Fact", "placeholder": "" }
+				},
+				"figure": {
+					"type": "Text",
+					"config": { "label": "Figure", "placeholder": "" }
+				},
+				"variants": {
+					"type": "Select",
+					"config": {
+						"label": "Variants",
+						"placeholder": "Select Color Variant",
+						"options": ["Blue", "Green", "Purple", "Orange"]
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

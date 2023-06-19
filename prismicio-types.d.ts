@@ -344,6 +344,61 @@ export type EventCategoryDocument<Lang extends string = string> =
 		'event_category',
 		Lang
 	>
+/** Content for Fact and Figure documents */
+interface FactFigureDocumentData {
+	/**
+	 * Fact field in *Fact and Figure*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: fact_figure.fact
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	fact: prismic.KeyTextField
+	/**
+	 * Figure field in *Fact and Figure*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: fact_figure.figure
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	figure: prismic.KeyTextField
+	/**
+	 * Variants field in *Fact and Figure*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: Select color variant
+	 * - **Default Value**: Blue
+	 * - **API ID Path**: fact_figure.variants
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	variants: prismic.SelectField<
+		'Blue' | 'Green' | 'Orange' | 'Purple',
+		'filled'
+	>
+}
+/**
+ * Fact and Figure document from Prismic
+ *
+ * - **API ID**: `fact_figure`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FactFigureDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<FactFigureDocumentData>,
+		'fact_figure',
+		Lang
+	>
 /** Content for Image Gallery documents */
 interface ImageGalleryDocumentData {
 	/**
@@ -1181,6 +1236,7 @@ export type AllDocumentTypes =
 	| CategoryDocument
 	| EventDocument
 	| EventCategoryDocument
+	| FactFigureDocument
 	| ImageGalleryDocument
 	| ImageGalleryCategoryDocument
 	| NewsletterDocument
@@ -1196,34 +1252,70 @@ export type AllDocumentTypes =
 	| VideoGalleryDocument
 	| VideoGalleryCategoryDocument
 /**
- * Default variation for BlogPostSlice Slice
+ * Primary content in FactSheet → Primary
+ *
+ */
+interface FactSheetSliceDefaultPrimary {
+	/**
+	 * Fact field in *FactSheet → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: fact_sheet.primary.fact
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	fact: prismic.KeyTextField
+	/**
+	 * Figure field in *FactSheet → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: fact_sheet.primary.figure
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	figure: prismic.KeyTextField
+	/**
+	 * Variants field in *FactSheet → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: Select Color Variant
+	 * - **API ID Path**: fact_sheet.primary.variants
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	variants: prismic.SelectField<'Blue' | 'Green' | 'Purple' | 'Orange'>
+}
+/**
+ * Default variation for FactSheet Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type BlogPostSliceSliceDefault = prismic.SharedSliceVariation<
+export type FactSheetSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
+	Simplify<FactSheetSliceDefaultPrimary>,
 	never
 >
 /**
- * Slice variation for *BlogPostSlice*
+ * Slice variation for *FactSheet*
  *
  */
-type BlogPostSliceSliceVariation = BlogPostSliceSliceDefault
+type FactSheetSliceVariation = FactSheetSliceDefault
 /**
- * BlogPostSlice Shared Slice
+ * FactSheet Shared Slice
  *
- * - **API ID**: `blog_post_slice`
- * - **Description**: `BlogPostSlice`
+ * - **API ID**: `fact_sheet`
+ * - **Description**: `FactSheet`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type BlogPostSliceSlice = prismic.SharedSlice<
-	'blog_post_slice',
-	BlogPostSliceSliceVariation
+export type FactSheetSlice = prismic.SharedSlice<
+	'fact_sheet',
+	FactSheetSliceVariation
 >
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -1243,6 +1335,8 @@ declare module '@prismicio/client' {
 			EventDocument,
 			EventCategoryDocumentData,
 			EventCategoryDocument,
+			FactFigureDocumentData,
+			FactFigureDocument,
 			ImageGalleryDocumentData,
 			ImageGalleryDocument,
 			ImageGalleryCategoryDocumentData,
@@ -1273,9 +1367,10 @@ declare module '@prismicio/client' {
 			VideoGalleryCategoryDocumentData,
 			VideoGalleryCategoryDocument,
 			AllDocumentTypes,
-			BlogPostSliceSliceDefault,
-			BlogPostSliceSliceVariation,
-			BlogPostSliceSlice,
+			FactSheetSliceDefaultPrimary,
+			FactSheetSliceDefault,
+			FactSheetSliceVariation,
+			FactSheetSlice,
 		}
 	}
 }
