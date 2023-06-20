@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http/:localhost:3000</loc><lastmod>2023-06-19T17:21:47.990Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/media-room/photo-gallery</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/media-room/press-release</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/media-room/video-gallery</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/news-and-events/events</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/news-and-events/press-release</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/news-and-events/workshops</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/publications/blog</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/publications/fact-sheets</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/publications/news-letters</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/publications/reports</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/publications/resources</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/search</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/slice-simulator</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/what-we-do</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http/:localhost:3000/who-we-are</loc><lastmod>2023-06-19T17:21:47.991Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/media-room/photo-gallery</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/media-room/press-release</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/media-room/video-gallery</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/news-and-events/events</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/news-and-events/press-release</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/news-and-events/workshops</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/publications/blog</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/publications/fact-sheets</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/publications/news-letters</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/publications/reports</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/publications/resources</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/search</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/slice-simulator</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/what-we-do</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http/:localhost:3000/who-we-are</loc><lastmod>2023-06-20T16:28:13.141Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

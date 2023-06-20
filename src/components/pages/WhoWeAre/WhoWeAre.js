@@ -53,22 +53,15 @@ export default function WhoWeAre() {
 								<h3 data-aos-delay="250">Our Focus:</h3>
 								<ul>
 									<li data-aos-delay="300">Improving teacher quality</li>
+
 									<li data-aos-delay="300">
-										Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-										sem
-									</li>
-									<li data-aos-delay="300">
-										Enhancing curriculum and assessment systems
+										Enhancing curriculum and learning assessment systems
 									</li>
 									<li data-aos-delay="300">
 										Strengthening school infrastructure
 									</li>
 									<li data-aos-delay="300">Promoting community engagement</li>
 								</ul>
-
-								{/* <a href="about.html" className="default-btn">
-									Learn more
-								</a> */}
 							</div>
 						</div>
 					</div>

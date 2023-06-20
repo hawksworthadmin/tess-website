@@ -61,73 +61,23 @@ export default function HomeHero() {
 					}}
 					bis_skin_checked="1"
 				>
-					<div
-						className=" d-flex flex-column align-items-center justify-content-center"
-						bis_skin_checked="1"
-						style={{
-							margin: 0,
-							width: '100%',
-							flexShrink: 0,
-						}}
-					>
-						<h1
-							style={{
-								color: 'white',
-							}}
-							data-aos="fade-up"
-							data-aos-offset="200"
-							data-aos-delay="50"
-							data-aos-duration="1000"
-						>
-							Welcome to Transforming Education Systems at States Level (TESS)
-						</h1>
-						<h2 style={{ color: 'white' }}>
-							Revolutionizing the educational sector
-						</h2>
-					</div>
-					<div
-						className="  d-flex flex-column align-items-center justify-content-center"
-						bis_skin_checked="1"
-						style={{
-							margin: 0,
-							width: '100%',
-							flexShrink: 0,
-						}}
-					>
-						<h1
-							style={{
-								color: 'white',
-							}}
-							data-aos="fade-up"
-							data-aos-offset="200"
-							data-aos-delay="50"
-							data-aos-duration="1000"
-						>
-							Reduction in the number of out-of-school children, focused on
-							equity
-						</h1>
-					</div>
-					<div
-						className="  d-flex flex-column align-items-center justify-content-center"
-						bis_skin_checked="1"
-						style={{ margin: 0, width: '100%', flexShrink: 0 }}
-					>
-						<h1
-							style={{
-								color: 'white',
-							}}
-							data-aos="fade-up"
-							data-aos-offset="200"
-							data-aos-delay="50"
-							data-aos-duration="1000"
-						>
-							Enhancing teaching practices and measuring learning outcomes,
-							Focused On Learning Outcomes.
-						</h1>
-						{/* <h2 style={{ color: 'white' }}>
-							Revolutionizing the educational sector
-						</h2> */}
-					</div>
+					<HeroSlideText
+						heading={
+							'Welcome to Transforming Education Systems at States Level (TESS)'
+						}
+						subheading={'Revolutionizing systems in the educational sector'}
+					/>
+
+					<HeroSlideText
+						heading={
+							'Reduction in the number of out-of-school children, focused onequity'
+						}
+					/>
+					<HeroSlideText
+						heading={
+							'Enhancing teaching practices and measuring learning outcomes,focused on learning outcomes.'
+						}
+					/>
 				</div>
 			</div>
 
@@ -161,5 +111,32 @@ export default function HomeHero() {
 				))}
 			</div>
 		</section>
+	)
+}
+
+const HeroSlideText = ({ heading, subheading }) => {
+	return (
+		<div
+			className=" d-flex flex-column align-items-center justify-content-center"
+			bis_skin_checked="1"
+			style={{
+				margin: 0,
+				width: '100%',
+				flexShrink: 0,
+			}}
+		>
+			<h1
+				style={{
+					color: 'white',
+				}}
+				data-aos="fade-up"
+				data-aos-offset="200"
+				data-aos-delay="50"
+				data-aos-duration="1000"
+			>
+				{heading}
+			</h1>
+			{subheading && <h2 style={{ color: 'white' }}>{subheading}</h2>}
+		</div>
 	)
 }
