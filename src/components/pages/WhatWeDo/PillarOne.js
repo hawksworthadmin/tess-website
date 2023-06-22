@@ -42,17 +42,17 @@ export default function PillarOne() {
 					<p style={{ fontSize: '20px' }}>
 						State infrastructure budget allocated to underserved communities to
 						improve learning conditions in primary schools and improve access to
-						junior secondary schools This DLI consists of two key results:
+						junior secondary schools. <br /> This DLI consists of two key
+						results:
 					</p>
 
 					<p style={{ fontSize: '20px' }} className="fw-bold">
 						Disbursement-Linked Result 1: Development of school network
 					</p>
 					<p style={{ fontSize: '20px' }}>
-						Number of states developing a school network encompassing all
-						primary and junior secondary schools, utilizing geo-coded school
-						infrastructure audit data and population estimates for school-age
-						children.
+						States to develop a school network encompassing all primary and
+						junior secondary schools, utilizing geo-coded school infrastructure
+						audit data and population estimates for school-age children.
 					</p>
 					<br />
 					<p style={{ fontSize: '20px' }} className="fw-bold">

@@ -15,11 +15,19 @@ export default function Agreement() {
 					>
 						<h2>Institutional Arrangement</h2>
 						<p className="">
-							TESS establishes a robust governance structure involving the State
+							TESS establishes a robust governance structure involving four
+							levels of coordination and implementation. The National Project
+							Steering Committee(NPSC) and the Federal Project Coordination Unit
+							(FPCU) at the the federal level; State Project Steering Committee
+							(SPSC) at the the state level, State Project Coordination
+							Units(SPSUs) for operational management, and Local Government
+							Education Authorities (LGEA) at the local government level and
+							School Based Management Committee (SBMC) at the school level.
+							{/* the State
 							Project Steering Committee (SPSC) at the state level, State
 							Project Coordination Units (SPCUs) for operational management, and
 							Local Government Education Authorities (LGEA) at the local
-							government level.
+							government level. */}
 						</p>
 					</div>
 				</div>
