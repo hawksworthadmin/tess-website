@@ -1,0 +1,27 @@
+{
+	"id": "sponsors",
+	"type": "SharedSlice",
+	"name": "Partners",
+	"description": "Sponsors",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"partner_logo": {
+					"type": "Image",
+					"config": {
+						"label": "Partner Logo",
+						"constraint": {},
+						"thumbnails": []
+					}
+				}
+			}
+		}
+	]
+}

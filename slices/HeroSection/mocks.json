@@ -1,0 +1,80 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hero_image": {
+				"url": "https://images.unsplash.com/photo-1617056239820-8ce90ba48193?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOXx8YWZyaWNhbiUyMGNoaWxkcmVufGVufDB8fHx8MTY4NzUxNzcwMHww&ixlib=rb-4.0.3&q=85",
+				"origin": {
+					"id": "OlJk99PX0Os",
+					"url": "https://images.unsplash.com/photo-1617056239820-8ce90ba48193?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOXx8YWZyaWNhbiUyMGNoaWxkcmVufGVufDB8fHx8MTY4NzUxNzcwMHww&ixlib=rb-4.0.3&q=85",
+					"width": 4928,
+					"height": 3264
+				},
+				"width": 4928,
+				"height": 3264,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"hero_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Welcome to Transforming Education Systems at States Level (TESS)"
+						}
+					],
+					[
+						"hero_sub_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Revolutionizing systems in the educational sector"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"hero_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Reduction in the number of out-of-school children, focused onequity"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"hero_sub_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Enhancing teaching practices and measuring learning outcomes,focused on learning outcomes."
+						}
+					]
+				]
+			}
+		]
+	}
+]

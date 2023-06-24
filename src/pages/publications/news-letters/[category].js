@@ -39,7 +39,7 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 
 	const newsletters = await client.getByType('newsletter', {
 		filters: [prismic.filter.at('my.newsletter.category', categoryId)],
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 		orderings: {
 			field: 'document.first_publication_date',

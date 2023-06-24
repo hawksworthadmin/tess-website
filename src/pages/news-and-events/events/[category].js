@@ -41,7 +41,7 @@ export const getServerSideProps = async ({ query, params }) => {
 
 		const events = await client.getByType('event', {
 			filters: [prismic.filter.at('my.event.category', categoryId)],
-			pageSize: 4,
+			pageSize: 8,
 			page: page,
 			orderings: {
 				field: 'document.first_publication_date',

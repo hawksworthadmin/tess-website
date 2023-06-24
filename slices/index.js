@@ -3,5 +3,12 @@
 import dynamic from 'next/dynamic'
 
 export const components = {
-	fact_sheet: dynamic(() => import('./FactSheet')),
+	facts_and_figures: dynamic(() => import('./FactsAndFigures')),
+	hero_section: dynamic(() => import('./HeroSection')),
+	key_stack_holders: dynamic(() => import('./KeyStackHolders')),
+	quote: dynamic(() => import('./Quote')),
+	result_area: dynamic(() => import('./ResultArea')),
+	sponsors: dynamic(() => import('./Partners')),
+	what_we_d: dynamic(() => import('./WhatWeD')),
+	what_we_do: dynamic(() => import('./WhoWeAre')),
 }

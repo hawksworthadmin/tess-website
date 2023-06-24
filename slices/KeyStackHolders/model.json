@@ -1,0 +1,31 @@
+{
+	"id": "key_stack_holders",
+	"type": "SharedSlice",
+	"name": "KeyStackHolders",
+	"description": "KeyStackHolders",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"stack_holder_image": {
+					"type": "Image",
+					"config": {
+						"label": "Stack holder image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				},
+				"stack_holder_name": {
+					"type": "Text",
+					"config": { "label": "Stack holder name", "placeholder": "" }
+				}
+			}
+		}
+	]
+}

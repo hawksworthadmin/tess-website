@@ -29,7 +29,7 @@ export default function WhatWeDo() {
 			<div className="container">
 				<div
 					className="row align-items-center"
-					style={{ marginBottom: '12px' }}
+					style={{ marginBottom: '12px', gap: '3rem' }}
 				>
 					<WhatWeDoContent
 						image={'/assets/images/what-we-do/tess_5.jpeg'}

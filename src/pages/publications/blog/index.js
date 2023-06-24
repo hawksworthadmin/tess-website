@@ -38,7 +38,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	})
 
 	const blog = await client.getByType('blopgpost', {
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 
 		orderings: {

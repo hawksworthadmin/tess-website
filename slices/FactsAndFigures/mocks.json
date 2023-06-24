@@ -1,0 +1,187 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "33%"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "green"
+						}
+					],
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Increase in Enrolment Rates."
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "42,566"
+						}
+					],
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "New primary schools established."
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "orange"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "reduction of out-of-school children."
+						}
+					],
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "23%"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "purple"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "20k+"
+						}
+					],
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Teachers recruited"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "blue"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "24k"
+						}
+					],
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Teachers recruited"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "orange"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"fact",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Teachers recruited"
+						}
+					],
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "10+"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "green"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

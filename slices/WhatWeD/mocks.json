@@ -1,0 +1,101 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"pillar_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+								"width": 4076,
+								"height": 2712
+							},
+							"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+							"width": 4076,
+							"height": 2712,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"pillar_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Reduction in the number of out-of-school children, focused on equity"
+						}
+					],
+					[
+						"pillar_content",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Our focus on equity drives this results area, aiming to ensure more equitable allocation of state education resources. Specifically, we work towards improving learning conditions in the most disadvantaged schools and providing opportunities for students."
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"pillar_image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1536337005238-94b997371b40?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwc3R1ZGVudHxlbnwwfHx8fDE2ODc1MzgzMTJ8MA&ixlib=rb-4.0.3&q=85",
+							"origin": {
+								"id": "83tkHLPgg2Q",
+								"url": "https://images.unsplash.com/photo-1536337005238-94b997371b40?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwc3R1ZGVudHxlbnwwfHx8fDE2ODc1MzgzMTJ8MA&ixlib=rb-4.0.3&q=85",
+								"width": 6016,
+								"height": 4016
+							},
+							"width": 6016,
+							"height": 4016,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"pillar_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Enhancing teaching practices and measuring learning outcomes, Focused On Learning Outcomes."
+						}
+					],
+					[
+						"pillar_content",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "At TESS, we are committed to improving the quality of education by enhancing teaching practices and measuring learning outcomes. Our focus is to strengthen teachers' capacity in OAK states through a structured pedagogy program based on digital technology."
+						}
+					]
+				]
+			}
+		]
+	}
+]

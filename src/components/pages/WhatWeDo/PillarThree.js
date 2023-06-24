@@ -40,14 +40,15 @@ export default function PillarThree() {
 				<br />
 				<br />
 				<div style={{ fontSize: '20px' }}>
-					{/* <p style={{ fontSize: '20px' }}>
-						Through this program, we anticipate reaching approximately 60,000
-						primary school and Junior Secondary School (JSS) teachers/class
-						streams in the three OAK states. We draw inspiration from successful
-						pedagogy programs implemented in various contexts, adapting and
-						incorporating the best elements to deliver results efficiently and
-						effectively.
-					</p> */}
+					<p style={{ fontSize: '20px' }} className="fw-bold">
+						Disbursement-Linked Indicator:
+					</p>
+					<ul>
+						<li>Improved Teacher Deployment</li>
+					</ul>
+				</div>
+				<br />
+				<div style={{ fontSize: '20px' }}>
 					<p style={{ fontSize: '20px' }} className="fw-bold">
 						Disbursement-Linked Result 1: Teacher Deployment Policy:
 					</p>
@@ -78,6 +79,61 @@ export default function PillarThree() {
 							PTR greater than 70. Similarly, States will also be rewarded for
 							redeployment of teachers from primary schools with a PTR below 30
 							to schools with a PTR above 70.
+						</li>
+					</ul>
+				</div>
+
+				{/* SECOND */}
+				<br />
+				<br />
+				<div style={{ fontSize: '20px' }}>
+					<p style={{ fontSize: '20px' }} className="fw-bold">
+						Disbursement-Linked Indicator:
+					</p>
+					<ul>
+						<li style={{ fontSize: '20px' }}>
+							Improved Transparency in Education Spending <br />
+							This DLI has two key results.{' '}
+						</li>
+					</ul>
+				</div>
+				<br />
+				<div style={{ fontSize: '20px' }}>
+					<p style={{ fontSize: '20px' }} className="fw-bold">
+						Disbursement-Linked Result 1: State Education Expenditures Accounts
+						published:
+					</p>
+					<ul style={{ listStyle: 'none' }}>
+						<li>
+							States are required to publish annual education expenditure
+							reports compiled and approved by the State Accountant General. The
+							report includes spending by administrative units in the education
+							and training sector, including other Ministries, Departments and
+							Agencies (MDAs); by economic classification such as capital and
+							recurrent expenditures; by functions such as levels of education
+							including pre-school, primary, JSS, Senior Secondary School (SSS),
+							non-formal, post-secondary non-tertiary and tertiary.
+						</li>
+					</ul>
+				</div>
+
+				<div style={{ fontSize: '20px' }}>
+					<p style={{ fontSize: '20px' }} className="fw-bold">
+						Disbursement-Linked Result 2: SUBEB Expenditure Accounts by Program
+						and Outputs published:
+					</p>
+					<ul style={{ listStyle: 'none' }}>
+						<li>
+							States are required to publish SUBEB’s expenditures and outputs by
+							program such as matching grants for infrastructure; Teacher
+							Professional Development; Instructional and learning materials;
+							Special needs education; Imbalance and good governance programs.
+							The report should include the list of schools with their
+							geo-coordinates, that benefit from SUBEBs’ investment. For each
+							beneficiary school, the report should include information on
+							infrastructure built or upgraded, training programs for teachers
+							and number of teachers participating, number of instructional
+							materials provided and number of students benefited.
 						</li>
 					</ul>
 				</div>

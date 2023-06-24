@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 export default function HomeHero() {
@@ -37,13 +38,14 @@ export default function HomeHero() {
 			className="banner-area- bg-img p-3 hero-slider-area  "
 			style={{
 				height: '92vh',
-				backgroundImage: `url(/assets/figma/hero.png)`,
-				// gap: '1rem',
+				// backgroundImage: `url(/assets/figma/hero.png)`,
+
 				overflowX: 'hidden',
-				// transform: `translateX()`,
+
 				position: 'relative',
 			}}
 		>
+			<Image fill src={'/assets/figma/hero.png'} alt="tess" />
 			<div
 				style={{
 					overflowX: 'hidden',

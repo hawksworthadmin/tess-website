@@ -1,0 +1,35 @@
+{
+	"id": "quote",
+	"type": "SharedSlice",
+	"name": "Quote",
+	"description": "Quote",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"quote": {
+					"type": "Text",
+					"config": { "label": "Quote", "placeholder": "" }
+				},
+				"author": {
+					"type": "Text",
+					"config": { "label": "Author", "placeholder": "" }
+				},
+				"background_image": {
+					"type": "Image",
+					"config": {
+						"label": "Background Image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

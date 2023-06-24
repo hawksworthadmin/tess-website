@@ -1,0 +1,28 @@
+{
+	"id": "what_we_do",
+	"type": "SharedSlice",
+	"name": "WhoWeAre",
+	"description": "WhatWeDo",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"content": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Content",
+						"placeholder": "Who we are section content",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em"
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

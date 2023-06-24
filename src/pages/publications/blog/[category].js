@@ -40,7 +40,7 @@ export const getServerSideProps = async ({ query, params }) => {
 
 		const blog = await client.getByType('blopgpost', {
 			filters: [prismic.filter.at('my.blopgpost.category', categoryId)],
-			pageSize: 4,
+			pageSize: 8,
 			page: page,
 			orderings: {
 				field: 'document.first_publication_date',

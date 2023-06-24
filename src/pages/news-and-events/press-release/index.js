@@ -35,7 +35,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	})
 
 	const pressReleases = await client.getByType('press_release', {
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 
 		orderings: {

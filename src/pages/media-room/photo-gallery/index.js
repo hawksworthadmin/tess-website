@@ -31,7 +31,7 @@ export const getServerSideProps = async ({ query, res }) => {
 
 		if (category == 'all') {
 			const photos = await client.getByType('image_gallery', {
-				pageSize: 6,
+				pageSize: 9,
 				page: page,
 				orderings: {
 					field: 'document.first_publication_date',

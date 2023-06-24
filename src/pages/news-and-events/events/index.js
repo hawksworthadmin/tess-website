@@ -31,7 +31,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	})
 
 	const events = await client.getByType('event', {
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 
 		orderings: {
