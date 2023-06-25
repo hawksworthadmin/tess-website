@@ -8,8 +8,7 @@ import HomePartners from './HomePartners'
 import ResultAreaMap from './ResultAreaMap'
 import Image from 'next/image'
 
-export default function Home({ latestNews, factsAndFigures }) {
-	console.log('facts and figures', factsAndFigures)
+export default function Home({ latestNews, factsAndFigures, statistics }) {
 	return (
 		<>
 			<HomeHero />
@@ -45,7 +44,7 @@ export default function Home({ latestNews, factsAndFigures }) {
 			<Metrics factsAndFigures={factsAndFigures} />
 			<WhatWeDo />
 			<RecentPublication latestNews={latestNews} />
-			<ResultAreaMap />
+			<ResultAreaMap statistics={statistics} />
 			<StackHolders />
 		</>
 	)

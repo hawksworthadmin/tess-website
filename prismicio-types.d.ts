@@ -399,6 +399,81 @@ export type FactFigureDocument<Lang extends string = string> =
 		'fact_figure',
 		Lang
 	>
+/** Content for Home page documents */
+interface HomePageDocumentData {
+	/**
+	 * Slice Zone field in *Home page*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_page.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+	 *
+	 */
+	slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice>
+	/**
+	 * Meta Title field in *Home page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: home_page.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Home page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: home_page.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	meta_description: prismic.RichTextField
+	/**
+	 * Meta Image field in *Home page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_page.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+}
+/**
+ * Slice for *Home page → Slice Zone*
+ *
+ */
+type HomePageDocumentDataSlicesSlice =
+	| HeroSectionSlice
+	| SponsorsSlice
+	| QuoteSlice
+	| WhatWeDoSlice
+	| FactsAndFiguresSlice
+	| KeyStackHoldersSlice
+	| ResultAreaSlice
+	| WhatWeDSlice
+/**
+ * Home page document from Prismic
+ *
+ * - **API ID**: `home_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomePageDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<HomePageDocumentData>,
+		'home_page',
+		Lang
+	>
 /** Content for Image Gallery documents */
 interface ImageGalleryDocumentData {
 	/**
@@ -976,16 +1051,16 @@ interface ResourceDocumentData {
 	 */
 	category: prismic.RelationField<'resource_category'>
 	/**
-	 * Cover Photo field in *Resource*
+	 * Password field in *Resource*
 	 *
-	 * - **Field Type**: Image
+	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: resource.cover_photo
+	 * - **API ID Path**: resource.password
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
 	 *
 	 */
-	cover_photo: prismic.ImageField<never>
+	password: prismic.KeyTextField
 	/**
 	 * Meta title field in *Resource*
 	 *
@@ -1062,6 +1137,46 @@ export type ResourceCategoryDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<
 		Simplify<ResourceCategoryDocumentData>,
 		'resource_category',
+		Lang
+	>
+/** Content for Statistics documents */
+interface StatisticsDocumentData {
+	/**
+	 * Numbers field in *Statistics*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: statistics.numbers
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	numbers: prismic.KeyTextField
+	/**
+	 * Description field in *Statistics*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: statistics.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	description: prismic.KeyTextField
+}
+/**
+ * Statistics document from Prismic
+ *
+ * - **API ID**: `statistics`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type StatisticsDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<StatisticsDocumentData>,
+		'statistics',
 		Lang
 	>
 /** Content for Subcategory documents */
@@ -1237,6 +1352,7 @@ export type AllDocumentTypes =
 	| EventDocument
 	| EventCategoryDocument
 	| FactFigureDocument
+	| HomePageDocument
 	| ImageGalleryDocument
 	| ImageGalleryCategoryDocument
 	| NewsletterDocument
@@ -1247,75 +1363,482 @@ export type AllDocumentTypes =
 	| ReportCategoryDocument
 	| ResourceDocument
 	| ResourceCategoryDocument
+	| StatisticsDocument
 	| SubcategoryDocument
 	| UserDocument
 	| VideoGalleryDocument
 	| VideoGalleryCategoryDocument
 /**
- * Primary content in FactSheet → Primary
+ * Item in FactsAndFigures → Items
  *
  */
-interface FactSheetSliceDefaultPrimary {
+export interface FactsAndFiguresSliceDefaultItem {
 	/**
-	 * Fact field in *FactSheet → Primary*
+	 * Fact field in *FactsAndFigures → Items*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_sheet.primary.fact
+	 * - **API ID Path**: facts_and_figures.items[].fact
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
 	 *
 	 */
 	fact: prismic.KeyTextField
 	/**
-	 * Figure field in *FactSheet → Primary*
+	 * Figure field in *FactsAndFigures → Items*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_sheet.primary.figure
+	 * - **API ID Path**: facts_and_figures.items[].figure
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
 	 *
 	 */
 	figure: prismic.KeyTextField
 	/**
-	 * Variants field in *FactSheet → Primary*
+	 * color field in *FactsAndFigures → Items*
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: Select Color Variant
-	 * - **API ID Path**: fact_sheet.primary.variants
+	 * - **Default Value**: blue
+	 * - **API ID Path**: facts_and_figures.items[].color
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
 	 *
 	 */
-	variants: prismic.SelectField<'Blue' | 'Green' | 'Purple' | 'Orange'>
+	color: prismic.SelectField<'blue' | 'green' | 'orange' | 'purple', 'filled'>
 }
 /**
- * Default variation for FactSheet Slice
+ * Default variation for FactsAndFigures Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type FactSheetSliceDefault = prismic.SharedSliceVariation<
+export type FactsAndFiguresSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<FactSheetSliceDefaultPrimary>,
-	never
+	Record<string, never>,
+	Simplify<FactsAndFiguresSliceDefaultItem>
 >
 /**
- * Slice variation for *FactSheet*
+ * Slice variation for *FactsAndFigures*
  *
  */
-type FactSheetSliceVariation = FactSheetSliceDefault
+type FactsAndFiguresSliceVariation = FactsAndFiguresSliceDefault
 /**
- * FactSheet Shared Slice
+ * FactsAndFigures Shared Slice
  *
- * - **API ID**: `fact_sheet`
- * - **Description**: `FactSheet`
+ * - **API ID**: `facts_and_figures`
+ * - **Description**: `FactsAndFigures`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type FactSheetSlice = prismic.SharedSlice<
-	'fact_sheet',
-	FactSheetSliceVariation
+export type FactsAndFiguresSlice = prismic.SharedSlice<
+	'facts_and_figures',
+	FactsAndFiguresSliceVariation
+>
+/**
+ * Primary content in HeroSection → Primary
+ *
+ */
+interface HeroSectionSliceDefaultPrimary {
+	/**
+	 * Hero Image field in *HeroSection → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_section.primary.hero_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	hero_image: prismic.ImageField<never>
+}
+/**
+ * Item in HeroSection → Items
+ *
+ */
+export interface HeroSectionSliceDefaultItem {
+	/**
+	 * Hero heading field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_section.items[].hero_heading
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	hero_heading: prismic.KeyTextField
+	/**
+	 * Hero sub heading field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_section.items[].hero_sub_heading
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	hero_sub_heading: prismic.KeyTextField
+}
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HeroSectionSliceDefaultPrimary>,
+	Simplify<HeroSectionSliceDefaultItem>
+>
+/**
+ * Slice variation for *HeroSection*
+ *
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: `HeroSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSectionSlice = prismic.SharedSlice<
+	'hero_section',
+	HeroSectionSliceVariation
+>
+/**
+ * Item in KeyStackHolders → Items
+ *
+ */
+export interface KeyStackHoldersSliceDefaultItem {
+	/**
+	 * Stack holder image field in *KeyStackHolders → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: key_stack_holders.items[].stack_holder_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	stack_holder_image: prismic.ImageField<never>
+	/**
+	 * Stack holder name field in *KeyStackHolders → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: key_stack_holders.items[].stack_holder_name
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	stack_holder_name: prismic.KeyTextField
+}
+/**
+ * Default variation for KeyStackHolders Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type KeyStackHoldersSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<KeyStackHoldersSliceDefaultItem>
+>
+/**
+ * Slice variation for *KeyStackHolders*
+ *
+ */
+type KeyStackHoldersSliceVariation = KeyStackHoldersSliceDefault
+/**
+ * KeyStackHolders Shared Slice
+ *
+ * - **API ID**: `key_stack_holders`
+ * - **Description**: `KeyStackHolders`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type KeyStackHoldersSlice = prismic.SharedSlice<
+	'key_stack_holders',
+	KeyStackHoldersSliceVariation
+>
+/**
+ * Primary content in Quote → Primary
+ *
+ */
+interface QuoteSliceDefaultPrimary {
+	/**
+	 * Quote field in *Quote → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quote.primary.quote
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	quote: prismic.KeyTextField
+	/**
+	 * Author field in *Quote → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quote.primary.author
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	author: prismic.KeyTextField
+	/**
+	 * Background Image field in *Quote → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quote.primary.background_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	background_image: prismic.ImageField<never>
+}
+/**
+ * Default variation for Quote Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuoteSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<QuoteSliceDefaultPrimary>,
+	never
+>
+/**
+ * Slice variation for *Quote*
+ *
+ */
+type QuoteSliceVariation = QuoteSliceDefault
+/**
+ * Quote Shared Slice
+ *
+ * - **API ID**: `quote`
+ * - **Description**: `Quote`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuoteSlice = prismic.SharedSlice<'quote', QuoteSliceVariation>
+/**
+ * Item in ResultArea → Items
+ *
+ */
+export interface ResultAreaSliceDefaultItem {
+	/**
+	 * number field in *ResultArea → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: result_area.items[].number
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	number: prismic.KeyTextField
+	/**
+	 * Description field in *ResultArea → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: result_area.items[].description
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	description: prismic.KeyTextField
+}
+/**
+ * Default variation for ResultArea Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResultAreaSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<ResultAreaSliceDefaultItem>
+>
+/**
+ * Slice variation for *ResultArea*
+ *
+ */
+type ResultAreaSliceVariation = ResultAreaSliceDefault
+/**
+ * ResultArea Shared Slice
+ *
+ * - **API ID**: `result_area`
+ * - **Description**: `ResultArea`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResultAreaSlice = prismic.SharedSlice<
+	'result_area',
+	ResultAreaSliceVariation
+>
+/**
+ * Item in Partners → Items
+ *
+ */
+export interface SponsorsSliceDefaultItem {
+	/**
+	 * Partner Logo field in *Partners → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sponsors.items[].partner_logo
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	partner_logo: prismic.ImageField<never>
+}
+/**
+ * Default variation for Partners Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SponsorsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<SponsorsSliceDefaultItem>
+>
+/**
+ * Slice variation for *Partners*
+ *
+ */
+type SponsorsSliceVariation = SponsorsSliceDefault
+/**
+ * Partners Shared Slice
+ *
+ * - **API ID**: `sponsors`
+ * - **Description**: `Sponsors`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SponsorsSlice = prismic.SharedSlice<
+	'sponsors',
+	SponsorsSliceVariation
+>
+/**
+ * Item in WhatWeD → Items
+ *
+ */
+export interface WhatWeDSliceDefaultItem {
+	/**
+	 * Pillar Image field in *WhatWeD → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_d.items[].pillar_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	pillar_image: prismic.ImageField<never>
+	/**
+	 * Pillar Title field in *WhatWeD → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_d.items[].pillar_title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	pillar_title: prismic.KeyTextField
+	/**
+	 * Pillar Content field in *WhatWeD → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_d.items[].pillar_content
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	pillar_content: prismic.KeyTextField
+}
+/**
+ * Default variation for WhatWeD Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<WhatWeDSliceDefaultItem>
+>
+/**
+ * Slice variation for *WhatWeD*
+ *
+ */
+type WhatWeDSliceVariation = WhatWeDSliceDefault
+/**
+ * WhatWeD Shared Slice
+ *
+ * - **API ID**: `what_we_d`
+ * - **Description**: `WhatWeD`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDSlice = prismic.SharedSlice<
+	'what_we_d',
+	WhatWeDSliceVariation
+>
+/**
+ * Primary content in WhoWeAre → Primary
+ *
+ */
+interface WhatWeDoSliceDefaultPrimary {
+	/**
+	 * Content field in *WhoWeAre → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Who we are section content
+	 * - **API ID Path**: what_we_do.primary.content
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	content: prismic.RichTextField
+}
+/**
+ * Default variation for WhoWeAre Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDoSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<WhatWeDoSliceDefaultPrimary>,
+	never
+>
+/**
+ * Slice variation for *WhoWeAre*
+ *
+ */
+type WhatWeDoSliceVariation = WhatWeDoSliceDefault
+/**
+ * WhoWeAre Shared Slice
+ *
+ * - **API ID**: `what_we_do`
+ * - **Description**: `WhatWeDo`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDoSlice = prismic.SharedSlice<
+	'what_we_do',
+	WhatWeDoSliceVariation
 >
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -1337,6 +1860,9 @@ declare module '@prismicio/client' {
 			EventCategoryDocument,
 			FactFigureDocumentData,
 			FactFigureDocument,
+			HomePageDocumentData,
+			HomePageDocumentDataSlicesSlice,
+			HomePageDocument,
 			ImageGalleryDocumentData,
 			ImageGalleryDocument,
 			ImageGalleryCategoryDocumentData,
@@ -1358,6 +1884,8 @@ declare module '@prismicio/client' {
 			ResourceDocument,
 			ResourceCategoryDocumentData,
 			ResourceCategoryDocument,
+			StatisticsDocumentData,
+			StatisticsDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,
@@ -1367,10 +1895,39 @@ declare module '@prismicio/client' {
 			VideoGalleryCategoryDocumentData,
 			VideoGalleryCategoryDocument,
 			AllDocumentTypes,
-			FactSheetSliceDefaultPrimary,
-			FactSheetSliceDefault,
-			FactSheetSliceVariation,
-			FactSheetSlice,
+			FactsAndFiguresSliceDefaultItem,
+			FactsAndFiguresSliceDefault,
+			FactsAndFiguresSliceVariation,
+			FactsAndFiguresSlice,
+			HeroSectionSliceDefaultPrimary,
+			HeroSectionSliceDefaultItem,
+			HeroSectionSliceDefault,
+			HeroSectionSliceVariation,
+			HeroSectionSlice,
+			KeyStackHoldersSliceDefaultItem,
+			KeyStackHoldersSliceDefault,
+			KeyStackHoldersSliceVariation,
+			KeyStackHoldersSlice,
+			QuoteSliceDefaultPrimary,
+			QuoteSliceDefault,
+			QuoteSliceVariation,
+			QuoteSlice,
+			ResultAreaSliceDefaultItem,
+			ResultAreaSliceDefault,
+			ResultAreaSliceVariation,
+			ResultAreaSlice,
+			SponsorsSliceDefaultItem,
+			SponsorsSliceDefault,
+			SponsorsSliceVariation,
+			SponsorsSlice,
+			WhatWeDSliceDefaultItem,
+			WhatWeDSliceDefault,
+			WhatWeDSliceVariation,
+			WhatWeDSlice,
+			WhatWeDoSliceDefaultPrimary,
+			WhatWeDoSliceDefault,
+			WhatWeDoSliceVariation,
+			WhatWeDoSlice,
 		}
 	}
 }

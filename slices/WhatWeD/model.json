@@ -1,0 +1,35 @@
+{
+	"id": "what_we_d",
+	"type": "SharedSlice",
+	"name": "WhatWeD",
+	"description": "WhatWeD",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"pillar_image": {
+					"type": "Image",
+					"config": {
+						"label": "Pillar Image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				},
+				"pillar_title": {
+					"type": "Text",
+					"config": { "label": "Pillar Title", "placeholder": "" }
+				},
+				"pillar_content": {
+					"type": "Text",
+					"config": { "label": "Pillar Content", "placeholder": "" }
+				}
+			}
+		}
+	]
+}

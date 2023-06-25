@@ -34,7 +34,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	})
 
 	const reports = await client.getByType('report', {
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 
 		orderings: {

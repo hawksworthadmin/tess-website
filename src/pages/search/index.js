@@ -77,7 +77,6 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	const reports =
 		searchResults.results?.filter((post) => post?.type == 'report') || []
 
-	console.log(searchQuery)
 	return {
 		props: {
 			query: searchQuery,

@@ -31,7 +31,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 
 		if (category == 'all') {
 			const videos = await client.getByType('video_gallery', {
-				pageSize: 6,
+				pageSize: 9,
 				page: page,
 				orderings: {
 					field: 'document.first_publication_date',

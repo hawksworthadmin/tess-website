@@ -34,8 +34,6 @@ export default async function handler(req, res) {
 				},
 			})
 
-			console.log(response[0].queryResult.fulfillmentText)
-
 			res.status(200).send({ data: response[0].queryResult.fulfillmentText })
 		} catch (error) {
 			console.log(error)

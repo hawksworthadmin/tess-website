@@ -1,0 +1,27 @@
+{
+	"id": "result_area",
+	"type": "SharedSlice",
+	"name": "ResultArea",
+	"description": "ResultArea",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"number": {
+					"type": "Text",
+					"config": { "label": "number", "placeholder": "" }
+				},
+				"description": {
+					"type": "Text",
+					"config": { "label": "Description", "placeholder": "" }
+				}
+			}
+		}
+	]
+}

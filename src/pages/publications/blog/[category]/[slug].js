@@ -44,8 +44,6 @@ export const getServerSideProps = async ({ previewData, params }) => {
 		},
 	})
 
-	// console.log('Related', relatedPosts)
-
 	return {
 		props: {
 			blog,

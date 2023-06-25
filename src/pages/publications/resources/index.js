@@ -4,7 +4,6 @@ import React from 'react'
 import { createClient } from '../../../../prismicio'
 
 const index = ({ resources, categories, totalPages }) => {
-	console.log(resources)
 	return (
 		<Layout>
 			<Blog
@@ -32,7 +31,7 @@ export const getServerSideProps = async ({ previewData, query }) => {
 	})
 
 	const resource = await client.getByType('resource', {
-		pageSize: 4,
+		pageSize: 8,
 		page: page,
 
 		orderings: {

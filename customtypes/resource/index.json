@@ -32,9 +32,9 @@
 					"customtypes": ["resource_category"]
 				}
 			},
-			"cover_photo": {
-				"type": "Image",
-				"config": { "label": "Cover Photo", "constraint": {}, "thumbnails": [] }
+			"password": {
+				"type": "Text",
+				"config": { "label": "Password", "placeholder": "" }
 			}
 		},
 		"SEO and Meta Data": {

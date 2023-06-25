@@ -9,25 +9,9 @@ export default function StackHolders() {
 					<h2 data-aos="fade-up" data-aos-duration="1000">
 						Key Stakeholders
 					</h2>
-					{/* <p
-						className='font-20'>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
-						consectetur
-					</p> */}
 				</div>
 
 				<div class="row justify-content-center align-items-center">
-					{/* <div class="col-lg-4 col-md-6 mb-4">
-						<div class="single-project- text-center" data-aos="zoom-in-up">
-							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
-
-							<p
-								className="font-20"
-								style={{ fontSize: '16px' }}
-							>{`Federal Ministry of Finance, Budget, and National Planning (FMoFBNP)`}</p>
-						</div>
-					</div> */}
 					<StackHolder
 						image={'/assets/figma/world_bank.png'}
 						worldbank={true}
@@ -48,17 +32,6 @@ export default function StackHolders() {
 						image={'/assets/figma/fpfmd.png'}
 						title={'State Project Steering Committee (NPSC)'}
 					/>
-
-					{/* <div class="col-lg-4 col-md-6 mb-4">
-						<div class="single-project- text-center" data-aos="zoom-in-up">
-							<img src="assets/figma/fpfmd.png" alt="Image" className="mb-4" />
-
-							<p
-								className="font-20"
-								style={{ fontSize: '16px' }}
-							>{`Federal Project Financial Management Division (FPFMD)`}</p>
-						</div>
-				</div>*/}
 				</div>
 			</div>
 		</section>

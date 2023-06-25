@@ -1,8 +1,8 @@
 {
-	"id": "fact_sheet",
+	"id": "facts_and_figures",
 	"type": "SharedSlice",
-	"name": "FactSheet",
-	"description": "FactSheet",
+	"name": "FactsAndFigures",
+	"description": "FactsAndFigures",
 	"variations": [
 		{
 			"id": "default",
@@ -11,7 +11,8 @@
 			"version": "initial",
 			"description": "Default",
 			"imageUrl": "",
-			"primary": {
+			"primary": {},
+			"items": {
 				"fact": {
 					"type": "Text",
 					"config": { "label": "Fact", "placeholder": "" }
@@ -20,16 +21,16 @@
 					"type": "Text",
 					"config": { "label": "Figure", "placeholder": "" }
 				},
-				"variants": {
+				"color": {
 					"type": "Select",
 					"config": {
-						"label": "Variants",
+						"label": "color",
 						"placeholder": "Select Color Variant",
-						"options": ["Blue", "Green", "Purple", "Orange"]
+						"options": ["blue", "green", "orange", "purple"],
+						"default_value": "blue"
 					}
 				}
-			},
-			"items": {}
+			}
 		}
 	]
 }

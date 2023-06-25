@@ -59,6 +59,7 @@ export default function Blog({
 											content={post?.data?.description}
 											downloadLink={post?.data?.document?.url}
 											documentName={post?.data?.document?.name}
+											password={post?.data?.password}
 										/>
 									) : (
 										<EachBlog
