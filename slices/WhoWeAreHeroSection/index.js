@@ -1,9 +1,11 @@
-import React from 'react'
-import Agreement from './Agreement'
-
-export default function WhoWeAre() {
+/**
+ * @typedef {import("@prismicio/client").Content.WhoWeAreHeroSectionSlice} WhoWeAreHeroSectionSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<WhoWeAreHeroSectionSlice>} WhoWeAreHeroSectionProps
+ * @param {WhoWeAreHeroSectionProps}
+ */
+const WhoWeAreHeroSection = ({ slice }) => {
 	return (
-		<div>
+		<>
 			<div
 				className="bg-1 bg-theme- "
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
@@ -21,8 +23,8 @@ export default function WhoWeAre() {
 								bis_skin_checked="1"
 							>
 								<img
-									src="/assets/figma/image-19.png"
-									alt="Image"
+									src={slice.primary.hero_image.url}
+									alt={slice.primary.hero_image.alt}
 									className="animate__slideInLeft "
 									data-aos="fade-right"
 								/>
@@ -36,23 +38,18 @@ export default function WhoWeAre() {
 								bis_skin_checked="1"
 							>
 								<span className="top-title">Who we are</span>
-								<h2 data-aos-delay="50">
-									The Transforming Education Systems at State Level (TESS)
-									program was initiated in response to the need for educational
-									reform and improvement in Nigeria.
-								</h2>
+								<h2 data-aos-delay="50">{slice.primary.hero_heading}</h2>
 
-								<p data-aos-delay="250">
-									TESS aims to enhance the quality of education and learning
-									outcomes in Nigerian states by addressing key challenges in
-									the education sector. TESS seeks to transform the education
-									sector in Nigeria and contribute to the country's
-									socioeconomic growth and development.
-								</p>
+								<p data-aos-delay="250">{slice.primary.hero_paragraph}</p>
 
 								<h3 data-aos-delay="250">Our Focus:</h3>
 								<ul>
-									<li data-aos-delay="300">Improving teacher quality</li>
+									{slice.items.map((focus, index) => (
+										<li key={`focus_${index}`} data-aos-delay="300">
+											{focus.our_focus}
+										</li>
+									))}
+									{/* <li data-aos-delay="300">Improving teacher quality</li>
 
 									<li data-aos-delay="300">
 										Enhancing curriculum and learning assessment systems
@@ -60,14 +57,15 @@ export default function WhoWeAre() {
 									<li data-aos-delay="300">
 										Strengthening school infrastructure
 									</li>
-									<li data-aos-delay="300">Promoting community engagement</li>
+									<li data-aos-delay="300">Promoting community engagement</li> */}
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<Agreement />
-		</div>
+		</>
 	)
 }
+
+export default WhoWeAreHeroSection

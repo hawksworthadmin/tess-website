@@ -1,0 +1,40 @@
+{
+	"id": "who_we_are_hero_section",
+	"type": "SharedSlice",
+	"name": "WhoWeAreHeroSection",
+	"description": "WhoWeAreHeroSection",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"hero_image": {
+					"type": "Image",
+					"config": {
+						"label": "Hero Image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				},
+				"hero_heading": {
+					"type": "Text",
+					"config": { "label": "Hero heading", "placeholder": "" }
+				},
+				"hero_paragraph": {
+					"type": "Text",
+					"config": { "label": "Hero Paragraph", "placeholder": "" }
+				}
+			},
+			"items": {
+				"our_focus": {
+					"type": "Text",
+					"config": { "label": "Our Focus", "placeholder": "" }
+				}
+			}
+		}
+	]
+}

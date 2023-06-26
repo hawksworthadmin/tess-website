@@ -39,8 +39,10 @@ export default function index({ blogposts, totalPages, categories }) {
 // }
 
 export const getServerSideProps = async ({ query, params }) => {
-	const page = Number(query.page) || 1
+	const page = Number(params.page) || 1
 	const { category } = params
+
+	console.log(params)
 
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
 

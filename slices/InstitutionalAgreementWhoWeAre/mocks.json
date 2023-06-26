@@ -1,0 +1,176 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"agreement_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "TESS establishes a robust governance structure involving four levels of coordination and implementation. The National Project Steering Committee(NPSC) and the Federal Project Coordination Unit (FPCU) at the the federal level; State Project Steering Committee (SPSC) at the the state level, State Project Coordination Units(SPSUs) for operational management, and Local Government Education Authorities (LGEA) at the local government level and School Based Management Committee (SBMC) at the school level."
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"section_type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Federal Level",
+							"type": "Select"
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Federal Ministry of Education (FMoE)"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Is the ultimate sectoral authority for the project and will be responsible for paying IVAs for independent verification of achievement of the DLIs; strengthening the education planning and resource allocation in three states and sharing the experience in education planning with the rest of the country; monitoring and reporting on TESS implementation progress and results."
+						}
+					],
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+								"width": 4160,
+								"height": 3120
+							},
+							"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+							"width": 4160,
+							"height": 3120,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"section_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Federal Level"
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Universal Basic Education Commission (UBEC)"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Is responsible for facilitating the implementation of UBE programs, supported by SUBEB at the state level. They will collaborate with FMoE and Development Partners (DPs) for the conduct of annual joint sector reviews in OAK states to monitor the implementation of the ESPs and the BESDA AF-TESS."
+						}
+					],
+					[
+						"image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1552914953-938eef0ce926?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8ZnJ1aXR8ZW58MHx8fHwxNjg3NzI3Njk0fDA&ixlib=rb-4.0.3&q=85",
+							"origin": {
+								"id": "Nl7eLS8E2Ss",
+								"url": "https://images.unsplash.com/photo-1552914953-938eef0ce926?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8ZnJ1aXR8ZW58MHx8fHwxNjg3NzI3Njk0fDA&ixlib=rb-4.0.3&q=85",
+								"width": 3450,
+								"height": 3456
+							},
+							"width": 3450,
+							"height": 3456,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"section_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "State Level"
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "State Ministry of Education (SMoE)"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Responsible for will be responsible for the development of the school network to identify the need for additional schools and priorities for infrastructure improvement in existing schools; develop and implement a need-based teacher deployment policy; conduct learning assessments in core subjects and publish education budget spending in collaboration with the State General Accountant’s office."
+						}
+					],
+					[
+						"image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE2ODc3Mjc2OTR8MA&ixlib=rb-4.0.3&q=85",
+							"origin": {
+								"id": "xnRg3xDcNnE",
+								"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE2ODc3Mjc2OTR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 7173,
+								"height": 10041
+							},
+							"width": 7173,
+							"height": 10041,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

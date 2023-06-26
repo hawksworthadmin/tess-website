@@ -21,6 +21,7 @@ import Link from 'next/link'
 import { DefaultSeo } from 'next-seo'
 import defaultSeo from '@/data/defaultSeo'
 import Head from 'next/head'
+import { createClient } from '../../prismicio'
 
 export default function App({ Component, pageProps }) {
 	useEffect(() => {
@@ -31,7 +32,10 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
-			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
+			<PrismicProvider
+				client={createClient}
+				internalLinkComponent={(props) => <Link {...props} />}
+			>
 				<PrismicPreview repositoryName={process.env.PRISMIC_REPO_NAME}>
 					<DefaultSeo {...defaultSeo} />
 					<Component {...pageProps} />

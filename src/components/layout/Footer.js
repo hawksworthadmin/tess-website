@@ -18,30 +18,13 @@ export default function Footer() {
 										gap: 10,
 									}}
 								>
-									<div
-										style={{
-											position: 'relative',
-											width: 70,
-											height: 70,
-											background: 'white',
-											borderRadius: '50%',
-										}}
-										className="align-self-center"
-									>
-										<img
-											src="/assets/figma/ministry_of_edu_logo.png"
-											alt="logo"
-											style={{
-												width: '100%',
-												position: 'absolute',
-												margin: 'auto',
-												left: '5%',
-												top: '5%',
-												// transform: 'translateX(-50%)',
-												// transform: 'translateY(-50%)',
-											}}
-										/>
-									</div>
+									<img
+										width={48}
+										height={48}
+										src="/footer_logo.png"
+										alt="logo"
+									/>
+
 									{/* <div
 										className="d-flex text-theme flex-column"
 										style={{ maxWidth: '200px' }}

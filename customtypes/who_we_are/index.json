@@ -1,0 +1,45 @@
+{
+	"id": "who_we_are",
+	"label": "Who we are page",
+	"format": "page",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"slices": {
+				"type": "Slices",
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {
+						"who_we_are_hero_section": { "type": "SharedSlice" },
+						"institutional_agreement_who_we_are": { "type": "SharedSlice" }
+					}
+				}
+			}
+		},
+		"SEO & Metadata": {
+			"meta_title": {
+				"type": "Text",
+				"config": {
+					"label": "Meta Title",
+					"placeholder": "A title of the page used for social media and search engines"
+				}
+			},
+			"meta_description": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Meta Description",
+					"placeholder": "A brief summary of the page"
+				}
+			},
+			"meta_image": {
+				"type": "Image",
+				"config": {
+					"label": "Meta Image",
+					"constraint": { "width": 2400, "height": 1260 },
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

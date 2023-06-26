@@ -1,0 +1,44 @@
+{
+	"id": "what_we_do_page_pillar",
+	"type": "SharedSlice",
+	"name": "WhatWeDoPagePillar",
+	"description": "WhatWeDoPagePillar",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"pillar_image": {
+					"type": "Image",
+					"config": {
+						"label": "Pillar Image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				},
+				"pillar_title": {
+					"type": "Text",
+					"config": { "label": "Pillar Title", "placeholder": "" }
+				},
+				"pillar_content": {
+					"type": "Text",
+					"config": { "label": "Pillar Content", "placeholder": "" }
+				},
+				"picture_position": {
+					"type": "Select",
+					"config": {
+						"label": "Picture position",
+						"placeholder": "",
+						"options": ["right", "left"],
+						"default_value": "right"
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

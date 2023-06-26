@@ -21,7 +21,6 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 	const page = Number(query.page) || 1
 	const { category } = params
 
-	c
 	const client = createClient(previewData)
 
 	try {
@@ -31,6 +30,8 @@ export const getServerSideProps = async ({ previewData, query, params }) => {
 				direction: 'desc',
 			},
 		})
+
+		console.log(categories.results)
 
 		const getCategoryIdUsingSlug = await client.getByUID(
 			'report_category',

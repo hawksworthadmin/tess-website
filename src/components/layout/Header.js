@@ -91,20 +91,11 @@ export default function Header({
 					display: 'block',
 				}}
 			>
-				<img
-					src="/assets/figma/ministry_of_edu_logo.png"
-					alt="logo"
-					width={size || 70}
-				/>
+				<img src="/logo.png" alt="logo" style={{}} />
 
 				<span style={{ fontWeight: 600, flexShrink: 0, color: 'black' }}>
 					BESDA AF-TESS
 				</span>
-				<img
-					src="/assets/figma/global_partners.png"
-					alt="logo"
-					width={size || 70}
-				/>
 			</Link>
 		)
 	}

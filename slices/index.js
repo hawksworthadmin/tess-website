@@ -5,10 +5,15 @@ import dynamic from 'next/dynamic'
 export const components = {
 	facts_and_figures: dynamic(() => import('./FactsAndFigures')),
 	hero_section: dynamic(() => import('./HeroSection')),
+	institutional_agreement_who_we_are: dynamic(() =>
+		import('./InstitutionalAgreementWhoWeAre')
+	),
 	key_stack_holders: dynamic(() => import('./KeyStackHolders')),
 	quote: dynamic(() => import('./Quote')),
 	result_area: dynamic(() => import('./ResultArea')),
 	sponsors: dynamic(() => import('./Partners')),
 	what_we_d: dynamic(() => import('./WhatWeD')),
 	what_we_do: dynamic(() => import('./WhoWeAre')),
+	what_we_do_page_pillar: dynamic(() => import('./WhatWeDoPagePillar')),
+	who_we_are_hero_section: dynamic(() => import('./WhoWeAreHeroSection')),
 }
