@@ -1,24 +1,26 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-
-// import { createClient,  } from '@prismicio/client'
-import { Client, PrismicDocument } from '@prismicio/client'
 import * as prismic from '@prismicio/client'
+import { createClient } from '../../../../../../prismicio'
 import {
 	getStaticCategoryPage,
 	getStaticPropsCategoryPage,
 } from '../../../../../../lib/helperFunctions'
 
-export default function index({ blogposts, totalPages, categories }) {
+export default function PressReleaseCategory({
+	press_release,
+	totalPages,
+	categories,
+}) {
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
-				posts={blogposts}
+				heading={'News and Press Release'}
+				posts={press_release}
 				totalPages={totalPages}
 				categories={categories}
-				link={'/publications/blog/'}
+				link={'/news-and-events/press-release/'}
 			/>
 		</Layout>
 	)
@@ -26,9 +28,11 @@ export default function index({ blogposts, totalPages, categories }) {
 
 export const getStaticPaths = async () => {
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
-	const paths = await getStaticCategoryPage(client, 'category', 'blopgpost')
-
-	// console.log(paths)
+	const paths = await getStaticCategoryPage(
+		client,
+		'press_release_category',
+		'press_release'
+	)
 
 	return {
 		paths,
@@ -36,21 +40,23 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps = async ({ query, params }) => {
+export const getStaticProps = async ({ params, previewData }) => {
 	const page = Number(params.page) || 1
 	const { category } = params
 
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+	const client = createClient(previewData)
+
 	const { publication, categories } = await getStaticPropsCategoryPage(
 		client,
 		page,
 		category,
-		'category',
-		'blopgpost'
+		'press_release_category',
+		'press_release'
 	)
+
 	return {
 		props: {
-			blogposts: publication.results,
+			press_release: publication.results,
 			totalPages: publication.total_pages,
 			categories: categories.results,
 		},

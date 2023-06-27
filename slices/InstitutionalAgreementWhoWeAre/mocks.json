@@ -72,8 +72,8 @@
 						"section_type",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Select",
-							"value": "Federal Level"
+							"value": "State Level",
+							"type": "Select"
 						}
 					],
 					[
@@ -95,7 +95,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"url": "https://images.unsplash.com/photo-1552914953-938eef0ce926?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8ZnJ1aXR8ZW58MHx8fHwxNjg3NzI3Njk0fDA&ixlib=rb-4.0.3&q=85",
 							"origin": {
 								"id": "Nl7eLS8E2Ss",
@@ -113,6 +112,9 @@
 									"y": 0
 								}
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
@@ -125,8 +127,8 @@
 						"section_type",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Select",
-							"value": "State Level"
+							"value": "State Level",
+							"type": "Select"
 						}
 					],
 					[
@@ -148,7 +150,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE2ODc3Mjc2OTR8MA&ixlib=rb-4.0.3&q=85",
 							"origin": {
 								"id": "xnRg3xDcNnE",
@@ -166,6 +167,9 @@
 									"y": 0
 								}
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

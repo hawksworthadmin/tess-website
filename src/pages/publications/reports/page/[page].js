@@ -1,16 +1,21 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
-import { createClient } from '../../../../prismicio'
-import * as prismic from '@prismicio/client'
+import { createClient } from '../../../../../prismicio'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 import {
-	getStaticCatogeryPaths,
-	getStaticPropsCategoryPage,
-} from '../../../../lib/helperFunctions'
+	getStaticPathsPublicationsPagination,
+	getStaticPropsPublications,
+} from '../../../../../lib/helperFunctions'
+import * as prismic from '@prismicio/client'
 
 export default function Reports({ reports, categories, totalPages }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Reports | {METADATA.title}</title>
+			</Head>
 			<Blog
 				heading={'Reports'}
 				posts={reports}
@@ -25,7 +30,7 @@ export default function Reports({ reports, categories, totalPages }) {
 export const getStaticPaths = async () => {
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
 
-	const paths = await getStaticCatogeryPaths(client, 'report_category')
+	const paths = await getStaticPathsPublicationsPagination(client, 'report')
 
 	return {
 		paths,
@@ -33,21 +38,18 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps = async ({ query, params, previewData }) => {
-	const page = Number(params.page) || 1
-	const { category } = params
+export const getStaticProps = async ({ previewData }) => {
+	const page = 1
 
 	const client = createClient(previewData)
 
-	const { publication, categories } = await getStaticPropsCategoryPage(
+	const { categories, publication } = await getStaticPropsPublications(
 		client,
 		page,
-		category,
 		'report_category',
 		'report'
 	)
 
-	console.log(publication)
 	return {
 		props: {
 			reports: publication.results,

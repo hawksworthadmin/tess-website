@@ -344,61 +344,6 @@ export type EventCategoryDocument<Lang extends string = string> =
 		'event_category',
 		Lang
 	>
-/** Content for Fact and Figure documents */
-interface FactFigureDocumentData {
-	/**
-	 * Fact field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_figure.fact
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	fact: prismic.KeyTextField
-	/**
-	 * Figure field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_figure.figure
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	figure: prismic.KeyTextField
-	/**
-	 * Variants field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Select
-	 * - **Placeholder**: Select color variant
-	 * - **Default Value**: Blue
-	 * - **API ID Path**: fact_figure.variants
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
-	 *
-	 */
-	variants: prismic.SelectField<
-		'Blue' | 'Green' | 'Orange' | 'Purple',
-		'filled'
-	>
-}
-/**
- * Fact and Figure document from Prismic
- *
- * - **API ID**: `fact_figure`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FactFigureDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<FactFigureDocumentData>,
-		'fact_figure',
-		Lang
-	>
 /** Content for Home page documents */
 interface HomePageDocumentData {
 	/**
@@ -474,6 +419,35 @@ export type HomePageDocument<Lang extends string = string> =
 		'home_page',
 		Lang
 	>
+/** Content for Image Gallery Category documents */
+interface ImageGallaryCategoryDocumentData {
+	/**
+	 * Title field in *Image Gallery Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallary_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Image Gallery Category document from Prismic
+ *
+ * - **API ID**: `image_gallary_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGallaryCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGallaryCategoryDocumentData>,
+		'image_gallary_category',
+		Lang
+	>
 /** Content for Image Gallery documents */
 interface ImageGalleryDocumentData {
 	/**
@@ -508,7 +482,9 @@ interface ImageGalleryDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
 	 *
 	 */
-	category: prismic.RelationField<'image_gallery_category'>
+	category: prismic.RelationField<
+		'image_gallery_category' | 'image_gallary_category'
+	>
 }
 /**
  * Image Gallery document from Prismic
@@ -523,84 +499,6 @@ export type ImageGalleryDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<
 		Simplify<ImageGalleryDocumentData>,
 		'image_gallery',
-		Lang
-	>
-/** Content for Image and video category documents */
-interface ImageGalleryCategoryDocumentData {
-	/**
-	 * Title field in *Image and video category*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.title
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	title: prismic.KeyTextField
-	/**
-	 * Slice Zone field in *Image and video category*
-	 *
-	 * - **Field Type**: Slice Zone
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.slices[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-	 *
-	 */
-	slices: prismic.SliceZone<ImageGalleryCategoryDocumentDataSlicesSlice>
-	/**
-	 * Meta Title field in *Image and video category*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A title of the page used for social media and search engines
-	 * - **API ID Path**: image_gallery_category.meta_title
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	meta_title: prismic.KeyTextField
-	/**
-	 * Meta Description field in *Image and video category*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: A brief summary of the page
-	 * - **API ID Path**: image_gallery_category.meta_description
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	meta_description: prismic.RichTextField
-	/**
-	 * Meta Image field in *Image and video category*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.meta_image
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	meta_image: prismic.ImageField<never>
-}
-/**
- * Slice for *Image and video category → Slice Zone*
- *
- */
-type ImageGalleryCategoryDocumentDataSlicesSlice = never
-/**
- * Image and video category document from Prismic
- *
- * - **API ID**: `image_gallery_category`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ImageGalleryCategoryDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<ImageGalleryCategoryDocumentData>,
-		'image_gallery_category',
 		Lang
 	>
 /** Content for Newsletter documents */
@@ -1139,46 +1037,6 @@ export type ResourceCategoryDocument<Lang extends string = string> =
 		'resource_category',
 		Lang
 	>
-/** Content for Statistics documents */
-interface StatisticsDocumentData {
-	/**
-	 * Numbers field in *Statistics*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: statistics.numbers
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	numbers: prismic.KeyTextField
-	/**
-	 * Description field in *Statistics*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: statistics.description
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	description: prismic.KeyTextField
-}
-/**
- * Statistics document from Prismic
- *
- * - **API ID**: `statistics`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type StatisticsDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<StatisticsDocumentData>,
-		'statistics',
-		Lang
-	>
 /** Content for Subcategory documents */
 interface SubcategoryDocumentData {
 	/**
@@ -1487,10 +1345,9 @@ export type AllDocumentTypes =
 	| CategoryDocument
 	| EventDocument
 	| EventCategoryDocument
-	| FactFigureDocument
 	| HomePageDocument
+	| ImageGallaryCategoryDocument
 	| ImageGalleryDocument
-	| ImageGalleryCategoryDocument
 	| NewsletterDocument
 	| NewsletterCategoryDocument
 	| PressReleaseDocument
@@ -1499,7 +1356,6 @@ export type AllDocumentTypes =
 	| ReportCategoryDocument
 	| ResourceDocument
 	| ResourceCategoryDocument
-	| StatisticsDocument
 	| SubcategoryDocument
 	| UserDocument
 	| VideoGalleryDocument
@@ -1671,11 +1527,12 @@ export interface InstitutionalAgreementWhoWeAreSliceDefaultItem {
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
+	 * - **Default Value**: State Level
 	 * - **API ID Path**: institutional_agreement_who_we_are.items[].section_type
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
 	 *
 	 */
-	section_type: prismic.SelectField<'State Level' | 'Federal Level'>
+	section_type: prismic.SelectField<'State Level' | 'Federal Level', 'filled'>
 	/**
 	 * Name field in *InstitutionalAgreementWhoWeAre → Items*
 	 *
@@ -2249,16 +2106,13 @@ declare module '@prismicio/client' {
 			EventDocument,
 			EventCategoryDocumentData,
 			EventCategoryDocument,
-			FactFigureDocumentData,
-			FactFigureDocument,
 			HomePageDocumentData,
 			HomePageDocumentDataSlicesSlice,
 			HomePageDocument,
+			ImageGallaryCategoryDocumentData,
+			ImageGallaryCategoryDocument,
 			ImageGalleryDocumentData,
 			ImageGalleryDocument,
-			ImageGalleryCategoryDocumentData,
-			ImageGalleryCategoryDocumentDataSlicesSlice,
-			ImageGalleryCategoryDocument,
 			NewsletterDocumentData,
 			NewsletterDocument,
 			NewsletterCategoryDocumentData,
@@ -2275,8 +2129,6 @@ declare module '@prismicio/client' {
 			ResourceDocument,
 			ResourceCategoryDocumentData,
 			ResourceCategoryDocument,
-			StatisticsDocumentData,
-			StatisticsDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,

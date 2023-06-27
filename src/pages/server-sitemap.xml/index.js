@@ -36,7 +36,6 @@ export const getServerSideProps = async (ctx) => {
 				  `${process.env.NEXT_PUBLIC_BASE_URL}/publications/news-letters/${post?.data?.category?.slug}/${post.uid}`,
 		lastmod: new Date().toISOString(),
 	}))
-	console.log('fields', fields)
 
 	return getServerSideSitemapLegacy(ctx, fields)
 }

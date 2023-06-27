@@ -23,7 +23,8 @@
 					"config": {
 						"label": "Section Type",
 						"placeholder": "",
-						"options": ["State Level", "Federal Level"]
+						"options": ["State Level", "Federal Level"],
+						"default_value": "State Level"
 					}
 				},
 				"name": {

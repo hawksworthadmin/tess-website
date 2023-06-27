@@ -91,11 +91,17 @@ export default function Header({
 					display: 'block',
 				}}
 			>
-				<img src="/logo.png" alt="logo" style={{}} />
+				<img src="/logo.png" alt="logo" />
 
 				<span style={{ fontWeight: 600, flexShrink: 0, color: 'black' }}>
 					BESDA AF-TESS
 				</span>
+				<img
+					src="/assets/images/gpe.png"
+					width={50}
+					height={50}
+					alt="gpe logo"
+				/>
 			</Link>
 		)
 	}

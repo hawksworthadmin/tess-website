@@ -1,20 +1,26 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
+import * as prismic from '@prismicio/client'
 
 // import { createClient,  } from '@prismicio/client'
 import { Client, PrismicDocument } from '@prismicio/client'
-import * as prismic from '@prismicio/client'
+import { createClient } from '../../../../../prismicio'
+import Head from 'next/head'
+import METADATA from '@/METADATA'
 import {
-	getStaticCategoryPage,
-	getStaticPropsCategoryPage,
-} from '../../../../../../lib/helperFunctions'
+	getStaticPathsPublicationsPagination,
+	getStaticPropsPublications,
+} from '../../../../../lib/helperFunctions'
 
-export default function index({ blogposts, totalPages, categories }) {
+export default function Index({ blogposts, totalPages, categories }) {
 	return (
 		<Layout>
+			<Head>
+				<title>Blog | {METADATA.title}</title>
+			</Head>
 			<Blog
-				heading={'Blog'}
+				heading={'Blogs'}
 				posts={blogposts}
 				totalPages={totalPages}
 				categories={categories}
@@ -26,9 +32,8 @@ export default function index({ blogposts, totalPages, categories }) {
 
 export const getStaticPaths = async () => {
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
-	const paths = await getStaticCategoryPage(client, 'category', 'blopgpost')
 
-	// console.log(paths)
+	const paths = await getStaticPathsPublicationsPagination(client, 'blopgpost')
 
 	return {
 		paths,
@@ -36,18 +41,18 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps = async ({ query, params }) => {
-	const page = Number(params.page) || 1
-	const { category } = params
+export const getStaticProps = async ({ previewData }) => {
+	const page = 1
 
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
-	const { publication, categories } = await getStaticPropsCategoryPage(
+	const client = createClient(previewData)
+
+	const { categories, publication } = await getStaticPropsPublications(
 		client,
 		page,
-		category,
 		'category',
 		'blopgpost'
 	)
+
 	return {
 		props: {
 			blogposts: publication.results,

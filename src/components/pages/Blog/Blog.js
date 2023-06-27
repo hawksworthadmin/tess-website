@@ -17,7 +17,7 @@ export default function Blog({
 }) {
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
-	const pathname = router.asPath.split('?')[0] // doing this to get the accurate pathname
+	const pathname = router.asPath.split('page')[0] // doing this to get the accurate pathname
 	// so that the component is reuseable for  both the blog page and the category pages
 
 	const pageNumbers = Array.from(
@@ -84,7 +84,7 @@ export default function Blog({
 											className={`page-numbers ${
 												currentPage == pageNumber && 'current'
 											}`}
-											href={`${pathname}?page=${pageNumber}`}
+											href={`${pathname}/page/${pageNumber}`}
 										>
 											{pageNumber}
 										</Link>
@@ -92,7 +92,7 @@ export default function Blog({
 
 									{currentPage < totalPages && (
 										<Link
-											href={`/publications/blog?page=${currentPage + 1}`}
+											href={`${pathname}/page/${currentPage + 1}`}
 											className="next page-numbers"
 										>
 											<i className="ri-arrow-right-line"></i>
