@@ -2,6 +2,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import RichTextComponent from './RichTextComponent'
+import Modal from '@/components/layout/Modal'
 
 const EachResource = ({
 	image,
@@ -17,12 +18,14 @@ const EachResource = ({
 	return (
 		<>
 			{isOpen && (
-				<DownloadForm
-					documentLink={downloadLink}
-					documentName={documentName}
-					onClick={() => setIsOpen(false)}
-					documentPassword={password}
-				/>
+				<Modal>
+					<DownloadForm
+						documentLink={downloadLink}
+						documentName={documentName}
+						onClick={() => setIsOpen(false)}
+						documentPassword={password}
+					/>
+				</Modal>
 			)}
 			<div
 				className="col-lg-6 col-md-6 mix business"
@@ -131,6 +134,7 @@ const DownloadForm = ({
 				backgroundColor: '#001a049c',
 				bottom: 0,
 				zIndex: 500,
+				width: '100%',
 			}}
 			className="d-flex flex-column justify-content-center align-items-center"
 		>

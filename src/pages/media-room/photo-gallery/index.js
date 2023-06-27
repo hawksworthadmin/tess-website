@@ -27,7 +27,7 @@ export const getServerSideProps = async ({ query, res }) => {
 	try {
 		const client = prismic.createClient(process.env.PRISMIC_API_URL)
 
-		const photo_category = await client.getAllByType('image_gallery_category')
+		const photo_category = await client.getAllByType('image_gallary_category')
 
 		if (category == 'all') {
 			const photos = await client.getByType('image_gallery', {
@@ -47,7 +47,7 @@ export const getServerSideProps = async ({ query, res }) => {
 			}
 		} else {
 			const getCategoryIdUsingSlug = await client.getByUID(
-				'image_gallery_category',
+				'image_gallary_category',
 				category
 			)
 			const categoryId = getCategoryIdUsingSlug.id
@@ -69,7 +69,6 @@ export const getServerSideProps = async ({ query, res }) => {
 			}
 		}
 	} catch (error) {
-		// res.status = exception.response.status
 		return {
 			props: {},
 		}

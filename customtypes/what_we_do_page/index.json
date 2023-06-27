@@ -1,20 +1,17 @@
 {
-	"id": "image_gallery_category",
-	"label": "Image and video category",
+	"id": "what_we_do_page",
+	"label": "What we do page",
 	"format": "page",
-	"repeatable": true,
+	"repeatable": false,
 	"status": true,
 	"json": {
 		"Main": {
-			"uid": { "type": "UID", "config": { "label": "UID" } },
-			"title": {
-				"type": "Text",
-				"config": { "label": "Title", "placeholder": "" }
-			},
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
-				"config": { "choices": {} }
+				"config": {
+					"choices": { "what_we_do_page_pillar": { "type": "SharedSlice" } }
+				}
 			}
 		},
 		"SEO & Metadata": {

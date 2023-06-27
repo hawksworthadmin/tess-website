@@ -3,48 +3,125 @@
  * @typedef {import("@prismicio/react").SliceComponentProps<WhatWeDSlice>} WhatWeDProps
  * @param {WhatWeDProps}
  */
-const WhatWeD = ({ slice }) => {
-	return (
-		<section
-			className="events-area pt-100 pb-70"
-			style={{ backgroundColor: '#F9FAFB' }}
-		>
-			<div className="container">
-				<div className="pb-5 text-start">
-					<h2
-						style={{
-							fontFamily: 'Syne !important',
 
-							color: '#F6FEF9',
-							WebkitTextStroke: '1.5px #12B76A',
-							WebkitTextFillColor: 'transparent',
-						}}
-						className=" font-60 fw-700 section-title"
-						data-aos="fade-up"
+import { createClient } from '@prismicio/client'
+import moment from 'moment'
+import Image from 'next/image'
+import Link from 'next/link'
+import { RichText } from 'prismic-dom'
+import { useLayoutEffect, useState } from 'react'
+
+// import usepris
+const WhatWeD = ({ slice }) => {
+	const [news, setNews] = useState([])
+	const [error, setError] = useState(false)
+
+	const fetctLatestNews = async () => {
+		const client = createClient(process.env.NEXT_PUBLIC_PRISMIC_API_URL)
+		const pressReleases = await client.getByType('press_release', {
+			pageSize: 3,
+			orderings: {
+				field: 'document.first_publication_date',
+				direction: 'desc',
+			},
+		})
+
+		setNews(pressReleases.results)
+	}
+
+	console.log(news)
+	useLayoutEffect(() => {
+		fetctLatestNews()
+	}, [])
+
+	console.log(news)
+	return (
+		<>
+			<section
+				className="events-area pt-100 pb-70"
+				style={{ backgroundColor: '#F9FAFB' }}
+			>
+				<div className="container">
+					<div className="pb-5 text-start">
+						<h2
+							style={{
+								fontFamily: 'Syne !important',
+
+								color: '#F6FEF9',
+								WebkitTextStroke: '1.5px #12B76A',
+								WebkitTextFillColor: 'transparent',
+							}}
+							className=" font-60 fw-700 section-title"
+							data-aos="fade-up"
+						>
+							What we do
+						</h2>
+					</div>
+				</div>
+				{/* <br /> */}
+				{/* <br /> */}
+				<div className="container">
+					<div
+						className="row align-items-center"
+						style={{ marginBottom: '12px', gap: '3rem' }}
 					>
-						What we do
-					</h2>
+						{slice.items.map((pillar, index) => (
+							<WhatWeDoContent
+								key={`pillar_${index}`}
+								image={pillar.pillar_image.url}
+								number={index + 1}
+								title={pillar.pillar_title}
+								paragraph={pillar.pillar_content}
+							/>
+						))}
+					</div>
 				</div>
-			</div>
-			{/* <br /> */}
-			{/* <br /> */}
-			<div className="container">
-				<div
-					className="row align-items-center"
-					style={{ marginBottom: '12px', gap: '3rem' }}
-				>
-					{slice.items.map((pillar, index) => (
-						<WhatWeDoContent
-							key={`pillar_${index}`}
-							image={pillar.pillar_image.url}
-							number={index + 1}
-							title={pillar.pillar_title}
-							paragraph={pillar.pillar_content}
-						/>
-					))}
+			</section>
+			<section
+				class="blog-area blog-area-two- pt-100 pb-70"
+				style={{ backgroundColor: '#F9FAFB' }}
+			>
+				<div class="container">
+					<div class="section-title">
+						<h2 data-aos="fade-up">Latest News</h2>
+					</div>
+					{/*  */}
+					<div class="row justify-content-center">
+						{!error ? (
+							news?.map((news, id) => (
+								<EachRelease
+									key={news?.uid}
+									category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
+									title={news?.data?.title}
+									img={news?.data?.image?.url}
+									created_at={news?.first_publication_date}
+									alt={news?.data?.image?.alt}
+									description={news?.data?.description}
+									categoryLink={`${'/news-and-events/press-release'}${
+										news?.data?.category?.slug
+									}`}
+									link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
+								/>
+							))
+						) : (
+							<p>
+								An error occurred while attempting to fetch the latest news.
+							</p>
+						)}
+						{/* <EachRelease link={}/>
+					<EachRelease /> */}
+					</div>
 				</div>
-			</div>
-		</section>
+
+				<div class="shape blog-shape-1">
+					<img src="/assets/images/blog/blog-shape-1.png" alt="Image" />
+				</div>
+
+				<div class="shape blog-shape-2">
+					<img src="/assets/images/blog/blog-shape-2.png" alt="Image" />
+				</div>
+			</section>
+		</>
 	)
 }
 const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
@@ -111,4 +188,61 @@ const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 		</div>
 	)
 }
+
+const EachRelease = ({
+	link,
+	title,
+	category,
+	created_at,
+	img,
+	alt,
+	description,
+	categoryLink,
+}) => {
+	const convertRichTextToPlain = RichText?.asText(description)
+
+	return (
+		<div
+			class="col-lg-4 col-md-6"
+			data-aos-delay="50"
+			data-aos="fade-up"
+			data-aos-duration="1000"
+		>
+			<div class="single-blog-box">
+				<Link
+					style={{ display: 'block', height: '350px', position: 'relative' }}
+					href={link}
+				>
+					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
+				</Link>
+
+				<div class="blog-content">
+					<ul>
+						<li>
+							<Link href={categoryLink}>
+								{/* <i class="ri-user-3-fill"></i> */}
+								{category}
+							</Link>
+						</li>
+						<li>
+							<i class="ri-calendar-line"></i>
+							{moment(created_at).format('MMMM DD, YYYY')}
+						</li>
+					</ul>
+					<h3>
+						<Link href={link}>{title.split(' ').slice(0, 3).join(' ')}...</Link>
+					</h3>
+					<p>
+						{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}...
+					</p>
+					<Link href={link} class="read-more">
+						Read more
+						<i class="ri-arrow-right-s-line"></i>
+					</Link>
+				</div>
+			</div>
+		</div>
+	)
+}
+
 export default WhatWeD

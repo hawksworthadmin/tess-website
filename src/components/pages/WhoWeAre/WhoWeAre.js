@@ -9,7 +9,7 @@ export default function WhoWeAre() {
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">Who We Are</h3>
+					<h1 className="fw-400 text-white">Who We Are</h1>
 				</div>
 			</div>
 			<section className="who-we-are-area pt-100 pb-70">

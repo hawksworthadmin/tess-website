@@ -4,7 +4,14 @@ export default function PillarOne() {
 	return (
 		<section className="local-councils-services-area pb-70 pt-70">
 			<div className="container">
-				<div className="row align-items-center">
+				<div
+					style={
+						{
+							// flexDirection: 'row-reverse',
+						}
+					}
+					className="row align-items-center "
+				>
 					<div className="col-lg-6" bis_skin_checked="1">
 						<div className="local-councils-img pl-15" bis_skin_checked="1">
 							<img

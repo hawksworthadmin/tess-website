@@ -344,61 +344,6 @@ export type EventCategoryDocument<Lang extends string = string> =
 		'event_category',
 		Lang
 	>
-/** Content for Fact and Figure documents */
-interface FactFigureDocumentData {
-	/**
-	 * Fact field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_figure.fact
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	fact: prismic.KeyTextField
-	/**
-	 * Figure field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: fact_figure.figure
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	figure: prismic.KeyTextField
-	/**
-	 * Variants field in *Fact and Figure*
-	 *
-	 * - **Field Type**: Select
-	 * - **Placeholder**: Select color variant
-	 * - **Default Value**: Blue
-	 * - **API ID Path**: fact_figure.variants
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
-	 *
-	 */
-	variants: prismic.SelectField<
-		'Blue' | 'Green' | 'Orange' | 'Purple',
-		'filled'
-	>
-}
-/**
- * Fact and Figure document from Prismic
- *
- * - **API ID**: `fact_figure`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FactFigureDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<FactFigureDocumentData>,
-		'fact_figure',
-		Lang
-	>
 /** Content for Home page documents */
 interface HomePageDocumentData {
 	/**
@@ -474,6 +419,35 @@ export type HomePageDocument<Lang extends string = string> =
 		'home_page',
 		Lang
 	>
+/** Content for Image Gallery Category documents */
+interface ImageGallaryCategoryDocumentData {
+	/**
+	 * Title field in *Image Gallery Category*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallary_category.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	title: prismic.KeyTextField
+}
+/**
+ * Image Gallery Category document from Prismic
+ *
+ * - **API ID**: `image_gallary_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ImageGallaryCategoryDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ImageGallaryCategoryDocumentData>,
+		'image_gallary_category',
+		Lang
+	>
 /** Content for Image Gallery documents */
 interface ImageGalleryDocumentData {
 	/**
@@ -508,7 +482,9 @@ interface ImageGalleryDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
 	 *
 	 */
-	category: prismic.RelationField<'image_gallery_category'>
+	category: prismic.RelationField<
+		'image_gallery_category' | 'image_gallary_category'
+	>
 }
 /**
  * Image Gallery document from Prismic
@@ -523,84 +499,6 @@ export type ImageGalleryDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<
 		Simplify<ImageGalleryDocumentData>,
 		'image_gallery',
-		Lang
-	>
-/** Content for Image and video category documents */
-interface ImageGalleryCategoryDocumentData {
-	/**
-	 * Title field in *Image and video category*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.title
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	title: prismic.KeyTextField
-	/**
-	 * Slice Zone field in *Image and video category*
-	 *
-	 * - **Field Type**: Slice Zone
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.slices[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-	 *
-	 */
-	slices: prismic.SliceZone<ImageGalleryCategoryDocumentDataSlicesSlice>
-	/**
-	 * Meta Title field in *Image and video category*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A title of the page used for social media and search engines
-	 * - **API ID Path**: image_gallery_category.meta_title
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	meta_title: prismic.KeyTextField
-	/**
-	 * Meta Description field in *Image and video category*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: A brief summary of the page
-	 * - **API ID Path**: image_gallery_category.meta_description
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-	 *
-	 */
-	meta_description: prismic.RichTextField
-	/**
-	 * Meta Image field in *Image and video category*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: image_gallery_category.meta_image
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
-	 *
-	 */
-	meta_image: prismic.ImageField<never>
-}
-/**
- * Slice for *Image and video category → Slice Zone*
- *
- */
-type ImageGalleryCategoryDocumentDataSlicesSlice = never
-/**
- * Image and video category document from Prismic
- *
- * - **API ID**: `image_gallery_category`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ImageGalleryCategoryDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<ImageGalleryCategoryDocumentData>,
-		'image_gallery_category',
 		Lang
 	>
 /** Content for Newsletter documents */
@@ -1139,46 +1037,6 @@ export type ResourceCategoryDocument<Lang extends string = string> =
 		'resource_category',
 		Lang
 	>
-/** Content for Statistics documents */
-interface StatisticsDocumentData {
-	/**
-	 * Numbers field in *Statistics*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: statistics.numbers
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	numbers: prismic.KeyTextField
-	/**
-	 * Description field in *Statistics*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: statistics.description
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	description: prismic.KeyTextField
-}
-/**
- * Statistics document from Prismic
- *
- * - **API ID**: `statistics`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type StatisticsDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<StatisticsDocumentData>,
-		'statistics',
-		Lang
-	>
 /** Content for Subcategory documents */
 interface SubcategoryDocumentData {
 	/**
@@ -1346,15 +1204,150 @@ export type VideoGalleryCategoryDocument<Lang extends string = string> =
 		'video_gallery_category',
 		Lang
 	>
+/** Content for What we do page documents */
+interface WhatWeDoPageDocumentData {
+	/**
+	 * Slice Zone field in *What we do page*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_do_page.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+	 *
+	 */
+	slices: prismic.SliceZone<WhatWeDoPageDocumentDataSlicesSlice>
+	/**
+	 * Meta Title field in *What we do page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: what_we_do_page.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *What we do page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: what_we_do_page.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	meta_description: prismic.RichTextField
+	/**
+	 * Meta Image field in *What we do page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_do_page.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+}
+/**
+ * Slice for *What we do page → Slice Zone*
+ *
+ */
+type WhatWeDoPageDocumentDataSlicesSlice = WhatWeDoPagePillarSlice
+/**
+ * What we do page document from Prismic
+ *
+ * - **API ID**: `what_we_do_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WhatWeDoPageDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<WhatWeDoPageDocumentData>,
+		'what_we_do_page',
+		Lang
+	>
+/** Content for Who we are page documents */
+interface WhoWeAreDocumentData {
+	/**
+	 * Slice Zone field in *Who we are page*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+	 *
+	 */
+	slices: prismic.SliceZone<WhoWeAreDocumentDataSlicesSlice>
+	/**
+	 * Meta Title field in *Who we are page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: who_we_are.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_title: prismic.KeyTextField
+	/**
+	 * Meta Description field in *Who we are page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: who_we_are.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	meta_description: prismic.RichTextField
+	/**
+	 * Meta Image field in *Who we are page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
+}
+/**
+ * Slice for *Who we are page → Slice Zone*
+ *
+ */
+type WhoWeAreDocumentDataSlicesSlice =
+	| WhoWeAreHeroSectionSlice
+	| InstitutionalAgreementWhoWeAreSlice
+/**
+ * Who we are page document from Prismic
+ *
+ * - **API ID**: `who_we_are`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WhoWeAreDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<WhoWeAreDocumentData>,
+		'who_we_are',
+		Lang
+	>
 export type AllDocumentTypes =
 	| BlopgpostDocument
 	| CategoryDocument
 	| EventDocument
 	| EventCategoryDocument
-	| FactFigureDocument
 	| HomePageDocument
+	| ImageGallaryCategoryDocument
 	| ImageGalleryDocument
-	| ImageGalleryCategoryDocument
 	| NewsletterDocument
 	| NewsletterCategoryDocument
 	| PressReleaseDocument
@@ -1363,11 +1356,12 @@ export type AllDocumentTypes =
 	| ReportCategoryDocument
 	| ResourceDocument
 	| ResourceCategoryDocument
-	| StatisticsDocument
 	| SubcategoryDocument
 	| UserDocument
 	| VideoGalleryDocument
 	| VideoGalleryCategoryDocument
+	| WhatWeDoPageDocument
+	| WhoWeAreDocument
 /**
  * Item in FactsAndFigures → Items
  *
@@ -1506,6 +1500,101 @@ type HeroSectionSliceVariation = HeroSectionSliceDefault
 export type HeroSectionSlice = prismic.SharedSlice<
 	'hero_section',
 	HeroSectionSliceVariation
+>
+/**
+ * Primary content in InstitutionalAgreementWhoWeAre → Primary
+ *
+ */
+interface InstitutionalAgreementWhoWeAreSliceDefaultPrimary {
+	/**
+	 * Agreement Text field in *InstitutionalAgreementWhoWeAre → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: institutional_agreement_who_we_are.primary.agreement_text
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	agreement_text: prismic.KeyTextField
+}
+/**
+ * Item in InstitutionalAgreementWhoWeAre → Items
+ *
+ */
+export interface InstitutionalAgreementWhoWeAreSliceDefaultItem {
+	/**
+	 * Section Type field in *InstitutionalAgreementWhoWeAre → Items*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: State Level
+	 * - **API ID Path**: institutional_agreement_who_we_are.items[].section_type
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	section_type: prismic.SelectField<'State Level' | 'Federal Level', 'filled'>
+	/**
+	 * Name field in *InstitutionalAgreementWhoWeAre → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: institutional_agreement_who_we_are.items[].name
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	name: prismic.KeyTextField
+	/**
+	 * Description field in *InstitutionalAgreementWhoWeAre → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: institutional_agreement_who_we_are.items[].description
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	description: prismic.KeyTextField
+	/**
+	 * Image field in *InstitutionalAgreementWhoWeAre → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: institutional_agreement_who_we_are.items[].image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>
+}
+/**
+ * Default variation for InstitutionalAgreementWhoWeAre Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InstitutionalAgreementWhoWeAreSliceDefault =
+	prismic.SharedSliceVariation<
+		'default',
+		Simplify<InstitutionalAgreementWhoWeAreSliceDefaultPrimary>,
+		Simplify<InstitutionalAgreementWhoWeAreSliceDefaultItem>
+	>
+/**
+ * Slice variation for *InstitutionalAgreementWhoWeAre*
+ *
+ */
+type InstitutionalAgreementWhoWeAreSliceVariation =
+	InstitutionalAgreementWhoWeAreSliceDefault
+/**
+ * InstitutionalAgreementWhoWeAre Shared Slice
+ *
+ * - **API ID**: `institutional_agreement_who_we_are`
+ * - **Description**: `InstitutionalAgreementWhoWeAre`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InstitutionalAgreementWhoWeAreSlice = prismic.SharedSlice<
+	'institutional_agreement_who_we_are',
+	InstitutionalAgreementWhoWeAreSliceVariation
 >
 /**
  * Item in KeyStackHolders → Items
@@ -1840,6 +1929,165 @@ export type WhatWeDoSlice = prismic.SharedSlice<
 	'what_we_do',
 	WhatWeDoSliceVariation
 >
+/**
+ * Primary content in WhatWeDoPagePillar → Primary
+ *
+ */
+interface WhatWeDoPagePillarSliceDefaultPrimary {
+	/**
+	 * Pillar Image field in *WhatWeDoPagePillar → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_do_page_pillar.primary.pillar_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	pillar_image: prismic.ImageField<never>
+	/**
+	 * Pillar Title field in *WhatWeDoPagePillar → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_do_page_pillar.primary.pillar_title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	pillar_title: prismic.KeyTextField
+	/**
+	 * Pillar Content field in *WhatWeDoPagePillar → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: what_we_do_page_pillar.primary.pillar_content
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	pillar_content: prismic.KeyTextField
+	/**
+	 * Picture position field in *WhatWeDoPagePillar → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: right
+	 * - **API ID Path**: what_we_do_page_pillar.primary.picture_position
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	picture_position: prismic.SelectField<'right' | 'left', 'filled'>
+}
+/**
+ * Default variation for WhatWeDoPagePillar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDoPagePillarSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<WhatWeDoPagePillarSliceDefaultPrimary>,
+	never
+>
+/**
+ * Slice variation for *WhatWeDoPagePillar*
+ *
+ */
+type WhatWeDoPagePillarSliceVariation = WhatWeDoPagePillarSliceDefault
+/**
+ * WhatWeDoPagePillar Shared Slice
+ *
+ * - **API ID**: `what_we_do_page_pillar`
+ * - **Description**: `WhatWeDoPagePillar`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhatWeDoPagePillarSlice = prismic.SharedSlice<
+	'what_we_do_page_pillar',
+	WhatWeDoPagePillarSliceVariation
+>
+/**
+ * Primary content in WhoWeAreHeroSection → Primary
+ *
+ */
+interface WhoWeAreHeroSectionSliceDefaultPrimary {
+	/**
+	 * Hero Image field in *WhoWeAreHeroSection → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are_hero_section.primary.hero_image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	hero_image: prismic.ImageField<never>
+	/**
+	 * Hero heading field in *WhoWeAreHeroSection → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are_hero_section.primary.hero_heading
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	hero_heading: prismic.KeyTextField
+	/**
+	 * Hero Paragraph field in *WhoWeAreHeroSection → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are_hero_section.primary.hero_paragraph
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	hero_paragraph: prismic.KeyTextField
+}
+/**
+ * Item in WhoWeAreHeroSection → Items
+ *
+ */
+export interface WhoWeAreHeroSectionSliceDefaultItem {
+	/**
+	 * Our Focus field in *WhoWeAreHeroSection → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: who_we_are_hero_section.items[].our_focus
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	our_focus: prismic.KeyTextField
+}
+/**
+ * Default variation for WhoWeAreHeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhoWeAreHeroSectionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<WhoWeAreHeroSectionSliceDefaultPrimary>,
+	Simplify<WhoWeAreHeroSectionSliceDefaultItem>
+>
+/**
+ * Slice variation for *WhoWeAreHeroSection*
+ *
+ */
+type WhoWeAreHeroSectionSliceVariation = WhoWeAreHeroSectionSliceDefault
+/**
+ * WhoWeAreHeroSection Shared Slice
+ *
+ * - **API ID**: `who_we_are_hero_section`
+ * - **Description**: `WhoWeAreHeroSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WhoWeAreHeroSectionSlice = prismic.SharedSlice<
+	'who_we_are_hero_section',
+	WhoWeAreHeroSectionSliceVariation
+>
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -1858,16 +2106,13 @@ declare module '@prismicio/client' {
 			EventDocument,
 			EventCategoryDocumentData,
 			EventCategoryDocument,
-			FactFigureDocumentData,
-			FactFigureDocument,
 			HomePageDocumentData,
 			HomePageDocumentDataSlicesSlice,
 			HomePageDocument,
+			ImageGallaryCategoryDocumentData,
+			ImageGallaryCategoryDocument,
 			ImageGalleryDocumentData,
 			ImageGalleryDocument,
-			ImageGalleryCategoryDocumentData,
-			ImageGalleryCategoryDocumentDataSlicesSlice,
-			ImageGalleryCategoryDocument,
 			NewsletterDocumentData,
 			NewsletterDocument,
 			NewsletterCategoryDocumentData,
@@ -1884,8 +2129,6 @@ declare module '@prismicio/client' {
 			ResourceDocument,
 			ResourceCategoryDocumentData,
 			ResourceCategoryDocument,
-			StatisticsDocumentData,
-			StatisticsDocument,
 			SubcategoryDocumentData,
 			SubcategoryDocument,
 			UserDocumentData,
@@ -1894,6 +2137,12 @@ declare module '@prismicio/client' {
 			VideoGalleryDocument,
 			VideoGalleryCategoryDocumentData,
 			VideoGalleryCategoryDocument,
+			WhatWeDoPageDocumentData,
+			WhatWeDoPageDocumentDataSlicesSlice,
+			WhatWeDoPageDocument,
+			WhoWeAreDocumentData,
+			WhoWeAreDocumentDataSlicesSlice,
+			WhoWeAreDocument,
 			AllDocumentTypes,
 			FactsAndFiguresSliceDefaultItem,
 			FactsAndFiguresSliceDefault,
@@ -1904,6 +2153,11 @@ declare module '@prismicio/client' {
 			HeroSectionSliceDefault,
 			HeroSectionSliceVariation,
 			HeroSectionSlice,
+			InstitutionalAgreementWhoWeAreSliceDefaultPrimary,
+			InstitutionalAgreementWhoWeAreSliceDefaultItem,
+			InstitutionalAgreementWhoWeAreSliceDefault,
+			InstitutionalAgreementWhoWeAreSliceVariation,
+			InstitutionalAgreementWhoWeAreSlice,
 			KeyStackHoldersSliceDefaultItem,
 			KeyStackHoldersSliceDefault,
 			KeyStackHoldersSliceVariation,
@@ -1928,6 +2182,15 @@ declare module '@prismicio/client' {
 			WhatWeDoSliceDefault,
 			WhatWeDoSliceVariation,
 			WhatWeDoSlice,
+			WhatWeDoPagePillarSliceDefaultPrimary,
+			WhatWeDoPagePillarSliceDefault,
+			WhatWeDoPagePillarSliceVariation,
+			WhatWeDoPagePillarSlice,
+			WhoWeAreHeroSectionSliceDefaultPrimary,
+			WhoWeAreHeroSectionSliceDefaultItem,
+			WhoWeAreHeroSectionSliceDefault,
+			WhoWeAreHeroSectionSliceVariation,
+			WhoWeAreHeroSectionSlice,
 		}
 	}
 }
