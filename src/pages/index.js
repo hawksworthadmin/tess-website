@@ -12,7 +12,6 @@ export default function index({
 	statistics,
 	page,
 }) {
-	console.log('page', page)
 	return (
 		<Layout>
 			{/* <Home

@@ -29,12 +29,10 @@ const WhatWeD = ({ slice }) => {
 		setNews(pressReleases.results)
 	}
 
-	console.log(news)
 	useLayoutEffect(() => {
 		fetctLatestNews()
 	}, [])
 
-	console.log(news)
 	return (
 		<>
 			<section

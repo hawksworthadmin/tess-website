@@ -17,7 +17,6 @@ const InstitutionalAgreementWhoWeAre = ({ slice }) => {
 		},
 	]
 
-	console.log(arrangement)
 	return (
 		<section className="discover-area discover-area-style-three bg-color pb-100">
 			<div className="container">

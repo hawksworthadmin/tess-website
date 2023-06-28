@@ -18,8 +18,6 @@ const FactsAndFigures = ({ slice }) => {
 	const PER_SLIDE = 4
 	const slides = Math.ceil(slice.items.length / PER_SLIDE)
 
-	console.log(slice.items)
-
 	const handleNextSlide = () => {
 		currentSlide === slides - 1
 			? setCurrentSlide(0)

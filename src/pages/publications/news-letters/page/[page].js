@@ -17,7 +17,7 @@ export default function NewsLetters({ newsletters, categories, totalPages }) {
 				<title>News Letters | {METADATA.title}</title>
 			</Head>
 			<Blog
-				heading={'Reports'}
+				heading={'Newsletters'}
 				posts={newsletters}
 				link={'/publications/news-letters/'}
 				totalPages={totalPages}
