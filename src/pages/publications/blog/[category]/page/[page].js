@@ -28,8 +28,6 @@ export const getStaticPaths = async () => {
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
 	const paths = await getStaticCategoryPage(client, 'category', 'blopgpost')
 
-	// console.log(paths)
-
 	return {
 		paths,
 		fallback: true,

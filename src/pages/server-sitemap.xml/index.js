@@ -21,7 +21,6 @@ export const getServerSideProps = async (ctx) => {
 		},
 	})
 
-	console.log(allData)
 	const fields = allData.results.map((post) => ({
 		loc:
 			post.type == 'blopgpost'

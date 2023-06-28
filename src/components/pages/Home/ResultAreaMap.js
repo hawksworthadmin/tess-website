@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 
 export default function ResultAreaMap({ statistics }) {
-	console.log(statistics)
 	return (
 		<section
 			className="blog-area blog-area-two- pt-100 pb-100"
