@@ -88,7 +88,7 @@ export const Tabs = ({ tabs_category, link }) => {
 					bis_skin_checked="1"
 				>
 					<Link
-						href={`${link}?category=all`}
+						href={`${link}`}
 						className={`filter ${categoryPath == 'all' && 'active'}`}
 						data-filter="all"
 						fdprocessedid="03j22"
@@ -97,7 +97,7 @@ export const Tabs = ({ tabs_category, link }) => {
 					</Link>
 					{tabs_category?.map((category) => (
 						<Link
-							href={`${link}?category=${category?.uid}`}
+							href={`${link}/${category?.uid}`}
 							className={`filter  ${categoryPath == category?.uid && 'active'}`}
 							data-filter=".business"
 							fdprocessedid="r0rmbc"

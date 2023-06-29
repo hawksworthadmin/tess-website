@@ -52,52 +52,6 @@ interface BlopgpostDocumentData {
 	 */
 	category: prismic.RelationField<'category'>
 	/**
-	 * Subcategories field in *Blog Post*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.subcategories[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/group
-	 *
-	 */
-	subcategories: prismic.GroupField<
-		Simplify<BlopgpostDocumentDataSubcategoriesItem>
-	>
-	/**
-	 * Author field in *Blog Post*
-	 *
-	 * - **Field Type**: Content Relationship
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.user
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-	 *
-	 */
-	user: prismic.RelationField<'user'>
-	/**
-	 * Created At field in *Blog Post*
-	 *
-	 * - **Field Type**: Timestamp
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.created_at
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
-	 *
-	 */
-	created_at: prismic.TimestampField
-	/**
-	 * Updated At field in *Blog Post*
-	 *
-	 * - **Field Type**: Timestamp
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.updated_at
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
-	 *
-	 */
-	updated_at: prismic.TimestampField
-	/**
 	 * Meta title field in *Blog Post*
 	 *
 	 * - **Field Type**: Text
@@ -132,22 +86,6 @@ interface BlopgpostDocumentData {
 	meta_description: prismic.RichTextField
 }
 /**
- * Item in Blog Post → Subcategories
- *
- */
-export interface BlopgpostDocumentDataSubcategoriesItem {
-	/**
-	 * Subcategory field in *Blog Post → Subcategories*
-	 *
-	 * - **Field Type**: Content Relationship
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.subcategories[].subcategory
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-	 *
-	 */
-	subcategory: prismic.RelationField
-}
-/**
  * Blog Post document from Prismic
  *
  * - **API ID**: `blopgpost`
@@ -162,10 +100,10 @@ export type BlopgpostDocument<Lang extends string = string> =
 		'blopgpost',
 		Lang
 	>
-/** Content for Category documents */
+/** Content for Blog Category documents */
 interface CategoryDocumentData {
 	/**
-	 * Title field in *Category*
+	 * Title field in *Blog Category*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -176,7 +114,7 @@ interface CategoryDocumentData {
 	 */
 	title: prismic.KeyTextField
 	/**
-	 * slug field in *Category*
+	 * slug field in *Blog Category*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -188,7 +126,7 @@ interface CategoryDocumentData {
 	slug: prismic.KeyTextField
 }
 /**
- * Category document from Prismic
+ * Blog Category document from Prismic
  *
  * - **API ID**: `category`
  * - **Repeatable**: `true`
@@ -818,17 +756,6 @@ interface ReportDocumentData {
 	 */
 	category: prismic.RelationField<'report_category'>
 	/**
-	 * User field in *Report*
-	 *
-	 * - **Field Type**: Content Relationship
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: report.user
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-	 *
-	 */
-	user: prismic.RelationField<'user'>
-	/**
 	 * Meta title field in *Report*
 	 *
 	 * - **Field Type**: Text
@@ -1035,46 +962,6 @@ export type ResourceCategoryDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<
 		Simplify<ResourceCategoryDocumentData>,
 		'resource_category',
-		Lang
-	>
-/** Content for Subcategory documents */
-interface SubcategoryDocumentData {
-	/**
-	 * Title field in *Subcategory*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: subcategory.title
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	title: prismic.KeyTextField
-	/**
-	 * slug field in *Subcategory*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: subcategory.slug
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	slug: prismic.KeyTextField
-}
-/**
- * Subcategory document from Prismic
- *
- * - **API ID**: `subcategory`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SubcategoryDocument<Lang extends string = string> =
-	prismic.PrismicDocumentWithUID<
-		Simplify<SubcategoryDocumentData>,
-		'subcategory',
 		Lang
 	>
 /** Content for User documents */
@@ -1356,7 +1243,6 @@ export type AllDocumentTypes =
 	| ReportCategoryDocument
 	| ResourceDocument
 	| ResourceCategoryDocument
-	| SubcategoryDocument
 	| UserDocument
 	| VideoGalleryDocument
 	| VideoGalleryCategoryDocument
@@ -2098,7 +1984,6 @@ declare module '@prismicio/client' {
 	namespace Content {
 		export type {
 			BlopgpostDocumentData,
-			BlopgpostDocumentDataSubcategoriesItem,
 			BlopgpostDocument,
 			CategoryDocumentData,
 			CategoryDocument,
@@ -2129,8 +2014,6 @@ declare module '@prismicio/client' {
 			ResourceDocument,
 			ResourceCategoryDocumentData,
 			ResourceCategoryDocument,
-			SubcategoryDocumentData,
-			SubcategoryDocument,
 			UserDocumentData,
 			UserDocument,
 			VideoGalleryDocumentData,
