@@ -21,6 +21,16 @@ export default function Details({ blog, categories, relatedPosts }) {
 	)
 }
 
+export const getStaticPaths = async () => {
+	const client = createClient()
+
+	const paths = await getStaticPathsSlug(client, 'blopgpost')
+	return {
+		paths,
+		fallback: true,
+	}
+}
+
 export const getStaticProps = async ({ previewData, params }) => {
 	const { slug } = params
 
@@ -39,15 +49,5 @@ export const getStaticProps = async ({ previewData, params }) => {
 			relatedPosts: relatedPosts?.results,
 		},
 		revalidate: 60,
-	}
-}
-
-export const getStaticPaths = async () => {
-	const client = createClient()
-
-	const paths = await getStaticPathsSlug(client, 'blopgpost')
-	return {
-		paths,
-		fallback: true,
 	}
 }

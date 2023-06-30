@@ -35,14 +35,6 @@
 					"select": "document",
 					"customtypes": ["report_category"]
 				}
-			},
-			"user": {
-				"type": "Link",
-				"config": {
-					"label": "User",
-					"select": "document",
-					"customtypes": ["user"]
-				}
 			}
 		},
 		"SEO and Meta Data": {

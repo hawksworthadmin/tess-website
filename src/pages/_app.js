@@ -32,10 +32,7 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
-			<PrismicProvider
-				client={createClient}
-				internalLinkComponent={(props) => <Link {...props} />}
-			>
+			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
 				<PrismicPreview repositoryName={process.env.PRISMIC_REPO_NAME}>
 					<DefaultSeo {...defaultSeo} />
 					<Component {...pageProps} />
