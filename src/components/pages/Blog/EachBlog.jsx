@@ -17,7 +17,11 @@ export default function EachBlog({
 	const convertRichTextToPlain = RichText.asText(description)
 
 	return (
-		<article className="col-lg-6 col-md-6" bis_skin_checked="1" data-aos="fade-up">
+		<article
+			className="col-lg-6 col-md-6"
+			bis_skin_checked="1"
+			data-aos="fade-up"
+		>
 			<div className="single-blog-box" bis_skin_checked="1">
 				<Link
 					className="w-100 relative "
@@ -32,7 +36,7 @@ export default function EachBlog({
 					<Image
 						fill
 						src={img}
-						alt={alt}
+						alt={alt || 'blog post image'}
 						// style={{ objectFit: 'contain' }}
 					/>
 				</Link>

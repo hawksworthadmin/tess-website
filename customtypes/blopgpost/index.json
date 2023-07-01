@@ -34,10 +34,6 @@
 			}
 		},
 		"SEO & Meta Datas": {
-			"meta_title": {
-				"type": "Text",
-				"config": { "label": "Meta title", "placeholder": "" }
-			},
 			"meta_image": {
 				"type": "Image",
 				"config": { "label": "Meta Image", "constraint": {}, "thumbnails": [] }

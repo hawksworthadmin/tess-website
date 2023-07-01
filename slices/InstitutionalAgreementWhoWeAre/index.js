@@ -35,9 +35,9 @@ const InstitutionalAgreementWhoWeAre = ({ slice }) => {
 			</div>
 			<br />
 			<br />
-			{arrangement.map((data) => {
+			{arrangement.map((data, index) => {
 				return (
-					<div key={Math.random()}>
+					<div key={`arrangement_${index}`}>
 						<div className="container">
 							<h4
 								className="mb-5 fw-600"
@@ -50,7 +50,7 @@ const InstitutionalAgreementWhoWeAre = ({ slice }) => {
 								{data.fields.map((field, i) => {
 									return (
 										<EachLevel
-											key={Math.random()}
+											key={`each_leve_${i}`}
 											data={field}
 											index={i + 100}
 										/>

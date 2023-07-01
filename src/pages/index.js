@@ -5,6 +5,8 @@ import { createClient } from '../../prismicio'
 import { SliceZone } from '@prismicio/react'
 import { components } from '../../slices'
 import { locale } from 'moment'
+import { NextSeo } from 'next-seo'
+import METADATA from '@/METADATA'
 
 export default function index({
 	pressReleases,
@@ -12,8 +14,13 @@ export default function index({
 	statistics,
 	page,
 }) {
+	console.log(page)
 	return (
 		<Layout>
+			<NextSeo
+				title={METADATA.title}
+				description={page.data.meta_description || METADATA.description}
+			/>
 			{/* <Home
 				factsAndFigures={factsAndFigures}
 				latestNews={pressReleases}

@@ -4,11 +4,11 @@ import React from 'react'
 import * as prismic from '@prismicio/client'
 import Head from 'next/head'
 import METADATA from '@/METADATA'
-import { createClient } from '../../../../../prismicio'
 import {
 	getStaticCategoryPage,
-	getStaticPropsMediaHomePage,
-} from '../../../../../lib/helperFunctions'
+	getStaticPropsMediaCategoryPage,
+} from '../../../../../../lib/helperFunctions'
+import { createClient } from '../../../../../../prismicio'
 
 export default function _PhotoGallery({ category, photos, totalPages }) {
 	return (
@@ -26,7 +26,7 @@ export default function _PhotoGallery({ category, photos, totalPages }) {
 }
 
 export const getStaticPaths = async () => {
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+	const client = createClient()
 	const paths = await getStaticCategoryPage(
 		client,
 		'image_gallary_category',
@@ -41,12 +41,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ previewData, params }) => {
 	const client = createClient({ previewData })
-	const page = params.page
 
-	const { categories, media } = await getStaticPropsMediaHomePage(
+	const { category, page } = params
+
+	const { categories, media } = await getStaticPropsMediaCategoryPage(
 		client,
 		'image_gallary_category',
 		'image_gallery',
+		category,
 		page
 	)
 	return {

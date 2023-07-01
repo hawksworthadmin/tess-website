@@ -22,17 +22,33 @@ export default function BlogDetails({
 	relatedPosts,
 	publicationType,
 }) {
+	console.log(post)
 	// const convertRichTextToPlain = RichText.asText(post?.data?.description)
 	return (
 		<Layout>
 			<NextSeo
 				title={post?.data?.meta_title || post?.data?.title}
-				metaDescription={
-					post?.data?.meta_description
-						? post?.data?.meta_description
-						: `${METADATA.title} ${heading} | ${post?.data?.title}`
+				metaDescription={post?.data?.meta_description}
+				image={
+					post?.data?.meta_image?.url ||
+					post?.data?.image?.url ||
+					post?.data?.featured_image?.url
 				}
-				image={post?.data?.image?.url || post?.data?.featured_image?.url}
+				alt={
+					post?.data?.meta_image?.alt ||
+					post?.data?.image?.alt ||
+					post?.data?.featured_image?.alt
+				}
+				width={
+					post?.data?.meta_image?.dimensions?.width ||
+					post?.data?.image?.dimensions?.width ||
+					post?.data?.featured_image?.dimensions?.width
+				}
+				height={
+					post?.data?.meta_image?.dimensions?.width ||
+					post?.data?.image?.dimensions?.width ||
+					post?.data?.featured_image?.dimensions?.width
+				}
 				postLink={`${link}${post?.data?.category?.slug}${post?.uid}`}
 				publishedDate={post?.first_publication_date}
 				publicationType={publicationType}
@@ -43,7 +59,7 @@ export default function BlogDetails({
 					style={{ height: '112px', backgroundColor: '#12B76A' }}
 				>
 					<div className="container d-flex flex-column justify-content-center h-100">
-						<h3 className="fw-400 text-white">{heading}</h3>
+						<h1 className="fw-400 text-white">{heading}</h1>
 					</div>
 				</div>
 				<section className="blog-details-area ptb-100">
@@ -137,7 +153,7 @@ const RelatedPosts = ({ posts, heading, link }) => {
 
 					<>
 						{posts?.map((post) => (
-							<div bis_skin_checked="1">
+							<div key={post.uid} bis_skin_checked="1">
 								<div
 									style={{
 										marginTop: '12px',
@@ -149,7 +165,11 @@ const RelatedPosts = ({ posts, heading, link }) => {
 											'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)',
 									}}
 								>
-									<Image fill src={post?.data?.image?.url} alt={''} />
+									<Image
+										fill
+										src={post?.data?.image?.url}
+										alt={post?.data?.image?.alt || 'blog image'}
+									/>
 
 									<div
 										style={{

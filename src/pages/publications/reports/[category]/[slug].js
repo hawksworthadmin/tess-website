@@ -22,7 +22,7 @@ export default function Details({ reports, categories, relatedPosts }) {
 export const getStaticProps = async ({ previewData, params }) => {
 	const { slug } = params
 
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 
 	const { publication, relatedPosts, categories } = await getStaticPropsSlug(
 		client,

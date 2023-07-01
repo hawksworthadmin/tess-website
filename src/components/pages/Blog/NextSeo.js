@@ -11,6 +11,9 @@ const NextSeoBlog = ({
 	publishedDate,
 	description,
 	category,
+	width,
+	height,
+	alt,
 }) => {
 	return (
 		<>
@@ -28,6 +31,9 @@ const NextSeoBlog = ({
 					images: [
 						{
 							url: image,
+							width,
+							height,
+							alt,
 						},
 					],
 					title: `${title} | ${METADATA.title}`,

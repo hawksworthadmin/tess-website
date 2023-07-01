@@ -34,9 +34,9 @@ export default function Agreement() {
 			</div>
 			<br />
 			<br />
-			{arrangement.map((data) => {
+			{arrangement.map((data, i) => {
 				return (
-					<div key={Math.random()}>
+					<div key={`arrangement_${i}`}>
 						<div className="container">
 							<h4
 								className="mb-5 fw-600"
@@ -49,7 +49,7 @@ export default function Agreement() {
 								{data.fields.map((field, i) => {
 									return (
 										<EachLevel
-											key={Math.random()}
+											key={`level_${i}`}
 											data={field}
 											index={i + 100}
 										/>

@@ -72,7 +72,6 @@ export default function Metrics({ factsAndFigures }) {
 									fact={factFigure?.data?.fact}
 								/>
 							))}
-					
 					</div>
 				</div>
 			</div>
@@ -151,7 +150,6 @@ const Fact = ({ figure, fact, color }) => {
 			<p style={{ fontSize: '20px', color: colors[color], fontWeight: 500 }}>
 				{fact}
 			</p>
-		
 		</div>
 	)
 }

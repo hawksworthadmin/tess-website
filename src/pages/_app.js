@@ -1,6 +1,5 @@
 import '../../public/assets/css/bootstrap.min.css'
 import '../../public/assets/css/owl.theme.default.min.css'
-// import '../../public/assets/css/owl.carousel.min.css'
 
 import '../../public/assets/css/remixicon.css'
 import '../../public/assets/css/flaticon.css'

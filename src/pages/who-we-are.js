@@ -20,7 +20,7 @@ export default function _WhoWeAre({ page }) {
 }
 
 export const getStaticProps = async ({ previewData }) => {
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 	const page = await client.getAllByType('who_we_are')
 	return {
 		props: {

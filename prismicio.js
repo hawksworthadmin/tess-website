@@ -95,8 +95,10 @@ const routes = [
 
 	{
 		type: 'video_gallery',
-
-		path: '/media-room/video-gallery/:uid',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/media-room/video-gallery/:category/:uid',
 	},
 ]
 
