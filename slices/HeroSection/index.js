@@ -28,15 +28,9 @@ import { useEffect, useState } from 'react'
 // }
 export default function HomeHero({ slice }) {
 	const [show, setShow] = useState(false)
-	const [fontSize, setFontSize] = useState('20px')
 	const [currentSlide, setCurrentSlide] = useState(0)
 	const slides = slice.items.length
 	useEffect(() => {
-		if (window.innerWidth > 500) {
-			setFontSize('65px')
-		} else {
-			setFontSize('30px')
-		}
 		setShow(true)
 	}, [])
 
@@ -92,8 +86,9 @@ export default function HomeHero({ slice }) {
 					}}
 					bis_skin_checked="1"
 				>
-					{slice.items?.map((item) => (
+					{slice.items?.map((item, index) => (
 						<HeroSlideText
+							key={`hero_slide_text_${index}`}
 							heading={item.hero_heading}
 							subheading={item.hero_sub_heading}
 						/>
@@ -135,6 +130,7 @@ export default function HomeHero({ slice }) {
 			>
 				{slice?.items.map((_, page) => (
 					<span
+						key={`_page_${page}`}
 						onClick={() => setCurrentSlide(page)}
 						style={{
 							width: '20px',

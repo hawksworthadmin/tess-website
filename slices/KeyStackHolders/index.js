@@ -21,6 +21,7 @@ const KeyStackHolders = ({ slice }) => {
 							image={stackholder.stack_holder_image.url}
 							// worldbank={true}
 							title={stackholder.stack_holder_name}
+							alt={stackholder.stack_holder_image.alt}
 						/>
 					))}
 				</div>
@@ -29,7 +30,7 @@ const KeyStackHolders = ({ slice }) => {
 	)
 }
 
-const StackHolder = ({ image, title, worldbank }) => {
+const StackHolder = ({ image, title, worldbank, alt }) => {
 	return (
 		<div class="col-lg-2 col-md-6 mb-4">
 			<div class="single-project- text-center" data-aos="zoom-in-up">
@@ -37,7 +38,7 @@ const StackHolder = ({ image, title, worldbank }) => {
 					width={worldbank ? 144.49 : 96}
 					height={worldbank ? 96 : 64}
 					src={image}
-					alt="Image"
+					alt={alt || 'Image'}
 					className="mb-4"
 					style={{ objectFit: 'contain' }}
 				/>

@@ -25,7 +25,7 @@ export default function BlogRight({ categories, link }) {
 
 					<ul>
 						{sortInAphabeticOrder?.map((category) => (
-							<li>
+							<li key={category.uid}>
 								<Link href={`${link}${category.uid}`}>
 									{category?.data?.title}
 									<i class="ri-arrow-right-s-line"></i>

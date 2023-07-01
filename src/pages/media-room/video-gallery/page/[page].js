@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout'
-import PhotoGallery from '@/components/pages/PhotoGallery/PhotoGallery'
+import VideoGallery from '@/components/pages/VideoGallery/VideoGallery'
 import React from 'react'
-import * as prismic from '@prismicio/client'
+
 import Head from 'next/head'
 import METADATA from '@/METADATA'
 import { createClient } from '../../../../../prismicio'
@@ -10,15 +10,15 @@ import {
 	getStaticPropsMediaHomePage,
 } from '../../../../../lib/helperFunctions'
 
-export default function _PhotoGallery({ category, photos, totalPages }) {
+export default function _VideoGallery({ category, videos, totalPages }) {
 	return (
 		<Layout>
 			<Head>
-				<title>Photo Gallery | {METADATA.title}</title>
+				<title>Video Gallery | {METADATA.title}</title>
 			</Head>
-			<PhotoGallery
+			<VideoGallery
 				tabs_category={category}
-				photos={photos}
+				videos={videos}
 				totalPages={totalPages}
 			/>
 		</Layout>
@@ -26,11 +26,11 @@ export default function _PhotoGallery({ category, photos, totalPages }) {
 }
 
 export const getStaticPaths = async () => {
-	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+	const client = createClient()
 	const paths = await getStaticCategoryPage(
 		client,
-		'image_gallary_category',
-		'image_gallery'
+		'video_gallery_category',
+		'video_gallery'
 	)
 
 	return {
@@ -45,14 +45,14 @@ export const getStaticProps = async ({ previewData, params }) => {
 
 	const { categories, media } = await getStaticPropsMediaHomePage(
 		client,
-		'image_gallary_category',
-		'image_gallery',
+		'video_gallery_category',
+		'video_gallery',
 		page
 	)
 	return {
 		props: {
 			category: categories,
-			photos: media.results,
+			videos: media.results,
 			totalPages: media.total_pages,
 		},
 		revalidate: 60,

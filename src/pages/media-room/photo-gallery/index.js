@@ -78,7 +78,7 @@ export default function _PhotoGallery({ category, photos, totalPages }) {
 // }
 
 export const getStaticProps = async ({ previewData }) => {
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 
 	const { categories, media } = await getStaticPropsMediaHomePage(
 		client,

@@ -12,8 +12,9 @@ const Sponsors = ({ slice }) => {
 			style={{ background: 'white', padding: '34px' }}
 		>
 			<div className="d-flex justify-content-evenly">
-				{slice.items?.map((partner) => (
+				{slice.items?.map((partner, i) => (
 					<Image
+						key={`partner_${i}`}
 						src={partner.partner_logo.url}
 						alt={partner.partner_logo.alt}
 						width={204.45}
@@ -21,24 +22,6 @@ const Sponsors = ({ slice }) => {
 						style={{ objectFit: 'contain' }}
 					/>
 				))}
-				{/* <Image
-				src="/assets/figma/world_bank_2.png"
-				alt="world bank"
-				width={204.45}
-				height={48}
-			/>
-			<Image
-				src="https://i.onthe.io/smngoz5g75kpkm53u.313edc0e.jpg"
-				alt="world bank"
-				width={64}
-				height={64}
-			/>
-			<Image
-				src="https://www.globalpartnership.org/themes/custom/gpe/img/default-thumb-small.png"
-				alt="world bank"
-				width={64}
-				height={64}
-			/> */}
 			</div>
 		</section>
 	)

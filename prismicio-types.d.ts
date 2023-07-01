@@ -52,17 +52,6 @@ interface BlopgpostDocumentData {
 	 */
 	category: prismic.RelationField<'category'>
 	/**
-	 * Meta title field in *Blog Post*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: blopgpost.meta_title
-	 * - **Tab**: SEO & Meta Datas
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-	 *
-	 */
-	meta_title: prismic.KeyTextField
-	/**
 	 * Meta Image field in *Blog Post*
 	 *
 	 * - **Field Type**: Image
@@ -1046,6 +1035,28 @@ interface VideoGalleryDocumentData {
 	 *
 	 */
 	thumbnail_image: prismic.ImageField<never>
+	/**
+	 * Meta Description field in *Video Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.meta_description
+	 * - **Tab**: METADATA
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	meta_description: prismic.KeyTextField
+	/**
+	 * Meta Image field in *Video Gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_gallery.meta_image
+	 * - **Tab**: METADATA
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	meta_image: prismic.ImageField<never>
 }
 /**
  * Video Gallery document from Prismic

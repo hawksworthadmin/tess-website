@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
+import { getStaticPropsPublications } from '../../../../lib/helperFunctions'
 import { createClient } from '../../../../prismicio'
 
 const index = ({ resources, categories, totalPages }) => {
@@ -18,34 +19,23 @@ const index = ({ resources, categories, totalPages }) => {
 	)
 }
 
-export const getServerSideProps = async ({ previewData, query }) => {
-	const page = Number(query.page) || 1
-
-	const client = createClient(previewData)
-
-	const categories = await client.getByType('resource_category', {
-		orderings: {
-			field: 'document.uid',
-			direction: 'desc',
-		},
-	})
-
-	const resource = await client.getByType('resource', {
-		pageSize: 8,
-		page: page,
-
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc',
-		},
-	})
+export const getStaticProps = async ({ previewData, query }) => {
+	const client = createClient({ previewData })
+	const page = 1
+	const { categories, publication } = await getStaticPropsPublications(
+		client,
+		page,
+		'resource_category',
+		'resource'
+	)
 
 	return {
 		props: {
-			resources: resource.results,
-			totalPages: resource.total_pages,
+			resources: publication.results,
+			totalPages: publication.total_pages,
 			categories: categories.results,
 		},
+		revalidate: 60,
 	}
 }
 export default index

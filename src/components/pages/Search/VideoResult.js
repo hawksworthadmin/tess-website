@@ -10,7 +10,7 @@ const VideoResult = ({ posts, query }) => {
 			style={{ marginTop: 20, alignItems: 'stretch', gap: '32px' }}
 		>
 			{posts?.map((post) => {
-				/* 
+				/*
 				Perform a regex to check the query text is in the post title.
 				If its there, split the post title by the query text
 			*/
@@ -37,7 +37,7 @@ const VideoResult = ({ posts, query }) => {
 										? post?.data?.image?.url
 										: post?.data?.thumbnail_image?.url
 								}
-								alt={''}
+								alt={post?.data?.thumbnail_image?.alt || 'image gallery'}
 							/>
 						</Link>
 

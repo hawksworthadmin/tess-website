@@ -30,15 +30,13 @@ export const getStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	}
 }
 
 export const getStaticProps = async ({ query, params }) => {
 	const page = Number(params.page) || 1
 	const { category } = params
-
-	console.log('his is the page', page)
 
 	const client = prismic.createClient(process.env.PRISMIC_API_URL)
 	const { publication, categories } = await getStaticPropsCategoryPage(

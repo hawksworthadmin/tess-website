@@ -24,8 +24,8 @@ const ResultArea = ({ slice }) => {
 						<ul
 							style={{ display: 'flex', gap: '10px', flexDirection: 'column' }}
 						>
-							{slice.items?.map((stat) => (
-								<Statistics statistics={stat} />
+							{slice.items?.map((stat, i) => (
+								<Statistics statistics={stat} key={`stats_${i}`} />
 							))}
 						</ul>
 					</div>

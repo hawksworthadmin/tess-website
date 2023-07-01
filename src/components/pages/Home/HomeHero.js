@@ -100,6 +100,7 @@ export default function HomeHero() {
 			>
 				{slides.map((page) => (
 					<span
+						key={`page__${page}`}
 						onClick={() => setCurrentSlide(page)}
 						style={{
 							width: '20px',
