@@ -17,14 +17,22 @@ export const repositoryName = config.repositoryName
  */
 // TODO: Update the routes array to match your project's route structure.
 const routes = [
-	// {
-	// 	type: 'homepage',
-	// 	path: '/',
-	// },
+	{
+		type: 'home_page',
+		path: '/',
+	},
+	{
+		type: 'who_we_are',
+		path: '/who-we-are',
+	},
 	// {
 	// 	type: 'page',
 	// 	path: '/:uid',
 	// },
+	{
+		type: 'resource',
+		path: '/publications/resources',
+	},
 	{
 		type: 'blopgpost',
 		resolvers: {
@@ -35,6 +43,62 @@ const routes = [
 	{
 		type: 'category',
 		path: '/publications/blog/:uid',
+	},
+
+	{
+		type: 'newsletter',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/publications/news-letters/:category/:uid',
+	},
+	{
+		type: 'newsletter_category',
+		path: '/publications/news-letters/:uid',
+	},
+
+	{
+		type: 'report',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/publications/reports/:category/:uid',
+	},
+	{
+		type: 'report_category',
+		path: '/publications/reports/:uid',
+	},
+
+	{
+		type: 'event',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/news-and-events/events/:category/:uid',
+	},
+	{
+		type: 'event_category',
+		path: '/news-and-events/events/:uid',
+	},
+
+	{
+		type: 'press_release',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/news-and-events/press-release/:category/:uid',
+	},
+	{
+		type: 'press_release_category',
+		path: '/news-and-events/press-release/:uid',
+	},
+
+	{
+		type: 'video_gallery',
+		resolvers: {
+			category: 'category',
+		},
+		path: '/media-room/video-gallery/:category/:uid',
 	},
 ]
 

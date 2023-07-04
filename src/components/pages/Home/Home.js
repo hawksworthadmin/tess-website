@@ -8,7 +8,7 @@ import HomePartners from './HomePartners'
 import ResultAreaMap from './ResultAreaMap'
 import Image from 'next/image'
 
-export default function Home({ latestNews }) {
+export default function Home({ latestNews, factsAndFigures, statistics }) {
 	return (
 		<>
 			<HomeHero />
@@ -41,10 +41,10 @@ export default function Home({ latestNews }) {
 					</p>
 				</div>
 			</section>
-			<Metrics />
+			<Metrics factsAndFigures={factsAndFigures} />
 			<WhatWeDo />
 			<RecentPublication latestNews={latestNews} />
-			<ResultAreaMap />
+			<ResultAreaMap statistics={statistics} />
 			<StackHolders />
 		</>
 	)

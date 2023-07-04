@@ -1,3 +1,4 @@
+import Modal from '@/components/layout/Modal'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -5,7 +6,11 @@ export default function EachSearchPhoto({ img, alt, content }) {
 	const [show, setShow] = useState(false)
 	return (
 		<>
-			{show && <Preview img={img} alt={alt} onClick={() => setShow(false)} />}
+			{show && (
+				<Modal>
+					<Preview img={img} alt={alt} onClick={() => setShow(false)} />
+				</Modal>
+			)}
 			<div
 				onClick={() => setShow(true)}
 				className="col-lg-5 col-md-6 mix business"
@@ -52,6 +57,7 @@ const Preview = ({ onClick, img, alt }) => {
 				bottom: 0,
 				zIndex: 70,
 				cursor: 'pointer',
+				width: '100%',
 			}}
 			className="d-flex flex-column justify-content-center align-items-center"
 		>

@@ -4,12 +4,16 @@ import Layout from '@/components/layout/Layout'
 
 import * as prismic from '@prismicio/client'
 import { createClient } from '../../../../prismicio'
+import {
+	getStaticCatogeryPaths,
+	getStaticPropsCategoryPage,
+} from '../../../../lib/helperFunctions'
 
 export default function index({ resources, totalPages, categories }) {
 	return (
 		<Layout>
 			<Blog
-				heading={'Blog'}
+				heading={'Resources'}
 				posts={resources}
 				totalPages={totalPages}
 				categories={categories}
@@ -20,47 +24,37 @@ export default function index({ resources, totalPages, categories }) {
 	)
 }
 
-export const getServerSideProps = async ({ previewData, query, params }) => {
-	const page = Number(query.page) || 1
+export const getStaticPaths = async () => {
+	const client = createClient()
+	const paths = await getStaticCatogeryPaths(client, 'resource_category')
+
+	return {
+		paths,
+		fallback: false,
+	}
+}
+export const getStaticProps = async ({ previewData, query, params }) => {
+	const page = Number(params.page) || 1
 	const { category } = params
 
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 
-	try {
-		const categories = await client.getByType('resource_category', {
-			orderings: {
-				field: 'document.uid',
-				direction: 'desc',
-			},
-		})
+	const { publication, categories } = await getStaticPropsCategoryPage(
+		client,
+		page,
+		category,
+		'resource_category',
+		'resource'
+	)
 
-		const getCategoryIdUsingSlug = await client.getByUID(
-			'resource_category',
-			category
-		)
+	console.log('publication', publication)
 
-		const categoryId = getCategoryIdUsingSlug.id
-
-		const resource = await client.getByType('resource', {
-			filters: [prismic.filter.at('my.resource.category', categoryId)],
-			pageSize: 4,
-			page: page,
-			orderings: {
-				field: 'document.first_publication_date',
-				direction: 'desc',
-			},
-		})
-
-		return {
-			props: {
-				resources: resource.results,
-				totalPages: resource.total_pages,
-				categories: categories.results,
-			},
-		}
-	} catch (error) {
-		return {
-			props: {},
-		}
+	return {
+		props: {
+			resources: publication.results,
+			totalPages: publication.total_pages,
+			categories: categories.results,
+		},
+		revalidate: 60,
 	}
 }

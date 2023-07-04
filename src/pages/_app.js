@@ -1,6 +1,6 @@
 import '../../public/assets/css/bootstrap.min.css'
 import '../../public/assets/css/owl.theme.default.min.css'
-// import "../../public/assets/css/owl.carousel.min.css";
+
 import '../../public/assets/css/remixicon.css'
 import '../../public/assets/css/flaticon.css'
 import '../../public/assets/css/meanmenu.min.css'
@@ -20,6 +20,7 @@ import Link from 'next/link'
 import { DefaultSeo } from 'next-seo'
 import defaultSeo from '@/data/defaultSeo'
 import Head from 'next/head'
+import { createClient } from '../../prismicio'
 
 export default function App({ Component, pageProps }) {
 	useEffect(() => {

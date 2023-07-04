@@ -2,6 +2,7 @@ import Layout from '@/components/layout/Layout'
 import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
+import { getStaticPropsPublications } from '../../../../lib/helperFunctions'
 
 export default function Event({ events, totalPages, categories }) {
 	return (
@@ -18,33 +19,24 @@ export default function Event({ events, totalPages, categories }) {
 	)
 }
 
-export const getServerSideProps = async ({ previewData, query }) => {
-	const page = Number(query.page) || 1
+export const getStaticProps = async ({ previewData }) => {
+	const page = 1
 
 	const client = createClient(previewData)
 
-	const categories = await client.getByType('event_category', {
-		orderings: {
-			field: 'document.uid',
-			direction: 'desc',
-		},
-	})
-
-	const events = await client.getByType('event', {
-		pageSize: 4,
-		page: page,
-
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc',
-		},
-	})
+	const { categories, publication } = await getStaticPropsPublications(
+		client,
+		page,
+		'event_category',
+		'event'
+	)
 
 	return {
 		props: {
-			events: events.results,
-			totalPages: events.total_pages,
+			events: publication.results,
+			totalPages: publication.total_pages,
 			categories: categories.results,
 		},
+		revalidate: 60,
 	}
 }

@@ -1,8 +1,10 @@
 import { createClient } from '../../../../../prismicio'
-import * as prismic from '@prismicio/client'
 import React from 'react'
-
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
+import {
+	getStaticPathsSlug,
+	getStaticPropsSlug,
+} from '../../../../../lib/helperFunctions'
 
 export default function Details({ reports, categories, relatedPosts }) {
 	return (
@@ -17,38 +19,34 @@ export default function Details({ reports, categories, relatedPosts }) {
 	)
 }
 
-export const getServerSideProps = async ({ previewData, params }) => {
+export const getStaticProps = async ({ previewData, params }) => {
 	const { slug } = params
 
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 
-	const categories = await client.getByType('report_category', {
-		orderings: {
-			field: 'document.uid',
-			direction: 'desc',
-		},
-	})
-
-	const reports = await client.getByUID('report', slug)
-	const categoryId = reports?.data?.category?.id
-	const postId = reports?.id
-	const relatedPosts = await client.getByType('report', {
-		filters: [
-			prismic.filter.at('my.report.category', categoryId),
-			prismic.filter.not('document.id', postId),
-		],
-		pageSize: 3,
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc',
-		},
-	})
-
+	const { publication, relatedPosts, categories } = await getStaticPropsSlug(
+		client,
+		slug,
+		'report',
+		'report_category'
+	)
 	return {
 		props: {
-			reports,
+			reports: publication,
 			categories: categories.results,
 			relatedPosts: relatedPosts?.results,
 		},
+
+		revalidate: 60,
+	}
+}
+
+export const getStaticPaths = async () => {
+	const client = createClient()
+
+	const paths = await getStaticPathsSlug(client, 'report')
+	return {
+		paths,
+		fallback: true,
 	}
 }

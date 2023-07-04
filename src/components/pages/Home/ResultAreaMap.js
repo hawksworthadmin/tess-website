@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function ResultAreaMap() {
+export default function ResultAreaMap({ statistics }) {
 	return (
 		<section
 			className="blog-area blog-area-two- pt-100 pb-100"
@@ -22,7 +22,10 @@ export default function ResultAreaMap() {
 						<ul
 							style={{ display: 'flex', gap: '10px', flexDirection: 'column' }}
 						>
-							<li
+							{statistics?.map((stat) => (
+								<Statistics statistics={stat} />
+							))}
+							{/* <li
 								className="font-20 font-secondary"
 								style={{ color: '#667085' }}
 							>
@@ -48,11 +51,22 @@ export default function ResultAreaMap() {
 									20K+
 								</strong>{' '}
 								Student Served
-							</li>
+							</li> */}
 						</ul>
 					</div>
 				</div>
 			</div>
 		</section>
+	)
+}
+
+const Statistics = ({ statistics }) => {
+	return (
+		<li className="font-20 font-secondary" style={{ color: '#667085' }}>
+			<strong className="font-secondary" style={{ color: '#344054' }}>
+				{statistics?.data?.numbers}
+			</strong>{' '}
+			{statistics?.data?.description}
+		</li>
 	)
 }

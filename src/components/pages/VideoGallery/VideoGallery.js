@@ -11,9 +11,9 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 	)
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
-	const pathname = router.asPath.includes('category')
-		? `${router.asPath.split('&')[0]}&`
-		: `${router.asPath.split('?')[0]}?`
+	const pathname = router.asPath.split('/page')[0]
+
+	console.log(videos)
 	return (
 		<div>
 			<div
@@ -21,7 +21,7 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">Video Gallery</h3>
+					<h1 className="fw-400 text-white">Video Gallery</h1>
 				</div>
 			</div>
 			<section className="project-area pt-100 pb-70">
@@ -31,11 +31,13 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 						link={'/media-room/video-gallery'}
 					/>
 					<div className="row">
-						{videos?.map((video) => (
+						{videos?.map((video, index) => (
 							<EachVideo
+								key={`video_${index}`}
 								thumbnail={video?.data?.thumbnail_image?.url}
-								link={`/media-room/video-gallery/${video?.uid}`}
+								link={`/media-room/video-gallery/${video.data?.category?.slug}/${video?.uid}`}
 								title={video?.data?.title}
+								alt={video?.data?.thumbnail_image?.alt || 'image'}
 							/>
 						))}
 					</div>
@@ -44,12 +46,13 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 				<br />
 				<div className="col-12" bis_skin_checked="1">
 					<div className="pagination-area" bis_skin_checked="1">
-						{pageNumbers?.map((pageNumber) => (
+						{pageNumbers?.map((pageNumber, index) => (
 							<Link
+								key={`video_link_${index}`}
 								className={`page-numbers ${
 									currentPage == pageNumber && 'current'
 								}`}
-								href={`${pathname}page=${pageNumber}`}
+								href={`${pathname}/page/${pageNumber}`}
 							>
 								{pageNumber}
 							</Link>
@@ -57,7 +60,7 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 
 						{currentPage < totalPages && (
 							<Link
-								href={`${pathname}page==${currentPage + 1}`}
+								href={`${pathname}page/${currentPage + 1}`}
 								className="next page-numbers"
 							>
 								<i className="ri-arrow-right-line"></i>

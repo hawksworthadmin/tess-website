@@ -17,7 +17,7 @@ export default function Blog({
 }) {
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
-	const pathname = router.asPath.split('?')[0] // doing this to get the accurate pathname
+	const pathname = router.asPath.split('/page')[0] // doing this to get the accurate pathname
 	// so that the component is reuseable for  both the blog page and the category pages
 
 	const pageNumbers = Array.from(
@@ -32,7 +32,7 @@ export default function Blog({
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">{heading}</h3>
+					<h1 className="fw-400 text-white">{heading}</h1>
 				</div>
 			</div>
 			<section className="blog-post-area ptb-100">
@@ -43,6 +43,7 @@ export default function Blog({
 								{posts?.map((post) =>
 									checkEvent ? (
 										<EventCard
+											key={post.uid}
 											date={post?.data?.date}
 											title={post?.data?.title}
 											category={post?.data?.category?.slug?.replace(/-/gi, ' ')}
@@ -59,6 +60,7 @@ export default function Blog({
 											content={post?.data?.description}
 											downloadLink={post?.data?.document?.url}
 											documentName={post?.data?.document?.name}
+											password={post?.data?.password}
 										/>
 									) : (
 										<EachBlog
@@ -80,10 +82,11 @@ export default function Blog({
 								<div className="pagination-area" bis_skin_checked="1">
 									{pageNumbers?.map((pageNumber) => (
 										<Link
+											key={`page_num_${pageNumber}`}
 											className={`page-numbers ${
 												currentPage == pageNumber && 'current'
 											}`}
-											href={`${pathname}?page=${pageNumber}`}
+											href={`${pathname}/page/${pageNumber}`}
 										>
 											{pageNumber}
 										</Link>
@@ -91,7 +94,7 @@ export default function Blog({
 
 									{currentPage < totalPages && (
 										<Link
-											href={`/publications/blog?page=${currentPage + 1}`}
+											href={`${pathname}/page/${currentPage + 1}`}
 											className="next page-numbers"
 										>
 											<i className="ri-arrow-right-line"></i>

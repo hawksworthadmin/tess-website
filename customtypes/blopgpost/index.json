@@ -31,41 +31,9 @@
 					"select": "document",
 					"customtypes": ["category"]
 				}
-			},
-			"subcategories": {
-				"type": "Group",
-				"config": {
-					"label": "Subcategories",
-					"fields": {
-						"subcategory": {
-							"type": "Link",
-							"config": { "label": "Subcategory", "select": "document" }
-						}
-					}
-				}
-			},
-			"user": {
-				"type": "Link",
-				"config": {
-					"label": "Author",
-					"select": "document",
-					"customtypes": ["user"]
-				}
-			},
-			"created_at": {
-				"type": "Timestamp",
-				"config": { "label": "Created At", "placeholder": "" }
-			},
-			"updated_at": {
-				"type": "Timestamp",
-				"config": { "label": "Updated At", "placeholder": "" }
 			}
 		},
 		"SEO & Meta Datas": {
-			"meta_title": {
-				"type": "Text",
-				"config": { "label": "Meta title", "placeholder": "" }
-			},
 			"meta_image": {
 				"type": "Image",
 				"config": { "label": "Meta Image", "constraint": {}, "thumbnails": [] }

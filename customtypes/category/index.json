@@ -1,6 +1,6 @@
 {
 	"id": "category",
-	"label": "Category",
+	"label": "Blog Category",
 	"format": "custom",
 	"repeatable": true,
 	"status": true,

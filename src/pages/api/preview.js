@@ -1,6 +1,6 @@
 /*
 	This page handles preview request from the prismic CMS
-	so that content creator can preview their contents 
+	so that content creator can preview their contents
 	before publishing
 */
 import { setPreviewData, redirectToPreviewURL } from '@prismicio/next'

@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"quote": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Education is the most powerful weapon you can use to change the world."
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Nelson Mandela"
+			},
+			"background_image": {
+				"origin": {
+					"id": "vbAEHCrvXZ0",
+					"url": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8ZnJ1aXR8ZW58MHx8fHwxNjg3NDQ2Mjk3fDA&ixlib=rb-4.0.3&q=85",
+					"width": 2244,
+					"height": 2805
+				},
+				"url": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8ZnJ1aXR8ZW58MHx8fHwxNjg3NDQ2Mjk3fDA&ixlib=rb-4.0.3&q=85",
+				"width": 2244,
+				"height": 2805,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

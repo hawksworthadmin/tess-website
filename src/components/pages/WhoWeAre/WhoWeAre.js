@@ -9,7 +9,7 @@ export default function WhoWeAre() {
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">Who We Are</h3>
+					<h1 className="fw-400 text-white">Who We Are</h1>
 				</div>
 			</div>
 			<section className="who-we-are-area pt-100 pb-70">
@@ -53,22 +53,15 @@ export default function WhoWeAre() {
 								<h3 data-aos-delay="250">Our Focus:</h3>
 								<ul>
 									<li data-aos-delay="300">Improving teacher quality</li>
+
 									<li data-aos-delay="300">
-										Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-										sem
-									</li>
-									<li data-aos-delay="300">
-										Enhancing curriculum and assessment systems
+										Enhancing curriculum and learning assessment systems
 									</li>
 									<li data-aos-delay="300">
 										Strengthening school infrastructure
 									</li>
 									<li data-aos-delay="300">Promoting community engagement</li>
 								</ul>
-
-								{/* <a href="about.html" className="default-btn">
-									Learn more
-								</a> */}
 							</div>
 						</div>
 					</div>

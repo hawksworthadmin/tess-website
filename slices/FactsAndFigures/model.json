@@ -1,0 +1,36 @@
+{
+	"id": "facts_and_figures",
+	"type": "SharedSlice",
+	"name": "FactsAndFigures",
+	"description": "FactsAndFigures",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"fact": {
+					"type": "Text",
+					"config": { "label": "Fact", "placeholder": "" }
+				},
+				"figure": {
+					"type": "Text",
+					"config": { "label": "Figure", "placeholder": "" }
+				},
+				"color": {
+					"type": "Select",
+					"config": {
+						"label": "color",
+						"placeholder": "Select Color Variant",
+						"options": ["blue", "green", "orange", "purple"],
+						"default_value": "blue"
+					}
+				}
+			}
+		}
+	]
+}

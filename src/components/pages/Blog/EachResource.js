@@ -2,6 +2,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import RichTextComponent from './RichTextComponent'
+import Modal from '@/components/layout/Modal'
 
 const EachResource = ({
 	image,
@@ -11,16 +12,20 @@ const EachResource = ({
 	created_at,
 	downloadLink,
 	documentName,
+	password,
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<>
 			{isOpen && (
-				<DownloadForm
-					documentLink={downloadLink}
-					documentName={documentName}
-					onClick={() => setIsOpen(false)}
-				/>
+				<Modal>
+					<DownloadForm
+						documentLink={downloadLink}
+						documentName={documentName}
+						onClick={() => setIsOpen(false)}
+						documentPassword={password}
+					/>
+				</Modal>
 			)}
 			<div
 				className="col-lg-6 col-md-6 mix business"
@@ -92,10 +97,16 @@ const EachResource = ({
 	)
 }
 
-const DownloadForm = ({ onClick, documentLink, documentName }) => {
-	const [email, setEmail] = useState('')
+const DownloadForm = ({
+	onClick,
+	documentLink,
+	documentName,
+	documentPassword,
+}) => {
+	const [error, setError] = useState(false)
 	const [password, setPassword] = useState('')
 	const [isSubmitted, setIsSubmitted] = useState(false)
+	const [showPassword, setShowPassword] = useState(false)
 
 	const handleDownload = () => {
 		const downloadLink = document.createElement('a')
@@ -106,8 +117,11 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		if (email) {
+		setError(false)
+		if (password.toLowerCase() === documentPassword.toLowerCase()) {
 			setIsSubmitted(true)
+		} else {
+			setError(true)
 		}
 	}
 	return (
@@ -119,8 +133,8 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 				top: 0,
 				backgroundColor: '#001a049c',
 				bottom: 0,
-				zIndex: 70,
-				cursor: 'pointer',
+				zIndex: 500,
+				width: '100%',
 			}}
 			className="d-flex flex-column justify-content-center align-items-center"
 		>
@@ -131,6 +145,7 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 					height: '450px',
 					borderRadius: '34px',
 					background: 'white',
+					position: 'relative',
 				}}
 				onClick={(e) => e.stopPropagation()}
 			>
@@ -141,14 +156,13 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 						style={{ width: '80%', maxWidth: '450px' }}
 					>
 						<p style={{ fontWeight: '600', textAlign: 'center' }}>
-							Enter your email address and password to get access to this
-							document
+							Enter the password to get access to this document
 						</p>
 						<div
 							className="d-flex flex-column  align-items-center"
 							style={{ width: '80%', gap: '1rem' }}
 						>
-							<input
+							{/* <input
 								required
 								placeholder="Enter your email address"
 								type="email"
@@ -161,21 +175,61 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 									border: '2px solid gray',
 									width: '100%',
 								}}
-							/>
-							<input
-								required
-								placeholder="Enter your password"
-								type="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
+							/> */}
+							<div
 								style={{
-									borderRadius: '8px',
-									height: '46px',
-									padding: '0 8px',
-									border: '2px solid gray',
+									display: 'flex',
+									flexDirection: 'column',
 									width: '100%',
 								}}
-							/>
+							>
+								<div
+									style={{
+										border: `2px ${error ? 'red' : 'gray'} solid`,
+										// border: '2px solid gray',
+										width: '100%',
+										height: '46px',
+										borderRadius: '8px',
+										position: 'relative',
+										display: 'flex',
+										alignItems: 'center',
+										padding: '0 8px',
+										gap: '2px',
+									}}
+								>
+									<input
+										required
+										placeholder="Enter your password"
+										type={showPassword ? 'text' : 'password'}
+										value={password}
+										onChange={(e) => setPassword(e.target.value)}
+										onFocus={() => error && setError(false)}
+										style={{
+											background: 'transparent',
+											height: '100%',
+											border: 'none',
+											outline: 'none',
+											width: '100%',
+										}}
+									/>
+									<div
+										style={{
+											background: 'inherit',
+											height: 'full',
+											cursor: 'pointer',
+											fontSize: '1.3rem',
+										}}
+										onClick={() => setShowPassword((prev) => !prev)}
+									>
+										{showPassword ? (
+											<i className="ri-eye-fill"></i>
+										) : (
+											<i className="ri-eye-off-fill"></i>
+										)}
+									</div>
+								</div>
+								{error && <p style={{ color: 'red' }}>Password is incorrect</p>}
+							</div>
 
 							<button
 								style={{
@@ -194,7 +248,7 @@ const DownloadForm = ({ onClick, documentLink, documentName }) => {
 						</div>
 					</form>
 				) : (
-					<div>
+					<div style={{ width: '80%', maxWidth: '450px' }}>
 						<p>
 							Click on the button below to download{' '}
 							<span style={{ color: '#12B76A', fontWeight: '600' }}>

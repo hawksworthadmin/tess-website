@@ -3,6 +3,10 @@ import * as prismic from '@prismicio/client'
 import React from 'react'
 
 import BlogDetails from '@/components/pages/Blog/BlogDetails'
+import {
+	getStaticPathsSlug,
+	getStaticPropsSlug,
+} from '../../../../../lib/helperFunctions'
 
 export default function Details({ pressRelease, categories, relatedPosts }) {
 	return (
@@ -17,38 +21,33 @@ export default function Details({ pressRelease, categories, relatedPosts }) {
 	)
 }
 
-export const getServerSideProps = async ({ previewData, params }) => {
+export const getStaticProps = async ({ previewData, params }) => {
 	const { slug } = params
 
 	const client = createClient(previewData)
 
-	const categories = await client.getByType('press_release_category', {
-		orderings: {
-			field: 'document.uid',
-			direction: 'desc',
-		},
-	})
-
-	const pressRelease = await client.getByUID('press_release', slug)
-	const categoryId = pressRelease?.data?.category?.id
-	const postId = pressRelease?.id
-	const relatedPosts = await client.getByType('press_release', {
-		filters: [
-			prismic.filter.at('my.press_release.category', categoryId),
-			prismic.filter.not('document.id', postId),
-		],
-		pageSize: 3,
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc',
-		},
-	})
-
+	const { publication, relatedPosts, categories } = await getStaticPropsSlug(
+		client,
+		slug,
+		'press_release',
+		'press_release_category'
+	)
 	return {
 		props: {
-			pressRelease,
+			pressRelease: publication,
 			categories: categories.results,
-			relatedPosts: relatedPosts.results,
+			relatedPosts: relatedPosts?.results,
 		},
+		revalidate: 60,
+	}
+}
+
+export const getStaticPaths = async () => {
+	const client = createClient()
+
+	const paths = await getStaticPathsSlug(client, 'press_release')
+	return {
+		paths,
+		fallback: true,
 	}
 }

@@ -1,3 +1,4 @@
+import Modal from '@/components/layout/Modal'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -5,7 +6,11 @@ export default function EachPhoto({ img, alt, content }) {
 	const [show, setShow] = useState(false)
 	return (
 		<>
-			{show && <Preview img={img} alt={alt} onClick={() => setShow(false)} />}
+			{show && (
+				<Modal>
+					<Preview img={img} alt={alt} onClick={() => setShow(false)} />
+				</Modal>
+			)}
 			<div
 				onClick={() => setShow(true)}
 				className="col-lg-4 col-md-6 mix business"
@@ -47,6 +52,7 @@ const Preview = ({ onClick, img, alt }) => {
 				position: 'fixed',
 				left: 0,
 				top: 0,
+				width: '100%',
 				backgroundColor: '#001a049c',
 				bottom: 0,
 				zIndex: 70,

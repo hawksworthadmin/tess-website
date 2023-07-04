@@ -4,7 +4,14 @@ export default function PillarOne() {
 	return (
 		<section className="local-councils-services-area pb-70 pt-70">
 			<div className="container">
-				<div className="row align-items-center">
+				<div
+					style={
+						{
+							// flexDirection: 'row-reverse',
+						}
+					}
+					className="row align-items-center "
+				>
 					<div className="col-lg-6" bis_skin_checked="1">
 						<div className="local-councils-img pl-15" bis_skin_checked="1">
 							<img
@@ -40,8 +47,8 @@ export default function PillarOne() {
 					</p>
 					<ul>
 						<li>
-							Structured Pedagogy Program for Effective Teaching Under this
-							program, we have developed two key deliverables:
+							Structured Pedagogy Program for Effective Teaching. <br /> Under
+							this program, we have developed two key deliverables:
 						</li>
 					</ul>
 				</div>
@@ -51,7 +58,7 @@ export default function PillarOne() {
 						Disbursement-Linked Result 1:Empowering Teachers with Relevant
 						Training:
 					</p>
-					<ul>
+					<ul style={{ listStyle: 'none' }}>
 						<li>
 							We provide teachers with comprehensive training modules tailored
 							to their specific teaching needs. These modules, available in both
@@ -69,7 +76,7 @@ export default function PillarOne() {
 					<p style={{ fontSize: '20px' }} className="fw-bold">
 						Disbursement-Linked Result 2: Assessing Student Learning Outcomes
 					</p>
-					<ul>
+					<ol style={{ listStyleType: 'lower-roman' }}>
 						<li>
 							To ensure continuous improvement, teachers conduct termly
 							assessments for at least 80% of their students annually. These
@@ -91,7 +98,7 @@ export default function PillarOne() {
 							coaching interactions and assessment results, guiding them to
 							enhance their teaching practice.
 						</li>
-					</ul>
+					</ol>
 				</div>
 			</div>
 		</section>

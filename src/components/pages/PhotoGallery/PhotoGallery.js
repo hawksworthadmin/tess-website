@@ -10,9 +10,9 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 	)
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
-	const pathname = router.asPath.includes('category')
-		? `${router.asPath.split('&')[0]}&`
-		: `${router.asPath.split('?')[0]}?`
+	const pathname = router.asPath.split('page')[0]
+
+	console.log(pathname)
 
 	return (
 		<div>
@@ -21,7 +21,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 				style={{ height: '112px', backgroundColor: '#12B76A' }}
 			>
 				<div className="container d-flex flex-column justify-content-center h-100">
-					<h3 className="fw-400 text-white">Image Gallery</h3>
+					<h1 className="fw-400 text-white">Image Gallery</h1>
 				</div>
 			</div>
 			<section className="gallery-area gallery-popup pt-100 pb-70">
@@ -50,7 +50,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 									className={`page-numbers ${
 										currentPage == pageNumber && 'current'
 									}`}
-									href={`${pathname}page=${pageNumber}`}
+									href={`${pathname}page/${pageNumber}`}
 								>
 									{pageNumber}
 								</Link>
@@ -58,7 +58,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 
 							{currentPage < totalPages && (
 								<Link
-									href={`${pathname}page==${currentPage + 1}`}
+									href={`${pathname}page/${currentPage + 1}`}
 									className="next page-numbers"
 								>
 									<i className="ri-arrow-right-line"></i>
@@ -88,7 +88,7 @@ export const Tabs = ({ tabs_category, link }) => {
 					bis_skin_checked="1"
 				>
 					<Link
-						href={`${link}?category=all`}
+						href={`${link}`}
 						className={`filter ${categoryPath == 'all' && 'active'}`}
 						data-filter="all"
 						fdprocessedid="03j22"
@@ -97,7 +97,7 @@ export const Tabs = ({ tabs_category, link }) => {
 					</Link>
 					{tabs_category?.map((category) => (
 						<Link
-							href={`${link}?category=${category?.uid}`}
+							href={`${link}/${category?.uid}`}
 							className={`filter  ${categoryPath == category?.uid && 'active'}`}
 							data-filter=".business"
 							fdprocessedid="r0rmbc"

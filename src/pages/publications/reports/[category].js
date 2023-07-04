@@ -3,6 +3,10 @@ import Blog from '@/components/pages/Blog/Blog'
 import React from 'react'
 import { createClient } from '../../../../prismicio'
 import * as prismic from '@prismicio/client'
+import {
+	getStaticCatogeryPaths,
+	getStaticPropsCategoryPage,
+} from '../../../../lib/helperFunctions'
 
 export default function Reports({ reports, categories, totalPages }) {
 	return (
@@ -17,50 +21,38 @@ export default function Reports({ reports, categories, totalPages }) {
 		</Layout>
 	)
 }
-export const getServerSideProps = async ({ previewData, query, params }) => {
-	const page = Number(query.page) || 1
+
+export const getStaticPaths = async () => {
+	const client = prismic.createClient(process.env.PRISMIC_API_URL)
+
+	const paths = await getStaticCatogeryPaths(client, 'report_category')
+
+	return {
+		paths,
+		fallback: true,
+	}
+}
+
+export const getStaticProps = async ({ query, params, previewData }) => {
+	const page = Number(params.page) || 1
 	const { category } = params
 
-	c
 	const client = createClient(previewData)
 
-	try {
-		const categories = await client.getByType('report_category', {
-			orderings: {
-				field: 'document.uid',
-				direction: 'desc',
-			},
-		})
+	const { publication, categories } = await getStaticPropsCategoryPage(
+		client,
+		page,
+		category,
+		'report_category',
+		'report'
+	)
 
-		const getCategoryIdUsingSlug = await client.getByUID(
-			'report_category',
-			category
-		)
-
-		const categoryId = getCategoryIdUsingSlug.id
-
-		const report = await client.getByType('report', {
-			filters: [prismic.filter.at('my.report.category', categoryId)],
-			pageSize: 4,
-			page: page,
-			orderings: {
-				field: 'document.first_publication_date',
-				direction: 'desc',
-			},
-		})
-
-		return {
-			props: {
-				reports: report.results,
-				totalPages: report.total_pages,
-				categories: categories.results,
-				params,
-				getCategoryIdUsingSlug,
-			},
-		}
-	} catch (error) {
-		return {
-			props: {},
-		}
+	return {
+		props: {
+			reports: publication.results,
+			totalPages: publication.total_pages,
+			categories: categories.results,
+		},
+		revalidate: 60,
 	}
 }

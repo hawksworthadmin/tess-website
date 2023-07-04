@@ -13,7 +13,6 @@ export default function WhatWeDo() {
 						style={{
 							fontFamily: 'Syne !important',
 
-							textAlign: 'center',
 							color: '#F6FEF9',
 							WebkitTextStroke: '1.5px #12B76A',
 							WebkitTextFillColor: 'transparent',
@@ -25,24 +24,27 @@ export default function WhatWeDo() {
 					</h2>
 				</div>
 			</div>
-			<br />
-			<br />
+			{/* <br /> */}
+			{/* <br /> */}
 			<div className="container">
 				<div
 					className="row align-items-center"
-					style={{ marginBottom: '112px' }}
+					style={{ marginBottom: '12px', gap: '3rem' }}
 				>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_5.jpeg'}
 						number={1}
 						title={`Reduction in the number of out-of-school children, focused on equity`}
 						paragraph={`Our focus on equity drives this results area, aiming to ensure more
-							 equitable allocation of state education resources. Specifically, we 
-							 work towards improving learning conditions in the most disadvantaged 
+							 equitable allocation of state education resources. Specifically, we
+							 work towards improving learning conditions in the most disadvantaged
 							 schools and providing opportunities for students.`}
 					/>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_6.jpeg'}
 						number={2}
-						title={`Enhancing teaching practices and measuring learning outcomes, 
+						reverse={true}
+						title={`Enhancing teaching practices and measuring learning outcomes,
 							Focused On Learning Outcomes. `}
 						paragraph={`At TESS, we are committed to improving the quality of
 						 education by enhancing teaching practices and measuring learning
@@ -51,9 +53,10 @@ export default function WhatWeDo() {
 						   technology.`}
 					/>
 					<WhatWeDoContent
+						image={'/assets/images/what-we-do/tess_7.jpeg'}
 						number={3}
 						title={`Improving teacher deployment and making education expenditures
-						 Transparent and accessible For Policy Formulation, Focused on 
+						 Transparent and accessible For Policy Formulation, Focused on
 						 efficiency and system management.`}
 						paragraph={`The importance of proper infrastructure in facilitating
 						 effective education delivery cannot be over-emphasized. The program
@@ -67,25 +70,39 @@ export default function WhatWeDo() {
 	)
 }
 
-const WhatWeDoContent = ({ number, title, paragraph }) => {
+const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 	return (
 		<div
-			className="row align-items-center justify-content-center"
-			style={{ marginBottom: '112px' }}
+			className={`d-flex align-items-center justify-content-center `}
+			style={{
+				gap: '2rem',
+				flexWrap: 'wrap',
+				flexDirection: reverse && 'row-reverse',
+			}}
 		>
 			<div
-				style={{ display: 'grid', placeItems: 'center' }}
-				className="col-lg-4 jus pb-100"
+				className="col-lg-5 "
+				style={{ borderRadius: '10px', overflow: 'hidden' }}
 			>
-				<div className="justify-content-center counselor-img pr-15 ">
-					<img
-						src="/assets/images/pillars.png"
-						alt="Image"
-						// className="rounded"
-						data-aos="fade-up-right"
-						style={{ objectFit: 'contain', margin: 'auto' }}
-					/>
-				</div>
+				{/* <div
+					className="justify-content-center counselor-img pr-15 "
+					style={{
+						position: 'relative',
+						borderRadius: '10px',
+						overflow: 'hidden',
+
+						height: '350px',
+						width: '100%',
+					}}
+				> */}
+				<img
+					src={image}
+					alt="Image"
+					// className="rounded"
+					data-aos="fade-up-right"
+					style={{ margin: 'auto', objectFit: 'scale-down' }}
+				/>
+				{/* </div> */}
 			</div>
 
 			<div className="col-lg-6">

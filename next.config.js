@@ -7,6 +7,7 @@ const nextConfig = {
 			'fmic.gov.ng',
 			'i.onthe.io',
 			'www.globalpartnership.org',
+			'images.unsplash.com',
 		],
 	},
 }
