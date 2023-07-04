@@ -57,18 +57,18 @@ export default function HomeHero({ slice }) {
 			className="banner-area- bg-img p-3 hero-slider-area  "
 			style={{
 				height: '92vh',
-				// backgroundImage: `url(/assets/figma/hero.png)`,
+				backgroundImage: `url(${slice.primary.hero_image.url})`,
 
 				overflowX: 'hidden',
 
 				position: 'relative',
 			}}
 		>
-			<Image
+			{/* <Image
 				fill
 				src={slice.primary.hero_image.url}
 				alt={slice.primary.hero_image.alt}
-			/>
+			/> */}
 			<div
 				style={{
 					overflowX: 'hidden',
