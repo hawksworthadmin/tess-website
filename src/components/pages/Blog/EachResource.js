@@ -141,7 +141,8 @@ const DownloadForm = ({
 			<div
 				className="d-flex flex-column justify-content-center align-items-center"
 				style={{
-					width: '50%',
+					maxWidth: '450px',
+					width: '90%',
 					height: '450px',
 					borderRadius: '34px',
 					background: 'white',
