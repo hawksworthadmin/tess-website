@@ -18,7 +18,8 @@
 						"facts_and_figures": { "type": "SharedSlice" },
 						"key_stack_holders": { "type": "SharedSlice" },
 						"result_area": { "type": "SharedSlice" },
-						"what_we_d": { "type": "SharedSlice" }
+						"what_we_d": { "type": "SharedSlice" },
+						"latest_news_section": { "type": "SharedSlice" }
 					}
 				}
 			}

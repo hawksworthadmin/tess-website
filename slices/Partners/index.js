@@ -11,7 +11,13 @@ const Sponsors = ({ slice }) => {
 			className="container services-area-style-two "
 			style={{ background: 'white', padding: '34px' }}
 		>
-			<div className="d-flex justify-content-evenly">
+			<div
+				style={{
+					flexWrap: 'wrap',
+					gap: '1.5rem',
+				}}
+				className="d-flex justify-content-evenly"
+			>
 				{slice.items?.map((partner, i) => (
 					<Image
 						key={`partner_${i}`}

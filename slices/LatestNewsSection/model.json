@@ -1,0 +1,27 @@
+{
+	"id": "latest_news_section",
+	"type": "SharedSlice",
+	"name": "LatestNewsSection",
+	"description": "LatestNewsSection",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"news": {
+					"type": "Link",
+					"config": {
+						"label": "News",
+						"select": "document",
+						"customtypes": ["newsletter"]
+					}
+				}
+			}
+		}
+	]
+}

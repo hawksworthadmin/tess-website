@@ -18,10 +18,11 @@ const Search = ({
 			onSubmit={handleSubmit}
 			style={{
 				width: '100%',
-				padding: !mobile ? ' 38px 0 ' : '8px 0',
-				display: openSearchComponent ? 'block' : mobile ? 'grid' : 'none',
+				padding: !mobile ? ' 38px 0 ' : ' 0 4px',
+				display: openSearchComponent ? 'block' : mobile ? 'block' : 'none',
 				marginBottom: mobile && '1rem',
 				justifyContent: 'center',
+				// background: 'red',
 			}}
 			className="container"
 		>
@@ -30,10 +31,11 @@ const Search = ({
 					display: 'flex',
 					justifyContent: !mobile && 'space-between',
 					alignItems: 'center',
-					background: '#F2F4F7',
+					backgroundColor: '#F2F4F7',
 					borderRadius: '40px',
 					padding: !mobile ? '8px 16px ' : '7px 4px',
-					width: mobile && '99%',
+					width: mobile && '85%',
+					margin: 'auto',
 				}}
 			>
 				<div
@@ -68,6 +70,7 @@ const Search = ({
 						height: mobile && '100%',
 						borderRadius: '32px',
 						color: '#12B76A',
+						display: mobile ? 'none' : 'block',
 					}}
 				>
 					Search

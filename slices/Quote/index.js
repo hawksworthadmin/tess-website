@@ -6,7 +6,7 @@
 const Quote = ({ slice }) => {
 	return (
 		<section
-			className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5"
+			className="blog-area bg-color- pt-100 pb-70 d-flex justify-content-center my-5 px-30"
 			style={{
 				backgroundColor: '#F2F4F7',
 				backgroundImage: `url(${slice.primary.background_image.url})`,
