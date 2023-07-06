@@ -49,15 +49,6 @@ const WhoWeAreHeroSection = ({ slice }) => {
 											{focus.our_focus}
 										</li>
 									))}
-									{/* <li data-aos-delay="300">Improving teacher quality</li>
-
-									<li data-aos-delay="300">
-										Enhancing curriculum and learning assessment systems
-									</li>
-									<li data-aos-delay="300">
-										Strengthening school infrastructure
-									</li>
-									<li data-aos-delay="300">Promoting community engagement</li> */}
 								</ul>
 							</div>
 						</div>

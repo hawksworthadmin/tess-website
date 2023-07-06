@@ -6,13 +6,6 @@ import Head from 'next/script'
 export default function PageNotFound() {
 	return (
 		<Layout>
-			<Head>
-				<script
-					async
-					defer
-					src="https://static.cdn.prismic.io/prismic.js?new=true&repo=tess-website"
-				></script>
-			</Head>
 			<div className="error-area ptb-100">
 				<div className="d-table">
 					<div className="d-table-cell">
