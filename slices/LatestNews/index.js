@@ -3,25 +3,30 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RichText } from 'prismic-dom'
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 
 const index = () => {
 	const [news, setNews] = useState([])
 	const [error, setError] = useState(false)
 	const fetctLatestNews = async () => {
-		const client = createClient(process.env.NEXT_PUBLIC_PRISMIC_API_URL)
-		const pressReleases = await client.getByType('press_release', {
-			pageSize: 3,
-			orderings: {
-				field: 'document.first_publication_date',
-				direction: 'desc',
-			},
-		})
+		try {
+			const client = createClient(process.env.NEXT_PUBLIC_PRISMIC_API_URL)
+			const pressReleases = await client.getByType('press_release', {
+				pageSize: 3,
+				orderings: {
+					field: 'document.first_publication_date',
+					direction: 'desc',
+				},
+			})
 
-		setNews(pressReleases.results)
+			setNews(pressReleases.results)
+		} catch (error) {
+			setError(true)
+			console.log(error)
+		}
 	}
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		fetctLatestNews()
 	}, [])
 	return (
