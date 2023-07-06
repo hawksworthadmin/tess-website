@@ -35,22 +35,24 @@ export const getStaticProps = async ({ params, previewData }) => {
 	const client = createClient(previewData)
 
 	const home_page = await client.getAllByType('home_page', {
-		// graphQuery: `
-		// {
-		// 	home_page {
-		// 		...home_pageFields
-		// 		slices {
-		// 		 ...on latest_news_section	{
-		// 				variation {
-		// 					...on default {
-		// 						items {
-		// 							...itemsFields
-		// 						}
-		// 					}
-		// 				}
-		// 			}
-		// 		}
-		// 	}
+		fetchLinks: ['newsletter.link'],
+		// 		graphQuery: `{
+		//   home_page {
+		//     ...home_pageFields
+		//     slices {
+		//       ...on latest_news_section {
+		//         variation {
+		//           ...on default {
+		//             items {
+		//               news {
+		// 				title
+		//               }
+		//             }
+		//           }
+		//         }
+		//       }
+		//     }
+		//   }
 		// }
 		// `,
 	})
