@@ -53,6 +53,7 @@ const Search = ({
 						style={{
 							border: 'none',
 							flex: !mobile && 1,
+							backgroundColor: 'red',
 							padding: '4px',
 							marginRight: '8px',
 							background: 'transparent',
