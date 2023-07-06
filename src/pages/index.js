@@ -7,20 +7,19 @@ import { components } from '../../slices'
 import { locale } from 'moment'
 import { NextSeo } from 'next-seo'
 import METADATA from '@/METADATA'
+import Head from 'next/head'
 
-export default function index({
-	pressReleases,
-	factsAndFigures,
-	statistics,
-	page,
-}) {
-	console.log(page)
+export default function index({ page }) {
 	return (
 		<Layout>
-			<NextSeo
-				title={METADATA.title}
-				description={page.data.meta_description || METADATA.description}
-			/>
+			<Head>
+				<title>{METADATA.title}</title>
+				<meta
+					name="description"
+					content={`${page.data.meta_description || METADATA.description}`}
+				/>
+			</Head>
+
 			{/* <Home
 				factsAndFigures={factsAndFigures}
 				latestNews={pressReleases}
