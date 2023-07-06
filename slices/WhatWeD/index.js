@@ -83,7 +83,7 @@ const WhatWeD = ({ slice }) => {
 					<div class="section-title">
 						<h2 data-aos="fade-up">Latest News</h2>
 					</div>
-					{/*  */}
+
 					<div class="row justify-content-center">
 						{!error ? (
 							news?.map((news, id) => (
@@ -106,8 +106,6 @@ const WhatWeD = ({ slice }) => {
 								An error occurred while attempting to fetch the latest news.
 							</p>
 						)}
-						{/* <EachRelease link={}/>
-					<EachRelease /> */}
 					</div>
 				</div>
 

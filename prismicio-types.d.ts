@@ -331,6 +331,7 @@ type HomePageDocumentDataSlicesSlice =
 	| KeyStackHoldersSlice
 	| ResultAreaSlice
 	| WhatWeDSlice
+	| LatestNewsSectionSlice
 /**
  * Home page document from Prismic
  *
@@ -1550,6 +1551,52 @@ export type KeyStackHoldersSlice = prismic.SharedSlice<
 	KeyStackHoldersSliceVariation
 >
 /**
+ * Item in LatestNewsSection → Items
+ *
+ */
+export interface LatestNewsSectionSliceDefaultItem {
+	/**
+	 * News field in *LatestNewsSection → Items*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: latest_news_section.items[].news
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	news: prismic.RelationField<'newsletter'>
+}
+/**
+ * Default variation for LatestNewsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LatestNewsSectionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<LatestNewsSectionSliceDefaultItem>
+>
+/**
+ * Slice variation for *LatestNewsSection*
+ *
+ */
+type LatestNewsSectionSliceVariation = LatestNewsSectionSliceDefault
+/**
+ * LatestNewsSection Shared Slice
+ *
+ * - **API ID**: `latest_news_section`
+ * - **Description**: `LatestNewsSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LatestNewsSectionSlice = prismic.SharedSlice<
+	'latest_news_section',
+	LatestNewsSectionSliceVariation
+>
+/**
  * Primary content in Quote → Primary
  *
  */
@@ -2056,6 +2103,10 @@ declare module '@prismicio/client' {
 			KeyStackHoldersSliceDefault,
 			KeyStackHoldersSliceVariation,
 			KeyStackHoldersSlice,
+			LatestNewsSectionSliceDefaultItem,
+			LatestNewsSectionSliceDefault,
+			LatestNewsSectionSliceVariation,
+			LatestNewsSectionSlice,
 			QuoteSliceDefaultPrimary,
 			QuoteSliceDefault,
 			QuoteSliceVariation,
