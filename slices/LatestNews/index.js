@@ -30,8 +30,8 @@ const index = () => {
 		fetctLatestNews()
 	}, [])
 	return (
-		<section class="container">
-			<div class="section-title">
+		<section class="container " style={{ padding: '180px 0px' }}>
+			<div class="section-title" style={{ paddingBottom: '80px' }}>
 				<h2 data-aos="fade-up">Latest News</h2>
 			</div>
 
