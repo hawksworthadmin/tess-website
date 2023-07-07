@@ -79,7 +79,7 @@ const WhatWeD = ({ slice }) => {
 				class="blog-area blog-area-two- pt-100 pb-70"
 				style={{ backgroundColor: '#F9FAFB' }}
 			>
-				<div class="container">
+				{/* <div class="container">
 					<div class="section-title">
 						<h2 data-aos="fade-up">Latest News</h2>
 					</div>
@@ -107,7 +107,7 @@ const WhatWeD = ({ slice }) => {
 							</p>
 						)}
 					</div>
-				</div>
+				</div> */}
 
 				<div class="shape blog-shape-1">
 					<img src="/assets/images/blog/blog-shape-1.png" alt="Image" />

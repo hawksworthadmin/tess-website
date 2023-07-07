@@ -60,7 +60,10 @@ const Preview = ({ onClick, img, alt }) => {
 			}}
 			className="d-flex flex-column justify-content-center align-items-center"
 		>
-			<div style={{ flex: 1 }} className="d-flex align-items-center">
+			<div
+				style={{ flex: 1, padding: '1rem' }}
+				className="d-flex align-items-center"
+			>
 				<Image
 					style={{ backgroundColor: 'white' }} // am giving a white background
 					// in case the picture does not have a background

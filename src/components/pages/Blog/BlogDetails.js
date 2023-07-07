@@ -29,7 +29,6 @@ export default function BlogDetails({
 			<NextSeo
 				title={post?.data?.meta_title || post?.data?.title}
 				metaDescription={post?.data?.meta_description}
-				
 				image={
 					post?.data?.meta_image?.url ||
 					post?.data?.image?.url ||
@@ -72,6 +71,9 @@ export default function BlogDetails({
 										<img
 											// fill
 											// style={{ objectFit: 'contain' }}
+											style={{
+												width: '100%',
+											}}
 											src={
 												!checkEvent
 													? post?.data?.image?.url
@@ -129,6 +131,8 @@ export default function BlogDetails({
 									</div>
 								</div>
 							</div>
+							<br />
+							<br />
 							<div className="col-lg-4">
 								<BlogRight categories={categories} link={link} />
 								<RelatedPosts
