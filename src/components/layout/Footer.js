@@ -25,14 +25,9 @@ export default function Footer() {
 										alt="logo"
 									/>
 
-									{/* <div
-										className="d-flex text-theme flex-column"
-										style={{ maxWidth: '200px' }}
-									> */}
 									<h4 style={{ fontWeight: 600, color: 'white' }}>
 										BESDA AF-TESS
 									</h4>
-									{/* </div> */}
 								</div>
 
 								<p>
@@ -74,7 +69,7 @@ export default function Footer() {
 								<ul className="address">
 									<li>
 										<i className="ri-map-pin-fill"></i>
-										Federal Coordinating Secretariat, Federal Ministry of
+										Federal Project Coordinating Unit, Federal Ministry of
 										Education Annex 245 Samuel Ademulegun Avenue, CBD 900103,
 										Abuja, <br /> NV 89108
 									</li>
@@ -163,7 +158,7 @@ export default function Footer() {
 				<div class="container">
 					<p>
 						Copyright <i class="ri-copyright-line"></i>
-						{new Date().getFullYear()}. Tess. All rights reserved{' '}
+						{new Date().getFullYear()}. BESDA AF-TESS. All rights reserved{' '}
 					</p>
 				</div>
 			</div>

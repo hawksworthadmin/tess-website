@@ -39,19 +39,11 @@ export const navLinks = [
 				name: 'Events',
 				url: '/news-and-events/events',
 			},
-			// {
-			// 	name: 'Workshops',
-			// 	url: '/news-and-events/workshops',
-			// },
 		],
 	},
 	{
 		name: 'Publications',
 		children: [
-			// {
-			// 	name: 'Fact sheets',
-			// 	url: '/publications/fact-sheets',
-			// },
 			{
 				name: 'News Letters',
 				url: '/publications/news-letters',
@@ -128,9 +120,7 @@ export default function Header({
 				<div className="desktop-nav">
 					<div className="container">
 						<nav className="navbar navbar-expand-md navbar-light">
-							{/* <Link href="/"> */}
 							<TheLogo />
-							{/* </Link> */}
 
 							<div
 								className="collapse navbar-collapse mean-menu"
@@ -200,31 +190,6 @@ export default function Header({
 												bis_skin_checked="1"
 											>
 												<i className="search-btn ri-search-line"></i>
-												{/* <i className="close-btn ri-close-line"></i>
-
-												<div
-													className="search-overlay search-popup"
-													bis_skin_checked="1"
-												>
-													<div
-														className="search-box"
-														bis_skin_checked="1"
-														style={{ display: 'block' }}
-													>
-														<form className="search-form">
-															<input
-																className="search-input"
-																name="search"
-																placeholder="Search"
-																type="text"
-															/>
-
-															<button className="search-button" type="submit">
-																<i className="ri-search-line"></i>
-															</button>
-														</form>
-													</div>
-												</div> */}
 											</div>
 										</li>
 									</ul>
@@ -349,7 +314,6 @@ const SideNavLinks = ({ eachLink }) => {
 						key={Math.random()}
 						onClick={() => setShow(!show)}
 						className="mean-expand"
-						// href="#"
 						style={{ fontSize: '18px', cursor: 'pointer' }}
 					>
 						+

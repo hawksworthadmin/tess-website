@@ -1,17 +1,41 @@
-/**
- * @typedef {import("@prismicio/client").Content.LatestNewsSectionSlice} LatestNewsSectionSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<LatestNewsSectionSlice>} LatestNewsSectionProps
- * @param {LatestNewsSectionProps}
- */
-const LatestNewsSection = ({ slice }) => {
-	console.log(slice)
+import { createClient } from '@prismicio/client'
+import moment from 'moment'
+import Image from 'next/image'
+import Link from 'next/link'
+import { RichText } from 'prismic-dom'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+
+const index = () => {
+	const [news, setNews] = useState([])
+	const [error, setError] = useState(false)
+	const fetctLatestNews = async () => {
+		try {
+			const client = createClient(process.env.NEXT_PUBLIC_PRISMIC_API_URL)
+			const pressReleases = await client.getByType('press_release', {
+				pageSize: 3,
+				orderings: {
+					field: 'document.first_publication_date',
+					direction: 'desc',
+				},
+			})
+
+			setNews(pressReleases.results)
+		} catch (error) {
+			setError(true)
+			console.log(error)
+		}
+	}
+
+	useEffect(() => {
+		fetctLatestNews()
+	}, [])
 	return (
 		<section class="container">
 			<div class="section-title">
 				<h2 data-aos="fade-up">Latest News</h2>
 			</div>
 
-			{/* <div class="row justify-content-center">
+			<div class="row justify-content-center " style={{ padding: '.2rem' }}>
 				{!error ? (
 					news?.map((news, id) => (
 						<EachRelease
@@ -31,8 +55,7 @@ const LatestNewsSection = ({ slice }) => {
 				) : (
 					<p>An error occurred while attempting to fetch the latest news.</p>
 				)}
-
-			</div> */}
+			</div>
 		</section>
 	)
 }
@@ -92,5 +115,4 @@ const EachRelease = ({
 		</div>
 	)
 }
-
-export default LatestNewsSection
+export default index

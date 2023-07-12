@@ -6,26 +6,7 @@ import { useEffect, useState } from 'react'
  * @typedef {import("@prismicio/react").SliceComponentProps<HeroSectionSlice>} HeroSectionProps
  * @param {HeroSectionProps}
  */
-// const HeroSection = ({ slice }) => {
-// 	console.log('hello', slice?.items[0].hero_heading)
-// 	return (
-// 		<section
-// 			data-slice-type={slice.slice_type}
-// 			data-slice-variation={slice.variation}
-// 		>
-// 			{/* Placeholder component for hero_section (variation: {slice.variation})
-// 			Slices */}
-// 			{/* {slice.items[1].hero_heading} */}
-// 			<Image
-// 				src={slice.primary.hero_image.url}
-// 				alt="text"
-// 				width={400}
-// 				height={400}
-// 			/>
-// 			<p>{slice?.items[0].hero_heading}</p>
-// 		</section>
-// 	)
-// }
+
 export default function HomeHero({ slice }) {
 	const [show, setShow] = useState(false)
 	const [currentSlide, setCurrentSlide] = useState(0)
@@ -64,11 +45,6 @@ export default function HomeHero({ slice }) {
 				position: 'relative',
 			}}
 		>
-			{/* <Image
-				fill
-				src={slice.primary.hero_image.url}
-				alt={slice.primary.hero_image.alt}
-			/> */}
 			<div
 				style={{
 					overflowX: 'hidden',
@@ -82,7 +58,6 @@ export default function HomeHero({ slice }) {
 						width: '100%',
 						transform: `translateX(-${currentSlide * 100}%)`,
 						transition: 'all 2s',
-						// gap: '1rem',
 					}}
 					bis_skin_checked="1"
 				>
@@ -93,29 +68,8 @@ export default function HomeHero({ slice }) {
 							subheading={item.hero_sub_heading}
 						/>
 					))}
-					{/* <HeroSlideText
-						heading={
-							'Welcome to Transforming Education Systems at States Level (TESS)'
-						}
-						subheading={'Revolutionizing systems in the educational sector'}
-					/>
-
-					<HeroSlideText
-						heading={
-							'Reduction in the number of out-of-school children, focused onequity'
-						}
-					/>
-					<HeroSlideText
-						heading={
-							'Enhancing teaching practices and measuring learning outcomes,focused on learning outcomes.'
-						}
-					/> */}
 				</div>
 			</div>
-
-			{/* <div className="shape banner-shape-1" bis_skin_checked="1">
-				<img src="/assets/images/banner/banner-shape-1.png" alt="Image" />
-			</div> */}
 
 			{/* SLIDE  PAGINATION */}
 			<div

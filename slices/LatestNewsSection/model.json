@@ -12,16 +12,7 @@
 			"description": "Default",
 			"imageUrl": "",
 			"primary": {},
-			"items": {
-				"news": {
-					"type": "Link",
-					"config": {
-						"label": "News",
-						"select": "document",
-						"customtypes": ["newsletter"]
-					}
-				}
-			}
+			"items": {}
 		}
 	]
 }

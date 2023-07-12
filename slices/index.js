@@ -9,7 +9,7 @@ export const components = {
 		import('./InstitutionalAgreementWhoWeAre')
 	),
 	key_stack_holders: dynamic(() => import('./KeyStackHolders')),
-	latest_news_section: dynamic(() => import('./LatestNews')),
+	latest_news_section: dynamic(() => import('./LatestNewsSection')),
 	quote: dynamic(() => import('./Quote')),
 	result_area: dynamic(() => import('./ResultArea')),
 	sponsors: dynamic(() => import('./Partners')),
