@@ -1551,22 +1551,6 @@ export type KeyStackHoldersSlice = prismic.SharedSlice<
 	KeyStackHoldersSliceVariation
 >
 /**
- * Item in LatestNewsSection → Items
- *
- */
-export interface LatestNewsSectionSliceDefaultItem {
-	/**
-	 * News field in *LatestNewsSection → Items*
-	 *
-	 * - **Field Type**: Content Relationship
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: latest_news_section.items[].news
-	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-	 *
-	 */
-	news: prismic.RelationField<'newsletter'>
-}
-/**
  * Default variation for LatestNewsSection Slice
  *
  * - **API ID**: `default`
@@ -1577,7 +1561,7 @@ export interface LatestNewsSectionSliceDefaultItem {
 export type LatestNewsSectionSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Record<string, never>,
-	Simplify<LatestNewsSectionSliceDefaultItem>
+	never
 >
 /**
  * Slice variation for *LatestNewsSection*
@@ -2103,7 +2087,6 @@ declare module '@prismicio/client' {
 			KeyStackHoldersSliceDefault,
 			KeyStackHoldersSliceVariation,
 			KeyStackHoldersSlice,
-			LatestNewsSectionSliceDefaultItem,
 			LatestNewsSectionSliceDefault,
 			LatestNewsSectionSliceVariation,
 			LatestNewsSectionSlice,

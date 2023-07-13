@@ -50,7 +50,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 									className={`page-numbers ${
 										currentPage == pageNumber && 'current'
 									}`}
-									href={`${pathname}page/${pageNumber}`}
+									href={`${pathname}/page/${pageNumber}`}
 								>
 									{pageNumber}
 								</Link>
@@ -58,7 +58,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 
 							{currentPage < totalPages && (
 								<Link
-									href={`${pathname}page/${currentPage + 1}`}
+									href={`${pathname}/page/${currentPage + 1}`}
 									className="next page-numbers"
 								>
 									<i className="ri-arrow-right-line"></i>
@@ -78,8 +78,12 @@ export const Tabs = ({ tabs_category, link }) => {
 	const categoryPath = router.query.category || 'all'
 
 	return (
-		<div className="row" bis_skin_checked="1">
-			<div className="col-lg-12" bis_skin_checked="1">
+		<div
+			className="row"
+			style={{ justifyContent: 'center' }}
+			bis_skin_checked="1"
+		>
+			<div className=" " bis_skin_checked="1">
 				<div
 					className="shorting-menu d-flex image_scroll_bar"
 					style={{
@@ -97,6 +101,9 @@ export const Tabs = ({ tabs_category, link }) => {
 					</Link>
 					{tabs_category?.map((category) => (
 						<Link
+							style={{
+								whiteSpace: 'nowrap',
+							}}
 							href={`${link}/${category?.uid}`}
 							className={`filter  ${categoryPath == category?.uid && 'active'}`}
 							data-filter=".business"

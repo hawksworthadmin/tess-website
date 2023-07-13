@@ -103,7 +103,8 @@ export default function Blog({
 								</div>
 							</div>
 						</div>
-
+						<br />
+						<br />
 						<div className="col-lg-4">
 							<BlogRight categories={categories} link={link} />
 						</div>

@@ -10,7 +10,6 @@ import METADATA from '@/METADATA'
 import Head from 'next/head'
 
 export default function index({ page }) {
-	console.log(page)
 	return (
 		<Layout>
 			<Head>
@@ -32,32 +31,12 @@ export default function index({ page }) {
 }
 
 export const getStaticProps = async ({ params, previewData }) => {
-	const client = createClient(previewData)
+	const client = createClient({ previewData })
 
 	const home_page = await client.getAllByType('home_page', {
 		fetchLinks: ['newsletter.link'],
-		// 		graphQuery: `{
-		//   home_page {
-		//     ...home_pageFields
-		//     slices {
-		//       ...on latest_news_section {
-		//         variation {
-		//           ...on default {
-		//             items {
-		//               news {
-		// 				title
-		//               }
-		//             }
-		//           }
-		//         }
-		//       }
-		//     }
-		//   }
-		// }
-		// `,
 	})
 
-	console.log(home_page)
 	return {
 		props: {
 			page: home_page[0],

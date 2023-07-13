@@ -35,7 +35,7 @@ const index = () => {
 				<h2 data-aos="fade-up">Latest News</h2>
 			</div>
 
-			<div class="row justify-content-center">
+			<div class="row justify-content-center " style={{ padding: '.2rem' }}>
 				{!error ? (
 					news?.map((news, id) => (
 						<EachRelease

@@ -46,7 +46,7 @@ const InstitutionalAgreementWhoWeAre = ({ slice }) => {
 							>
 								{data.section_name}
 							</h4>
-							<div className="row justify-content-center">
+							<div className="row justify-content-start">
 								{data.fields.map((field, i) => {
 									return (
 										<EachLevel
@@ -81,7 +81,7 @@ const EachLevel = ({ data, index }) => {
 				bis_skin_checked="1"
 			>
 				<div className="col-3">
-					<img src={data?.image.url} />
+					<img src={data?.image.url} alt={data?.image.alt} />
 				</div>
 
 				<div className="col-8">
