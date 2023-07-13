@@ -22,7 +22,6 @@ const index = () => {
 			setNews(pressReleases.results)
 		} catch (error) {
 			setError(true)
-			console.log(error)
 		}
 	}
 

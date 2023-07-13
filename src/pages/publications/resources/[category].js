@@ -47,8 +47,6 @@ export const getStaticProps = async ({ previewData, query, params }) => {
 		'resource'
 	)
 
-	console.log('publication', publication)
-
 	return {
 		props: {
 			resources: publication.results,

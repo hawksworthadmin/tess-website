@@ -22,7 +22,6 @@ export default function BlogDetails({
 	relatedPosts,
 	publicationType,
 }) {
-	console.log(post)
 	// const convertRichTextToPlain = RichText.asText(post?.data?.description)
 	return (
 		<Layout>
