@@ -76,7 +76,7 @@ export default function Header({
 				href={'/'}
 				className="d-flex align-items-center justify-space-between"
 				style={{
-					gap: 6,
+					gap: '1rem',
 
 					width: 'fit-content',
 					flexShrink: 0,
