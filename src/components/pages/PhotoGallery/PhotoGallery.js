@@ -50,7 +50,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 									className={`page-numbers ${
 										currentPage == pageNumber && 'current'
 									}`}
-									href={`${pathname}page/${pageNumber}`}
+									href={`${pathname}/page/${pageNumber}`}
 								>
 									{pageNumber}
 								</Link>
@@ -58,7 +58,7 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 
 							{currentPage < totalPages && (
 								<Link
-									href={`${pathname}page/${currentPage + 1}`}
+									href={`${pathname}/page/${currentPage + 1}`}
 									className="next page-numbers"
 								>
 									<i className="ri-arrow-right-line"></i>
