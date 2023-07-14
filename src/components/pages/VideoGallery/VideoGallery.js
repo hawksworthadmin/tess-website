@@ -13,7 +13,6 @@ export default function VideoGallery({ tabs_category, videos, totalPages }) {
 	const currentPage = Number(router.query.page) || 1
 	const pathname = router.asPath.split('/page')[0]
 
-	console.log(videos)
 	return (
 		<div>
 			<div
