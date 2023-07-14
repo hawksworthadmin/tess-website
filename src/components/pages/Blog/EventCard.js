@@ -5,16 +5,21 @@ import Image from 'next/image'
 
 const EventCard = ({ category, date, location, image, title, link, alt }) => {
 	return (
-		<div class="col-lg-6 col-md-6">
-			<div class="single-event-box ">
+		<div className="col-lg-6 col-md-6">
+			<div className="single-event-box ">
 				<Link
 					style={{ height: '400px', position: 'relative', display: 'block' }}
 					href={link}
 				>
-					<Image fill src={image} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image
+						fill
+						src={image}
+						alt={alt || 'single event'}
+						style={{ objectFit: 'contain' }}
+					/>
 				</Link>
 
-				<div class="event-content">
+				<div className="event-content">
 					<ul>
 						<li>
 							<a
@@ -34,11 +39,11 @@ const EventCard = ({ category, date, location, image, title, link, alt }) => {
 						<Link href={link}>{title}</Link>
 					</h3>
 					<p>
-						<i class="ri-map-pin-2-line"></i> {location}
+						<i className="ri-map-pin-2-line"></i> {location}
 					</p>
-					<Link href={link} class="read-more">
+					<Link href={link} className="read-more">
 						Read more
-						<i class="ri-arrow-right-s-line"></i>
+						<i className="ri-arrow-right-s-line"></i>
 					</Link>
 				</div>
 			</div>

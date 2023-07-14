@@ -12,12 +12,6 @@ export default function PillarThree() {
 								Expenditures Transparent and accessible For Policy Formulation
 							</h2>
 							<p style={{ fontSize: '20px' }}>
-								{/* {`The objective of this expanded results area is to reduce the
-								overall unit cost of education provision through improved
-								teacher deployment practices and improved transparency of
-								education spending data. These results will be achieved through
-								the following DLIs: I. Improved Teacher Deployment (DL1 3.1) II.
-								Improved Transparency of Education Spending (DLI 3.2)`} */}
 								The objective of this expanded results area is to reduce the
 								overall unit cost of education provision through improved
 								teacher deployment practices and improved transparency of

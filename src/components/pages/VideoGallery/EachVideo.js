@@ -18,7 +18,7 @@ export default function EachVideo({ title, thumbnail, link, alt }) {
 					}}
 				></Link>
 				<div style={{ position: 'relative', height: '400px' }}>
-					<Image fill src={thumbnail} alt={alt} />
+					<Image fill src={thumbnail} alt={alt || 'thumbnail image'} />
 				</div>
 
 				<div className="project-content" bis_skin_checked="1">

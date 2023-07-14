@@ -22,7 +22,7 @@ const Sponsors = ({ slice }) => {
 					<Image
 						key={`partner_${i}`}
 						src={partner.partner_logo.url}
-						alt={partner.partner_logo.alt}
+						alt={partner.partner_logo.alt || 'partner logo'}
 						width={204.45}
 						height={48}
 						style={{ objectFit: 'contain' }}

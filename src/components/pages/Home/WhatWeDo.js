@@ -24,8 +24,7 @@ export default function WhatWeDo() {
 					</h2>
 				</div>
 			</div>
-			{/* <br /> */}
-			{/* <br /> */}
+
 			<div className="container">
 				<div
 					className="row align-items-center"
@@ -84,25 +83,12 @@ const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 				className="col-lg-5 "
 				style={{ borderRadius: '10px', overflow: 'hidden' }}
 			>
-				{/* <div
-					className="justify-content-center counselor-img pr-15 "
-					style={{
-						position: 'relative',
-						borderRadius: '10px',
-						overflow: 'hidden',
-
-						height: '350px',
-						width: '100%',
-					}}
-				> */}
 				<img
 					src={image}
 					alt="Image"
-					// className="rounded"
 					data-aos="fade-up-right"
 					style={{ margin: 'auto', objectFit: 'scale-down' }}
 				/>
-				{/* </div> */}
 			</div>
 
 			<div className="col-lg-6">

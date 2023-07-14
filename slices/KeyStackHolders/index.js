@@ -7,17 +7,18 @@ import Image from 'next/image'
  */
 const KeyStackHolders = ({ slice }) => {
 	return (
-		<section class="project-area pt-100 pb-70">
-			<div class="container">
-				<div class="section-title">
+		<section className="project-area pt-100 pb-70">
+			<div className="container">
+				<div className="section-title">
 					<h2 data-aos="fade-up" data-aos-duration="1000">
 						Key Stakeholders
 					</h2>
 				</div>
 
-				<div class="row justify-content-center align-items-center">
-					{slice.items.map((stackholder) => (
+				<div className="row justify-content-center align-items-center">
+					{slice.items.map((stackholder, id) => (
 						<StackHolder
+							key={`StackHolders_${id}`}
 							image={stackholder.stack_holder_image.url}
 							// worldbank={true}
 							title={stackholder.stack_holder_name}
@@ -32,8 +33,8 @@ const KeyStackHolders = ({ slice }) => {
 
 const StackHolder = ({ image, title, worldbank, alt }) => {
 	return (
-		<div class="col-lg-2 col-md-6 mb-4">
-			<div class="single-project- text-center" data-aos="zoom-in-up">
+		<div className="col-lg-2 col-md-6 mb-4">
+			<div className="single-project- text-center" data-aos="zoom-in-up">
 				<Image
 					width={worldbank ? 144.49 : 96}
 					height={worldbank ? 96 : 64}

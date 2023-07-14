@@ -239,7 +239,7 @@ const ChatBox = ({ setChatbotOpen, chatbotOpen }) => {
 						}}
 						className="rounded-full btn d-flex flex-colum  justify-content-center"
 					>
-						<i class="ri-send-plane-fill"></i>
+						<i className="ri-send-plane-fill"></i>
 					</button>
 				</form>
 			</div>

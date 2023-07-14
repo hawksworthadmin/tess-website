@@ -7,17 +7,25 @@ import {
 	getStaticCategoryPage,
 	getStaticPropsCategoryPage,
 } from '../../../../../../lib/helperFunctions'
+import { useRouter } from 'next/router'
 
 export default function Reports({ reports, categories, totalPages }) {
+	const router = useRouter()
 	return (
 		<Layout>
-			<Blog
-				heading={'Reports'}
-				posts={reports}
-				link={'/publications/reports/'}
-				totalPages={totalPages}
-				categories={categories}
-			/>
+			{router.isFallback ? (
+				<></>
+			) : (
+				<>
+					<Blog
+						heading={'Reports'}
+						posts={reports}
+						link={'/publications/reports/'}
+						totalPages={totalPages}
+						categories={categories}
+					/>
+				</>
+			)}
 		</Layout>
 	)
 }
@@ -28,7 +36,7 @@ export const getStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	}
 }
 
