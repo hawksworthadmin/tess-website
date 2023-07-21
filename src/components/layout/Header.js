@@ -76,11 +76,9 @@ export default function Header({
 				href={'/'}
 				className="d-flex align-items-center justify-space-between"
 				style={{
-					gap: 6,
-
+					gap: '1rem',
 					width: 'fit-content',
 					flexShrink: 0,
-					display: 'block',
 				}}
 			>
 				<img src="/logo.png" alt="logo" />
@@ -105,14 +103,16 @@ export default function Header({
 			<div className="navbar-area">
 				<div className="mobile-responsive-nav">
 					<div className="container">
-						<div className="mobile-responsive-menu mean-container">
+						<div
+							// style={{ background: 'blue' }}
+							className=" d-flex align-items-center mobile-responsive-menu mean-container"
+						>
+							<TheLogo size={48} />
 							<MobileMenu
 								openSearchComponent={openSearchComponent}
 								searchQuery={searchQuery}
 								setSearchQuery={setSearchQuery}
 							/>
-
-							<TheLogo size={48} />
 						</div>
 					</div>
 				</div>
@@ -131,7 +131,7 @@ export default function Header({
 									{navLinks.map((eachLink, i) => {
 										return (
 											<>
-												<li className="nav-item">
+												<li key={`navbar_${i}`} className="nav-item">
 													{eachLink.url ? (
 														<Link
 															key={`nav_${i}`}
@@ -161,7 +161,7 @@ export default function Header({
 															{eachLink?.children?.map((val, index) => {
 																return (
 																	<li
-																		key={`link_${index}`}
+																		key={`${eachLink.name}_${index}`}
 																		className="nav-item"
 																	>
 																		<Link href={val?.url} className="nav-link">
@@ -204,15 +204,17 @@ export default function Header({
 }
 
 const MobileMenu = ({ openSearchComponent, searchQuery, setSearchQuery }) => {
-	'use client'
 	const [show, setShow] = useState(false)
 	return (
-		<div className="mean-bar" bis_skin_checked="1" style={{ top: '20%' }}>
+		<div
+			className="mean-bar"
+			bis_skin_checked="1"
+			style={{ /*top: '20%',*/ position: 'relative', display: 'block' }}
+		>
 			<a
 				onClick={() => setShow(!show)}
-				href="#nav"
 				className="meanmenu-reveal"
-				style={{ right: 0, left: 'auto;' }}
+				style={{ right: 0, left: 'auto', background: 're' }}
 			>
 				<span>
 					<span>
@@ -248,9 +250,12 @@ const MobileMenu = ({ openSearchComponent, searchQuery, setSearchQuery }) => {
 										mobile={true}
 									/>
 								</li>
-								{navLinks?.map((eachNavLink) => {
+								{navLinks?.map((eachNavLink, id) => {
 									return (
-										<SideNavLinks eachLink={eachNavLink} key={Math.random()} />
+										<SideNavLinks
+											eachLink={eachNavLink}
+											key={`each_link_${id + 1}`}
+										/>
 									)
 								})}
 							</ul>
@@ -282,11 +287,7 @@ const SideNavLinks = ({ eachLink }) => {
 		<>
 			<li className="nav-item">
 				{eachLink?.url ? (
-					<Link
-						prefetch={false}
-						href={eachLink?.url}
-						className="nav-link active-"
-					>
+					<Link href={eachLink?.url} className="nav-link active-">
 						{eachLink?.name}
 					</Link>
 				) : (
@@ -298,10 +299,10 @@ const SideNavLinks = ({ eachLink }) => {
 						className="dropdown-menu"
 						style={{ display: !show ? 'none' : 'block' }}
 					>
-						{eachLink?.children?.map((val) => {
+						{eachLink?.children?.map((val, id) => {
 							return (
-								<li className="nav-item" key={Math.random()}>
-									<Link prefetch={false} href={val?.url} className="nav-link">
+								<li className="nav-item" key={`${eachLink.name}_${id}`}>
+									<Link href={val?.url} className="nav-link">
 										{val?.name}
 									</Link>
 								</li>
@@ -311,7 +312,6 @@ const SideNavLinks = ({ eachLink }) => {
 				) : null}
 				{eachLink?.children ? (
 					<a
-						key={Math.random()}
 						onClick={() => setShow(!show)}
 						className="mean-expand"
 						style={{ fontSize: '18px', cursor: 'pointer' }}

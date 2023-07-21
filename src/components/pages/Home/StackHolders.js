@@ -3,15 +3,15 @@ import React from 'react'
 
 export default function StackHolders() {
 	return (
-		<section class="project-area pt-100 pb-70">
-			<div class="container">
-				<div class="section-title">
+		<section className="project-area pt-100 pb-70">
+			<div className="container">
+				<div className="section-title">
 					<h2 data-aos="fade-up" data-aos-duration="1000">
 						Key Stakeholders
 					</h2>
 				</div>
 
-				<div class="row justify-content-center align-items-center">
+				<div className="row justify-content-center align-items-center">
 					<StackHolder
 						image={'/assets/figma/world_bank.png'}
 						worldbank={true}
@@ -40,8 +40,8 @@ export default function StackHolders() {
 
 const StackHolder = ({ image, title, worldbank }) => {
 	return (
-		<div class="col-lg-2 col-md-6 mb-4">
-			<div class="single-project- text-center" data-aos="zoom-in-up">
+		<div className="col-lg-2 col-md-6 mb-4">
+			<div className="single-project- text-center" data-aos="zoom-in-up">
 				<Image
 					width={worldbank ? 144.49 : 96}
 					height={worldbank ? 96 : 64}

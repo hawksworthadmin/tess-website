@@ -23,11 +23,6 @@ export default function Agreement() {
 							Units(SPSUs) for operational management, and Local Government
 							Education Authorities (LGEA) at the local government level and
 							School Based Management Committee (SBMC) at the school level.
-							{/* the State
-							Project Steering Committee (SPSC) at the state level, State
-							Project Coordination Units (SPCUs) for operational management, and
-							Local Government Education Authorities (LGEA) at the local
-							government level. */}
 						</p>
 					</div>
 				</div>
@@ -76,10 +71,9 @@ const EachLevel = ({ data, index }) => {
 			data-aos-delay={`${index}`}
 		>
 			<div
-				class="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
+				className="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
 				bis_skin_checked="1"
 			>
-				{/* <span class="flaticon-government"></span> */}
 				<div className="col-3">
 					<img src={data?.img} />
 				</div>
@@ -91,12 +85,7 @@ const EachLevel = ({ data, index }) => {
 
 					<p>{data?.des}</p>
 
-					{/* <a href="services-details.html" class="read-more">
-						Learn more
-						<i class="ri-arrow-right-s-line"></i>
-					</a> */}
-
-					<div class="services-shape" bis_skin_checked="1">
+					<div className="services-shape" bis_skin_checked="1">
 						<img src="assets/images/services-shape.png" alt="Image" />
 					</div>
 				</div>

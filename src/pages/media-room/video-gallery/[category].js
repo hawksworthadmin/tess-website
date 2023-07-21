@@ -11,17 +11,25 @@ import {
 	getStaticPropsMediaHomePage,
 } from '../../../../lib/helperFunctions'
 import { createClient } from '../../../../prismicio'
+import { useRouter } from 'next/router'
 export default function _VideoGallery({ category, videos, totalPages }) {
+	const router = useRouter()
 	return (
 		<Layout>
-			<Head>
-				<title>Video Gallery | {METADATA.title}</title>
-			</Head>
-			<VideoGallery
-				tabs_category={category}
-				videos={videos}
-				totalPages={totalPages}
-			/>
+			{router.isFallback ? (
+				<> </>
+			) : (
+				<>
+					<Head>
+						<title>Video Gallery | {METADATA.title}</title>
+					</Head>
+					<VideoGallery
+						tabs_category={category}
+						videos={videos}
+						totalPages={totalPages}
+					/>
+				</>
+			)}
 		</Layout>
 	)
 }

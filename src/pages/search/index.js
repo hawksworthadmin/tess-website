@@ -21,7 +21,6 @@ const index = ({
 		<Layout query={query}>
 			<Head>
 				<title>Search | {METADATA.title}</title>
-				{/* <meta property="og:title" content={`Search | ${METADATA.title}`}></meta>	 */}
 			</Head>
 			<SearchResults
 				blogPosts={blogPosts}

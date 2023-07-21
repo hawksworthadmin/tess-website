@@ -29,12 +29,12 @@ const index = () => {
 		fetctLatestNews()
 	}, [])
 	return (
-		<section class="container">
-			<div class="section-title">
+		<section className="container">
+			<div className="section-title">
 				<h2 data-aos="fade-up">Latest News</h2>
 			</div>
 
-			<div class="row justify-content-center " style={{ padding: '.2rem' }}>
+			<div className="row justify-content-center " style={{ padding: '.2rem' }}>
 				{!error ? (
 					news?.map((news, id) => (
 						<EachRelease
@@ -73,29 +73,34 @@ const EachRelease = ({
 
 	return (
 		<div
-			class="col-lg-4 col-md-6"
+			className="col-lg-4 col-md-6"
 			data-aos-delay="50"
 			data-aos="fade-up"
 			data-aos-duration="1000"
 		>
-			<div class="single-blog-box">
+			<div className="single-blog-box">
 				<Link
 					style={{ display: 'block', height: '350px', position: 'relative' }}
 					href={link}
 				>
-					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image
+						fill
+						src={img}
+						alt={alt || 'image'}
+						style={{ objectFit: 'contain' }}
+					/>
 				</Link>
 
-				<div class="blog-content">
+				<div className="blog-content">
 					<ul>
 						<li>
 							<Link href={categoryLink}>
-								{/* <i class="ri-user-3-fill"></i> */}
+								{/* <i className="ri-user-3-fill"></i> */}
 								{category}
 							</Link>
 						</li>
 						<li>
-							<i class="ri-calendar-line"></i>
+							<i className="ri-calendar-line"></i>
 							{moment(created_at).format('MMMM DD, YYYY')}
 						</li>
 					</ul>
@@ -105,9 +110,9 @@ const EachRelease = ({
 					<p>
 						{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}...
 					</p>
-					<Link href={link} class="read-more">
+					<Link href={link} className="read-more">
 						Read more
-						<i class="ri-arrow-right-s-line"></i>
+						<i className="ri-arrow-right-s-line"></i>
 					</Link>
 				</div>
 			</div>

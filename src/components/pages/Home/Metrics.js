@@ -119,6 +119,7 @@ export default function Metrics({ factsAndFigures }) {
 					src={'/assets/figma/left_slide_arrow.png'}
 					width={48}
 					height={48}
+					alt="left slide arrow"
 				/>
 				<Image
 					style={{
@@ -128,6 +129,7 @@ export default function Metrics({ factsAndFigures }) {
 					src={'/assets/figma/left_slide_arrow.png'}
 					width={48}
 					height={48}
+					alt="left slide arrow"
 				/>
 			</div>
 		</section>

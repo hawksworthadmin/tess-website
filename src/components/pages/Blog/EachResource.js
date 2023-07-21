@@ -47,15 +47,18 @@ const EachResource = ({
 					className="gallery-item"
 					bis_skin_checked="1"
 				>
-					<Image fill src={image} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image
+						fill
+						src={image}
+						alt={alt || 'gallery item'}
+						style={{ objectFit: 'contain' }}
+					/>
 
 					<div
 						style={{ background: '#e7f4eb' }}
 						className="gallery-item-content"
 						bis_skin_checked="1"
 					>
-						{/* <a href="assets/images/gallery/gallery-1.jpg">Office building</a> */}
-						{/* <span>{content}</span> */}
 						<RichTextComponent field={content} />
 					</div>
 				</div>
@@ -64,7 +67,7 @@ const EachResource = ({
 						style={{
 							textTransform: 'capitalize',
 							background: '#eaecf0',
-							// color: 'white',
+
 							padding: '2px 6px',
 							marginBottom: '4px',
 							textAlign: 'center',
@@ -87,7 +90,7 @@ const EachResource = ({
 							className="d-flex "
 							style={{ gap: '10px' }}
 						>
-							<i class="ri-download-line"></i>
+							<i className="ri-download-line"></i>
 							Download
 						</span>
 					</div>

@@ -25,33 +25,6 @@ export default function ResultAreaMap({ statistics }) {
 							{statistics?.map((stat) => (
 								<Statistics statistics={stat} />
 							))}
-							{/* <li
-								className="font-20 font-secondary"
-								style={{ color: '#667085' }}
-							>
-								<strong className="font-secondary" style={{ color: '#344054' }}>
-									20K+
-								</strong>{' '}
-								Students served
-							</li>
-							<li
-								className="font-20 font-secondary"
-								style={{ color: '#667085' }}
-							>
-								<strong className="font-secondary" style={{ color: '#344054' }}>
-									20K+
-								</strong>{' '}
-								Schools beneficiaries
-							</li>
-							<li
-								className="font-20 font-secondary"
-								style={{ color: '#667085' }}
-							>
-								<strong className="font-secondary" style={{ color: '#344054' }}>
-									20K+
-								</strong>{' '}
-								Student Served
-							</li> */}
 						</ul>
 					</div>
 				</div>

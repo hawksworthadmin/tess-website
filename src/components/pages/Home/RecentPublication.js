@@ -7,20 +7,15 @@ import Image from 'next/image'
 export default function RecentPublication({ latestNews }) {
 	return (
 		<section
-			class="blog-area blog-area-two- pt-100 pb-70"
+			className="blog-area blog-area-two- pt-100 pb-70"
 			style={{ backgroundColor: '#F9FAFB' }}
 		>
-			<div class="container">
-				<div class="section-title">
+			<div className="container">
+				<div className="section-title">
 					<h2 data-aos="fade-up">Latest News</h2>
-					{/* <p data-aos="fade-up" className="font-20">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-						eveniet quod mollitia asperiores ullam dolor corporis. vero nemo
-						consectetur
-					</p> */}
 				</div>
 				{/*  */}
-				<div class="row justify-content-center">
+				<div className="row justify-content-center">
 					{latestNews?.length > 0 ? (
 						latestNews?.map((news, id) => (
 							<EachRelease
@@ -40,16 +35,14 @@ export default function RecentPublication({ latestNews }) {
 					) : (
 						<p>NOT FOUND</p>
 					)}
-					{/* <EachRelease link={}/>
-					<EachRelease /> */}
 				</div>
 			</div>
 
-			<div class="shape blog-shape-1">
+			<div className="shape blog-shape-1">
 				<img src="/assets/images/blog/blog-shape-1.png" alt="Image" />
 			</div>
 
-			<div class="shape blog-shape-2">
+			<div className="shape blog-shape-2">
 				<img src="/assets/images/blog/blog-shape-2.png" alt="Image" />
 			</div>
 		</section>
@@ -70,29 +63,31 @@ const EachRelease = ({
 
 	return (
 		<div
-			class="col-lg-4 col-md-6"
+			className="col-lg-4 col-md-6"
 			data-aos-delay="50"
 			data-aos="fade-up"
 			data-aos-duration="1000"
 		>
-			<div class="single-blog-box">
+			<div className="single-blog-box">
 				<Link
 					style={{ display: 'block', height: '350px', position: 'relative' }}
 					href={link}
 				>
-					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image
+						fill
+						src={img}
+						alt={alt || 'image'}
+						style={{ objectFit: 'contain' }}
+					/>
 				</Link>
 
-				<div class="blog-content">
+				<div className="blog-content">
 					<ul>
 						<li>
-							<Link href={categoryLink}>
-								{/* <i class="ri-user-3-fill"></i> */}
-								{category}
-							</Link>
+							<Link href={categoryLink}>{category}</Link>
 						</li>
 						<li>
-							<i class="ri-calendar-line"></i>
+							<i className="ri-calendar-line"></i>
 							{moment(created_at).format('MMMM DD, YYYY')}
 						</li>
 					</ul>
@@ -102,9 +97,9 @@ const EachRelease = ({
 					<p>
 						{convertRichTextToPlain?.split(' ')?.slice(0, 13)?.join(' ')}...
 					</p>
-					<Link href={link} class="read-more">
+					<Link href={link} className="read-more">
 						Read more
-						<i class="ri-arrow-right-s-line"></i>
+						<i className="ri-arrow-right-s-line"></i>
 					</Link>
 				</div>
 			</div>

@@ -119,7 +119,7 @@ export default function Footer() {
 								<form
 									className="newsletter-form"
 									data-toggle="validator"
-									novalidate="true"
+									noValidate={true}
 								>
 									<input
 										type="email"
@@ -127,7 +127,7 @@ export default function Footer() {
 										placeholder="hello@wikin.com"
 										name="EMAIL"
 										required=""
-										autocomplete="off"
+										autoComplete="off"
 									/>
 
 									<button
@@ -154,10 +154,10 @@ export default function Footer() {
 					<img src="/assets/images/footer-shape-2.png" alt="Image" />
 				</div>
 			</footer>
-			<div class="copy-right-area" style={{ backgroundColor: '#101828' }}>
-				<div class="container">
+			<div className="copy-right-area" style={{ backgroundColor: '#101828' }}>
+				<div className="container">
 					<p>
-						Copyright <i class="ri-copyright-line"></i>
+						Copyright <i className="ri-copyright-line"></i>
 						{new Date().getFullYear()}. BESDA AF-TESS. All rights reserved{' '}
 					</p>
 				</div>
