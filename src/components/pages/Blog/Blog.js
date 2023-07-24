@@ -15,6 +15,7 @@ export default function Blog({
 	checkEvent,
 	isResource,
 }) {
+	console.log(posts)
 	const router = useRouter()
 	const currentPage = Number(router.query.page) || 1
 	const pathname = router.asPath.split('/page')[0] // doing this to get the accurate pathname
@@ -54,6 +55,7 @@ export default function Blog({
 										/>
 									) : isResource ? (
 										<EachResource
+											isProtected={post?.data?.protected}
 											title={post?.data?.title}
 											alt={post?.data?.featured_image?.alt}
 											image={'/assets/figma/filePlaceholder.jpeg'}

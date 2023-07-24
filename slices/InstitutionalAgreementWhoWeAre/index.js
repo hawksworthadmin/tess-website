@@ -77,11 +77,28 @@ const EachLevel = ({ data, index }) => {
 			data-aos-delay={`${index}`}
 		>
 			<div
-				className="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
+				className="single-services-box d-flex
+				justify-content-between bg-white h-100 pb-0"
 				bis_skin_checked="1"
 			>
-				<div className="col-3">
+				<div
+					style={{
+						display: 'flex',
+						flexDirection: 'column',
+					}}
+					className="col-3"
+				>
 					<img src={data?.image.url} alt={data?.image.alt} />
+					<span
+						style={{
+							fontWeight: 'bold',
+							fontSize: '12px',
+							textAlign: 'center',
+							marginTop: '.5rem',
+						}}
+					>
+						{data?.image_title}
+					</span>
 				</div>
 
 				<div className="col-8">

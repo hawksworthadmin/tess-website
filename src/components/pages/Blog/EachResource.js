@@ -13,6 +13,7 @@ const EachResource = ({
 	downloadLink,
 	documentName,
 	password,
+	isProtected,
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
@@ -24,6 +25,7 @@ const EachResource = ({
 						documentName={documentName}
 						onClick={() => setIsOpen(false)}
 						documentPassword={password}
+						isProtected={isProtected}
 					/>
 				</Modal>
 			)}
@@ -105,6 +107,7 @@ const DownloadForm = ({
 	documentLink,
 	documentName,
 	documentPassword,
+	isProtected,
 }) => {
 	const [error, setError] = useState(false)
 	const [password, setPassword] = useState('')
@@ -153,7 +156,7 @@ const DownloadForm = ({
 				}}
 				onClick={(e) => e.stopPropagation()}
 			>
-				{!isSubmitted ? (
+				{!isSubmitted && isProtected ? (
 					<form
 						className="d-flex flex-column  align-items-center"
 						onSubmit={handleSubmit}
