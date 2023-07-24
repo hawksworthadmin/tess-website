@@ -35,6 +35,15 @@
 			"password": {
 				"type": "Text",
 				"config": { "label": "Password", "placeholder": "" }
+			},
+			"protected": {
+				"type": "Boolean",
+				"config": {
+					"label": "Protected",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
+				}
 			}
 		},
 		"SEO and Meta Data": {

@@ -877,6 +877,18 @@ interface ResourceDocumentData {
 	 */
 	password: prismic.KeyTextField
 	/**
+	 * Protected field in *Resource*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: resource.protected
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+	 *
+	 */
+	protected: prismic.BooleanField
+	/**
 	 * Meta title field in *Resource*
 	 *
 	 * - **Field Type**: Text
@@ -1461,6 +1473,16 @@ export interface InstitutionalAgreementWhoWeAreSliceDefaultItem {
 	 *
 	 */
 	image: prismic.ImageField<never>
+	/**
+	 * image title field in *InstitutionalAgreementWhoWeAre → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Include this if the image is not descriptive
+	 * - **API ID Path**: institutional_agreement_who_we_are.items[].image_title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	image_title: prismic.KeyTextField
 }
 /**
  * Default variation for InstitutionalAgreementWhoWeAre Slice

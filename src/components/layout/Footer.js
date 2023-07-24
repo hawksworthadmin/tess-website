@@ -75,7 +75,9 @@ export default function Footer() {
 									</li>
 									<li>
 										<i className="ri-mail-open-fill"></i>
-										<Link href="mailto:info@tess.com">info@tess.com</Link>
+										<Link href="mailto:fmegpe2@gmail.com">
+											fmegpe2@gmail.com
+										</Link>
 									</li>
 									<li className="location">
 										<i className="ri-phone-fill"></i>

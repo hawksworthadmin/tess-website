@@ -62,6 +62,14 @@
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
+					],
+					[
+						"image_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "State Ministry of education"
+						}
 					]
 				]
 			},
@@ -117,6 +125,14 @@
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
+					],
+					[
+						"image_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "throughout",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -171,6 +187,14 @@
 							"alt": null,
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					],
+					[
+						"image_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "perfect",
+							"type": "Text"
 						}
 					]
 				]
