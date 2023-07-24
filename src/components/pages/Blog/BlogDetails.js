@@ -22,7 +22,6 @@ export default function BlogDetails({
 	relatedPosts,
 	publicationType,
 }) {
-	console.log(post)
 	// const convertRichTextToPlain = RichText.asText(post?.data?.description)
 	return (
 		<Layout>
@@ -152,8 +151,8 @@ export default function BlogDetails({
 const RelatedPosts = ({ posts, heading, link }) => {
 	return (
 		<div style={{ width: '100%', marginTop: '42px' }} bis_skin_checked="1">
-			<div class="widget-sidebar pl-15" bis_skin_checked="1">
-				<div class="sidebar-widget categories" bis_skin_checked="1">
+			<div className="widget-sidebar pl-15" bis_skin_checked="1">
+				<div className="sidebar-widget categories" bis_skin_checked="1">
 					<h3>Related {heading} </h3>
 
 					<>

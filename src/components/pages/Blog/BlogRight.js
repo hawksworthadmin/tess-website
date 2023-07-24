@@ -19,8 +19,8 @@ export default function BlogRight({ categories, link }) {
 
 	return (
 		<div bis_skin_checked="1">
-			<div class="widget-sidebar pl-15" bis_skin_checked="1">
-				<div class="sidebar-widget categories" bis_skin_checked="1">
+			<div className="widget-sidebar pl-15" bis_skin_checked="1">
+				<div className="sidebar-widget categories" bis_skin_checked="1">
 					<h3>Categories</h3>
 
 					<ul>
@@ -28,7 +28,7 @@ export default function BlogRight({ categories, link }) {
 							<li key={category.uid}>
 								<Link href={`${link}${category.uid}`}>
 									{category?.data?.title}
-									<i class="ri-arrow-right-s-line"></i>
+									<i className="ri-arrow-right-s-line"></i>
 								</Link>
 							</li>
 						))}

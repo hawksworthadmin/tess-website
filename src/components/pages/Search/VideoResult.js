@@ -58,9 +58,6 @@ const VideoResult = ({ posts, query }) => {
 									background: '#FEC84B',
 								}}
 							>
-								{/* only display the query amongst the title if it's included
-									in the title
-								*/}
 								{regex.test(post?.data?.title) && query}
 							</span>{' '}
 							{parts?.length > 0 ? parts[1] : ''}

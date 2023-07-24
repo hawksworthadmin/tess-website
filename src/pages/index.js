@@ -20,11 +20,6 @@ export default function index({ page }) {
 				/>
 			</Head>
 
-			{/* <Home
-				factsAndFigures={factsAndFigures}
-				latestNews={pressReleases}
-				statistics={statistics}
-			/> */}
 			<SliceZone slices={page.data.slices} components={components} />
 		</Layout>
 	)

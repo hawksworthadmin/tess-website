@@ -12,8 +12,6 @@ export default function PhotoGallery({ tabs_category, photos, totalPages }) {
 	const currentPage = Number(router.query.page) || 1
 	const pathname = router.asPath.split('page')[0]
 
-	console.log(pathname)
-
 	return (
 		<div>
 			<div

@@ -77,7 +77,7 @@ const EachLevel = ({ data, index }) => {
 			data-aos-delay={`${index}`}
 		>
 			<div
-				class="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
+				className="single-services-box d-flex justify-content-between bg-white h-100 pb-0"
 				bis_skin_checked="1"
 			>
 				<div className="col-3">
@@ -91,7 +91,7 @@ const EachLevel = ({ data, index }) => {
 
 					<p>{data?.description}</p>
 
-					<div class="services-shape" bis_skin_checked="1">
+					<div className="services-shape" bis_skin_checked="1">
 						<img src="assets/images/services-shape.png" alt="Image" />
 					</div>
 				</div>

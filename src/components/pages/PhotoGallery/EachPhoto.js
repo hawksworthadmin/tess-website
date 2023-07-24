@@ -32,10 +32,14 @@ export default function EachPhoto({ img, alt, content }) {
 					className="gallery-item"
 					bis_skin_checked="1"
 				>
-					<Image fill src={img} alt={alt} style={{ objectFit: 'contain' }} />
+					<Image
+						fill
+						src={img}
+						alt={alt || 'image'}
+						style={{ objectFit: 'contain' }}
+					/>
 
 					<div className="gallery-item-content" bis_skin_checked="1">
-						{/* <a href="assets/images/gallery/gallery-1.jpg">Office building</a> */}
 						<span>{content}</span>
 					</div>
 				</div>
@@ -69,7 +73,7 @@ const Preview = ({ onClick, img, alt }) => {
 					// in case the picture does not have a background
 					className="shadow rounded"
 					src={img}
-					alt={alt}
+					alt={alt || 'image'}
 					width={550}
 					height={450}
 				/>

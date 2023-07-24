@@ -83,10 +83,6 @@ export default function HomeHero() {
 				</div>
 			</div>
 
-			{/* <div className="shape banner-shape-1" bis_skin_checked="1">
-				<img src="/assets/images/banner/banner-shape-1.png" alt="Image" />
-			</div> */}
-
 			{/* SLIDE  PAGINATION */}
 			<div
 				style={{

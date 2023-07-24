@@ -8,18 +8,26 @@ import {
 	getStaticCatogeryPaths,
 	getStaticPropsMediaCategoryPage,
 } from '../../../../lib/helperFunctions'
+import { useRouter } from 'next/router'
 
 export default function _PhotoGallery({ category, photos, totalPages }) {
+	const router = useRouter()
 	return (
 		<Layout>
-			<Head>
-				<title>Photo Gallery | {METADATA.title}</title>
-			</Head>
-			<PhotoGallery
-				tabs_category={category}
-				photos={photos}
-				totalPages={totalPages}
-			/>
+			{router.isFallback ? (
+				<></>
+			) : (
+				<>
+					<Head>
+						<title>Photo Gallery | {METADATA.title}</title>
+					</Head>
+					<PhotoGallery
+						tabs_category={category}
+						photos={photos}
+						totalPages={totalPages}
+					/>
+				</>
+			)}
 		</Layout>
 	)
 }
