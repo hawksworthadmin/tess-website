@@ -38,6 +38,13 @@
 				"image": {
 					"type": "Image",
 					"config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+				},
+				"image_title": {
+					"type": "Text",
+					"config": {
+						"label": "image title",
+						"placeholder": "Include this if the image is not descriptive"
+					}
 				}
 			}
 		}
