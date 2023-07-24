@@ -29,8 +29,10 @@ const index = () => {
 		fetctLatestNews()
 	}, [])
 	return (
+
 		<section className="container">
 			<div className="section-title">
+
 				<h2 data-aos="fade-up">Latest News</h2>
 			</div>
 
