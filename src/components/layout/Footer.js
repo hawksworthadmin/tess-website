@@ -126,7 +126,7 @@ export default function Footer() {
 									<input
 										type="email"
 										className="form-control"
-										placeholder="hello@wikin.com"
+										placeholder="Enter your email address"
 										name="EMAIL"
 										required=""
 										autoComplete="off"

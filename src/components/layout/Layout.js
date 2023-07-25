@@ -36,6 +36,13 @@ export default function Layout({ children, query }) {
 
 			<main className="animate__fadeIn animate__animated ">{children}</main>
 
+			<iframe
+				allow="microphone;"
+				className="bg-red-500"
+				width="350"
+				height="430"
+				src="https://console.dialogflow.com/api-client/demo/embedded/bb567fae-7c69-4987-8713-e16d61b3b865"
+			></iframe>
 			<Chatbot />
 			<Footer />
 		</>
