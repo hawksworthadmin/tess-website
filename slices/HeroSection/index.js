@@ -1,3 +1,4 @@
+import { PrismicNextImage } from '@prismicio/next'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -45,6 +46,14 @@ export default function HomeHero({ slice }) {
 				position: 'relative',
 			}}
 		>
+			{/* <PrismicNextImage
+				alt=""
+				className="object-contain"
+				priority
+				field={slice.primary.hero_image}
+				fill
+
+			/> */}
 			<div
 				style={{
 					overflowX: 'hidden',
