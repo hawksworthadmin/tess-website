@@ -29,31 +29,36 @@ const index = () => {
 		fetctLatestNews()
 	}, [])
 	return (
-		<section className="container">
-			<div className="section-title">
-				<h2 data-aos="fade-up">Latest News</h2>
-			</div>
-
-			<div className="row justify-content-center " style={{ padding: '.2rem' }}>
-				{!error ? (
-					news?.map((news, id) => (
-						<EachRelease
-							key={news?.uid}
-							category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
-							title={news?.data?.title}
-							img={news?.data?.image?.url}
-							created_at={news?.first_publication_date}
-							alt={news?.data?.image?.alt}
-							description={news?.data?.description}
-							categoryLink={`${'/news-and-events/press-release'}${
-								news?.data?.category?.slug
-							}`}
-							link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
-						/>
-					))
-				) : (
-					<p>An error occurred while attempting to fetch the latest news.</p>
-				)}
+		<section className="services-area pt-100 pb-70">
+			<div className="container">
+				<div className="section-title">
+					<h2 data-aos="fade-up">Latest News </h2>
+				</div>
+				<br />
+				<div
+					className="row justify-content-center "
+					style={{ padding: '.2rem' }}
+				>
+					{!error ? (
+						news?.map((news, id) => (
+							<EachRelease
+								key={news?.uid}
+								category={news?.data?.category?.slug?.replace(/-/gi, ' ')}
+								title={news?.data?.title}
+								img={news?.data?.image?.url}
+								created_at={news?.first_publication_date}
+								alt={news?.data?.image?.alt}
+								description={news?.data?.description}
+								categoryLink={`${'/news-and-events/press-release'}${
+									news?.data?.category?.slug
+								}`}
+								link={`/news-and-events/press-release/${news?.data?.category?.slug}/${news?.uid}`}
+							/>
+						))
+					) : (
+						<p>An error occurred while attempting to fetch the latest news.</p>
+					)}
+				</div>
 			</div>
 		</section>
 	)

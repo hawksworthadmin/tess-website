@@ -9,6 +9,7 @@
 		"lint": "next lint",
 		"postbuild": "next-sitemap",
 		"slicemachine": "start-slicemachine",
+		"export": "next build && next export",
 		"prepare": "husky install"
 	},
 	"husky": {

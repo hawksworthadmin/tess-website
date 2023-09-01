@@ -38,7 +38,7 @@ export default function Footer() {
 								</p>
 
 								<ul className="social-icon">
-									<li>
+									{/* <li>
 										<Link href="https://www.facebook.com/" target="_blank">
 											<i className="ri-facebook-fill"></i>
 										</Link>
@@ -57,7 +57,7 @@ export default function Footer() {
 										<Link href="https://twitter.com/" target="_blank">
 											<i className="ri-linkedin-box-fill"></i>
 										</Link>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 						</div>
@@ -73,7 +73,7 @@ export default function Footer() {
 										Education Annex 245 Samuel Ademulegun Avenue, CBD 900103,
 										Abuja, <br /> NV 89108
 									</li>
-									<li>
+									{/* <li>
 										<i className="ri-mail-open-fill"></i>
 										<Link href="mailto:fmegpe2@gmail.com">
 											fmegpe2@gmail.com
@@ -82,19 +82,19 @@ export default function Footer() {
 									<li className="location">
 										<i className="ri-phone-fill"></i>
 										<Link href="tel:+23412345567">+234 12345567</Link>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 						</div>
 
 						<div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget">
-								<h3>Quick link</h3>
+								<h3>Quick links</h3>
 
 								<ul className="import-link">
-									<li>
+									{/* <li>
 										<Link href="/media-room/photo-gallery">Photo Gallery</Link>
-									</li>
+									</li> */}
 
 									<li>
 										<Link href="/publications/reports">Reports</Link>
@@ -105,15 +105,30 @@ export default function Footer() {
 									<li>
 										<Link href="/publications/blog">Blog</Link>
 									</li>
-
-									<li>
-										<Link href={'https://tess-website.prismic.io'}>Login</Link>
-									</li>
 								</ul>
 							</div>
 						</div>
 
 						<div className="col-lg-3 col-md-6">
+							<div className="single-footer-widget">
+								<h3>Useful Links</h3>
+
+								<ul className="import-link">
+									<li>
+										<Link href="/media-room/photo-gallery">Images</Link>
+									</li>
+
+									<li>
+										<Link href="/media-room/video-gallery">Videos</Link>
+									</li>
+									<li>
+										<Link href="/news-and-events/events">Our Events</Link>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						{/* <div className="col-lg-3 col-md-6">
 							<div className="single-footer-widget newsletter">
 								<h3>Newsletter</h3>
 								<p>Sign up for our weekly councils newsletter</p>
@@ -144,7 +159,7 @@ export default function Footer() {
 									<div id="validator-newsletter" className="form-result"></div>
 								</form>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 
