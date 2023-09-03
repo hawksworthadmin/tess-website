@@ -5,19 +5,19 @@ export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
-				<title>{METADATA.title}</title>
-				<meta name="description" content={METADATA.description} />
+				{/* <title>{METADATA.title}</title> */}
+				{/* <meta name="description" content={METADATA.description} /> */}
 
 				{/* Open Graph Tags */}
-				<meta property="og:title" content={METADATA.title} />
+				{/* <meta property="og:title" content={METADATA.title} />
 				<meta property="og:description" content={METADATA.description} />
 				<meta property="og:image" content={METADATA.og_image} />
 				<meta property="og:url" content={METADATA.base_url} />
-				<meta property="og:type" content="website" />
+				<meta property="og:type" content="website" /> */}
 				{/* Twitter Card Tags */}
-				<meta name="twitter:title" content={METADATA.title} />
+				{/* <meta name="twitter:title" content={METADATA.title} />
 				<meta name="twitter:description" content={METADATA.description} />
-				<meta name="twitter:image" content={METADATA.og_image} />
+				<meta name="twitter:image" content={METADATA.og_image} /> */}
 
 				<link
 					rel="stylesheet"

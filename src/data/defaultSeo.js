@@ -4,11 +4,15 @@ export default {
 	openGraph: {
 		type: 'website',
 		locale: 'en_IE',
-		url: process.env.NEXT_PUBLIC_BASE_URL,
 		site_name: 'BESDA AF-TESS',
+		images: [
+			{
+				url: '/favicon.png',
+				type: 'image/png',
+			},
+		],
 	},
 	twitter: {},
-	canonical: process.env.BASE_URL,
 	images: [
 		{
 			url: '/favicon.png',

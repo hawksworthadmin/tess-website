@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
 	TwitterIcon,
@@ -8,6 +8,12 @@ import {
 } from 'next-share'
 
 const ShareIcons = ({ title, url }) => {
+	const [loc, setLocation] = useState()
+
+	useEffect(() => {
+		const loc = window.location.host
+		setLocation(loc)
+	}, [])
 	return (
 		<div
 			style={{
@@ -26,16 +32,10 @@ const ShareIcons = ({ title, url }) => {
 				}}
 				className="flex justify-end items-center"
 			>
-				<FacebookShareButton
-					url={`${process.env.NEXT_PUBLIC_BASE_URL}${url}`}
-					quote={title}
-				>
+				<FacebookShareButton url={`${loc}${url}`} quote={title}>
 					<FacebookIcon size={32} round />
 				</FacebookShareButton>
-				<TwitterShareButton
-					url={`${process.env.NEXT_PUBLIC_BASE_URL}${url}`}
-					title={title}
-				>
+				<TwitterShareButton url={`${loc}${url}`} title={title}>
 					<TwitterIcon size={32} round />
 				</TwitterShareButton>
 			</div>
