@@ -28,11 +28,7 @@ export default function BlogDetails({
 			<NextSeo
 				title={post?.data?.meta_title || post?.data?.title}
 				metaDescription={post?.data?.meta_description}
-				image={
-					post?.data?.meta_image?.url ||
-					post?.data?.image?.url ||
-					post?.data?.featured_image?.url
-				}
+				image={post?.data?.image?.url || post?.data?.featured_image?.url}
 				alt={
 					post?.data?.meta_image?.alt ||
 					post?.data?.image?.alt ||
