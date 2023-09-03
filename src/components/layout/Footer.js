@@ -73,13 +73,13 @@ export default function Footer() {
 										Education Annex 245 Samuel Ademulegun Avenue, CBD 900103,
 										Abuja, <br /> NV 89108
 									</li>
-									{/* <li>
+									<li>
 										<i className="ri-mail-open-fill"></i>
 										<Link href="mailto:fmegpe2@gmail.com">
 											fmegpe2@gmail.com
 										</Link>
 									</li>
-									<li className="location">
+									{/* <li className="location">
 										<i className="ri-phone-fill"></i>
 										<Link href="tel:+23412345567">+234 12345567</Link>
 									</li> */}
