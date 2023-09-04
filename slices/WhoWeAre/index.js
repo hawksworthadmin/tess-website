@@ -16,7 +16,12 @@ const WhatWeDo = ({ slice }) => {
 				>
 					Who we are
 				</h5>
-				<RichTextComponent field={slice.primary.content} />
+				<div className="text-justify">
+					<RichTextComponent
+						field={slice.primary.content}
+						className="text-justify"
+					/>
+				</div>
 			</div>
 		</section>
 	)

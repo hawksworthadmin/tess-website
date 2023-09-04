@@ -161,7 +161,7 @@ const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 							</div>
 						</div>
 						<h4
-							className="font-30 text-theme fw-500"
+							className="font-30 text-theme fw-500 text-justify"
 							style={{ marginBottom: '20px', textTransform: 'initial' }}
 							data-aos-delay="50"
 							data-aos="fade-up"
@@ -169,7 +169,7 @@ const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 							{title}
 						</h4>
 						<p
-							className="font-20 text-gray fw-300"
+							className="font-20 text-gray fw-300 text-justify"
 							data-aos-delay="150"
 							data-aos="fade-up"
 						>

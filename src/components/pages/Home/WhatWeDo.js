@@ -119,7 +119,7 @@ const WhatWeDoContent = ({ number, title, paragraph, image, reverse }) => {
 							{title}
 						</h4>
 						<p
-							className="font-20 text-gray fw-300"
+							className="font-20 text-gray fw-300 text-justify"
 							data-aos-delay="150"
 							data-aos="fade-up"
 						>
