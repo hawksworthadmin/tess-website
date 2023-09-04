@@ -7,4 +7,4 @@ Host: https://fmegpetess.com.ng
 
 # Sitemaps
 Sitemap: https://fmegpetess.com.ng/sitemap.xml
-Sitemap: https://fmegpetess.com.ng/server-sitemap.xml
+# Sitemap: https://fmegpetess.com.ng/server-sitemap.xml
